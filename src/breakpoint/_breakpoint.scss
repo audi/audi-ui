@@ -1,0 +1,39 @@
+// TODO Comment the use with js
+body {
+  &::before {
+    content: 'default';
+    display: none;
+
+    @each $name, $size in $aui-breakpoint {
+      @include aui-respond-to($name) {
+        content: '#{$name}';
+      }
+    }
+  }
+}
+
+// Make viewport responsive
+//
+// @viewport is needed because IE 10+ doesn't honor <meta name="viewport"> in
+// some cases. See http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/.
+// Eventually @viewport will replace <meta name="viewport">. It's been manually
+// prefixed for forward-compatibility.
+@-moz-viewport {
+  width: device-width;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@-webkit-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}

@@ -1,0 +1,42 @@
+.test-section {
+
+  // margin-left: auto;
+  // margin-right: auto;
+  // padding-left: $aui-grid-container-offset;
+  // padding-right: $aui-grid-container-offset;
+
+  @extend .aui-layout;
+
+  padding-top: unit(10);
+
+  &__title {
+    padding: unit(4) 0 calc(#{unit(1)} - 1px);
+    margin-bottom: unit(4);
+    padding: unit(1) unit(2);
+    @include fontfamily;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: unit(4);
+    color: white;
+    background: $demo-highlight;
+  }
+
+  &__headline {
+    display: block;
+    padding: unit(4) 0 calc(#{unit(1)} - 1px);
+    margin-top: unit(4);
+    margin-bottom: unit(4);
+    padding: unit(1) unit(2);
+    @include fontfamily;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: unit(4);
+    color: white;
+    background: rgba($demo-highlight, 0.5);
+  }
+
+  & + & {
+    margin-top: unit(30);
+  }
+
+}

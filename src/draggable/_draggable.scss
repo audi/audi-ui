@@ -1,0 +1,84 @@
+$aui-draggable-icon-width: rem(16) !default;
+$aui-draggable-icon-margin-left: unit(2) !default;
+$aui-draggable-padding-x: unit(6) !default;
+
+$aui-draggable-color: rgba(#000, .8) !default;
+$aui-draggable-color-hover: rgba(#000, 1) !default;
+$aui-draggable-color-active: rgba(#000, 1) !default;
+
+$aui-draggable-background: rgba(#000, 0.1) !default;
+$aui-draggable-background-hover: rgba(#000, 0.15) !default;
+$aui-draggable-background-active: $aui-color-gray80 !default;
+$aui-draggable-background-dragging: rgba(#000, 0.05) !default;
+
+.aui-draggable-list {
+  padding-left: 0;
+  list-style: none;
+  font-weight: $aui-font-weight-normal;
+
+  &__item {
+    cursor: move;
+    position: relative;
+    padding: unit(4) #{$aui-draggable-padding-x + $aui-draggable-icon-width + $aui-draggable-icon-margin-left} unit(4) $aui-draggable-padding-x;
+    color: $aui-draggable-color;
+    background: $aui-draggable-background;
+    transition: background .15s linear, color .15s linear;
+
+    &:hover {
+      color: $aui-draggable-color-hover;
+      background: $aui-draggable-background-hover;
+    }
+  }
+
+  &__item + &__item {
+    margin-top: 1px;
+  }
+
+  &.is-dragging &__item,
+  &.is-dragging &__item:hover {
+    background: $aui-draggable-background-dragging;
+
+    &.is-active {
+      color: $aui-draggable-color-active;
+      background: $aui-draggable-background-active;
+    }
+  }
+
+  // Placeholder state
+  &.is-dragging .is-placeholder,
+  &.is-dragging .is-placeholder:hover {
+    color: transparent;
+    background: none;
+  }
+
+  .is-placeholder::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px dotted $aui-draggable-background-dragging;
+  }
+
+  // Dragging icon
+  &__item:not(.is-placeholder)::after {
+    content: '';
+    opacity: 0;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: $aui-draggable-padding-x;
+    width: 16px;
+    height: 5px;
+    margin-top: -2.5px;
+    background: url('data:image/svg+xml;dataset=utf-8,#{aui-svg-draggable-handle($aui-draggable-color-hover)}') center center no-repeat;
+    transition: opacity .15s linear;
+  }
+
+  &__item.is-active::after,
+  &__item:hover::after {
+    opacity: 1;
+  }
+}

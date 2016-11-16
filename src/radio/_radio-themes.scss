@@ -1,0 +1,42 @@
+.aui-radio {
+  /**
+   * Theme: light
+   */
+  &.aui-theme-light {
+    $aui-radio-color-text: $aui-color-gray95;
+    $aui-radio-color-text-hover: $aui-color-white;
+    $aui-radio-color-border: rgba(#fff, 0.5);
+    $aui-radio-color-border-hover: rgba(#fff, 1);
+    $aui-radio-color-tick: rgba(#fff, 0.1);
+    $aui-radio-color-tick-active: rgba(#fff, 0.8);
+
+    color: $aui-radio-color-text;
+
+    .aui-radio__box {
+      border-color: $aui-radio-color-border;
+    }
+
+    .aui-radio__tick {
+      background: $aui-radio-color-tick;
+    }
+
+    // Hover state
+    &:hover:not(.is-disabled) {
+      color: $aui-radio-color-text-hover;
+
+      .aui-radio__box {
+        border-color: $aui-radio-color-border-hover;
+      }
+    }
+
+    // Focus state
+    .aui-radio__input:focus ~ .aui-radio__box {
+      @include shadow-focus-light;
+    }
+
+    // Checked state
+    &.is-checked .aui-radio__tick {
+      background: $aui-radio-color-tick-active;
+    }
+  }
+}

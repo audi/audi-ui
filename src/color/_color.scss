@@ -1,0 +1,101 @@
+.aui-color {
+  &-white {
+    background-color: $aui-color-white;
+  }
+
+  &-black {
+    background-color: $aui-color-black;
+  }
+
+  &-silver {
+    background-color: $aui-color-silver;
+  }
+
+  &-warmsilver {
+    background-color: $aui-color-warmsilver;
+  }
+
+  &-green,
+  &-success {
+    background-color: $aui-color-green;
+  }
+
+  &-warning,
+  &-yellow {
+    background-color: $aui-color-yellow;
+  }
+
+  &-danger,
+  &-red {
+    background-color: $aui-color-red;
+  }
+
+  &-gray10 {
+    background-color: $aui-color-gray10;
+  }
+
+  &-gray20 {
+    background-color: $aui-color-gray20;
+  }
+
+  &-gray30 {
+    background-color: $aui-color-gray30;
+  }
+
+  &-gray40 {
+    background-color: $aui-color-gray40;
+  }
+
+  &-gray50 {
+    background-color: $aui-color-gray50;
+  }
+
+  &-gray60 {
+    background-color: $aui-color-gray60;
+  }
+
+  &-gray70 {
+    background-color: $aui-color-gray70;
+  }
+
+  &-gray80 {
+    background-color: $aui-color-gray80;
+  }
+
+  &-gray85 {
+    background-color: $aui-color-gray85;
+  }
+
+  &-gray90 {
+    background-color: $aui-color-gray90;
+  }
+
+  &-gray95 {
+    background-color: $aui-color-gray95;
+  }
+}
+
+.aui-color-text {
+  &-light {
+    color: $aui-color-light;
+  }
+
+  &-dark {
+    color: $aui-color-dark;
+  }
+
+  &-green,
+  &-success {
+    color: $aui-color-green;
+  }
+
+  &-warning,
+  &-yellow {
+    color: $aui-color-yellow;
+  }
+
+  &-danger,
+  &-red {
+    color: $aui-color-red;
+  }
+}

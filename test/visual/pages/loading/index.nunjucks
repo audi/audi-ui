@@ -1,0 +1,35 @@
+{% extends 'pages/_layouts/page-color.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="spinner">
+    {{ section.header('Spinner') }}
+    <div class="test-section__panel">
+      {% include 'spinner/snippets/spinner.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="continuous-spinner">
+    {{ section.header('Continuous Spinner') }}
+    <div class="test-section__panel">
+      {% include 'spinner/snippets/continuous-spinner.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="progress">
+    {{ section.header('Progress') }}
+    <div class="test-section__panel">
+      {% include 'progress/snippets/progress.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="continuous-progress">
+    {{ section.header('Continuous Progress') }}
+    <div class="test-section__panel">
+      {% include 'progress/snippets/continuous-progress.html' %}
+    </div>
+  </section>
+
+{% endblock %}

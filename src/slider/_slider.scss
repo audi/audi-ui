@@ -1,0 +1,153 @@
+/**
+ * NOTE Slider AUI components rely on the 3rd party library noUiSlider.
+ * @see https://github.com/leongersen/noUiSlider
+ */
+
+$aui-slider-handle-size: unit(6) !default;
+$aui-slider-color-text: $aui-color-gray20 !default;
+$aui-slider-color-track: $aui-color-gray80 !default;
+$aui-slider-color-track-active: $aui-color-black !default;
+$aui-slider-color-thumb: $aui-color-white !default;
+$aui-slider-color-thumb-border: $aui-color-gray50 !default;
+$aui-slider-color-thumb-border-hover: $aui-slider-color-track-active !default;
+
+.aui-slider {
+  position: relative;
+  padding: 0;
+  min-height: $aui-slider-handle-size;
+  color: $aui-slider-color-text;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: #{$aui-slider-handle-size / 2};
+    width: 100%;
+    height: 2px;
+    transform: translateY(-50%);
+    background: $aui-slider-color-track;
+  }
+
+  &:not(.aui-slider--range)::after {
+    background: linear-gradient(to right, $aui-slider-color-track-active 50.9%, $aui-slider-color-track 51%);
+  }
+
+  &__output {
+    position: relative;
+    font-size: modular-scale(-1);
+  }
+
+  &__target,
+  &__target * {
+    touch-action: none;
+    user-select: none;
+  }
+
+  &__target {
+    display: block;
+    position: relative;
+    direction: ltr;
+    margin: 0 #{$aui-slider-handle-size / 2};
+    height: $aui-slider-handle-size;
+    z-index: 1;
+  }
+
+  &__base {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    // Painting and performance: Browsers can paint handles in their own layer
+    transform: translate3d(0,0,0);
+  }
+
+  &__origin {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // z-index: 2;
+  }
+
+  &__background,
+  &__connect {
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 2px;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__connect {
+    &::after {
+      background: $aui-slider-color-track-active;
+    }
+  }
+
+  &__background {
+    &::after {
+      background: $aui-slider-color-track;
+    }
+  }
+
+  &__handle {
+    position: relative;
+    width: $aui-slider-handle-size;
+    height: $aui-slider-handle-size;
+    background: $aui-slider-color-thumb;
+    border-radius: 50%;
+    border: 1px solid $aui-slider-color-thumb-border;
+    transform: translateX(-50%);
+    transition: border .15s linear;
+    cursor: pointer;
+    z-index: 1;
+
+    &.aui-slider__active {
+      z-index: 4;
+    }
+  }
+
+  &__stacking &__handle {
+    // This class is applied to the lower origin when its values is > 50%
+    z-index: 3;
+  }
+
+  &__draggable {
+    cursor: ew-resize;
+  }
+
+  /**
+   * States
+   */
+
+  // Tap
+  &__state-tap &__origin {
+    transition: left .25s $aui-easing, top .25s $aui-easing;
+  }
+
+  // Drag
+  &__state-drag * {
+    cursor: inherit !important;
+  }
+
+  // Hover
+  &:not(.is-disabled) &__handle:hover {
+    border-color: $aui-slider-color-thumb-border-hover;
+  }
+
+  // Disabled state
+  &.is-disabled {
+    opacity: $aui-field-disabled-opacity;
+    cursor: not-allowed;
+
+    .aui-slider__handle,
+    .aui-slider__draggable {
+      cursor: not-allowed;
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{% extends 'pages/_layouts/page-color.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="flyout">
+    {{ section.header('Flyout') }}
+    <div class="test-section__panel">
+      <div class="aui-grid">
+        <div class="aui-cell aui-cell--4">
+          <h3 class="test-section__headline">left</h3>
+          {% include 'flyout/snippets/flyout.html' %}
+        </div>
+        <div class="aui-cell aui-cell--4 align-center">
+          <h3 class="test-section__headline">center</h3>
+          {% include 'flyout/snippets/flyout-center.html' %}
+        </div>
+        <div class="aui-cell aui-cell--4 align-right">
+          <h3 class="test-section__headline">right</h3>
+          {% include 'flyout/snippets/flyout-right.html' %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section" id="nav-inline">
+    {{ section.header('Nav Inline') }}
+    <div class="test-section__panel">
+      <div class="aui-grid">
+        <div class="aui-cell">
+          <h3 class="test-section__headline">Default</h3>
+          {% include 'nav/snippets/nav-inline.html' %}
+        </div>
+        <div class="aui-cell leader-4">
+          <h3 class="test-section__headline">Small</h3>
+          {% include 'nav/snippets/nav-inline-small.html' %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section" id="nav-pills">
+    {{ section.header('Nav Pills') }}
+    <div class="test-section__panel">
+      <div class="aui-grid">
+        <div class="aui-cell">
+          <h3 class="test-section__headline">Default</h3>
+          {% include 'nav/snippets/nav-pills.html' %}
+          <div class="leader-padding-10 trailer-padding-10 aui-color-gray90" style="padding-left: 1.25rem; padding-right: 1.25rem;">
+            Content area
+          </div>
+        </div>
+        <div class="aui-cell leader-4">
+          <h3 class="test-section__headline">Small</h3>
+          {% include 'nav/snippets/nav-pills-small.html' %}
+          <div class="leader-padding-10 trailer-padding-10 aui-color-gray90" style="padding-left: 1rem; padding-right: 1rem;">
+            Content area
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section" id="nav-pills-theme">
+    {{ section.header('Nav Pills Overlap component with custom theme of gray10 and gray20') }}
+    <div class="test-section__panel">
+      <div class="aui-grid">
+        <div class="aui-cell">
+          <div class="aui-color-gray10 aui-color-text-light leader-padding-10 trailer-padding-20" style="padding-left: 1.25rem; padding-right: 1.25rem;">
+            Content above
+          </div>
+        </div>
+      </div>
+      <div class="aui-grid">
+        <div class="aui-cell">
+          <nav class="aui-nav aui-js-nav aui-nav--pills aui-nav--overlap aui-theme-gray10-gray20">
+            <div class="aui-nav__panel">
+              <ul class="aui-nav__items">
+                <li class="aui-nav__item">
+                  <button class="aui-nav__action is-active" type="button">Action A</button>
+                </li>
+                <li class="aui-nav__item">
+                  <button class="aui-nav__action" type="button">Action B</button>
+                </li>
+                <li class="aui-nav__item">
+                  <button class="aui-nav__action" type="button">Action C</button>
+                </li>
+                <li class="aui-nav__item">
+                  <button class="aui-nav__action is-disabled" type="button" disabled>Action Disabled</button>
+                </li>
+                <li class="aui-nav__item">
+                  <button class="aui-nav__action" type="button">Action E</button>
+                </li>
+                <li class="aui-nav__item">
+                  <button class="aui-nav__action" type="button">Action F</button>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="aui-color-gray20 aui-color-text-light leader-padding-10 trailer-padding-10" style="padding-left: 1.25rem; padding-right: 1.25rem;">
+            Content below
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section" id="nav-dropdown">
+    {{ section.header('Nav Dropdown') }}
+    <div class="test-section__panel">
+      {% include 'nav/snippets/nav-dropdown.html' %}
+      <h3 class="test-section__headline">Sticky</h3>
+      {% include 'nav/snippets/nav-dropdown-sticky.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="nav-list">
+    {{ section.header('Nav List') }}
+    <div class="test-section__panel">
+      {% include 'nav/snippets/nav.html' %}
+      <h3 class="test-section__headline">With icons</h3>
+      {% include 'nav/snippets/nav-list-icons.html' %}
+      <h3 class="test-section__headline">With large icons</h3>
+      {% include 'nav/snippets/nav-list-large-icons.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="header">
+    {{ section.header('Header') }}
+    <div class="test-section__panel">
+      <a class="aui-textlink" href="header.html">Sticky header demo</a>
+    </div>
+  </section>
+
+  <section class="test-section" id="breadcrumb">
+    {{ section.header('Breadcrumb') }}
+    <div class="test-section__panel">
+      {% include 'breadcrumb/snippets/breadcrumb.html' %}
+    </div>
+  </section>
+
+{% endblock %}

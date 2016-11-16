@@ -1,0 +1,45 @@
+/**
+ * Returns multiple unit
+ * @param {number (unitless)} $multiple
+ * @return {number (rem)}
+ */
+@function unit($multiple: 1) {
+   @return $aui-base-unit * $multiple / $aui-rem-base * 1rem;
+}
+
+/**
+ * Convert pixels to ems
+ * eg. for a relational value of 12px write em(12) when the parent is equal
+ * the em-base (defined in $audui-config).
+ * If the parent is another value say 24px write em(12, 24)
+ * @param {number (px)} $val
+ * @param {number} $base
+ * @return {number (em)}
+ */
+@function em($val, $base: $aui-rem-base) {
+  $val: strip-units($val);
+  $base: strip-units($base);
+  @return ($val / $base) * 1em;
+}
+
+/**
+ * Convert pixels to rems
+ * Assumes that the defined em-base is the font-size of <html>
+ * @param {number (px)} $val
+ * @param {number} $base
+ * @return {number (rem)}
+ */
+@function rem($val) {
+  $val: strip-units($val);
+  $base: strip-units($aui-rem-base);
+  @return ($val / $base) * 1rem;
+}
+
+/**
+ * Strips the unit from a number.
+ * @param {number (with unit)} $value
+ * @return {number (unitless)}
+ */
+@function strip-units($value) {
+   @return ($value / ($value * 0 + 1));
+}

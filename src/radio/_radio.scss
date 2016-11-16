@@ -1,0 +1,95 @@
+$aui-radio-box-width: 1.5em !default;
+$aui-radio-tick-scale: 8 / 12 / $aui-circle-smoothing-factor !default;
+$aui-radio-tick-scale-hover: 10 / 12 / $aui-circle-smoothing-factor !default;
+$aui-radio-tick-scale-active: 1 / $aui-circle-smoothing-factor !default;
+$aui-radio-tick-size: .75em * $aui-circle-smoothing-factor !default;
+$aui-radio-text-spacing: 1em !default;
+$aui-radio-color-text: $aui-color-gray20 !default;
+$aui-radio-color-text-hover: $aui-color-black !default;
+$aui-radio-color-border: rgba(#000, 0.5) !default;
+$aui-radio-color-border-hover: rgba(#000, 1) !default;
+$aui-radio-color-tick: rgba(#000, 0.1) !default;
+$aui-radio-color-tick-active: rgba(#000, 0.8) !default;
+
+.aui-radio {
+  display: inline-block;
+  position: relative;
+  font-weight: $aui-font-weight-normal;
+  line-height: $aui-field-line-height;
+  color: $aui-radio-color-text;
+  cursor: pointer;
+  @include aui-remove-tap-highlight;
+
+  .aui-js & {
+    padding-left: $aui-radio-box-width + $aui-radio-text-spacing;
+  }
+
+  .aui-js &__input {
+    // Visually hide input
+    @extend %aui-hidden-input;
+  }
+
+  &__box {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $aui-radio-box-width;
+    height: $aui-radio-box-width;
+    border: 1px solid $aui-radio-color-border;
+    border-radius: 50%;
+    transition: box-shadow .15s linear, border .15s linear;
+    cursor: pointer;
+    pointer-events: none;
+    z-index: 1;
+
+    .aui-js & {
+      display: inline-block;
+    }
+  }
+
+  &__tick {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $aui-radio-tick-size;
+    height: $aui-radio-tick-size;
+    transform: translate(-50%, -50%) scale($aui-radio-tick-scale, $aui-radio-tick-scale);
+    border-radius: 50%;
+    background: $aui-radio-color-tick;
+    transition: transform .15s $aui-easing, background .15s linear;
+    pointer-events: none;
+  }
+
+  // Hover state
+  &:hover:not(.is-disabled) {
+    color: $aui-radio-color-text-hover;
+
+    .aui-radio__box {
+      border-color: $aui-radio-color-border-hover;
+    }
+
+    .aui-radio__tick {
+      transform: translate(-50%, -50%) scale($aui-radio-tick-scale-hover, $aui-radio-tick-scale-hover);
+    }
+  }
+
+  // Focus state
+  &__input:focus ~ .aui-radio__box {
+    @include shadow-focus;
+  }
+
+  // Disabled state
+  &.is-disabled {
+    opacity: $aui-field-disabled-opacity;
+    cursor: not-allowed;
+  }
+
+  // Checked state
+  &.is-checked &__tick {
+    background: $aui-radio-color-tick-active;
+    transform: translate(-50%, -50%) scale($aui-radio-tick-scale-active, $aui-radio-tick-scale-active);
+  }
+}

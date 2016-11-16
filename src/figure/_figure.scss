@@ -1,0 +1,14 @@
+.aui-figure {
+  display: block;
+  margin: 0;
+
+  &__image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__caption {
+    margin-top: unit(4);
+  }
+}

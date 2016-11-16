@@ -1,0 +1,25 @@
+{% extends 'pages/_layouts/page-color.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="draggable">
+    {{ section.header('Draggable') }}
+    <div class="test-section__panel">
+      {% include 'draggable/snippets/draggable-list.html' %}
+      <h3 class="test-section__headline">While active dragging</h3>
+      {% include 'draggable/snippets/draggable-list-active.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="dropzone">
+    {{ section.header('Dropzone') }}
+    <div class="test-section__panel">
+      {% include 'dropzone/snippets/dropzone.html' %}
+      <h3 class="test-section__headline">While active dragging</h3>
+      <a class="aui-textlink" href="dropzone-fullpage.html">Full-page dropzone</a>
+    </div>
+  </section>
+
+{% endblock %}

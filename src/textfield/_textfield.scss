@@ -1,0 +1,338 @@
+$aui-textfield-max-lines: 0 !default;
+$aui-textfield-icon-top-default: $aui-field-default-height * .5 !default; // Center with label
+$aui-textfield-color: $aui-color-dark !default;
+$aui-textfield-color: $aui-color-black !default;
+$aui-textfield-color-secondary: rgba(#000, 0.5) !default;
+$aui-textfield-border: rgba(#000, 0.3) !default;
+$aui-textfield-border-hover: rgba(#000, 0.8) !default;
+$aui-textfield-border-focus: rgba(#000, 0.8) !default;
+$aui-textfield-border-dirty: rgba(#000, 0.8) !default;
+$aui-textfield-valid-tick-color: rgba(#000, 0.6) !default;
+
+$aui-textfield-input-padding-y: (8 / 16 * 1em) !default;
+
+$aui-textfield-floating-label-active-label-top: 0 !default;
+$aui-textfield-floating-label-active-label-opacity: 1 !default;
+$aui-textfield-floating-label-active-label-font-size: $aui-field-floating-label-font-size !default;
+
+$aui-textfield-multiline-padding-top: (21 / 16 * 1em) !default;
+$aui-textfield-multiline-padding-x: (10 / 16 * 1em) !default;
+$aui-textfield-multiline-active-label-top: (10 / 16 * 1em) !default;
+$aui-textfield-multiline-active-label-font-size: $aui-field-floating-label-font-size !default;
+$aui-textfield-multiline-active-label-opacity: 1 !default;
+$aui-textfield-multiline-active-field-padding-top: (20 / 16 * 1em) !default;
+$aui-textfield-multiline-padding-top: (13 / 16 * 1em) !default;
+
+.aui-textfield {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: $aui-field-floating-label-padding 0 0;
+  font-size: 1rem;
+  line-height: $aui-field-line-height;
+  stroke: $aui-textfield-color;
+
+  &__input {
+    display: block;
+    margin: 0;
+    padding: $aui-textfield-input-padding-y 0;
+    width: 100%;
+    min-height: $aui-field-default-height;
+    font-size: inherit;
+    font-weight: $aui-font-weight-normal;
+    line-height: inherit;
+    text-align: left;
+    color: $aui-field-placeholder-color;
+    background: none;
+    border: none;
+    transition: color $aui-field-transition-duration $aui-easing;
+    resize: none;
+    outline: 0;
+    border-radius: 0;
+    @if $aui-textfield-max-lines > 0 {
+      max-height: $aui-field-line-height * $aui-textfield-max-lines;
+    }
+  }
+
+  &__field {
+    position: relative;
+    border-bottom: 1px solid $aui-textfield-border;
+    transition-property: border, padding;
+    transition-duration: $aui-field-transition-duration;
+    transition-timing-function: $aui-easing;
+  }
+
+  &__label {
+    display: block;
+    position: absolute;
+    top: 0;
+    // right: 0;
+    // bottom: 0;
+    left: 0;
+    width: 100%;
+    color: $aui-field-placeholder-color;
+    font-size: $aui-textfield-floating-label-active-label-font-size;
+    font-weight: $aui-font-weight-normal;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+    transition-property: top, font-size, color, opacity;
+    transition-duration: $aui-field-transition-duration;
+    transition-timing-function: $aui-easing;
+    pointer-events: none;
+  }
+
+  // Focus line will be injected by JS
+  &__focus-line {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-top: -2px;
+    height: 1px;
+    background: $aui-textfield-border-hover;
+    opacity: 0;
+    transition-property: opacity, background;
+    transition-duration: $aui-field-transition-duration;
+  }
+
+  &__counter,
+  &__description,
+  &__error,
+  &__valid {
+    display: block;
+    color: $aui-textfield-color-secondary;
+    transition: color $aui-field-transition-duration linear;
+    margin-top: unit(2);
+    font-size: rem(13);
+    line-height: $aui-field-error-line-height;
+  }
+
+  &__counter {
+    position: relative;
+    height: $aui-field-error-line-height;
+  }
+
+  &__counter-value {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__counter ~ &__description,
+  &__counter ~ &__error {
+    margin-top: $aui-field-error-line-height * -1;
+    padding-right: 4em;
+  }
+
+  &__valid {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-right: unit(2);
+      width: 12px;
+      height: 12px;
+      background: url('data:image/svg+xml,#{aui-svg-tick($aui-textfield-valid-tick-color)}') center center no-repeat;
+    }
+  }
+
+  &__error {
+    color: $aui-field-error-color;
+  }
+
+  .audiicon {
+    position: absolute;
+    top: $aui-textfield-icon-top-default;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .aui-js & {
+    padding-top: 0;
+
+    .aui-textfield__label {
+      top: $aui-field-label-y;
+      font-size: inherit;
+    }
+  }
+
+  /**
+   * Variant: floating-label
+   */
+  &.aui-textfield--floating-label &__field {
+    padding-top: $aui-field-floating-label-padding;
+  }
+
+  .aui-js &.aui-textfield--floating-label &__label {
+    top: $aui-field-label-y + $aui-field-floating-label-padding;
+    font-size: inherit;
+  }
+
+  /**
+   * Variant: multiline
+   */
+  &.aui-textfield--multiline {
+    transition-property: padding;
+    transition-duration: $aui-field-transition-duration;
+    transition-timing-function: $aui-easing;
+  }
+
+  &.aui-textfield--multiline &__field {
+    padding-top: $aui-textfield-multiline-active-field-padding-top;
+    border: 1px solid $aui-textfield-border;
+  }
+
+  &.aui-textfield--multiline &__label {
+    top: 10px;
+    left: 10px;
+  }
+
+  &.aui-textfield--multiline &__input {
+    padding-left: $aui-textfield-multiline-padding-x;
+    padding-right: $aui-textfield-multiline-padding-x;
+  }
+
+  .aui-js &.aui-textfield--multiline {
+    padding-top: $aui-textfield-multiline-padding-top;
+  }
+
+  .aui-js &.aui-textfield--multiline &__field {
+    padding-top: $aui-textfield-multiline-active-field-padding-top - $aui-textfield-multiline-padding-top;
+  }
+
+  .aui-js &.aui-textfield--multiline &__label {
+    top: 7px;
+  }
+
+  /**
+   * Variant: icon
+   */
+  &--icon {
+    .aui-textfield__input,
+    .aui-textfield__label {
+      padding-left: unit(8);
+    }
+  }
+
+  /**
+   * States
+   */
+
+  // Hover state
+  &:not(.is-disabled):not(.is-invalid) {
+    .aui-textfield__field:hover {
+      border-bottom-color: $aui-textfield-border-hover;
+    }
+  }
+
+  // Focus state
+  &.is-focused {
+    .aui-textfield__label {
+      opacity: 0;
+    }
+
+    &.aui-textfield--floating-label .aui-textfield__label {
+      top: $aui-textfield-floating-label-active-label-top;
+      font-size: $aui-textfield-floating-label-active-label-font-size;
+      opacity: $aui-textfield-floating-label-active-label-opacity;
+    }
+
+    &.aui-textfield--multiline {
+      padding-top: 0;
+    }
+
+    &.aui-textfield--multiline .aui-textfield__field {
+      padding-top: $aui-textfield-multiline-active-field-padding-top;
+    }
+
+    &.aui-textfield--multiline .aui-textfield__label {
+      top: $aui-textfield-multiline-active-label-top;
+      font-size: $aui-textfield-multiline-active-label-font-size;
+      opacity: $aui-textfield-multiline-active-label-opacity;
+    }
+
+    .aui-textfield__field {
+      border-bottom-color: $aui-textfield-border-focus;
+    }
+
+    .aui-textfield__input {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .aui-textfield__focus-line {
+      opacity: 1;
+    }
+  }
+
+  // Disabled state
+  &.is-disabled {
+    opacity: $aui-field-disabled-opacity;
+    cursor: not-allowed;
+
+    .aui-textfield__input {
+      cursor: not-allowed;
+    }
+
+    .aui-textfield__focus-line {
+      opacity: 0;
+    }
+  }
+
+  // Dirty state
+  &.is-dirty {
+    .aui-textfield__label {
+      opacity: 0;
+    }
+
+    &.aui-textfield--floating-label .aui-textfield__label {
+      top: $aui-textfield-floating-label-active-label-top;
+      font-size: $aui-textfield-floating-label-active-label-font-size;
+      opacity: $aui-textfield-floating-label-active-label-opacity;
+    }
+
+    &.aui-textfield--multiline {
+      padding-top: 0;
+    }
+
+    &.aui-textfield--multiline .aui-textfield__field {
+      padding-top: $aui-textfield-multiline-active-field-padding-top;
+    }
+
+    &.aui-textfield--multiline .aui-textfield__label {
+      top: $aui-textfield-multiline-active-label-top;
+      font-size: $aui-textfield-multiline-active-label-font-size;
+      opacity: $aui-textfield-multiline-active-label-opacity;
+    }
+
+    .aui-textfield__field {
+      border-bottom-color: $aui-textfield-border-dirty;
+    }
+
+    .aui-textfield__input {
+      color: $aui-textfield-color;
+    }
+  }
+
+  // Invalid state
+  &.is-invalid {
+    &,
+    &:not(.is-dirty) .aui-textfield__input,
+    .aui-textfield__counter,
+    .aui-textfield__label {
+      color: $aui-field-error-color;
+    }
+
+    .aui-textfield__field {
+      border-color: $aui-field-error-color;
+    }
+
+    .aui-textfield__focus-line {
+      background: $aui-field-error-color;
+    }
+  }
+}

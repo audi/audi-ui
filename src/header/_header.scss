@@ -1,0 +1,33 @@
+.aui-header {
+  // FIXME position:sticky currently not working. See also JS.
+  // We use position:sticky for smoother behavior on iOS.
+  // Browser which didn't support it will just ignore it.
+  // position: sticky;
+  z-index: $aui-zindex-header;
+  top: 0;
+  font-size: modular-scale(-2);
+  height: unit(14);
+
+  &__content {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    height: unit(14);
+    transition: box-shadow linear .15s;
+  }
+
+  &--grid &__content {
+    padding: 0 $aui-grid-container-offset;
+  }
+
+  &.is-sticky &__content {
+    // If the Browser didn't supports position:sticky, JS will toggle .is-sticky
+    // class to handle positioning.
+    z-index: $aui-zindex-header;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include shadow;
+  }
+}

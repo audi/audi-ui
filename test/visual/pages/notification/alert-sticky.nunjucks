@@ -1,0 +1,12 @@
+{% extends 'pages/_layouts/default.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+
+{% block outside %}
+  {% include 'alert/snippets/alert-sticky.html' %}
+{% endblock %}
+
+{% block page %}
+  <div class="aui-layout">
+    {% include 'pages/_shared/demo-content.nunjucks' %}
+  </div>
+{% endblock %}

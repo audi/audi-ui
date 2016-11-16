@@ -1,0 +1,42 @@
+{% extends 'pages/_layouts/page-color.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="button-group-two-text">
+    {{ section.header('Button Group of two Text Buttons') }}
+    <div class="test-section__panel">
+      {% include 'button-group/snippets/button-group-two-text.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-group-two-secondary">
+    {{ section.header('Button Group of two Secondary Buttons') }}
+    <div class="test-section__panel">
+      {% include 'button-group/snippets/button-group-two-secondary.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-group-primary-secondary">
+    {{ section.header('Button Group of Primary and Secondary Button') }}
+    <div class="test-section__panel">
+      {% include 'button-group/snippets/button-group-primary-secondary.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-group-icons">
+    {{ section.header('Special Button Group of (System) Icon Buttons') }}
+    <div class="test-section__panel">
+      {% include 'button-group/snippets/button-group-icons.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-group-secondaries">
+    {{ section.header('Special Button Group of narrowly positioned Secondary Buttons only') }}
+    <div class="test-section__panel">
+      {% include 'button-group/snippets/button-group-secondaries.html' %}
+    </div>
+  </section>
+
+{% endblock %}

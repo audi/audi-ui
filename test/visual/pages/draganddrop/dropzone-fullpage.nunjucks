@@ -1,0 +1,10 @@
+{% extends 'pages/_layouts/default.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block page %}
+
+{% include 'dropzone/snippets/dropzone-fullpage.html' %}
+{% include 'pages/_shared/demo-content.nunjucks' %}
+
+{% endblock %}

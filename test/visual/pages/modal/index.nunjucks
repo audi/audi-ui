@@ -1,0 +1,30 @@
+{% extends 'pages/_layouts/page-color.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  {% include 'modal/snippets/modal.html' %}
+  {% include 'modal/snippets/modal-window.html' %}
+  {% include 'modal/snippets/modal-layer.html' %}
+  {% include 'modal/snippets/modal-morphing-layer.html' %}
+
+  <section class="test-section" id="modal">
+    {{ section.header('Modal') }}
+    <div class="section--modal">
+      <div class="aui-button-group aui-button-group--primaries">
+        <button class="aui-js-response aui-button aui-button--primary" type="button" data-toggle="modal" data-target="modal-sample">Open modal</button>
+        <button class="aui-js-response aui-button aui-button--primary" type="button" data-toggle="modal" data-target="modal-sample-window">Open modal as window</button>
+        <button class="aui-js-response aui-button aui-button--primary" type="button" data-toggle="modal" data-target="modal-sample-layer">Open modal as layer</button>
+        <button class="aui-js-response aui-button aui-button--primary" type="button" data-toggle="modal" data-target="modal-sample-morphing-layer">Morph modal</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section" id="demo-content">
+    <div class="test-section__panel">
+      {% include 'pages/_shared/demo-content.nunjucks' %}
+    </div>
+  </section>
+
+{% endblock %}

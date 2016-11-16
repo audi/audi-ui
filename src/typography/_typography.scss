@@ -1,0 +1,135 @@
+html {
+  @include aui-responsive-type(0, 1.75);
+}
+
+body {
+  font-family: $aui-font-default;
+  font-weight: $aui-font-weight-light;
+  // @include typo-body;
+  // font-size: 16px;
+  // line-height: 28px;
+  color: $aui-color-body;
+}
+
+.aui-headline {
+  &-1,
+  &-2,
+  &-3,
+  &-4,
+  &-5 {
+    font-family: $aui-font-extended;
+    font-weight: $aui-font-weight-normal;
+    letter-spacing: -0.015em;
+  }
+
+  &-6 {
+    font-family: $aui-font-default;
+  }
+
+  &-1 {
+    @include aui-responsive-type(8, 1.1);
+    font-weight: $aui-font-weight-bold;
+    color: $aui-color-black;
+  }
+
+  .aui-color-text-light &-1 {
+    color: $aui-color-white;
+  }
+
+  &-2 {
+    @include aui-responsive-type(5, 1.2);
+  }
+
+  &-3 {
+    @include aui-responsive-type(2, 1.2);
+  }
+
+  &-4 {
+    @include aui-responsive-type(1, 1.2);
+  }
+
+  &-5 {
+    @include aui-responsive-type(0, 1.3333);
+  }
+
+  &-6 {
+    @include aui-responsive-type(0, 1.5);
+    font-weight: $aui-font-weight-bold;
+  }
+}
+
+.aui-shortread {
+  @include aui-responsive-type(0, 1.5);
+}
+
+.aui-accentuated {
+  &::before {
+    content: '';
+    display: block;
+    margin-bottom: unit(5);
+    width: 100px;
+    height: 1px;
+    border-top: 1px solid $aui-color-black;
+  }
+}
+
+.aui-color-text-light {
+  .aui-accentuated {
+    &::before {
+      border-top-color: $aui-color-white;
+    }
+  }
+}
+
+.aui-caption {
+  @include aui-responsive-type(-1, 1.5);
+}
+
+.aui-big {
+  @include aui-responsive-type(1, 1.75);
+}
+
+.aui-small {
+  @include aui-responsive-type(-2, 1.5);
+  color: rgba(#000, 0.4);
+}
+
+.aui-color-text-light {
+  .aui-small {
+    color: rgba(#fff, 0.6);
+  }
+}
+
+.aui-blockquote {
+  margin: 0;
+  font-weight: normal;
+  @include aui-responsive-type(1, 1.5);
+}
+
+.aui-textlink {
+  padding-bottom: 0.06125em;
+  border-bottom: 1px solid rgba(#000, 0.3);
+  color: inherit;
+  font-weight: $aui-font-weight-normal;
+  transition: color 0.3s linear, border 0.3s linear;
+
+  &:hover {
+    color: $aui-color-black;
+    border-bottom-color: $aui-color-black;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.aui-color-text-light {
+  .aui-textlink {
+    border-bottom-color: rgba(#fff, 0.3);
+
+    &:hover {
+      color: $aui-color-white;
+      border-bottom-color: $aui-color-white;
+    }
+  }
+}

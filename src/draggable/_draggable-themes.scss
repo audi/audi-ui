@@ -1,0 +1,48 @@
+.aui-draggable-list {
+  $aui-draggable-color: rgba(#fff, .8);
+  $aui-draggable-color-hover: rgba(#fff, 0.95);
+  $aui-draggable-color-active: rgba(#fff, 0.95);
+
+  $aui-draggable-background: rgba(#fff, 0.2);
+  $aui-draggable-background-hover: rgba(#fff, 0.3);
+  $aui-draggable-background-active: $aui-color-gray40;
+  $aui-draggable-background-dragging: rgba(#fff, 0.1);
+
+  &.aui-theme-light {
+    .aui-draggable-list__item {
+      color: $aui-draggable-color;
+      background: $aui-draggable-background;
+
+      &:hover {
+        color: $aui-draggable-color-hover;
+        background: $aui-draggable-background-hover;
+      }
+    }
+
+    &.is-dragging .aui-draggable-list__item,
+    &.is-dragging .aui-draggable-list__item:hover {
+      background: $aui-draggable-background-dragging;
+
+      &.is-active {
+        color: $aui-draggable-color-active;
+        background: $aui-draggable-background-active;
+      }
+    }
+
+    // Placeholder state
+    &.is-dragging .is-placeholder,
+    &.is-dragging .is-placeholder:hover {
+      color: transparent;
+      background: none;
+    }
+
+    .is-placeholder::before {
+      border-color: $aui-draggable-background-dragging;
+    }
+
+    // Dragging icon
+    .aui-draggable-list__item::after {
+      background-image: url('data:image/svg+xml;dataset=utf-8,#{aui-svg-draggable-handle($aui-draggable-color)}');
+    }
+  }
+}

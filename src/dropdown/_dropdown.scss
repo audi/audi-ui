@@ -1,0 +1,317 @@
+$aui-dropdown-arrow-width: 13px !default;
+$aui-dropdown-arrow-top-default: $aui-field-default-height * .525 !default;
+$aui-dropdown-font-size: 1rem !default;
+$aui-dropdown-option-box-width: 1.5em !default;
+$aui-dropdown-option-tick-size: .75em !default;
+$aui-dropdown-color: $aui-color-dark !default;
+$aui-dropdown-secondary-color: rgba(#000, 0.5) !default;
+$aui-dropdown-border: rgba(#000, 0.3) !default;
+$aui-dropdown-hover-border: rgba(#000, 0.8) !default;
+$aui-dropdown-focus-border: rgba(#000, 0.8) !default;
+$aui-dropdown-dirty-border: rgba(#000, 0.8) !default;
+$aui-dropdown-valid-tick-color: rgba(#000, 0.6) !default;
+$aui-dropdown-arrow-color: $aui-field-placeholder-color !default;
+$aui-dropdown-dirty-arrow-color: $aui-dropdown-color !default;
+$aui-dropdown-panel-background: darken($aui-color-white, 10%) !default;
+$aui-dropdown-list-title-color: rgba(#000, 0.2) !default;
+$aui-dropdown-option-color: $aui-color-dark !default;
+$aui-dropdown-option-hover-background: rgba(#000, 0.10) !default;
+
+.aui-dropdown {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: $aui-dropdown-font-size;
+  line-height: $aui-field-line-height;
+  box-sizing: border-box;
+  @include aui-remove-tap-highlight;
+
+  &__field {
+    position: relative;
+  }
+
+  &__input {
+    display: block;
+    margin: 0;
+    width: 100%;
+    padding-right: #{rem($aui-dropdown-arrow-width) + unit(2)};
+    min-height: $aui-field-default-height;
+    font-size: inherit;
+    font-weight: $aui-font-weight-normal;
+    line-height: inherit;
+    text-align: left;
+    color: $aui-field-placeholder-color;
+    background: none;
+    border: none;
+    border-bottom: 1px solid $aui-dropdown-border;
+    border-radius: 0;
+    transition: color, border;
+    transition-duration: $aui-field-transition-duration;
+    transition-timing-function: $aui-easing;
+    resize: none;
+    outline: 0;
+    cursor: pointer;
+  }
+
+  &__label {
+    display: block;
+    position: absolute;
+    top: $aui-field-label-y;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: $aui-field-placeholder-color;
+    font-size: inherit;
+    font-weight: $aui-font-weight-normal;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+    transition-property: top, font-size, color, opacity;
+    transition-duration: $aui-field-transition-duration;
+    transition-timing-function: $aui-easing;
+    pointer-events: none;
+  }
+
+  // Arrow icon
+  &__field::after {
+    $_height: 8px;
+    content: '';
+    display: block;
+    position: absolute;
+    top: $aui-dropdown-arrow-top-default;
+    right: 0;
+    width: $aui-dropdown-arrow-width;
+    height: $_height;
+    margin-top: ($_height / -2);
+    background: url('data:image/svg+xml,#{aui-svg-dropdown-arrow($aui-dropdown-arrow-color)}') center center no-repeat;
+    transition-property: transform, background;
+    transition-duration: $aui-field-transition-duration;
+    transition-timing-function: $aui-easing;
+  }
+
+  // Focus line will be injected by JS
+  &__focus-line {
+    display: block;
+    position: absolute;
+    bottom: $aui-field-focus-line-height;
+    width: 100%;
+    height: $aui-field-focus-line-height;
+    background: $aui-dropdown-hover-border;
+    opacity: 0;
+    transition-property: opacity, background;
+    transition-duration: $aui-field-transition-duration;
+  }
+
+  &__description,
+  &__error {
+    display: block;
+    color: $aui-dropdown-secondary-color;
+    transition: color $aui-field-transition-duration linear;
+    margin-top: unit(2);
+    font-size: rem(13);
+    line-height: $aui-field-error-line-height;
+  }
+
+  &__error {
+    color: $aui-field-error-color;
+  }
+
+  &__panel {
+    display: block;
+    visibility: hidden;
+    overflow: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    // IDEA Should Dropdown panels have max height?
+    // max-height: 80vh;
+    background: $aui-dropdown-panel-background;
+    opacity: 0;
+    @include shadow;
+    transition: opacity $aui-field-transition-duration $aui-easing;
+    z-index: 1;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__list-item--animate {
+    opacity: 0;
+    transform: translateY(.5em);
+    transition: transform .25s $aui-easing, opacity .25s $aui-easing;
+    // A transition delay will be applied by JS:
+    // transition-delay: 0.05s * i;
+  }
+
+  &__list-title,
+  &__option {
+    display: block;
+    padding: 0 unit(4);
+    font-weight: $aui-font-weight-normal;
+  }
+
+  &__list-title {
+    color: $aui-dropdown-list-title-color;
+    padding-top: unit(2);
+    padding-bottom: unit(1);
+  }
+
+  &__option {
+    position: relative;
+    width: 100%;
+    padding-top: unit(3);
+    padding-bottom: unit(3);
+    text-align: left;
+    text-decoration: none;
+    color: $aui-dropdown-option-color;
+    background: none;
+    border: none;
+    outline: none;
+    white-space: normal;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: background $aui-field-transition-duration linear;
+    @include aui-remove-tap-highlight;
+
+    &:hover {
+      background: $aui-dropdown-option-hover-background;
+    }
+  }
+
+  &__list &__list &__option {
+    padding-left: unit(10);
+  }
+
+  /**
+   * Variant: floating-label
+   */
+  &.aui-dropdown--floating-label {
+    .aui-dropdown__field {
+      padding-top: $aui-field-floating-label-padding;
+
+      // Arrow icon
+      &::after {
+        top: $aui-dropdown-arrow-top-default + $aui-field-floating-label-padding;
+      }
+    }
+  }
+
+  .aui-js &.aui-dropdown--floating-label &__label {
+    top: $aui-field-label-y + $aui-field-floating-label-padding;
+  }
+
+  /**
+   * States
+   */
+
+  // Active state
+  &.is-active {
+    z-index: $aui-zindex-dropdown;
+
+    // Arrow icon
+    .aui-dropdown__field::after {
+      transform: rotate(180deg);
+    }
+
+    .aui-dropdown__focus-line {
+      opacity: 1;
+    }
+
+    .aui-dropdown__panel {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .aui-dropdown__list-item--animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // Hover state
+  &:not(.is-disabled):not(.is-invalid) {
+    .aui-dropdown__input:hover {
+      border-color: $aui-dropdown-hover-border;
+    }
+  }
+
+  // Focus state
+  &.is-focused {
+    .aui-dropdown__input {
+      outline: none;
+      box-shadow: none;
+      border-color: $aui-dropdown-focus-border;
+    }
+
+    .aui-dropdown__focus-line {
+      opacity: 1;
+    }
+  }
+
+  // Disabled state
+  &.is-disabled {
+    opacity: $aui-field-disabled-opacity;
+    cursor: not-allowed;
+
+    .aui-dropdown__input {
+      cursor: not-allowed;
+    }
+
+    .aui-dropdown__focus-line {
+      opacity: 0;
+    }
+  }
+
+  // Dirty state
+  &.is-dirty {
+    .aui-dropdown__label {
+      opacity: 0;
+    }
+
+    .aui-dropdown__field::after {
+      // Arrow icon
+      background-image: url('data:image/svg+xml,#{aui-svg-dropdown-arrow($aui-dropdown-dirty-arrow-color)}');
+    }
+
+    &.aui-dropdown--floating-label .aui-dropdown__label {
+      top: 0;
+      font-size: .75rem;
+      opacity: 1;
+    }
+
+    .aui-dropdown__input {
+      border-color: $aui-dropdown-dirty-border;
+      color: $aui-dropdown-color;
+    }
+  }
+
+  // Invalid state
+  &.is-invalid {
+    &,
+    &:not(.is-dirty) .aui-dropdown__input,
+    .aui-dropdown__counter,
+    .aui-dropdown__label {
+      color: $aui-field-error-color;
+    }
+
+    // Arrow icon
+    .aui-dropdown__field::after {
+      background-image: url('data:image/svg+xml,#{aui-svg-dropdown-arrow($aui-field-error-color)}');
+    }
+
+    .aui-dropdown__input {
+      border-color: $aui-field-error-color;
+    }
+
+    .aui-dropdown__focus-line {
+      background: $aui-field-error-color;
+    }
+  }
+}

@@ -1,0 +1,254 @@
+$aui-select-arrow-width: 13px;
+$aui-select-arrow-top-default: $aui-field-default-height * .525; // Center with label
+$aui-select-color: $aui-color-dark;
+$aui-select-color-secondary: rgba(#000, 0.5);
+$aui-select-border: rgba(#000, 0.3);
+$aui-select-border-hover: rgba(#000, 0.8);
+$aui-select-border-focus: rgba(#000, 0.8);
+$aui-select-border-dirty: rgba(#000, 0.8);
+$aui-select-color-arrow: $aui-field-placeholder-color;
+$aui-select-color-arrow-dirty: $aui-select-color;
+
+.aui-select {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: $aui-field-line-height;
+  box-sizing: border-box;
+
+  &__input {
+    display: block;
+    margin: 0;
+    padding-right: #{rem($aui-select-arrow-width) + unit(2)};
+    width: 100%;
+    min-height: $aui-field-default-height;
+    font-size: inherit;
+    font-weight: $aui-font-weight-normal;
+    line-height: inherit;
+    color: $aui-field-placeholder-color;
+    background: none;
+    border: none;
+    border-bottom: 1px solid $aui-select-border;
+    border-radius: 0;
+    box-shadow: none;
+    transition: color, border;
+    transition-duration: $aui-field-transition-duration;
+    transition-timing-function: $aui-easing;
+    appearance: none;
+    outline: 0;
+
+    // HACK IE: Remove arrow.
+    &::-ms-expand {
+      display: none;
+    }
+
+    // HACK [1] IE: Remove blue background when selected.
+    // HACK [2] IE: Use placeholder color, if default value is selected.
+    &::-ms-value {
+      background: none; // [1]
+      color: $aui-field-placeholder-color; // [2]
+    }
+
+    // HACK Firefox, IE: Fix styling on backgrounds other than white.
+    option {
+      color: $aui-select-color;
+      background: white;
+
+      &:disabled {
+        color: $aui-field-placeholder-color;
+      }
+    }
+
+    // NOTE Don't use this kind of a hack to remove the dotted outline in Mozilla.
+    // color: transparent;
+    // text-shadow: 0 0 0 #333;
+  }
+
+  // HACK Firefox: Fix vertical aligment.
+  // https://bugzilla.mozilla.org/show_bug.cgi?id=610733
+  @-moz-document url-prefix() {
+    .aui-select__input {
+      padding-top: (9 / 16 * 1em);
+    }
+  }
+
+  &__label {
+    display: block;
+    position: absolute;
+    top: $aui-field-label-y;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: $aui-field-placeholder-color;
+    font-size: inherit;
+    font-weight: $aui-font-weight-normal;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition-property: top, font-size, color, opacity;
+    transition-duration: $aui-field-transition-duration;
+    transition-timing-function: $aui-easing;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  // Arrow icon
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: $aui-select-arrow-top-default;
+    right: 0;
+    width: $aui-select-arrow-width;
+    height: 8px;
+    background: url('data:image/svg+xml,#{aui-svg-dropdown-arrow($aui-select-color-arrow)}') center center no-repeat;
+    transform: translateY(-50%);
+    transition: background .25s linear;
+    pointer-events: none;
+  }
+
+  // Focus line will be injected by JS
+  &__focus-line {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-top: -2px;
+    height: 1px;
+    background: $aui-select-border-hover;
+    opacity: 0;
+    transition-property: opacity, background;
+    transition-duration: $aui-field-transition-duration;
+  }
+
+  &__description,
+  &__error {
+    display: block;
+    color: $aui-select-color-secondary;
+    transition: color $aui-field-transition-duration linear;
+    margin-top: unit(2);
+    font-size: rem(13);
+    line-height: $aui-field-error-line-height;
+  }
+
+  &__error {
+    color: $aui-field-error-color;
+  }
+
+  /**
+   * Variant: floating-label
+   */
+  &.aui-select--floating-label {
+    padding-top: $aui-field-floating-label-padding;
+
+    // Arrow icon
+    &::after {
+      top: $aui-select-arrow-top-default + $aui-field-floating-label-padding;
+    }
+  }
+
+  .aui-js &.aui-select--floating-label &__label {
+    top: $aui-field-label-y + $aui-field-floating-label-padding;
+  }
+
+  /**
+   * States
+   */
+
+  // Hover state
+  &:not(.is-disabled):not(.is-invalid) {
+    .aui-select__input:hover {
+      border-color: $aui-select-border-hover;
+    }
+  }
+
+  // Focus state
+  &.is-focused {
+    .aui-select__label {
+      opacity: 0;
+    }
+
+    &.aui-select--floating-label .aui-select__label {
+      top: 0;
+      font-size: .75rem;
+      opacity: 1;
+    }
+
+    .aui-select__input {
+      outline: none;
+      box-shadow: none;
+      border-color: $aui-select-border-focus;
+    }
+
+    .aui-select__focus-line {
+      opacity: 1;
+    }
+  }
+
+  // Disabled state
+  &.is-disabled {
+    opacity: $aui-field-disabled-opacity;
+    cursor: not-allowed;
+
+    .aui-select__input {
+      cursor: not-allowed;
+    }
+
+    .aui-select__focus-line {
+      opacity: 0;
+    }
+  }
+
+  // Dirty state
+  &.is-dirty {
+    &::after {
+      // Arrow icon
+      background-image: url('data:image/svg+xml,#{aui-svg-dropdown-arrow($aui-select-color-arrow-dirty)}');
+    }
+
+    .aui-select__label {
+      opacity: 0;
+    }
+
+    &.aui-select--floating-label .aui-select__label {
+      top: 0;
+      font-size: .75rem;
+      opacity: 1;
+    }
+
+    .aui-select__input {
+      border-color: $aui-select-border-dirty;
+      color: $aui-select-color;
+
+      // Style color on IE10+ when selected
+      &::-ms-value {
+        color: $aui-select-color;
+      }
+    }
+  }
+
+  // Invalid state
+  &.is-invalid {
+    &,
+    &:not(.is-dirty) .aui-select__input,
+    .aui-select__label {
+      color: $aui-field-error-color;
+    }
+
+    // Arrow icon
+    &::after {
+      background-image: url('data:image/svg+xml,#{aui-svg-dropdown-arrow($aui-field-error-color)}');
+    }
+
+    .aui-select__input {
+      border-color: $aui-field-error-color;
+    }
+
+    .aui-select__focus-line {
+      background: $aui-field-error-color;
+    }
+  }
+}

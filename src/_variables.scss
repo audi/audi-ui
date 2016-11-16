@@ -1,0 +1,144 @@
+$aui-rem-base: 16px; // in px
+$aui-base-unit: 4px; // in px
+@import "util/units";
+
+$aui-layout-min-width: 288px; // = smallest grid width on 320px viewport.
+
+$aui-pi: 3.14159;
+
+/**
+ * Modular Scale
+ */
+$aui-modular-scale: ( default: ( base: 16px, ratio: 1.14, ), small: ( ratio: 1.17, ), large: ( base: 18px, ratio: 1.21, ), huge: ( base: 20px, ratio: 1.25, ), );
+
+/**
+ * Animation & Transitions
+ */
+$aui-easing: cubic-bezier(0.75, 0.02, 0.5, 1);
+
+/**
+ * Colors
+ */
+$aui-color-red: #bb0a30;
+$aui-color-yellow: #ffaa00;
+$aui-color-green: #009900;
+$aui-color-silver: #b2b2b2;
+$aui-color-warmsilver: #b6b1a9;
+$aui-color-black: #000000;
+$aui-color-gray10: #1a1a1a;
+$aui-color-gray20: #333333;
+$aui-color-gray30: #4c4c4c;
+$aui-color-gray40: #666666;
+$aui-color-gray50: #808080;
+$aui-color-gray60: #999999;
+$aui-color-gray70: #b2b2b2;
+$aui-color-gray80: #cccccc;
+$aui-color-gray85: #d9d9d9;
+$aui-color-gray90: #e5e5e5;
+$aui-color-gray95: #f2f2f2;
+$aui-color-white: #ffffff;
+
+$aui-color-light: $aui-color-gray95;
+$aui-color-dark: $aui-color-gray20;
+$aui-color-body: $aui-color-dark;
+$aui-color-placeholder: $aui-color-gray60;
+$aui-color-invalid: $aui-color-red;
+
+/**
+ * Font
+ */
+$aui-font-default: #{"\'AudiTypeScreen\'", Verdana, Geneva, sans-serif};
+$aui-font-extended: #{"\'AudiTypeExtended\'", Verdana, Geneva, sans-serif};
+$aui-font-weight-light: 300;
+$aui-font-weight-normal: 400;
+$aui-font-weight-bold: 700;
+
+// To smooth circles in Chrome on subpixel, we define an scaling factor:
+$aui-circle-smoothing-factor: 2;
+
+/**
+ * Icons
+ */
+$aui-icon-size-small: 24px;
+$aui-icon-size-large: 48px;
+$aui-icon-system-size-small: 23px;
+$aui-icon-system-size-large: 45px;
+
+/**
+ * SVG
+ */
+$aui-svg-arrow-width: 8px;
+$aui-svg-arrow-height: 13px;
+
+/**
+ * Breakpoints
+ */
+$aui-breakpoint: ( tiny : 480px, xsmall : 600px, small : 740px, medium : 960px, large : 1264px, xlarge : 1424px, huge : 1584px, );
+
+
+// $aui-shadow: 0 10px 50px rgba(#000, .1);
+
+/**
+ * Card Component
+ */
+$aui-card-spacing: unit(1);
+
+/**
+ * Form Field Components, like Textfield
+ */
+// $aui-field-floating-label-padding: unit(4);
+$aui-field-floating-label-padding: 0.6875rem;
+$aui-field-floating-label-font-size: .75rem;
+$aui-field-default-height: unit(10);
+$aui-field-line-height: 1.5;
+$aui-field-error-line-height: unit(5);
+$aui-field-error-color: $aui-color-invalid;
+$aui-field-disabled-opacity: 0.3;
+$aui-field-placeholder-color: rgba(#000, 0.6);
+$aui-field-placeholder-color-light: rgba(#fff, 0.6);
+$aui-field-transition-duration: 0.25s;
+$aui-field-label-y: 0.5rem;
+$aui-field-focus-line-height: 1px;
+
+/**
+ * Grid Component
+ */
+$aui-grid-columns: 12;
+$aui-grid-gutters: unit(1);
+$aui-grid-container-offset: 4.375%; // in percent
+
+/**
+ * Visibility Component
+ */
+$aui-visibility: ( tiny, xsmall, small, medium, large, xlarge, huge, );
+
+/**
+ * z-index
+ */
+$aui-zindex-header: 100;
+$aui-dropdown-open-index: 1000;
+$aui-alert-zindex: 1700;
+$aui-notification-zindex: 1701;
+$aui-button-floating-zindex: 900;
+$aui-zindex-modal-backdrop: 1800;
+$aui-zindex-modal: 1900;
+$aui-zindex-dropdown: 1000;
+$aui-zindex-nav-dropdown-toggle: 1001;
+$aui-zindex-tooltip: 1002;
+$aui-zindex-popover: 1002;
+$aui-zindex-dropdown: 1002;
+$aui-zindex-nav-sticky: 1001;
+
+%aui-hidden-input {
+  appearance: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  opacity: 0;
+  z-index: -1;
+}

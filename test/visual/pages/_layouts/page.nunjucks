@@ -1,0 +1,12 @@
+{% extends 'pages/_layouts/default.nunjucks' %}
+
+{% block page %}
+  <header class="test-header">
+    {% include 'pages/_shared/nav.nunjucks' %}
+  </header>
+  <div class="test-main">
+
+    {% block main %}{% endblock %}
+
+  </div>
+{% endblock %}

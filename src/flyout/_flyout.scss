@@ -1,0 +1,199 @@
+$aui-flyout-panel-translate-y: -10px !default;
+$aui-fylout-panel-offset-y: unit(5) !default;
+$aui-fylout-breakpoint: 400px !default;
+$aui-fylout-panel-close-size: rem(17) !default;
+$aui-fylout-panel-header-padding: unit(5) !default;
+$aui-fylout-panel-header-height: $aui-fylout-panel-close-size + 2 * $aui-fylout-panel-header-padding !default;
+
+/**
+ * Prevent scrolling of body, when Flyout is open.
+ * Added to body by JS.
+ */
+.aui-flyout-is-open {
+  @media (max-width: $aui-fylout-breakpoint - 1px) {
+    overflow: hidden;
+  }
+}
+
+.aui-flyout {
+  display: inline-block;
+  position: relative;
+
+  &__toggle {
+    z-index: 1;
+  }
+
+  &__panel {
+    display: block;
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 0;
+    color: $aui-color-body;
+    background: $aui-color-gray90;
+    font-size: .875rem;
+    font-weight: $aui-font-weight-normal;
+    line-height: unit(5);
+    text-align: left;
+    transition: opacity .2s linear, transform .3s $aui-easing, max-height .1s linear .4s;
+  }
+
+  &__panel-content {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    opacity: 0;
+    padding: unit(2) unit(7);
+    transition: opacity .4s $aui-easing;
+    z-index: 1;
+    background-color: inherit;
+  }
+
+  &__triangle {
+    // TODO Figure out how to implement the triangle with box-shadow
+    // display: none;
+    position: absolute;
+    top: 0;
+    margin-left: unit(6);
+    background: inherit;
+    opacity: 0;
+    transition: opacity .4s $aui-easing;
+
+    &::after {
+      $size: 16px;
+      content: '';
+      display: block;
+      position: absolute;
+      left: #{$size / -2};
+      top: #{$size / -2};
+      width: $size;
+      height: $size;
+      transform: rotate(45deg);
+      transform-origin: center;
+      background: inherit;
+      box-shadow: -1px -1px 4px rgba(#000, 0.05);
+    }
+  }
+
+  &--center &__triangle {
+    left: 50%;
+    margin-left: 0;
+  }
+
+  &--right &__triangle {
+    left: 100%;
+    margin-left: unit(-6);
+  }
+
+  &__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $aui-fylout-panel-header-height;
+  }
+
+  &__close {
+    position: absolute;
+    top: $aui-fylout-panel-header-padding;
+    right: $aui-fylout-panel-header-padding;
+    width: $aui-fylout-panel-close-size;
+    height: $aui-fylout-panel-close-size;
+    outline: 0;
+    border: 0;
+    background: url('data:image/svg+xml,#{aui-svg-close($aui-color-dark)}') center center no-repeat;
+    z-index: 1;
+    cursor: pointer;
+    @include aui-remove-tap-highlight;
+  }
+
+  // Close gap between trigger and panel, when flyout is `active`.
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+
+  &.is-active::after {
+    bottom: #{$aui-fylout-panel-offset-y * -1};
+  }
+
+  &.is-active &__panel {
+    opacity: 1;
+    max-height: 9999px;
+    transition-delay: 0s;
+    z-index: 9999;
+    overflow: visible;
+  }
+
+  &.is-active &__panel-content {
+    opacity: 1;
+    transition-delay: .2s;
+  }
+
+  &.is-active &__triangle {
+    opacity: 1;
+    transition-delay: .2s;
+  }
+  @media (min-width: $aui-fylout-breakpoint) {
+    &__panel {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: auto;
+      bottom: auto;
+      margin-top: $aui-fylout-panel-offset-y;
+      max-width: $aui-layout-min-width;
+      color: $aui-color-body;
+      background: $aui-color-white;
+      @include shadow;
+      transform: translateY($aui-flyout-panel-translate-y);
+    }
+
+    &__panel-content {
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      overflow: auto;
+    }
+
+    &__header {
+      display: none;
+    }
+
+    &--right &__panel {
+      left: auto;
+      right: 0;
+    }
+
+    &--center &__panel {
+      left: 50%;
+      transform: translate(-50%, $aui-flyout-panel-translate-y);
+    }
+
+    &.is-active &__panel {
+      transform: translateY(0);
+      transition-delay: 0s;
+    }
+
+    &.is-active.aui-flyout--center &__panel {
+      transform: translate(-50%, 0);
+    }
+  }
+}

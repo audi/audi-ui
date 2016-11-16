@@ -1,0 +1,133 @@
+$aui-checkbox-box-width: 1.5em !default;
+$aui-checkbox-tick-size: .75em !default;
+$aui-checkbox-text-spacing: 1em !default;
+$aui-checkbox-color-text: $aui-color-gray20 !default;
+$aui-checkbox-color-text-hover: $aui-color-black !default;
+$aui-checkbox-color-border: rgba(#000, 0.5) !default;
+$aui-checkbox-color-border-hover: rgba(#000, 1) !default;
+$aui-checkbox-color-border-invalid: $aui-color-invalid !default;
+$aui-checkbox-color-tick: $aui-checkbox-color-text !default;
+
+.aui-checkbox {
+  display: inline-block;
+  position: relative;
+  font-weight: $aui-font-weight-normal;
+  line-height: $aui-field-line-height;
+  color: $aui-checkbox-color-text;
+  cursor: pointer;
+  @include aui-remove-tap-highlight;
+
+  .aui-js & {
+    padding-left: $aui-checkbox-box-width + $aui-checkbox-text-spacing;
+  }
+
+  .aui-js &__input {
+    // Visually hide input
+    @extend %aui-hidden-input;
+  }
+
+  &__box {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $aui-checkbox-box-width;
+    height: $aui-checkbox-box-width;
+    border: 1px solid $aui-checkbox-color-border;
+    transition: box-shadow .15s linear, border .15s linear;
+    cursor: pointer;
+    pointer-events: none;
+    z-index: 1;
+
+    .aui-js & {
+      display: inline-block;
+    }
+  }
+
+  &__tick {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $aui-checkbox-tick-size;
+    height: $aui-checkbox-tick-size;
+    transform: translate(-50%, -50%);
+    background: url('data:image/svg+xml,#{aui-svg-tick($aui-checkbox-color-tick)}') center center no-repeat;
+    opacity: 0;
+    transition: opacity .15s $aui-easing;
+    pointer-events: none;
+  }
+
+  &__error {
+    display: block;
+    margin-top: unit(2);
+    font-size: rem(13);
+    line-height: unit(5);
+    color: $aui-field-error-color;
+    transition: color .25s linear;
+  }
+
+  /**
+   * Variant: stretch
+   */
+  &--stretch {
+    width: 100%;
+  }
+
+  /**
+   * Variant: box-right
+   */
+  .aui-js &--box-right {
+    padding-left: 0;
+    padding-right: $aui-checkbox-box-width + $aui-checkbox-text-spacing;
+
+    .aui-checkbox__box {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  /**
+   * States
+   */
+  // Hover state
+  &:hover:not(.is-disabled) {
+    color: $aui-checkbox-color-text-hover;
+
+    .aui-checkbox__box {
+      border-color: $aui-checkbox-color-border-hover;
+    }
+  }
+
+  // Focus state
+  &__input:focus ~ .aui-checkbox__box {
+    @include shadow-focus;
+  }
+
+  // Disabled state
+  &.is-disabled {
+    opacity: $aui-field-disabled-opacity;
+    cursor: not-allowed;
+  }
+
+  // Checked state
+  &.is-checked &__tick {
+    opacity: 1;
+  }
+
+  // Invalid states
+  &.is-invalid,
+  &.is-invalid &__label {
+    color: $aui-field-error-color;
+  }
+
+  &.is-invalid &__tick {
+    background-image: url('data:image/svg+xml,#{aui-svg-tick($aui-color-invalid)}');
+  }
+
+  &.is-invalid &__box,
+  &.is-invalid:hover &__box {
+    border-color: $aui-checkbox-color-border-invalid;
+  }
+}

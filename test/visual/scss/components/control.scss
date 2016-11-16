@@ -1,0 +1,16 @@
+.test-control {
+  padding: 1em;
+  @include fontfamily;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  background-color: lighten(#bbb4ae, 20%);
+  color: $demo-highlight;
+  background: rgba($demo-highlight, 0.5);
+  border-bottom: 1px solid rgba($demo-highlight, 0.25);
+
+  &__setting {
+    display: inline-block;
+    margin-right: 36px;
+  }
+}

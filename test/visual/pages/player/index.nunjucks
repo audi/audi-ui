@@ -1,0 +1,66 @@
+{% extends 'pages/_layouts/page.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="player-with-chrome">
+    {{ section.header('Player with chrome') }}
+    <div class="test-section__panel">
+      <div class="aui-player aui-js-player aui-player--preview" style="background-image:url('http://dev.strichpunkt-design.de/audi/animation_principles/images/content/section-index-slider-1.4205e277.jpg')">
+        {% include 'player/snippets/player_video-container.html' %}
+        {% include 'player/snippets/player_chrome.html' %}
+      </div>
+      <h3 class="test-section__headline">Complete state (and without preview)</h3>
+      <div class="aui-player aui-js-player is-complete" style="background-image:url('http://dev.strichpunkt-design.de/audi/animation_principles/images/content/section-index-slider-1.4205e277.jpg')">
+        {% include 'player/snippets/player_video-container.html' %}
+        {% include 'player/snippets/player_chrome.html' %}
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section" id="Player-with-large-button">
+    {{ section.header('Player with large button') }}
+    <div class="test-section__panel">
+      <div class="aui-player aui-js-player" style="background-image:url('http://dev.strichpunkt-design.de/audi/animation_principles/images/content/section-index-slider-1.4205e277.jpg')">
+        {% include 'player/snippets/player_video-container.html' %}
+        {% include 'player/snippets/player_overlay.html' %}
+        {% include 'player/snippets/player_large-button.html' %}
+      </div>
+      <h3 class="test-section__headline">Complete state</h3>
+      <div class="aui-player aui-js-player is-complete" style="background-image:url('http://dev.strichpunkt-design.de/audi/animation_principles/images/content/section-index-slider-1.4205e277.jpg')">
+        {% include 'player/snippets/player_video-container.html' %}
+        {% include 'player/snippets/player_overlay.html' %}
+        {% include 'player/snippets/player_large-button.html' %}
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section" id="video-complete-state-with-related-content">
+    {{ section.header('Player with related content; complete state') }}
+    <div class="test-section__panel">
+      <div class="aui-player aui-js-player is-complete" style="background-image:url('http://dev.strichpunkt-design.de/audi/animation_principles/images/content/section-index-slider-1.4205e277.jpg')">
+        {% include 'player/snippets/player_video-container.html' %}
+        {% include 'player/snippets/player_overlay.html' %}
+        {% include 'player/snippets/player_related-container.html' %}
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block javascript %}
+  <script src="https://cdn.rawgit.com/kayahr/jquery-fullscreen-plugin/master/jquery.fullscreen-min.js"></script>
+  <script type="text/javascript">
+    $('.aui-js-player-play-toggle').off('click').on('click', function (event) {
+      $(this).closest('.aui-player').toggleClass('is-playing');
+      $(this).closest('.aui-player').removeClass('is-complete');
+    });
+    $('.aui-js-player-mute-toggle').off('click').on('click', function (event) {
+      $(this).closest('.aui-player').toggleClass('is-mute');
+    });
+    $('.aui-js-player-fullscreen-toggle').off('click').on('click', function (event) {
+      $(this).closest('.aui-player').toggleFullScreen();
+    });
+  </script>
+{% endblock %}

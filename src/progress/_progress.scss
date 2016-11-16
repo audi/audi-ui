@@ -1,0 +1,51 @@
+$aui-progress-color: rgba(#000, .1) !default;
+$aui-progress-color-progress: $aui-color-red !default;
+
+.aui-progress {
+  position: relative;
+  height: unit(1);
+  background: $aui-progress-color;
+  overflow: hidden;
+
+  &__bar {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: $aui-progress-color-progress;
+  }
+
+  &--continuous &__bar {
+    animation: aui-progress 2s linear infinite;
+  }
+}
+
+// Continous progress animation:
+@keyframes aui-progress {
+  from {
+    left: -55%;
+    width: 55%;
+  }
+
+  50% {
+    width: 30%;
+  }
+
+  70% {
+    width: 70%;
+  }
+
+  80% {
+    left: 50%;
+  }
+
+  95% {
+    left: 120%;
+  }
+
+  to {
+    left: 100%;
+  }
+}

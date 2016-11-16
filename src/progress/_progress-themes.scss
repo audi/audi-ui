@@ -1,0 +1,7 @@
+$aui-progress-color: rgba(#fff, .3);
+
+.aui-progress {
+  &.aui-theme-light {
+    background: $aui-progress-color;
+  }
+}

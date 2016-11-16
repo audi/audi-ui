@@ -1,0 +1,107 @@
+// TODO Add scroll shadow, http://codepen.io/dbushell/pen/wGaamR
+// TODO Add stacked responsive pattern as CodePen http://codepen.io/maddesigns/pen/pHqnt
+
+$aui-table-border-width-title: 3px;
+$aui-table-border-width: 1px;
+$aui-table-border-color: $aui-color-black;
+$aui-table-background-color: $aui-color-white;
+$aui-table-gutters: unit(2);
+$aui-table-cell-padding-x: unit(3);
+$aui-table-cell-padding-y: unit(4);
+
+.aui-table {
+  width: calc(100% + #{2 * $aui-table-gutters});
+  margin-left: #{$aui-table-gutters * -1};
+  overflow: auto;
+  overflow-y: hidden;
+
+  table {
+    border-collapse: separate;
+    border-spacing: $aui-table-gutters;
+    border-color: $aui-table-border-color;
+  }
+
+  caption {
+    font-weight: $aui-font-weight-bold;
+    text-align: left;
+    padding: $aui-table-cell-padding-y $aui-table-gutters;
+  }
+
+  tr {
+    vertical-align: top;
+  }
+
+  th {
+    border-top: $aui-table-border-width-title solid $aui-table-border-color;
+    font-weight: $aui-font-weight-bold;
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: $aui-table-cell-padding-y $aui-table-cell-padding-x #{$aui-table-cell-padding-y - $aui-table-gutters} 0;
+  }
+
+  td {
+    border-top: $aui-table-border-width solid $aui-table-border-color;
+  }
+
+  &__cell--colored {
+    background-color: rgba(#000, .05);
+  }
+
+  &__cell--last-row {
+    td {
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: #{$aui-table-gutters * -1};
+        left: 0;
+        right: 0;
+        border-bottom: $aui-table-border-width solid $aui-table-border-color;
+      }
+    }
+  }
+
+  &--stretched {
+    table {
+      width: 100%;
+    }
+  }
+
+  &--padded {
+    th,
+    td {
+      padding: $aui-table-cell-padding-y $aui-table-cell-padding-x;
+    }
+  }
+
+
+  &.is-inverted {
+    $aui-table-border-color: $aui-color-white;
+    $aui-table-background-color: $aui-color-black;
+
+    table {
+      border-color: $aui-table-border-color;
+    }
+
+    th {
+      border-top-color: $aui-table-border-color;
+    }
+
+    td {
+      border-top-color: $aui-table-border-color;
+    }
+
+    .aui-table__cell--colored {
+      background-color: rgba(#fff, .15);
+    }
+
+    .aui-table__cell--last-row td::after {
+      border-color: $aui-table-border-color;
+    }
+  }
+}

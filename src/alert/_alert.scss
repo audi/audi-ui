@@ -1,0 +1,62 @@
+$aui-alert-close-btn-size: 17px !default;
+$aui-alert-text-padding-x: unit(7) !default;
+$aui-alert-text-padding-y: unit(5) !default;
+$aui-alert-closing-duration: .3s !default;
+
+.aui-alert {
+  position: relative;
+  transition: height $aui-alert-closing-duration $aui-easing;
+  @include aui-responsive-type(-1, 1.5);
+
+  &__content {
+    position: relative;
+    color: inherit;
+    background: inherit;
+    margin-right: #{$aui-alert-close-btn-size + 10px};
+    padding: $aui-alert-text-padding-y #{$aui-alert-text-padding-x * 2} $aui-alert-text-padding-y $aui-alert-text-padding-x;
+    transition: transform $aui-alert-closing-duration $aui-easing, box-shadow $aui-alert-closing-duration $aui-easing;
+  }
+
+  &__close {
+    position: absolute;
+    top: $aui-alert-text-padding-y;
+    right: $aui-alert-text-padding-x;
+    width: $aui-alert-close-btn-size;
+    height: $aui-alert-close-btn-size;
+    background: url('data:image/svg+xml,#{aui-svg-close($aui-color-dark)}') center center no-repeat;
+    cursor: pointer;
+    vertical-align: middle;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    @include aui-remove-tap-highlight;
+  }
+
+  &.aui-color-text-light &__close,
+  &.aui-color-text-warning &__close {
+    background-image: url('data:image/svg+xml,#{aui-svg-close($aui-color-light)}');
+  }
+
+  &--sticky &__content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include shadow;
+    z-index: $aui-alert-zindex;
+  }
+
+  &.is-open &__content {
+    transform: translateY(0);
+  }
+
+  &.is-closed {
+    overflow: hidden;
+    height: 0 !important;
+  }
+
+  &.is-closed &__content {
+    box-shadow: none;
+    transform: translateY(-100%);
+  }
+}

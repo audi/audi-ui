@@ -1,0 +1,100 @@
+$aui-pagination-color: rgba(#000, 0.5) !default;
+$aui-pagination-color-active: rgba(#000, 1) !default;
+
+.aui-pagination {
+  overflow: hidden;
+  position: relative;
+  height: unit(7);
+  @include typo-body;
+  font-weight: $aui-font-weight-normal;
+  color: $aui-pagination-color;
+
+  &__items {
+    display: block;
+    list-style: none;
+    padding-left: 0;
+    @include clearfix;
+  }
+
+  &__item {
+    display: block;
+    margin: 0 1em;
+    float: left;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__ellipsis,
+  &__link,
+  &__next,
+  &__previous {
+    transition: color .15s linear;
+  }
+
+  &__link.is-active,
+  &__link:hover:not(.is-disabled) {
+    color: $aui-pagination-color-active;
+  }
+
+  &__next-icon,
+  &__previous-icon {
+    display: inline-block;
+    width: .5em;
+    height: .8125em;
+    text-indent: 100%;
+    overflow: hidden;
+    transform: translateY(em(1));
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__previous-icon {
+    transform: translateY(em(1)) rotate(180deg);
+  }
+
+  &__next-icon,
+  &__previous-icon {
+    background-image: url('data:image/svg+xml;dataset=utf-8,#{aui-svg-arrow($aui-pagination-color)}');
+    transition: background .15s linear;
+  }
+
+  &__next:hover:not(.is-disabled) .aui-pagination__next-icon,
+  &__previous:hover:not(.is-disabled) .aui-pagination__previous-icon {
+    background-image: url('data:image/svg+xml;dataset=utf-8,#{aui-svg-arrow($aui-pagination-color-active)}');
+  }
+
+  &__indicator {
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 2px;
+    background: $aui-pagination-color-active;
+    z-index: 1;
+    opacity: 0;
+  }
+
+  .is-animated &__indicator {
+    opacity: 1;
+    transition: left .3s $aui-easing, width .3s $aui-easing, opacity .3s $aui-easing;
+  }
+
+  &__link,
+  &__next,
+  &__previous {
+    &.is-disabled {
+      cursor: not-allowed;
+      opacity: .30;
+      pointer-events: none;
+    }
+  }
+}

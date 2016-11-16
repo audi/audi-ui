@@ -1,0 +1,152 @@
+$aui-popover-arrow-size: 10px !default;
+$aui-popover-offset: 2px !default;
+$aui-popover-offset-window: 4% !default;
+$aui-popover-content-margin: $aui-popover-offset + $aui-popover-arrow-size !default;
+
+/**
+ * Prevent zooming of body, when popover is open.
+ * Added to body by JS.
+ */
+.aui-popover-is-open {
+  overflow-x: hidden;
+}
+
+.aui-popover {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: $aui-popover-offset;
+  width: 0;
+  height: 0;
+  font-size: unit(3.5);
+  line-height: unit(5);
+  text-align: left;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .15s linear, visibility .15s linear;
+  z-index: $aui-zindex-popover;
+
+  &.aui-tether-enabled {
+    // width: 100% - $aui-popover-offset-window;
+    width: 90vw;
+    max-width: 22em;
+    height: auto;
+    overflow: visible;
+    visibility: visible;
+  }
+
+  &__content {
+    position: relative;
+    @include shadow;
+  }
+
+  &__content:not([class^="aui-color-"]):not([class*=" aui-color-"]) {
+    // NOTE Add a color class to element to define a background-color,
+    // otherwise fall back to white as default.
+    background-color: $aui-color-white;
+  }
+
+  &__text {
+    display: block;
+    position: relative;
+    padding: unit(4);
+    // Overlay arrow icon:
+    background-color: inherit;
+    z-index: 1;
+  }
+
+  &__media {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+
+  &__arrow {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    // Because we draw a diamond square ◆ double the size:
+    width: $aui-popover-arrow-size * 2;
+    height: $aui-popover-arrow-size * 2;
+    fill: $aui-color-white;
+    transform: translate(-50%, -50%);
+  }
+
+  &__arrow-shape {
+    display: block;
+  }
+
+  // Element attached top
+  &.aui-tether-element-attached-top {
+    margin-top: $aui-popover-content-margin;
+
+    .aui-popover__arrow {
+      top: 0;
+    }
+  }
+
+  // Element attached bottom
+  &.aui-tether-element-attached-bottom {
+    margin-top: -$aui-popover-content-margin;
+
+    .aui-popover__arrow {
+      top: 100%;
+    }
+  }
+
+  // Element attached left
+  &.aui-tether-element-attached-left {
+    padding-left: $aui-popover-content-margin;
+
+    .aui-popover__arrow {
+      left: 0;
+    }
+  }
+
+  // Element attached right
+  &.aui-tether-element-attached-right {
+    padding-right: $aui-popover-content-margin;
+
+    .aui-popover__arrow {
+      left: 100%;
+    }
+  }
+
+  // Pinned left (and element attached middle)
+  // HACK fix positioning of Tether
+  &.aui-tether-element-attached-middle.aui-tether-pinned-right {
+    left: 0 !important; // [1]
+    padding-right: $aui-popover-content-margin;
+
+    .aui-popover__arrow {
+      left: 100%;
+    }
+  }
+
+  // Pinned right (and element attached middle)
+  // HACK [1] fix positioning of Tether
+  &.aui-tether-element-attached-middle.aui-tether-pinned-left {
+    right: 0; // [1]
+    left: auto !important; // [1]
+    padding-left: $aui-popover-content-margin;
+
+    .aui-popover__arrow {
+      left: 0;
+    }
+  }
+
+  /**
+   * States
+   */
+
+  &.is-shown {
+    opacity: 1;
+    visibility: visible;
+    transition-duration: .25s;
+  }
+}

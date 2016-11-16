@@ -1,0 +1,12 @@
+{% extends 'pages/_layouts/page.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+
+{% block page %}
+{% include 'button/snippets/button-primary-sticky.html' %}
+<div class="aui-layout">
+  {% include 'pages/_shared/demo-content.nunjucks' %}
+</div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

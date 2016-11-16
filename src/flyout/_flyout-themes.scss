@@ -1,0 +1,16 @@
+.aui-flyout {
+  $aui-nav-panel-color: rgba(#fff, 0.5);
+  $aui-nav-panel-background: $aui-color-gray20;
+
+  &.aui-theme-light {
+    .aui-flyout__panel {
+      color: $aui-nav-panel-color;
+      background: $aui-nav-panel-background;
+      @include shadow-dark;
+    }
+
+    .aui-flyout__close {
+      background: url('data:image/svg+xml,#{aui-svg-close($aui-nav-panel-color)}') center center no-repeat;
+    }
+  }
+}

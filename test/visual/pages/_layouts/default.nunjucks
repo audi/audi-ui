@@ -1,0 +1,46 @@
+{% import 'pages/_shared/section.nunjucks' as section %}
+<!doctype html>
+<!--
+We use an approach like [Modernizr](https://modernizr.com/docs#no-js) to detect JS support,
+and change the styling accordingly. Add the class `aui-no-js` to the `html` element.
+Later the class will be renamed to `aui-js` by a JavaScript.
+-->
+<html class="aui-no-js">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>
+      {% block title %}Audi UI Test{% endblock %}
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ 'assets/css/test.css' | path('test') }}">
+    <link rel="shortcut icon" href="{{ 'assets/content/favicon.ico' | path('test') }}">
+    <script type="text/javascript">
+      // This will rewrite <html class="aui-no-js"> to <html class="aui-js">.
+      // This lets hide certain elements that should only be exposed in environments that execute JavaScript.
+      document.documentElement.className = document.documentElement.className.replace(new RegExp("(^|\\s)aui-no-js(\\s|$)"), "$1aui-js$2");
+    </script>
+    {% block head %}{% endblock %}
+  </head>
+
+  <body>
+
+    <div class="audiicon-sprite" data-svg-sprite="{{ 'assets/svg/sprite.svg' | path('test') }}"></div>
+
+    {% block outside %}{% endblock %}
+
+    {% block body %}
+      <div class="test-page">
+        {% block page %}{% endblock %}
+      </div>
+    {% endblock %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.1/URI.min.js"></script>
+    <script src={{ 'assets/js/test.min.js' | path('test') }}></script>
+    {% block javascript %}{% endblock %}
+  </body>
+
+</html>

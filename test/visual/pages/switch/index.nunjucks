@@ -1,0 +1,53 @@
+{% extends 'pages/_layouts/page-color.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="switch">
+    {{ section.header('Switch') }}
+    <div class="test-section__panel">
+      {% include 'switch/snippets/switch.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'switch/snippets/switch-disabled.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="switch-checked">
+    {{ section.header('Switch checked') }}
+    <div class="test-section__panel">
+      {% include 'switch/snippets/switch-checked.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'switch/snippets/switch-checked-disabled.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="switch-checked">
+    {{ section.header('Switch with text on the left') }}
+    <div class="test-section__panel">
+      {% include 'switch/snippets/switch-text-left.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'switch/snippets/switch-text-left-disabled.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="switch-without-text">
+    {{ section.header('Switch without text') }}
+    <div class="test-section__panel">
+      {% include 'switch/snippets/switch-without-text.html' %}
+      <span>(Just some text to control positioning.)</span>
+    </div>
+  </section>
+
+  <section class="test-section" id="switch-equal">
+    {{ section.header('Switch with equal options') }}
+    <div class="test-section__panel">
+      {% include 'switch/snippets/switch-equal.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'switch/snippets/switch-equal-disabled.html' %}
+      <h3 class="test-section__headline">Checked and disabled state</h3>
+      {% include 'switch/snippets/switch-equal-checked-disabled.html' %}
+    </div>
+  </section>
+
+{% endblock %}

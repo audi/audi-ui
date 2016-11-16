@@ -1,0 +1,9 @@
+{% extends 'pages/_layouts/page.nunjucks' %}
+
+{% block main %}
+  <section class="test-section" id="index">
+    <div class="test-section__panel">
+      Audi UI Demo Page
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,90 @@
+@mixin aui-respond-to($breakpoint-name) {
+  @if map-has-key($aui-breakpoint, $breakpoint-name) {
+    @media (min-width: map-get($aui-breakpoint, $breakpoint-name)) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin aui-responsive-type($font-size-increment, $line-height-ratio) {
+  $base: aui-map-get($aui-modular-scale, default, base);
+  $ratio: aui-map-get($aui-modular-scale, default, ratio);
+  $baseline: $aui-base-unit;
+
+  $font-size: modular-scale($font-size-increment, $base, $ratio);
+  font-size: round($font-size);
+  line-height: round($line-height-ratio * $font-size / $baseline) * $baseline;
+
+  @each $breakpoint-name, $scale in $aui-modular-scale {
+    @if $breakpoint-name != 'default' {
+      @if type-of($scale) == 'map' {
+        @include aui-respond-to($breakpoint-name) {
+          $changed: false;
+          @if map-get($scale, base) and map-get($scale, base) != $base {
+            $base: map-get($scale, base);
+            $changed: true;
+          }
+          @if map-get($scale, ratio) and map-get($scale, ratio) != $ratio {
+            $ratio: map-get($scale, ratio);
+            $changed: true;
+          }
+          @if $changed {
+            $font-size: modular-scale($font-size-increment, $base, $ratio);
+            font-size: round($font-size);
+            line-height: round($line-height-ratio * $font-size / $baseline) * $baseline;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin typo-body() {
+  font-size: unit(4);
+  line-height: unit(7);
+}
+
+// TODO Ersetzen. Wird nur noch von Player verwendet.
+@mixin aui-font-size-line-height($font-size-increment, $line-height-ratio, $base: aui-map-get($aui-modular-scale, default, base), $ratio: aui-map-get($aui-modular-scale, default, ratio), $baseline: $aui-base-unit) {
+  $font-size: modular-scale($font-size-increment, $base, $ratio);
+  font-size: round($font-size);
+  line-height: round($line-height-ratio * $font-size / $baseline) * $baseline;
+}
+
+@mixin aui-remove-tap-highlight() {
+  // Remove the unwanted box around interactive elements, e.g. AUI button:
+  // http://phonegap-tips.com/articles/essential-phonegap-css-webkit-tap-highlight-color.html
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+// Provides an easy way to include a clearfix for containing floats.
+// We use this modern clearfix from cssmojo:
+// http://cssmojo.com/latest_new_clearfix_so_far/
+@mixin clearfix() {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// Shadows
+@mixin shadow() {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05);
+  // box-shadow: 0 0 2px 0 rgba(#ff00ff, 0.5), 0 0 40px 0 rgba(#ff00ff, 0.5);
+}
+@mixin shadow-dark() {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1), 0 0 40px 0 rgba(0, 0, 0, 0.15);
+  // box-shadow: 0 0 2px 0 rgba(#ffff00, 0.5), 0 0 40px 0 rgba(#ffff00, 0.5);
+}
+@mixin shadow-focus() {
+  box-shadow: 0 0 3px 3px rgba(#000, 0.1);
+  // box-shadow: 0 0 3px 3px rgba(#0000ff, 0.5);
+}
+@mixin shadow-focus-light() {
+  box-shadow: 0 0 3px 3px rgba(#fff, 0.2);
+  // box-shadow: 0 0 3px 3px rgba(#00ffff, 0.5);
+}

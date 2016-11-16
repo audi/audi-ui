@@ -1,0 +1,27 @@
+$aui-pagination-color: rgba(#fff, 0.5);
+$aui-pagination-color-active: rgba(#fff, 1);
+
+.aui-pagination {
+  &.aui-theme-light {
+    color: $aui-pagination-color;
+
+    .aui-pagination__link.is-active,
+    .aui-pagination__link:hover:not(.is-disabled) {
+      color: $aui-pagination-color-active;
+    }
+
+    .aui-pagination__next-icon,
+    .aui-pagination__previous-icon {
+      background: url('data:image/svg+xml;dataset=utf-8,#{aui-svg-arrow($aui-pagination-color)}') center center no-repeat;
+    }
+
+    .aui-pagination__next:hover:not(.is-disabled) .aui-pagination__next-icon,
+    .aui-pagination__previous:hover:not(.is-disabled) .aui-pagination__previous-icon {
+      background: url('data:image/svg+xml;dataset=utf-8,#{aui-svg-arrow($aui-pagination-color-active)}') center center no-repeat;
+    }
+
+    .aui-pagination__indicator {
+      background: $aui-pagination-color-active;
+    }
+  }
+}

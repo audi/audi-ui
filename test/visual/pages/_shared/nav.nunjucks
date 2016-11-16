@@ -1,0 +1,19 @@
+<ul class="test-nav">
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ '' | path('test') }}">Index</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'button/' | path('test') }}">Button</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'button-group/' | path('test') }}">Button Group</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'card/' | path('test') }}">Card</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'draganddrop/' | path('test') }}">Drag and Drop</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'form/' | path('test') }}">Form</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'loading/' | path('test') }}">Loading</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'modal/' | path('test') }}">Modal</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'navigation/' | path('test') }}">Navigation</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'notification/' | path('test') }}">Notification</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'pagination/' | path('test') }}">Pagination</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'player/' | path('test') }}">Player</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'popover/' | path('test') }}">Popover</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'switch/' | path('test') }}">Switch</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'table/' | path('test') }}">Table</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'tooltip/' | path('test') }}">Tooltip</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'typography/' | path('test') }}">Typography</a></li>
+</ul>

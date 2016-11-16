@@ -1,0 +1,67 @@
+$aui-slidernav-color: rgba(#000, 0.2) !default;
+$aui-slidernav-color-hover: rgba(#000, 0.5) !default;
+$aui-slidernav-color-active: rgba(#000, 0.8) !default;
+
+$aui-slidernav-dot-width: unit(5) !default;
+$aui-slidernav-height: unit(2) !default;
+
+.aui-slidernav {
+  display: inline-block;
+  position: relative;
+  font-family: serif;
+  height: $aui-slidernav-height;
+  line-height: $aui-slidernav-height;
+
+  &__items {
+    padding-left: 0;
+    list-style: none;
+    @include clearfix;
+  }
+
+  &__item {
+    float: left;
+    margin-left: unit(1);
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__action {
+    display: block;
+    width: $aui-slidernav-dot-width;
+    height: $aui-slidernav-height;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    text-decoration: none;
+    outline: 0;
+    transition: background 0.15s linear;
+  }
+
+  &__action,
+  &__action:visited {
+    background: $aui-slidernav-color;
+  }
+
+  &__action:hover {
+    background: $aui-slidernav-color-hover;
+  }
+
+  &__indicator {
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $aui-slidernav-dot-width;
+    height: 100%;
+    background: $aui-slidernav-color-active;
+    z-index: 1;
+    transition: left 0.3s $aui-easing;
+  }
+
+  &--shadow &__action {
+    box-shadow: 0 0 8px rgba(#000, 0.5);
+  }
+}

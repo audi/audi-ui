@@ -1,0 +1,50 @@
+.margin {
+  @for $i from 1 through 10 {
+    &-top-#{$i} {
+      margin-top: unit($i) !important;
+    }
+    &-bottom-#{$i} {
+      margin-bottom: unit($i) !important;
+    }
+    &-vertical-#{$i} {
+      margin-top: unit($i) !important;
+      margin-bottom: unit($i) !important;
+    }
+  }
+}
+
+.leader {
+  $steps: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+  @each $i in $steps {
+    &-#{$i} {
+      margin-top: unit($i) !important;
+    }
+  }
+}
+
+.trailer {
+  $steps: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+  @each $i in $steps {
+    &-#{$i} {
+      margin-bottom: unit($i) !important;
+    }
+  }
+}
+
+.leader-padding {
+  $steps: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+  @each $i in $steps {
+    &-#{$i} {
+      padding-top: unit($i) !important;
+    }
+  }
+}
+
+.trailer-padding {
+  $steps: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+  @each $i in $steps {
+    &-#{$i} {
+      padding-bottom: unit($i) !important;
+    }
+  }
+}

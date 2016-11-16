@@ -1,0 +1,146 @@
+.aui-slider {
+
+  /**
+   * Theme: black
+   */
+  &.aui-theme-black {
+    $aui-slider-color-text: $aui-color-gray80;
+    $aui-slider-color-track: $aui-color-gray20;
+    $aui-slider-color-track-active: $aui-color-white;
+    $aui-slider-color-thumb: $aui-color-black;
+    $aui-slider-color-thumb-border: $aui-color-gray50;
+    $aui-slider-color-thumb-border-hover: $aui-slider-color-track-active;
+
+    color: $aui-slider-color-text;
+
+    &::after {
+      background: $aui-slider-color-track;
+    }
+
+    &:not(.aui-slider--range)::after {
+      background: linear-gradient(to right, $aui-slider-color-track-active 50.9%, $aui-slider-color-track 51%);
+    }
+
+    .aui-slider__connect {
+      &::after {
+        background: $aui-slider-color-track-active;
+      }
+    }
+
+    .aui-slider__background {
+      &::after {
+        background: $aui-slider-color-track;
+      }
+    }
+
+    .aui-slider__handle {
+      background: $aui-slider-color-thumb;
+      border-color: $aui-slider-color-thumb-border;
+    }
+
+    /**
+    * States
+    */
+
+    // Hover
+    &:not(.is-disabled) .aui-slider__handle:hover {
+      border-color: $aui-slider-color-thumb-border-hover;
+    }
+  }
+
+  /**
+   * Theme: silver
+   */
+  &.aui-theme-silver {
+    $aui-slider-color-text: rgba(#fff, 0.8);
+    $aui-slider-color-track: #c1c1c1;
+    $aui-slider-color-track-active: $aui-color-white;
+    $aui-slider-color-thumb: $aui-color-silver;
+    $aui-slider-color-thumb-border: #d9d9d9;
+    $aui-slider-color-thumb-border-hover: $aui-slider-color-track-active;
+
+    color: $aui-slider-color-text;
+
+    &::after {
+      background: $aui-slider-color-track;
+    }
+
+    &:not(.aui-slider--range)::after {
+      background: linear-gradient(to right, $aui-slider-color-track-active 50.9%, $aui-slider-color-track 51%);
+    }
+
+    .aui-slider__connect {
+      &::after {
+        background: $aui-slider-color-track-active;
+      }
+    }
+
+    .aui-slider__background {
+      &::after {
+        background: $aui-slider-color-track;
+      }
+    }
+
+    .aui-slider__handle {
+      background: $aui-slider-color-thumb;
+      border-color: $aui-slider-color-thumb-border;
+    }
+
+    /**
+    * States
+    */
+
+    // Hover
+    &:not(.is-disabled) .aui-slider__handle:hover {
+      border-color: $aui-slider-color-thumb-border-hover;
+    }
+  }
+
+  /**
+   * Theme: warmsilver
+   */
+  &.aui-theme-warmsilver {
+    $aui-slider-color-text: rgba(#fff, 0.8);
+    $aui-slider-color-track: #c5c1ba;
+    $aui-slider-color-track-active: $aui-color-white;
+    $aui-slider-color-thumb: $aui-color-warmsilver;
+    $aui-slider-color-thumb-border: #dbd8d4;
+    $aui-slider-color-thumb-border-hover: $aui-slider-color-track-active;
+
+    color: $aui-slider-color-text;
+
+    &::after {
+      background: $aui-slider-color-track;
+    }
+
+    &:not(.aui-slider--range)::after {
+      background: linear-gradient(to right, $aui-slider-color-track-active 50.9%, $aui-slider-color-track 51%);
+    }
+
+    .aui-slider__connect {
+      &::after {
+        background: $aui-slider-color-track-active;
+      }
+    }
+
+    .aui-slider__background {
+      &::after {
+        background: $aui-slider-color-track;
+      }
+    }
+
+    .aui-slider__handle {
+      background: $aui-slider-color-thumb;
+      border-color: $aui-slider-color-thumb-border;
+    }
+
+    /**
+    * States
+    */
+
+    // Hover
+    &:not(.is-disabled) .aui-slider__handle:hover {
+      border-color: $aui-slider-color-thumb-border-hover;
+    }
+  }
+}

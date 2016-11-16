@@ -1,0 +1,506 @@
+// Colors
+$aui-nav-textcolor: rgba(#000, .5) !default;
+$aui-nav-textcolor-active: $aui-color-black !default;
+$aui-nav-list-separator-color: rgba(#000, .1) !default;
+$aui-nav-pills-background: $aui-color-gray90 !default;
+$aui-nav-dropdown-textcolor: $aui-nav-textcolor !default;
+$aui-nav-dropdown-textcolor-active: $aui-nav-textcolor-active !default;
+$aui-nav-dropdown-panel-color: $aui-color-gray90 !default;
+$aui-nav-dropdown-separator-color: rgba(#000, .1) !default;
+$aui-nav-layout-break: -1 !default;
+$aui-nav-dropdown-sticky-background: $aui-color-white;
+
+// Common settings
+$aui-nav-font-size: unit(4) !default;
+$aui-nav-default-height: unit(8) !default;
+$aui-nav-item-spacing: unit(8) !default;
+
+// Modification: Small
+$aui-nav-small-font-size: unit(3) !default;
+$aui-nav-small-default-height: unit(6) !default;
+$aui-nav-small-item-spacing: unit(6) !default;
+$aui-nav-small-pills-item-padding-x: unit(4) !default;
+$aui-nav-small-pills-item-padding-y: unit(3.5) !default;
+$aui-nav-small-pills-height: $aui-nav-small-font-size + 2 * $aui-nav-small-pills-item-padding-y !default;
+
+// Modification: Pills
+$aui-nav-pills-item-padding-x: unit(5) !default;
+$aui-nav-pills-item-padding-y: unit(4.5) !default;
+$aui-nav-pills-height: $aui-nav-font-size + 2 * $aui-nav-pills-item-padding-y !default;
+
+// Modification: Dropdown
+$aui-nav-dropdown-toogle-arrow-width: 13px !default;
+$aui-nav-dropdown-sticky-padding-x: $aui-grid-container-offset !default;
+$aui-nav-dropdown-sticky-padding-y: unit(4.5) !default;
+$aui-nav-dropdown-sticky-height: $aui-nav-font-size + 2* $aui-nav-dropdown-sticky-padding-y !default;
+
+.aui-nav {
+  position: relative;
+  font-weight: $aui-font-weight-normal;
+  font-size: $aui-nav-font-size;
+  line-height: 1;
+  color: $aui-nav-textcolor;
+  fill: $aui-nav-textcolor;
+  stroke: $aui-nav-textcolor;
+}
+
+.aui-nav__items {
+  padding-left: 0;
+  list-style: none;
+}
+
+.aui-nav__action {
+  display: block;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  padding: #{($aui-nav-default-height - $aui-nav-font-size) / 2} 0;
+  vertical-align: baseline;
+  text-align: left;
+  transition-property: color, background, fill, stroke;
+  transition-duration: .15s;
+  transition-timing-function: linear;
+  cursor: pointer;
+
+  &.is-active,
+  &:hover {
+    color: $aui-nav-textcolor-active;
+    fill: $aui-nav-textcolor-active;
+    stroke: $aui-nav-textcolor-active;
+  }
+
+  &,
+  &.is-disabled {
+    color: $aui-nav-textcolor;
+    fill: $aui-nav-textcolor;
+    stroke: $aui-nav-textcolor;
+  }
+
+  &,
+  &.is-disabled,
+  &:active,
+  &:focus {
+    outline: 0;
+    border: 0;
+    background: none;
+    @include aui-remove-tap-highlight;
+  }
+
+  > span {
+    position: relative;
+  }
+
+  .audiicon {
+    position: relative;
+    margin-right: .75em;
+    vertical-align: middle;
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: .3;
+  }
+}
+
+/**
+ * Modifier: List
+ */
+.aui-nav--list {
+  .aui-nav__action {
+    padding: unit(3) 0;
+  }
+
+  .aui-nav__item {
+    display: block;
+  }
+
+  .aui-nav__item + .aui-nav__item {
+    border-top: 1px solid $aui-nav-list-separator-color;
+  }
+
+  .aui-nav__action {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/**
+ * Modifier: Inline and Pills
+ */
+.aui-nav--inline,
+.aui-nav--pills {
+  overflow: hidden;
+  height: $aui-nav-default-height;
+
+  // NOTE
+  // Define a viewport width up to we use dropdown layout,
+  // instead of the origin inline/ pills layout.
+  // JS will read `content` value and switch the layout on window resize.
+  @if $aui-nav-layout-break > 0 {
+    &::after {
+      content: '#{$aui-nav-layout-break}';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+  }
+
+  .aui-nav__panel {
+    position: relative;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 50px; // Hide Scrollbars
+    box-sizing: content-box;
+  }
+
+  .aui-nav__items {
+    display: flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    white-space: nowrap;
+  }
+
+  .aui-nav__item {
+    // display: inline-block;
+    flex: 0 0 auto;
+    padding: 0 #{$aui-nav-item-spacing / 2};
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .aui-nav__action {
+    display: inline-block;
+    width: auto;
+
+    &.is-active {
+      transition-delay: .15s;
+    }
+  }
+}
+
+// Active indicator added by JS
+.aui-nav__indicator {
+  pointer-events: none;
+  display: block;
+  position: absolute;
+  top: $aui-nav-default-height;
+  left: 0;
+  width: 1px;
+  height: 2px;
+  background: $aui-nav-textcolor-active;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+// Paddles added by JS
+.aui-nav__paddle-left,
+.aui-nav__paddle-right {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  width: $aui-nav-item-spacing;
+  height: 100%;
+  z-index: 2;
+  border: 0;
+  outline: 0;
+  overflow: hidden;
+  transition: opacity .15s linear;
+
+  // Arrow icon
+  &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 13px;
+    background: url('data:image/svg+xml,#{aui-svg-arrow($aui-nav-textcolor)}') center center no-repeat;
+    transform: translateY(-50%);
+  }
+
+  &:disabled {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+.aui-nav__paddle-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(#fff,1) 40%,rgba(#fff,0) 100%);
+
+  &::after {
+    left: 0;
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+
+.aui-nav__paddle-right {
+  right: 0;
+  background: linear-gradient(to right, rgba(#fff,0) 0%,rgba(#fff,1) 60%);
+
+  &::after {
+    right: 0;
+  }
+}
+
+.is-animated .aui-nav__indicator {
+  opacity: 1;
+  transition: left .3s $aui-easing, width .3s $aui-easing, opacity .3s $aui-easing;
+}
+
+.aui-nav--overlap {
+  margin-top: #{$aui-nav-default-height * -1};
+}
+
+.aui-nav--small {
+  height: $aui-nav-small-default-height;
+  font-size: $aui-nav-small-font-size;
+
+  .aui-nav__item {
+    padding: 0 #{$aui-nav-small-item-spacing / 2};
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .aui-nav__action {
+    padding: #{($aui-nav-small-default-height - $aui-nav-small-font-size) / 2} 0;
+  }
+
+  .aui-nav__indicator {
+    top: $aui-nav-small-default-height;
+  }
+}
+
+.aui-nav--pills {
+  height: $aui-nav-pills-height;
+
+  .aui-nav__item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .aui-nav__action {
+    padding: $aui-nav-pills-item-padding-y $aui-nav-pills-item-padding-x;
+  }
+
+  .aui-nav__indicator {
+    top: 0;
+    height: 100%;
+    transform: none;
+    background: $aui-nav-pills-background;
+  }
+
+  &.aui-nav--small {
+    height: $aui-nav-small-pills-height;
+
+    .aui-nav__action {
+      padding: $aui-nav-small-pills-item-padding-y $aui-nav-small-pills-item-padding-x;
+    }
+  }
+
+  &.aui-nav--overlap {
+    margin-top: #{$aui-nav-pills-height * -1};
+  }
+}
+
+/**
+ * Modifier: dropdown
+ */
+.aui-nav--dropdown {
+  color: $aui-nav-dropdown-textcolor;
+
+  &.is-active {
+    z-index: $aui-zindex-dropdown;
+  }
+
+  // Dropdown toggle added by JS
+  .aui-nav__toggle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    padding: unit(2.5) 0;
+    width: 100%;
+    border: 0;
+    background: none;
+    outline: none;
+    line-height: 1;
+    text-align: left;
+    color: $aui-nav-textcolor-active;
+  }
+
+  .aui-nav__toggle-label {
+    display: block;
+    position: relative;
+    pointer-events: none;
+    padding-right: #{$aui-nav-dropdown-toogle-arrow-width + 5px};
+
+    // Arrow icon
+    &::after {
+      $_height: 8px;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: $aui-nav-dropdown-toogle-arrow-width;
+      height: $_height;
+      margin-top: ($_height / -2);
+      background: url('data:image/svg+xml,#{aui-svg-dropdown-arrow($aui-dropdown-arrow-color)}') center center no-repeat;
+      transition-property: transform, background;
+      transition-duration:0.25s;
+      transition-timing-function: $aui-easing;
+    }
+  }
+
+  &.is-active .aui-nav__toggle-label::after {
+    transform: rotate(180deg);
+  }
+
+  // Underline added by JS
+  .aui-nav__underline {
+    display: block;
+    position: relative;
+    top: -1px;
+    height: 1px;
+    background: $aui-nav-dropdown-textcolor;
+    z-index: 1;
+
+    &::after {
+      content: '';
+      display: block;
+      opacity: 0;
+      position: absolute;
+      top: 1px;
+      width: 100%;
+      height: 1px;
+      background: inherit;
+      transition: opacity .25s linear;
+    }
+  }
+
+  &.is-active .aui-nav__underline::after {
+    opacity: 1;
+  }
+
+  .aui-nav__panel {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    background: $aui-nav-dropdown-panel-color;
+    @include shadow;
+    transition: opacity .3s, visibility .3s;
+    transition-timing-function: $aui-easing;
+    z-index: $aui-zindex-dropdown;
+  }
+
+  &.is-active .aui-nav__panel {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .aui-nav__items {
+    max-height: 0;
+    overflow: hidden;
+    padding: unit(2) 0;
+    transition: max-height 0s .3s;
+  }
+
+  &.is-active .aui-nav__items {
+    // max-height:auto cannot be transitioned.
+    // Use a very high number instead (something bigger than the panel will ever get).
+    max-height: 10000px;
+    transition-delay: 0s;
+  }
+
+  .aui-nav__item {
+    opacity: 0;
+    margin: 0 unit(5);
+    transform: translateY(10%);
+    transition-property: transform, opacity;
+    transition-duration: .3s;
+    transition-timing-function: $aui-easing;
+    transition-delay: 0s; // increasing transition-delay set by JS
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $aui-nav-dropdown-separator-color;
+    }
+  }
+
+  &.is-active .aui-nav__item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .aui-nav__action {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: unit(5) 0;
+  }
+
+  &.aui-nav--sticky {
+    // We use position:sticky for smoother behavior on iOS.
+    // Browser which didn't support it will just ignore it.
+    position: sticky;
+    top: 0;
+    z-index: $aui-zindex-nav-sticky;
+  }
+
+  &.aui-nav--sticky .aui-nav__toggle {
+    background: $aui-nav-dropdown-sticky-background;
+  }
+
+  &.is-sticky .aui-nav__toggle {
+    padding: $aui-nav-dropdown-sticky-padding-y $aui-nav-dropdown-sticky-padding-x;
+    @include shadow;
+    z-index: $aui-zindex-nav-dropdown-toggle;
+  }
+
+  &.is-sticky .aui-nav__toggle {
+    // If the Browser didn't supports position:sticky, JS will toggle .is-sticky
+    // class to handle positioning.
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &.is-sticky .aui-nav__panel {
+    position: fixed;
+    top: $aui-nav-dropdown-sticky-height;
+    left: 0;
+  }
+
+  &.is-sticky .aui-nav__underline {
+    opacity: 0;
+  }
+
+  &.is-sticky .aui-nav__item {
+    margin-left: $aui-nav-dropdown-sticky-padding-x;
+    margin-right: $aui-nav-dropdown-sticky-padding-x;
+  }
+}

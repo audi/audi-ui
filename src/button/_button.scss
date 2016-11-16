@@ -1,0 +1,274 @@
+$aui-button-font-size: 15 !default;
+$aui-button-icon-margin: 8 !default;
+
+$aui-button-floating-offset-x: 1.5rem !default;
+$aui-button-floating-offset-y: 1.5rem !default;
+
+$aui-button-color: $aui-color-black !default;
+$aui-button-color-hover: $aui-color-gray30 !default;
+$aui-button-color-primary: $aui-color-white !default;
+
+$aui-button-border-color: $aui-color-black !default;
+$aui-button-border-color-hover: $aui-color-gray50 !default;
+
+$aui-button-background: $aui-color-black !default;
+$aui-button-background-hover: $aui-color-gray20 !default;
+
+.aui-button {
+  &.is-active,
+  &:active,
+  &:hover,
+  &:visited {
+    color: $aui-button-color-hover;
+    stroke: $aui-button-color-hover;
+    fill: $aui-button-color-hover;
+  };
+
+  & {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding: em(13, $aui-button-font-size) 0;
+    outline: 0;
+    font-size: rem($aui-button-font-size);
+    font-weight: $aui-font-weight-normal;
+    line-height: unit(6);
+    text-align: center;
+    text-decoration: none;
+    white-space: normal;
+    vertical-align: middle;
+    transition: all .3s $aui-easing;
+    @include aui-remove-tap-highlight;
+  }
+
+  &,
+  &.is-disabled,
+  &:disabled {
+    color: $aui-button-color;
+    stroke: $aui-button-color;
+    fill: $aui-button-color;
+    border: 1px solid transparent;
+    background: transparent;
+  }
+
+  &.is-disabled,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .30;
+  }
+
+  &--bold {
+    font-weight: $aui-font-weight-bold;
+  }
+
+  &--padded,
+  &--primary,
+  &--secondary {
+    padding-left: em(32, $aui-button-font-size);
+    padding-right: em(32, $aui-button-font-size);
+  }
+
+  &--icon,
+  &--primary,
+  &--secondary {
+    &:focus {
+      @include shadow-focus;
+    }
+
+    &.is-disabled,
+    &:disabled,
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &--floating,
+  &--primary {
+    &.is-active,
+    &:active,
+    &:hover {
+      border-color: $aui-button-background-hover;
+      background-color: $aui-button-background-hover;
+    }
+
+    &,
+    &.is-active,
+    &:active,
+    &:hover,
+    &:visited {
+      color: $aui-button-color-primary;
+      stroke: $aui-button-color-primary;
+      fill: $aui-button-color-primary;
+    }
+
+    &.is-disabled,
+    &:disabled {
+      color: rgba(#fff, 0.5);
+      stroke: rgba(#fff, 0.5);
+      fill: rgba(#fff, 0.5);
+    }
+
+    &,
+    &.is-disabled,
+    &:disabled {
+      border-color: $aui-button-background;
+      background-color: $aui-button-background;
+    }
+  }
+
+  &--secondary {
+    &.is-active,
+    &:active,
+    &:hover {
+      border-color: $aui-button-border-color-hover;
+    };
+
+    &,
+    &.is-disabled,
+    &:disabled {
+      border-color: $aui-button-border-color;
+    }
+  }
+
+  &--text {
+    &::after {
+      content: '';
+      display: inline-block;
+      position: relative;
+      top: em(1, $aui-button-font-size);
+      width: .5em;
+      height: .8125em;
+      background: center no-repeat url('data:image/svg+xml,#{aui-svg-arrow($aui-button-color)}');
+      background-size: contain;
+      transition: transform .2s ease;
+    }
+
+    &:hover::after {
+      background-image: url('data:image/svg+xml,#{aui-svg-arrow($aui-button-color-hover)}');
+      transform: translateX(5px);
+    }
+
+    &.is-disabled::after,
+    &:disabled::after {
+      transform: none;
+    }
+  }
+
+  &--icon {
+    // System icon size without white space
+    width: 23px;
+    height: 23px;
+    padding: 0;
+    border: none;
+
+    .audiicon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      width: $aui-icon-size-small;
+      height: $aui-icon-size-small;
+    }
+  }
+
+  &--icon--large {
+    // Large system icon size without white space
+    width: 45px;
+    height: 45px;
+
+    .audiicon {
+      top: -1px;
+      left: -1px;
+      width: $aui-icon-size-large;
+      height: $aui-icon-size-large;
+
+      &-container--small {
+        display: none;
+      }
+
+      &-container--large {
+        display: inline;
+      }
+    }
+  }
+
+  &--round {
+    border-radius: 50%;
+  }
+
+  &--stretched {
+    width: 100%;
+  }
+
+  &--sticky {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    @include shadow;
+  }
+
+  &--floating {
+    position: fixed;
+    right: $aui-button-floating-offset-x;
+    bottom: $aui-button-floating-offset-y;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    z-index: $aui-button-floating-zindex;
+    @include shadow;
+
+    .audiicon {
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      width: $aui-icon-size-large;
+      height: $aui-icon-size-large;
+
+      &-container--small {
+        display: none;
+      }
+
+      &-container--large {
+        display: inline;
+      }
+    }
+
+    &,
+    &:focus,
+    &:hover {
+      @include shadow;
+    }
+  }
+
+  // Child elements
+  &__text-with-icon {
+    $_padding: em($aui-icon-size-small + $aui-button-icon-margin, $aui-button-font-size);
+    display: inline-block;
+    position: relative;
+    padding-left: $_padding;
+
+    .audiicon {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &--right {
+      padding-left: 0;
+      padding-right: $_padding;
+    }
+
+    &--right .audiicon {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  // Firefox Button Height Fix
+  // @see https://davidwalsh.name/firefox-buttons
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}

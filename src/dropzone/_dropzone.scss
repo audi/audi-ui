@@ -1,0 +1,74 @@
+/**
+ * Add class `aui-dropzone-active` to body element, to prevent scrolling,
+ * when strechted dropzone is active.
+ */
+.aui-dropzone-active {
+  overflow: hidden;
+}
+
+$aui-dropzone-background: rgba(#fff, .9) !default;
+$aui-dropzone-border: rgba(#000, .2) !default;
+$aui-dropzone-border-active: rgba(#000, .8) !default;
+$aui-dropzone-border-width: 1px !default;
+$aui-dropzone-padding-fullpage: unit(2) !default;
+
+.aui-dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1rem;
+  color: $aui-color-dark;
+  border: $aui-dropzone-border-width dashed $aui-dropzone-border;
+  transition: border 0.15s linear;
+
+  &__message {
+    flex: none;
+  }
+
+  &:hover,
+  &.is-active {
+    border-color: $aui-dropzone-border-active;
+  }
+
+  // Full-page dropzone covering entire viewport
+  &--fullpage {
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background: $aui-dropzone-background;
+    border: none;
+    transition: border 0.15s linear, opacity 0.15s linear, visibility 0.15s linear;
+
+    // Indented broder
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: $aui-dropzone-padding-fullpage;
+      right: $aui-dropzone-padding-fullpage;
+      bottom: $aui-dropzone-padding-fullpage;
+      left: $aui-dropzone-padding-fullpage;
+      border: $aui-dropzone-border-width dashed $aui-dropzone-border-active;
+    }
+
+    &.is-active {
+      visibility: visible;
+      overflow: visible;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: auto;
+      height: auto;
+      opacity: 1;
+      padding: $aui-dropzone-padding-fullpage;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+// Make the Webkit/Blink browsers stretch like Firefox/IE11:
+:-ms-fullscreen::-ms-backdrop,
+:-webkit-full-screen {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: none;
+}
+
+// Apply a color or image backdrop when an element with
+// a different aspect-ratio is viewed full-screen:
+:fullscreen::backdrop {
+	background-color: $aui-color-black;
+}

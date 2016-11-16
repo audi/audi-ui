@@ -1,0 +1,278 @@
+$aui-modal-close-size: 45px !default; // sync with JS
+$aui-modal-close-size-large: 81px !default; // sync with JS
+// $aui-modal-content-padding-x: 8.75% !default;
+// $aui-modal-content-padding-x: 14% !default;
+$aui-modal-content-padding-x: $aui-grid-container-offset !default;
+$aui-modal-content-padding-y: unit(6.5) !default;
+$aui-modal-dialog-padding: unit(8) !default;
+$aui-modal-dialog-offset: unit(5) !default;
+$aui-modal-duration: .4s !default;
+$aui-modal-delay: .4s !default;
+$aui-modal-content-translate-y: 10px !default;
+$aui-modal-breakpoint: map-get($aui-breakpoint, xsmall) !default;
+$aui-modal-morph-duration: .4s !default;
+$aui-modal-max-width: 1200px !default;
+
+/**
+ * Prevent scrolling of body, when modal is open.
+ * Added to body by JS.
+ */
+.aui-modal-open {
+  overflow: hidden;
+}
+
+/**
+ * Modal container stretched to viewport size.
+ */
+.aui-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  outline: 0; // Prevent Chrome on Windows from adding a focus outline. For details, see https://github.com/twbs/bootstrap/pull/10951.
+  z-index: $aui-zindex-modal;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  &.is-active {
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+/**
+ * Modal background.
+ */
+.aui-modal-backdrop {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0, .9);
+  transition: opacity .6s $aui-easing;
+  z-index: $aui-zindex-modal-backdrop;
+}
+
+.aui-modal-open .aui-modal-backdrop {
+  opacity: 1;
+}
+
+/**
+ * Modal dialog
+ */
+.aui-modal-dialog {
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex: 0 1 auto;
+  position: relative;
+  min-height: 100%;
+  opacity: 0;
+  transition: opacity $aui-modal-duration $aui-easing;
+
+  &__body {
+    // TODO: For ArticlePreview module of the Audi Brand Platform, we need a padding:0 version.
+    display: flex;
+    position: relative;
+    flex: 0 1 auto;
+    width: 100%;
+    padding: $aui-modal-content-padding-y $aui-modal-content-padding-x;
+  }
+
+  &__body--full {
+    padding: 0;
+  }
+
+  &--morph.is-morphing &__body {
+    transition-property: top, left, width, min-width, max-width, height, min-height, max-height, padding;
+    transition-duration: $aui-modal-morph-duration;
+    transition-timing-function: $aui-easing;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  &--morph &__close,
+  &--morph &__content {
+    opacity: 0;
+    transition: opacity .15s $aui-easing;
+  }
+
+  .aui-modal-open &--morph &__close,
+  .aui-modal-open &--morph &__content {
+    opacity: 1;
+    transition-duration: .15s;
+  }
+
+  &__content {
+    flex: 0 1 auto;
+    width: 100%;
+    // margin: 0;
+    transform: translateY($aui-modal-content-translate-y);
+    transition: transform $aui-modal-duration $aui-easing;
+  }
+
+  &--fullpage &__content,
+  &--window &__content {
+    // Vertical/ horizontal center modal content
+    margin: auto;
+  }
+
+  &__close {
+    position: fixed;
+    top: rem(6);
+    right: rem(6);
+    width: $aui-modal-close-size;
+    height: $aui-modal-close-size;
+    cursor: pointer;
+    vertical-align: middle;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    @include aui-remove-tap-highlight;
+    transition: color .3s $aui-easing;
+    color: $aui-color-black;
+
+    &:hover {
+      color: $aui-color-gray30;
+    }
+  }
+
+  &.aui-color-text-light &__close {
+    color: $aui-color-white;
+
+    &:hover {
+      color: $aui-color-gray80;
+    }
+  }
+}
+
+.aui-modal-close-icon-large,
+.aui-modal-close-icon-small {
+  display: block;
+  stroke-width: 1px;
+}
+
+.aui-modal-close-icon-large {
+  display: none;
+}
+
+/**
+ * Styles when modal is open:
+ */
+.aui-modal-open .aui-modal.is-active {
+  .aui-modal-dialog {
+    opacity: 1;
+    transition-delay: $aui-modal-delay;
+  }
+
+  .aui-modal-dialog__content {
+    transform: translateY(0);
+    transition-delay: $aui-modal-delay;
+  }
+
+  .aui-modal-dialog--morph {
+    transition-delay: 0s;
+
+    .aui-modal-dialog__body {
+      transition-delay: 0s;
+    }
+  }
+}
+
+/**
+ * Responsive adaptions:
+ */
+@media (min-width: $aui-modal-breakpoint) {
+  .aui-modal-dialog__body {
+    width: 62.5%;
+    max-width: $aui-modal-max-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .aui-modal-dialog--fullpage,
+  .aui-modal-dialog--window {
+    .aui-modal-dialog__close {
+      top: 0;
+      right: 0;
+      width: $aui-modal-close-size-large;
+      height: $aui-modal-close-size-large;
+    }
+  }
+
+  .aui-modal-dialog--fullpage {
+    .aui-modal-dialog__body {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .aui-modal-dialog--window {
+    .aui-modal-dialog__body {
+      width: 80%;
+      padding-left: $aui-modal-close-size-large;
+      padding-right: $aui-modal-close-size-large;
+    }
+  }
+
+  .aui-modal-dialog--layer {
+    .aui-modal-dialog__content {
+      transform: translateY(0);
+    }
+
+    .aui-modal-dialog__body {
+      margin: auto;
+      padding: $aui-modal-dialog-padding;
+    }
+
+    &:not(.aui-modal-dialog--morph) .aui-modal-dialog__body {
+      transform: translateY($aui-modal-content-translate-y);
+      transition: transform $aui-modal-duration $aui-easing;
+    }
+
+    .aui-modal-dialog__close {
+      position: absolute;
+    }
+  }
+
+  .aui-modal-dialog--layer .aui-modal-dialog__body--full,
+  .aui-modal-dialog__body--full {
+    padding: 0;
+  }
+
+  .aui-modal-open {
+    .aui-modal-dialog--layer .aui-modal-dialog__body {
+      transform: translateY(0);
+      transition-delay: $aui-modal-delay;
+    }
+
+    .aui-modal-dialog--morph {
+      .aui-modal-dialog__body {
+        transition-delay: 0s;
+      }
+
+      .aui-modal-dialog__close,
+      .aui-modal-dialog__content {
+        transition-duration: .4s;
+        transition-delay: .5s;
+      }
+    }
+  }
+
+  .aui-modal-close-icon-small {
+    display: none;
+  }
+
+  .aui-modal-close-icon-large {
+    display: block;
+  }
+}

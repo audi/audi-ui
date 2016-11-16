@@ -1,0 +1,11 @@
+{% macro header(label) %}
+<div class="section--header">
+  <div class="aui-layout">
+    <div class="aui-grid">
+      <div class="aui-cell">
+        <h2 class="section--title">{{ label }}</h2>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}

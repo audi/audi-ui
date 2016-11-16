@@ -1,0 +1,38 @@
+.aui-badge {
+  $size: 24px;
+
+  display: inline-block;
+  width: $size;
+  height: $size;
+  font-size: 13px;
+  line-height: $size;
+  border-radius: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  transition: transform .25s $aui-easing, visibility .25s $aui-easing, color .25s $aui-easing .1s;
+  vertical-align: middle;
+
+  &.is-hidden {
+    transform: scale(0);
+    color: transparent !important;
+    transition-delay: 0s;
+    visibility: hidden;
+  }
+
+  &--small {
+    text-indent: 100%;
+    transform: scale(.25);
+  }
+
+  &--small-text {
+    font-size: 10px;
+  }
+
+  &.aui-color-text-light {
+    color: $aui-color-white;
+    stroke: $aui-color-white;
+    fill: $aui-color-white;
+  }
+}

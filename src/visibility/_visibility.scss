@@ -1,0 +1,41 @@
+.aui-visible {
+  display: block !important;
+
+  &-inline {
+    display: inline !important;
+  }
+
+  &-inline-block {
+    display: inline-block !important;
+  }
+}
+
+.aui-hidden {
+  display: none !important;
+}
+@if $aui-visibility {
+   @each $breakpoint-name in $aui-visibility{
+    .aui-visible-#{$breakpoint-name},
+    .aui-visible-#{$breakpoint-name}-inline,
+    .aui-visible-#{$breakpoint-name}-inline-block {
+      display: none !important;
+    }
+    @include aui-respond-to($breakpoint-name) {
+      .aui-visible-#{$breakpoint-name} {
+        display: block !important;
+      }
+
+      .aui-visible-#{$breakpoint-name}-inline {
+        display: inline !important;
+      }
+
+      .aui-visible-#{$breakpoint-name}-inline-block {
+        display: inline-block !important;
+      }
+
+      .aui-hidden-#{$breakpoint-name} {
+        display: none !important;
+      }
+    }
+  }
+}

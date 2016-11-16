@@ -1,0 +1,65 @@
+$close-btn-size: 17px !default;
+$text-padding-x: unit(3) !default;
+$text-padding-y: unit(3) !default;
+$container-offset-x: unit(3) !default;
+$container-offset-y: unit(3) !default;
+$opening-duration: .4s !default;
+$closing-duration: .4s !default;
+
+.aui-notification {
+  position: relative;
+  width: #{rem(320) - 2 * $container-offset-x};
+  @include aui-responsive-type(-1, 1.5);
+  transform: translateY(30px);
+  transition: height $closing-duration $aui-easing $closing-duration, margin $closing-duration $aui-easing $closing-duration, opacity $closing-duration $aui-easing, visibility $closing-duration $aui-easing, transform $closing-duration $aui-easing, box-shadow $closing-duration $aui-easing;
+  margin-bottom: unit(1);
+  opacity: 0;
+  visibility: hidden;
+
+  &-container {
+    position: fixed;
+    right: $container-offset-x;
+    top: $container-offset-y;
+    z-index: $aui-notification-zindex;
+  }
+
+  &__content {
+    position: relative;
+    margin-right: #{$close-btn-size + 10px};
+    padding: $text-padding-y #{$text-padding-x * 2} $text-padding-y $text-padding-x;
+  }
+
+  &__close {
+    position: absolute;
+    top: $text-padding-y;
+    right: $text-padding-x;
+    width: $close-btn-size;
+    height: $close-btn-size;
+    background: url('data:image/svg+xml,#{aui-svg-close($aui-color-dark)}') center center no-repeat;
+    cursor: pointer;
+    vertical-align: middle;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    @include aui-remove-tap-highlight;
+  }
+
+  &.aui-color-text-light &__close,
+  &.aui-color-text-warning &__close {
+    background-image: url('data:image/svg+xml,#{aui-svg-close($aui-color-light)}');
+  }
+
+  &.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    @include shadow;
+    transition-duration: $opening-duration;
+  }
+
+  &.is-closed {
+    transform: translateY(0);
+    overflow: hidden;
+    height: 0 !important;
+  }
+}

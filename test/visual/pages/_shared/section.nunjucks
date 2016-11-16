@@ -1,0 +1,5 @@
+{% macro header(label) %}
+<div class="test-section__header">
+  <h2 class="test-section__title">{{ label }}</h2>
+</div>
+{% endmacro %}

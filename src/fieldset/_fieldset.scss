@@ -1,0 +1,53 @@
+$aui-fieldset-field-spacing-x: unit(6) !default;
+$aui-fieldset-field-spacing-y: unit(6) !default;
+
+.aui-fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: unit(6);
+  font-weight: $aui-font-weight-normal;
+  color: $aui-field-placeholder-color;
+  box-sizing: border-box;
+
+  &--selects &__legend,
+  &--textfields &__legend {
+    font-weight: $aui-font-weight-bold;
+    color: $aui-color-dark;
+  }
+
+  &--radios &__legend {
+    margin-bottom: unit(4);
+  }
+
+  &__fields {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: #{$aui-fieldset-field-spacing-x * -1};
+    margin-bottom: #{$aui-fieldset-field-spacing-y * -1};
+  }
+
+  &__field {
+    flex: 1 1 auto;
+    margin-right: $aui-fieldset-field-spacing-x;
+    margin-bottom: $aui-fieldset-field-spacing-y;
+  }
+
+  &--radios &__field {
+    flex: 0 1 auto;
+  }
+
+  &__error {
+    display: block;
+    margin-top: unit(2);
+    color: $aui-color-gray60;
+    font-size: rem(13);
+    line-height: unit(5);
+    transition: color .25s linear;
+  }
+
+  &.is-invalid &__error,
+  &.is-invalid &__legend {
+    color: $aui-color-invalid;
+  }
+}

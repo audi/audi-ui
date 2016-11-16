@@ -1,0 +1,152 @@
+{% extends 'pages/_layouts/page-color.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="button">
+    {{ section.header('Button') }}
+    <div class="test-section__panel">
+      {% include 'button/snippets/button.html' %}
+      <h3 class="test-section__headline">Bold</h3>
+      {% include 'button/snippets/button-bold.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'button/snippets/button-disabled.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-text">
+    {{ section.header('Button text style') }}
+    <div class="test-section__panel">
+      {% include 'button/snippets/button-text.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'button/snippets/button-text-disabled.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-primary">
+    {{ section.header('Button primary style') }}
+    <div class="test-section__panel">
+      {% include 'button/snippets/button-primary.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'button/snippets/button-primary-disabled.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-primary-with-icon">
+    {{ section.header('Button primary style with icon') }}
+    <div class="test-section__panel">
+      {% include 'button/snippets/button-primary-with-icon.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'button/snippets/button-primary-with-icon-disabled.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-primary-with-icon-right">
+    {{ section.header('Button primary style with icon on the right') }}
+    <div class="test-section__panel">
+      {% include 'button/snippets/button-primary-with-icon-right.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'button/snippets/button-primary-with-icon-right-disabled.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-secondary">
+    {{ section.header('Button secondary style') }}
+    <div class="test-section__panel">
+      {% include 'button/snippets/button-secondary.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'button/snippets/button-secondary-disabled.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-secondary-with-icon">
+    {{ section.header('Button secondary style with icon') }}
+    <div class="test-section__panel">
+      {% include 'button/snippets/button-secondary-with-icon.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'button/snippets/button-secondary-with-icon-disabled.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-secondary-with-icon-right">
+    {{ section.header('Button secondary style with icon on the right') }}
+    <div class="test-section__panel">
+      {% include 'button/snippets/button-secondary-with-icon-right.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'button/snippets/button-secondary-with-icon-right-disabled.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-icon">
+    {{ section.header('Button icon style with small system icon close') }}
+    <div class="test-section__panel">
+      {% include 'button/snippets/button-icon.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'button/snippets/button-icon-disabled.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-icon-large">
+    {{ section.header('Button icon style with large system icon close') }}
+    <div class="test-section__panel">
+      {% include 'button/snippets/button-icon-large.html' %}
+      <h3 class="test-section__headline">Disabled state</h3>
+      {% include 'button/snippets/button-icon-large-disabled.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="button-floating-icon">
+    {{ section.header('Floating button with icon') }}
+    <div class="test-section__panel">
+      The Floating Button is fixed to the bottom right of the viewport.
+      {% include 'button/snippets/button-floating.html' %}
+      <br>
+      <a class="aui-textlink" href="floating.html">Floating Button demo page</a>
+      <br>
+      <a class="aui-textlink" href="sticky.html">Sticky and stretched button demo page</a>
+    </div>
+  </section>
+
+  <section class="test-section" id="sepcial-examples">
+    {{ section.header('Special examples like multiline buttons') }}
+    <div class="test-section__panel">
+      <div>
+        <button class="aui-button aui-button--text aui-js-response" type="button">
+          Text button<br>second line
+        </button>
+      </div>
+      <div class="leader-4">
+        <button class="aui-button aui-button--primary aui-js-response" type="button">
+          Primary button<br>second line
+        </button>
+      </div>
+      <div class="leader-4">
+        <button class="aui-button aui-button--secondary aui-js-response" type="button">
+          Secondary button<br>second line
+        </button>
+      </div>
+      <div class="leader-4">
+        <button class="aui-button aui-button--primary aui-js-response" type="button">
+          <span class="aui-button__text-with-icon">
+            Primary button<br>second line
+            <svg class="audiicon">
+              <use xlink:href="#audiicon-search-small"></use>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div class="leader-4">
+        <button class="aui-button aui-button--secondary aui-js-response" type="button">
+          <span class="aui-button__text-with-icon aui-button__text-with-icon--right">
+            Secondary button<br>second line
+            <svg class="audiicon">
+              <use xlink:href="#audiicon-erase-small"></use>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+$aui-pager-color: rgba(#000, 0.5) !default;
+$aui-pager-color-active: rgba(#000, 1) !default;
+
+.aui-pager {
+  list-style: none;
+  padding-left: 0;
+  font-weight: $aui-font-weight-normal;
+  color: $aui-pager-color;
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__current {
+    color: $aui-pager-color-active;
+  }
+
+  &__next,
+  &__previous {
+    transition: color .15s linear;
+  }
+
+  &__previous {
+    margin-right: 1em;
+  }
+
+  &__next {
+    margin-left: 1em;
+  }
+
+  &__next-icon,
+  &__previous-icon {
+    display: inline-block;
+    width: .5em;
+    height: .8125em;
+    text-indent: 100%;
+    overflow: hidden;
+    transform: translateY(em(1));
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__previous-icon {
+    transform: translateY(em(1)) rotate(180deg);
+  }
+
+  &__next-icon,
+  &__previous-icon {
+    background-image: url('data:image/svg+xml;dataset=utf-8,#{aui-svg-arrow($aui-pager-color)}');
+    transition: background .15s linear;
+  }
+
+  &__next:hover:not(.is-disabled),
+  &__previous:hover:not(.is-disabled) {
+    color: $aui-pager-color-active;
+  }
+
+  &__next:hover:not(.is-disabled) .aui-pager__next-icon,
+  &__previous:hover:not(.is-disabled) .aui-pager__previous-icon {
+    background-image: url('data:image/svg+xml;dataset=utf-8,#{aui-svg-arrow($aui-pager-color-active)}');
+  }
+
+  &__next,
+  &__previous {
+    &.is-disabled {
+      cursor: not-allowed;
+      opacity: .30;
+      pointer-events: none;
+    }
+  }
+}

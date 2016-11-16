@@ -1,0 +1,181 @@
+$aui-switch-track-width: 3em !default;
+$aui-switch-track-height: 1.5em !default;
+$aui-switch-track-spacing: 1em !default;
+$aui-switch-thumb-scale: 8 / 12 / $aui-circle-smoothing-factor !default;
+$aui-switch-thumb-scale-hover: 10 / 12 / $aui-circle-smoothing-factor !default;
+$aui-switch-thumb-scale-active: 1 / $aui-circle-smoothing-factor !default;
+$aui-switch-thumb-size: .75em * $aui-circle-smoothing-factor !default;
+$aui-switch-color-text: $aui-color-gray20 !default;
+$aui-switch-color-text-hover: $aui-color-black !default;
+$aui-switch-color-text-inactive: rgba(#000, 0.5) !default;
+$aui-switch-color-track-border: rgba(#000, 0.5) !default;
+$aui-switch-color-track-border-hover: rgba(#000, 1) !default;
+$aui-switch-color-thumb: rgba(#000, 0.1) !default;
+$aui-switch-color-thumb-active: rgba(#000, 0.8) !default;
+
+.aui-switch {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-weight: $aui-font-weight-normal;
+  // Because track is positioned `absolute`, the element would have a width of 0
+  // when there's no text label.
+  min-width: $aui-switch-track-width;
+  cursor: pointer;
+  @include aui-remove-tap-highlight;
+
+  // Ensure positioning of track, when there's no text label.
+  &::after {
+    content: '.';
+    display: inline-block;
+    width: 0;
+    visibility: hidden;
+  }
+
+  // Visually hide input
+  .aui-switch__input {
+    @extend %aui-hidden-input;
+  }
+
+  &__text {
+    display: inline-block;
+    padding-left: #{$aui-switch-track-width + $aui-switch-track-spacing};
+    color: $aui-switch-color-text;
+    transition: color .15s linear;
+  }
+
+  &__track {
+    display: inline-block;
+    position: absolute;
+    top: .125em;
+    left: 0;
+    width: $aui-switch-track-width;
+    height: $aui-switch-track-height;
+    border: 1px solid $aui-switch-color-track-border;
+    border-radius: #{$aui-switch-track-height / 2};
+    vertical-align: middle;
+    transition: box-shadow .15s linear, border .15s linear;
+  }
+
+  &__thumb {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: .75em;
+    width: $aui-switch-thumb-size;
+    height: $aui-switch-thumb-size;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale($aui-switch-thumb-scale, $aui-switch-thumb-scale);
+    background: $aui-switch-color-thumb;
+    transition: transform .15s $aui-easing, left .3s $aui-easing, background .3s $aui-easing;
+  }
+
+  /**
+   * Variant: text-left
+   */
+  &--text-left {
+    .aui-switch__text {
+      padding-left: 0;
+      padding-right: #{$aui-switch-track-width + $aui-switch-track-spacing};
+    }
+
+    .aui-switch__track {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  /**
+   * Variant: equal
+   */
+  &--equal {
+    display: inline-flex;
+
+    .aui-switch__text {
+      padding-left: 0;
+      padding-right: 0;
+      flex: 1 1 auto;
+      order: 1;
+    }
+
+    .aui-switch__text--left {
+      margin-right: $aui-switch-track-spacing;
+    }
+
+    .aui-switch__text--right {
+      order: 3;
+      color: $aui-switch-color-text-inactive;
+      margin-left: $aui-switch-track-spacing;
+    }
+
+    .aui-switch__track {
+      position: relative;
+      // top: auto;
+      left: auto;
+      flex: 0 0 $aui-switch-track-width;
+      order: 2;
+    }
+
+    .aui-switch__thumb {
+      background: $aui-switch-color-thumb-active;
+      transform: translate(-50%, -50%) scale($aui-switch-thumb-scale-active, $aui-switch-thumb-scale-active);
+    }
+  }
+
+  /**
+   * States
+   */
+
+  // Hover state
+  &:hover:not(.is-disabled) {
+    .aui-switch__text {
+      color: $aui-switch-color-text-hover;
+    }
+
+    .aui-switch__track {
+      border-color: $aui-switch-color-track-border-hover;
+
+      .aui-switch__thumb {
+        transform: translate(-50%, -50%) scale($aui-switch-thumb-scale-hover, $aui-switch-thumb-scale-hover);
+      }
+    }
+  }
+
+  &--equal:hover:not(.is-disabled) .aui-switch__text--right {
+    color: $aui-switch-color-text-inactive;
+  }
+
+  &--equal:hover:not(.is-disabled) &__input:checked ~ .aui-switch__text--left {
+    color: $aui-switch-color-text-inactive;
+  }
+
+  &--equal:hover:not(.is-disabled) &__input:checked ~ .aui-switch__text--right {
+    color: $aui-switch-color-text-hover;
+  }
+
+  // Focus state
+  &__input:focus ~ .aui-switch__track {
+    @include shadow-focus;
+  }
+
+  // Disabled state
+  &.is-disabled {
+    opacity: $aui-field-disabled-opacity;
+    cursor: not-allowed;
+  }
+
+  // Checked state
+  &__input:checked ~ &__track &__thumb {
+    background: $aui-switch-color-thumb-active;
+    transform: translate(-50%, -50%) scale($aui-switch-thumb-scale-active, $aui-switch-thumb-scale-active);
+    left: 2.125em;
+  }
+
+  &--equal &__input:checked ~ .aui-switch__text--left {
+    color: $aui-switch-color-text-inactive;
+  }
+
+  &--equal &__input:checked ~ .aui-switch__text--right {
+    color: $aui-switch-color-text;
+  }
+}

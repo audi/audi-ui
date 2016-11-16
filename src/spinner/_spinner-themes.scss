@@ -1,0 +1,7 @@
+$aui-spinner-color: rgba(#fff, .6);
+
+.aui-spinner {
+  &.aui-theme-light {
+    stroke: $aui-spinner-color;
+  }
+}

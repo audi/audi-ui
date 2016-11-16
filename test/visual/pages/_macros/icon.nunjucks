@@ -1,0 +1,10 @@
+{% macro sprite(name, spriteUrl, classes = '', large = false, smart = false) %}
+  {% set size = (24 if smart else (48 if large else 24)) %}
+  {% set id = name + ('' if smart else ('-large' if large else '-small')) %}
+  {% set classes = classes + (' audiicon--smart' if smart else '') %}
+  {% set classes = classes + (' audiicon--large' if large else '') %}
+  {# TODO aria-hidden="true" or role="presentation" #}
+  <svg width="{{ size }}" height="{{ size }}" viewbox="0 0 {{ size }} {{ size }}" class="audiicon audiicon-inject {% if classes %}{{ classes }}{% endif %}" aria-hidden="true">
+    <use xlink:href="{{ spriteUrl }}#{{ id }}"></use>
+  </svg>
+{% endmacro %}

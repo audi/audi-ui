@@ -1,0 +1,21 @@
+{% extends 'pages/_layouts/page-color.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="table-stretched">
+    {{ section.header('Table stretched to 100% width') }}
+    <div class="test-section__panel">
+      {% include 'table/snippets/table-stretched.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="table-colored">
+    {{ section.header('Table with colored and padded cells') }}
+    <div class="test-section__panel">
+      {% include 'table/snippets/table-colored.html' %}
+    </div>
+  </section>
+
+{% endblock %}

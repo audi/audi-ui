@@ -1,0 +1,231 @@
+{% extends 'pages/_layouts/page.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <style>
+    .aui-card .aui-small {
+      margin-bottom: 8px;
+    }
+    .aui-card .aui-shortread ~ .aui-button {
+      margin-top: 16px;
+    }
+    .aui-card .aui-headline-3,
+    .aui-card .aui-headline-5 {
+      margin-bottom: 8px;
+    }
+
+  </style>
+
+  <section class="test-section" id="card-cover">
+    {{ section.header('Card with cover image (<picture> element)') }}
+    <div class="test-section__panel">
+      <div class="aui-card-grid">
+        <div class="aui-card-grid__item">
+          <a class="aui-card aui-card--action aui-card--cover aui-color-black aui-color-text-dark" href="#">
+            <div class="aui-card__cover">
+              <img class="aui-card__cover-image" src="http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/gallery-1280x720-1.jpg"/>
+            </div>
+            <div class="aui-card__body">
+              <div class="aui-card__content">
+                <h2 class="aui-headline-3">
+                  Headline
+                </h2>
+                <p class="aui-shortread">
+                  The whole card is clickable.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="aui-card-grid__item">
+          <a class="aui-card aui-card--action aui-card--cover aui-color-black aui-color-text-light" href="#">
+            <div class="aui-card__cover">
+              <img class="aui-card__cover-image" src="http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/gallery-1280x720-4.jpg"/>
+            </div>
+            <div class="aui-card__body">
+              <div class="aui-card__content">
+                <h2 class="aui-headline-3">
+                  Headline
+                </h2>
+                <p class="aui-shortread">
+                  The whole card is clickable.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="aui-card-grid__item">
+          <a class="aui-card aui-card--action aui-card--cover aui-color-black aui-color-text-dark" href="#">
+            <div class="aui-card__cover">
+              <img class="aui-card__cover-image" src="http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/gallery-1280x720-3.jpg"/>
+            </div>
+            <div class="aui-card__body">
+              <div class="aui-card__content">
+                <h2 class="aui-headline-3">
+                  Headline
+                </h2>
+                <p class="aui-shortread">
+                  The whole card is clickable.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section" id="card">
+    {{ section.header('Card') }}
+    <div class="test-section__panel">
+      <div class="aui-card-grid">
+        <div class="aui-card-grid__item">
+          <div class="aui-card aui-color-gray70 aui-color-text-light">
+            <div class="aui-card__body">
+              <div class="aui-card__media">
+                <img src="http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/card-390x224.jpg" alt="" width="390" height="224" style="max-width:390px;">
+              </div>
+              <div class="aui-card__content">
+                <p class="aui-small">
+                  Small text
+                </p>
+                <h2 class="aui-headline-3">
+                  Headline
+                </h2>
+                <p class="aui-shortread">
+                  This is a short text for this card. Image with max-width.
+                </p>
+              </div>
+              <div class="aui-card__content aui-card__content--bottom">
+                <div class="aui-button-group aui-button-group--block">
+                  <button class="aui-button aui-button--secondary aui-theme-light aui-js-response" type="button">Action</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aui-card-grid__item">
+          {% include 'card/snippets/card-actions.html' %}
+        </div>
+        <div class="aui-card-grid__item">
+          <a class="aui-card aui-card--action aui-card--image aui-color-black aui-color-text-light" style="background-image:url('http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/card-390x480.jpg');background-position:100% 50%;" href="#">
+            <div class="aui-card__content">
+              <p class="aui-small">
+                31.07.2016
+              </p>
+              <h2 class="aui-headline-3">
+                Headline
+              </h2>
+              <p class="aui-shortread">
+                Card with background image; clickable.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section" id="card-second">
+    {{ section.header('Card') }}
+    <div class="test-section__panel">
+      <div class="aui-card-grid">
+        <div class="aui-card-grid__item">
+          <a class="aui-card aui-card--action aui-card--image aui-color-black aui-color-text-light" style="background-image:url('http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/card-390x480.jpg');background-position:100% 50%;" href="#">
+            <div class="aui-card__content">
+              <p class="aui-small">
+                31.07.2016
+              </p>
+              <h2 class="aui-headline-3">
+                Headline
+              </h2>
+              <p class="aui-shortread">
+                Card with background image; clickable.
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="aui-card-grid__item">
+          <div class="aui-card aui-color-gray95 aui-color-text-dark">
+            <div class="aui-card__body">
+              <div class="aui-card__content">
+                <h2 class="aui-headline-5">
+                  Grow and shrink
+                </h2>
+                <p class="aui-shortread">
+                  Use align-right and align-center on card content to align Button Group as you want.
+                </p>
+              </div>
+              <div class="aui-card__content aui-card__content--bottom align-right">
+                <!-- Button Group of two secondary buttons -->
+                <div class="aui-button-group">
+                  <button class="aui-js-response aui-button aui-button--secondary" type="button">Action</button>
+                  <button class="aui-js-response aui-button aui-button--secondary" type="button">Action</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aui-card-grid__item aui-card-grid__item--column">
+          <div class="aui-card aui-color-red aui-color-text-light">
+            <div class="aui-card__body">
+              <div class="aui-card__content">
+                <p class="aui-small">
+                  December
+                </p>
+                <p class="aui-headline-1">
+                  24
+                </p>
+                <button class="aui-js-response aui-button aui-button--text aui-theme-light" type="button">
+                  Text Button
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="aui-card-grid">
+            <div class="aui-card-grid__item" style="width:50%;">
+              <div class="aui-card aui-color-gray95 aui-color-text-dark">
+                <div class="aui-card__body">
+                  <div class="aui-card__content">
+                    <h6 class="aui-headline-6">
+                      Your Confi&shy;guration
+                    </h6>
+                    <p class="aui-small">
+                      30.02.2025
+                    </p>
+                  </div>
+                  <div class="aui-card__content aui-card__content--bottom">
+                    <div class="aui-button-group aui-button-group--icons">
+                      {% include 'button/snippets/button-icon-large.html' %}
+                      {% include 'button/snippets/button-icon-large.html' %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="aui-card-grid__item" style="width:50%;">
+              <div class="aui-card aui-color-gray95 aui-color-text-dark">
+                <div class="aui-card__body">
+                  <div class="aui-card__content align-center">
+                    <h6 class="aui-headline-2">
+                      NPR
+                    </h6>
+                    <p class="aui-small">
+                      WRWA / 88.7 FM
+                    </p>
+                  </div>
+                  <div class="aui-card__content aui-card__content--bottom align-center">
+                    {% include 'button/snippets/button-icon-large.html' %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

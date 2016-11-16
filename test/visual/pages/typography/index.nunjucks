@@ -1,0 +1,93 @@
+{% extends 'pages/_layouts/page-color.nunjucks' %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="headline-1">
+    {{ section.header('Headline 1') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/headline-1.html'%}
+    </div>
+  </section>
+
+  <section class="test-section" id="headline-2">
+    {{ section.header('Headline 2') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/headline-2.html'%}
+    </div>
+  </section>
+
+  <section class="test-section" id="headline-3">
+    {{ section.header('Headline 3') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/headline-3.html'%}
+    </div>
+  </section>
+
+  <section class="test-section" id="headline-4">
+    {{ section.header('Headline 4') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/headline-4.html'%}
+    </div>
+  </section>
+
+  <section class="test-section" id="headline-5">
+    {{ section.header('Headline 5') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/headline-5.html'%}
+    </div>
+  </section>
+
+  <section class="test-section" id="headline-6">
+    {{ section.header('Headline 6') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/headline-6.html'%}
+    </div>
+  </section>
+
+  <section class="test-section" id="paragraph">
+    {{ section.header('Paragraphs') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/paragraph.html'%}
+      <h3 class="test-section__headline">Accentuated</h3>
+      {% include 'typography/snippets/paragraph-accentuated.html'%}
+      <h3 class="test-section__headline">Shortread</h3>
+      {% include 'typography/snippets/paragraph-shortread.html'%}
+      <h3 class="test-section__headline">Big text</h3>
+      {% include 'typography/snippets/paragraph-big.html'%}
+      <h3 class="test-section__headline">Small text</h3>
+      {% include 'typography/snippets/paragraph-small.html'%}
+      <h3 class="test-section__headline">Caption</h3>
+      {% include 'typography/snippets/paragraph-caption.html'%}
+    </div>
+  </section>
+
+  <section class="test-section" id="textlink">
+    {{ section.header('Textlink') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/textlink.html'%}
+    </div>
+  </section>
+
+  <section class="test-section" id="list-arrow">
+    {{ section.header('List with arrows') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/list-arrow.html'%}
+    </div>
+  </section>
+
+  <section class="test-section" id="list-number">
+    {{ section.header('List numbered') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/list-number.html'%}
+    </div>
+  </section>
+
+  <section class="test-section" id="blockquote">
+    {{ section.header('Blockquote') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/blockquote.html'%}
+    </div>
+  </section>
+
+{% endblock %}

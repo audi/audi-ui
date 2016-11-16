@@ -1,0 +1,75 @@
+.aui-tooltip {
+  display: block;
+  position: fixed;
+  top: -1000px;
+  left: -1000px;
+  font-size: .875rem;
+  line-height: unit(5);
+  max-width: $aui-layout-min-width;
+  background: $aui-color-white;
+  visibility: hidden;
+  pointer-events: none;
+  @include shadow;
+  opacity: 0;
+  color: $aui-color-body;
+  transition: opacity .15s linear, visibility .15s linear;
+
+  &__triangle {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background: inherit;
+
+    &::after {
+      $_size: 16px;
+      content: '';
+      display: block;
+      position: absolute;
+      left: #{$_size / -2};
+      top: #{$_size / -2};
+      width: $_size;
+      height: $_size;
+      transform: rotate(45deg);
+      transform-origin: center;
+      background: inherit;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    padding: unit(3) unit(5);
+  }
+
+  &__media {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /**
+   * Variant: Dark
+   */
+  &--dark {
+    color: $aui-color-white;
+    background: $aui-color-gray30;
+  }
+
+  /**
+   * States
+   */
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    transition-duration: .25s;
+    transition-delay: .4s;
+    z-index: $aui-zindex-tooltip;
+  }
+
+  &.is-top &__triangle {
+    top: auto;
+    bottom: 0;
+  }
+}

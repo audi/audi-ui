@@ -1,0 +1,76 @@
+{% extends 'pages/_layouts/page.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="popver">
+    {{ section.header('Popover') }}
+    <div class="test-section__panel">
+      <div class="trailer-padding-10">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="leader-4">
+          {% include 'popover/snippets/popover.html' %}
+        </div>
+        <div class="leader-4">
+          {% include 'popover/snippets/popover-image.html' %}
+        </div>
+        <div class="leader-4">
+          {% include 'popover/snippets/popover-dark.html' %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section" id="popover-placement">
+    {{ section.header('Popover placement') }}
+    <div class="test-section__panel">
+      <div>
+        <button id="sample-popover-top" class="aui-js-response aui-button aui-button--primary" type="button">Popover on top</button>
+        <div class="aui-popover aui-js-popover" role="tooltip" for="sample-popover-top" data-placement="top">
+          <div class="aui-popover__content">
+            <div class="aui-popover__text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="leader-4">
+        <button id="sample-popover-right" class="aui-js-response aui-button aui-button--primary" type="button">Popover on right</button>
+        <div class="aui-popover aui-js-popover" role="tooltip" for="sample-popover-right" data-placement="right">
+          <div class="aui-popover__content">
+            <div class="aui-popover__text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="leader-4">
+        <button id="sample-popover-bottom" class="aui-js-response aui-button aui-button--primary" type="button">Popover on bottom</button>
+        <div class="aui-popover aui-js-popover" role="tooltip" for="sample-popover-bottom" data-placement="bottom">
+          <div class="aui-popover__content">
+            <div class="aui-popover__text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="leader-4 align-right">
+        <button id="sample-popover-left" class="aui-js-response aui-button aui-button--primary" type="button">Popover on left</button>
+        <div class="aui-popover aui-js-popover" role="tooltip" for="sample-popover-left" data-placement="left">
+          <div class="aui-popover__content">
+            <div class="aui-popover__text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="aui-layout leader-30">
+    {% include 'pages/_shared/demo-content.nunjucks' %}
+  </div>
+
+{% endblock %}

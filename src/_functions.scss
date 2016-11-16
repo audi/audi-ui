@@ -1,0 +1,130 @@
+// TODO Überprüfen ob die noch benötigt wird. Derzeit nur im Player.
+@function line-height($line-height-ratio, $font-size, $baseline: $aui-base-unit) {
+  @return round($line-height-ratio * $font-size / $baseline) * $baseline;
+}
+
+// TODO Complete error handling
+@function aui-map-get($map, $args...) {
+  $return: $map;
+  @for $i from 1 through length($args) {
+    $key: nth($args, $i);
+    $return: map-get($return, $key);
+    @if type-of($return) != 'map' and $i < length($args) {
+      @warn 'No map found for `' + $key + '`.';
+      @return '';
+    }
+    $last-key: $key;
+  }
+  @return $return;
+}
+
+// Fork of Bourbon SASS implememntation
+// https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_modular-scale.scss
+// Multiplies $value with $ratio in power of $increment
+@function modular-scale($increment, $value: aui-map-get($aui-modular-scale, default, base), $ratio: aui-map-get($aui-modular-scale, default, ratio), $round: true) {
+  $v1: nth($value, 1);
+  $v2: nth($value, length($value));
+  $value: $v1;
+
+  // scale $v2 to just above $v1
+  @while $v2 > $v1 {
+    $v2: ($v2 / $ratio); // will be off-by-1
+  }
+  @while $v2 < $v1 {
+    $v2: ($v2 * $ratio); // will fix off-by-1
+  }
+
+  // check AFTER scaling $v2 to prevent double-counting corner-case
+  $double-stranded: $v2 > $v1;
+
+  @if $increment > 0 {
+    @for $i from 1 through $increment {
+      @if $double-stranded and ($v1 * $ratio) > $v2 {
+        $value: $v2;
+        $v2: ($v2 * $ratio);
+      } @else {
+        $v1: ($v1 * $ratio);
+        $value: $v1;
+      }
+    }
+  }
+
+  @if $increment < 0 {
+    // adjust $v2 to just below $v1
+    @if $double-stranded {
+      $v2: ($v2 / $ratio);
+    }
+
+    @for $i from $increment through -1 {
+      @if $double-stranded and ($v1 / $ratio) < $v2 {
+        $value: $v2;
+        $v2: ($v2 / $ratio);
+      } @else {
+        $v1: ($v1 / $ratio);
+        $value: $v1;
+      }
+    }
+  }
+
+  @if ($round) {
+    $value: round($value)
+  }
+
+  @return $value;
+}
+
+// Returns a handle symbol used in Draggable components as SVG element.
+// @param {color} $color the color used as fill and/or stroke.
+// @returns {string} the SVG element as string.
+@function aui-svg-draggable-handle($color) {
+  @return '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="5" viewBox="0 0 16 5"><rect style="fill:#{$color}" x="0" y="0" width="16" height="1" /><rect style="fill:#{$color}" x="0" y="4" width="16" height="1" /></svg>';
+}
+
+// Returns an arrow symbol as SVG element.
+// @param {color} $color the color used as fill and/or stroke.
+// @returns {string} the SVG element as string.
+@function aui-svg-arrow($color) {
+  @return '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13"><path stroke="#{$color}" stroke-width="1px" fill="none" d="M1.5,1l5.485,5.504l-5.48,5.496" /></svg>';
+}
+
+// Returns an arrow symbol used in Dropdown/Select components as SVG element.
+// @param {color} $color the color used as fill and/or stroke.
+// @returns {string} the SVG element as string.
+@function aui-svg-dropdown-arrow($color) {
+  @return '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="8" viewBox="0 0 13 8"><polygon fill="#{$color}" points="6.511 7.371 0 0.715 0.731 0 6.51 5.907 12.267 0 13 0.714 6.511 7.371"/></svg>';
+}
+
+// Returns a divider symbol used in breadcrumbs as SVG element.
+// @param {color} $color the color used as fill and/or stroke.
+// @returns {string} the SVG element as string.
+@function aui-svg-breadcrumb-divider($color) {
+ @return '<svg xmlns="http://www.w3.org/2000/svg" width="5" height="8" viewBox="0 0 5 8"><path stroke="#{$color}" stroke-width="1px" fill="none" d="M0.5,0.5l3.24,3.252l-3.237,3.247" /></svg>';
+}
+
+// Returns a close symbol as SVG element.
+// @param {color} $color the color used as fill and/or stroke.
+// @returns {string} the SVG element as string.
+@function aui-svg-close($color) {
+  @return '<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" ><path fill="#{$color}" d="M8.487,7.78l7.78,-7.777c0.235,0.236 0.471,0.472 0.707,0.707l-7.78,7.777l7.777,7.78l-0.708,0.707l-7.776,-7.78l-7.78,7.777l-0.707,-0.708l7.78,-7.776l-7.777,-7.78l0.707,-0.707l7.777,7.78Z" /></svg>';
+}
+
+// Returns a tick symbol as SVG element.
+// @param {color} $color the color used as fill and/or stroke.
+// @returns {string} the SVG element as string.
+@function aui-svg-tick($color) {
+  @return '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><polygon fill="#{$color}" points="4.945 12 0 7.699 0.667 6.92 4.708 10.435 11.132 0 12 0.543 4.945 12" /></svg>';
+}
+
+// Returns a triangle symbol as SVG element.
+// @param {color} $color the color used as fill and/or stroke.
+// @returns {string} the SVG element as string.
+@function aui-svg-triangle($color) {
+  @return '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 10 20"><path style="fill:#{$color}" d="M10,20l-10,-10l10,-10l0,20Z" /></svg>';
+}
+
+// Returns a circle symbol as SVG element.
+// @param {color} $color the color used as fill and/or stroke.
+// @returns {string} the SVG element as string.
+@function aui-svg-circle($color) {
+  @return '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle style="fill:#{$color}" cx="50" cy="50" r="50" /></svg>';
+}

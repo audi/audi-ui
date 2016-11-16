@@ -1,0 +1,30 @@
+.test-nav {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0;
+  padding: 0;
+  @include fontfamily;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  list-style: none;
+  background: $demo-highlight;
+  border-bottom: 1px solid rgba($demo-highlight, 0.25);
+
+  &__item {
+    flex: 1 0 auto;
+  }
+
+  &__action {
+    display: block;
+    padding: .25em 1em;
+    margin: 1px;
+    color: $aui-color-white;
+    background: rgba(#000, 0.1);
+    text-align: center;
+
+    &:hover {
+      background: rgba(#000, 0.2);
+    }
+  }
+}

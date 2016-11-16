@@ -1,0 +1,13 @@
+<div class="test-control">
+  <div class="test-control__setting">
+    <select id="change-color">
+      <option value="white">White</option>
+      <option value="black">Black</option>
+      <option value="silver">Silver</option>
+      <option value="warmsilver">Warmsilver</option>
+      <option value="red">Red</option>
+      <option value="image">Image</option>
+      <option value="imagedark">Image dark</option>
+    </select>
+  </div>
+</div>

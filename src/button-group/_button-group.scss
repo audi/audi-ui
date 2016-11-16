@@ -1,0 +1,84 @@
+.aui-button-group {
+  $button-spacing: unit();
+
+  display: inline-flex;
+  flex-flow: row wrap;
+  align-items: center;
+  // Fix an issue with positioning in IE10+
+  vertical-align: top;
+
+  // Remove button margin
+  margin-right: ($button-spacing * -1);
+  margin-bottom: ($button-spacing * -1);
+
+  .aui-button {
+    flex: 1 1 auto;
+    margin: 0 $button-spacing $button-spacing 0;
+
+    // Bring the "active" button to the front
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+      z-index: 2;
+    }
+  }
+
+  // The Icon-Buttons must not scale
+  .aui-button--icon {
+    flex: 0 0 auto;
+  }
+
+  // A Button-Group, that always stretch to full width of parent
+  &--block {
+    display: flex;
+  }
+
+  // A Button-Group, that only contains Text-Buttons
+  &--texts {
+    $button-spacing: unit(6);
+
+    margin-right: ($button-spacing * -1);
+    margin-bottom: ($button-spacing * -1);
+
+    .aui-button {
+      margin: 0 $button-spacing $button-spacing 0;
+    }
+  }
+
+  // A Button-Group, that only contains Icon-Buttons
+  &--icons {
+    $button-spacing: unit(3);
+
+    margin-right: ($button-spacing * -1);
+    margin-bottom: ($button-spacing * -1);
+
+    .aui-button {
+      margin: 0 $button-spacing $button-spacing 0;
+    }
+  }
+
+  // A Button-Group, that only contains narrowly arranged Primary-Buttons
+  &--primaries {
+    $button-spacing: 1px;
+
+    margin-right: ($button-spacing * -1);
+    margin-bottom: ($button-spacing * -1);
+
+    .aui-button {
+      margin: 0 $button-spacing $button-spacing 0;
+    }
+  }
+
+  // A Button-Group, that only contains narrowly arranged Secondary-Butons
+  &--secondaries {
+    $button-spacing: -1px;
+
+    margin-right: ($button-spacing * -1);
+    margin-bottom: ($button-spacing * -1);
+
+    .aui-button {
+      margin: 0 $button-spacing $button-spacing 0;
+    }
+  }
+}

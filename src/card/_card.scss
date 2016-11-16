@@ -1,0 +1,105 @@
+.aui-card-grid {
+  display: flex;
+  flex-flow: row wrap;
+  margin: #{$aui-card-spacing / -2};
+
+  .aui-card-grid {
+    margin: 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex: 1 1 auto;
+    width: $aui-layout-min-width;
+  }
+
+  &__item--column {
+    flex-direction: column;
+  }
+}
+
+.aui-card {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: #{$aui-card-spacing / 2};
+  width: calc(100% - #{$aui-card-spacing}); // IE fix
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-origin: padding-box;
+  background-attachment: scroll;
+  transition: transform .15s $aui-easing, box-shadow .15s $aui-easing;
+
+  &__cover {
+    display: block;
+
+    &-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    padding: unit(5); // TODO Laut Laoyut 6, dann passen aber nicht 2 System Icons nebeneinander
+
+    &--bottom {
+      margin-top: auto;
+    }
+  }
+
+  &__media {
+    text-align: center;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  /**
+   * Variant: Action
+   */
+  &--action:hover,
+  &--action:focus {
+    z-index: 1;
+    outline: none;
+    @include shadow;
+    transform: translateY(unit(-1));
+  }
+
+  /**
+   * Variant: Cover
+   */
+   &--cover {
+     flex-direction: row;
+   }
+
+   &--cover &__cover {
+     flex: 1 1 auto;
+   }
+
+   &--cover &__body {
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     overflow-x: hidden;
+     overflow-y: auto;
+     -webkit-overflow-scrolling: touch;
+     z-index: 1;
+   }
+}

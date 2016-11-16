@@ -1,0 +1,238 @@
+{% extends 'pages/_layouts/page-color.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="dropdown">
+    {{ section.header('Dropdown') }}
+    <div class="test-section__panel">
+      <form action="#">
+        {% include 'dropdown/snippets/dropdown.html' %}
+        <h3 class="test-section__headline">Invalid</h3>
+        {% include 'dropdown/snippets/dropdown-invalid.html' %}
+        <h3 class="test-section__headline">Disabled</h3>
+        {% include 'dropdown/snippets/dropdown-disabled.html' %}
+      </form>
+    </div>
+  </section>
+
+  <section class="test-section" id="dropdown">
+    {{ section.header('Dropdown with multiple options') }}
+    <div class="test-section__panel">
+      <form action="#">
+        {% include 'dropdown/snippets/dropdown-multiple.html' %}
+      </form>
+    </div>
+  </section>
+
+  <section class="test-section" id="select">
+    {{ section.header('Select') }}
+    <div class="test-section__panel">
+      <form action="#">
+        {% include 'select/snippets/select.html' %}
+        <h3 class="test-section__headline">Invalid</h3>
+        {% include 'select/snippets/select-invalid.html' %}
+        <h3 class="test-section__headline">Disabled</h3>
+        {% include 'select/snippets/select-disabled.html' %}
+      </form>
+    </div>
+  </section>
+
+  <section class="test-section" id="fieldset-selects">
+    {{ section.header('Fieldset with Selects') }}
+    <div class="test-section__panel">
+      <form action="#">
+        {% include 'fieldset/snippets/fieldset-selects.html' %}
+        <h3 class="test-section__headline">Invalid state</h3>
+        {% include 'fieldset/snippets/fieldset-selects-invalid.html' %}
+      </form>
+    </div>
+  </section>
+
+  <section class="test-section" id="textfield">
+    {{ section.header('Textfield') }}
+    <div class="test-section__panel">
+      <form action="#">
+        <div class="aui-grid">
+          <div class="aui-cell">
+            {% include 'textfield/snippets/textfield-floating-label.html' %}
+            <h3 class="test-section__headline">Invalid state</h3>
+            {% include 'textfield/snippets/textfield-invalid.html' %}
+            <h3 class="test-section__headline">Valid state</h3>
+            {% include 'textfield/snippets/textfield-valid.html' %}
+            <h3 class="test-section__headline">Disabled state</h3>
+            {% include 'textfield/snippets/textfield-disabled.html' %}
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="test-section" id="textfield-icon">
+    {{ section.header('Textfield with Icon') }}
+    <div class="test-section__panel">
+      <form action="#">
+        <div class="aui-grid">
+          <div class="aui-cell">
+            {% include 'textfield/snippets/textfield-icon.html' %}
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="test-section" id="multiline-textfield">
+    {{ section.header('Multiline Textfield') }}
+    <div class="test-section__panel">
+      <form action="#">
+        <div class="aui-grid">
+          <div class="aui-cell">
+            {% include 'textfield/snippets/textfield-multiline.html' %}
+            <h3 class="test-section__headline">Invalid state</h3>
+            {% include 'textfield/snippets/textfield-multiline-invalid.html' %}
+            <h3 class="test-section__headline">Disabled state</h3>
+            {% include 'textfield/snippets/textfield-multiline-disabled.html' %}
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="test-section" id="textfield-counter">
+    {{ section.header('Multiline Textfield with Counter') }}
+    <div class="test-section__panel">
+      <form action="#">
+        <div class="aui-grid">
+          <div class="aui-cell">
+            {% include 'textfield/snippets/textfield-multiline-counter.html' %}
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="test-section" id="fieldset-textfields">
+    {{ section.header('Fieldset with Textfields') }}
+    <div class="test-section__panel">
+      <form action="#">
+        {% include 'fieldset/snippets/fieldset-textfields.html' %}
+        <h3 class="test-section__headline">Invalid state</h3>
+        {% include 'fieldset/snippets/fieldset-textfields-invalid.html' %}
+      </form>
+    </div>
+  </section>
+
+  <section class="test-section" id="checkbox">
+    {{ section.header('Checkbox') }}
+    <div class="test-section__panel">
+      <form action="#">
+        <div class="aui-grid">
+          <div class="aui-cell aui-cell--4">
+            <h3 class="test-section__headline">Default and Checked</h3>
+            <div class="trailer-4">
+              {% include 'checkbox/snippets/checkbox.html' %}
+            </div>
+            <div class="trailer-4">
+              {% include 'checkbox/snippets/checkbox-checked.html' %}
+            </div>
+          </div>
+          <div class="aui-cell aui-cell--4">
+            <h3 class="test-section__headline">Invalid states</h3>
+            <div class="trailer-4">
+              {% include 'checkbox/snippets/checkbox-invalid.html' %}
+            </div>
+            <div class="trailer-4">
+              {% include 'checkbox/snippets/checkbox-checked-invalid.html' %}
+            </div>
+          </div>
+          <div class="aui-cell aui-cell--4">
+            <h3 class="test-section__headline">Disabled states</h3>
+            <div class="trailer-4">
+              {% include 'checkbox/snippets/checkbox-disabled.html' %}
+            </div>
+            <div class="trailer-4">
+              {% include 'checkbox/snippets/checkbox-checked-disabled.html' %}
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="test-section" id="radio">
+    {{ section.header('Radio') }}
+    <div class="test-section__panel">
+      <form action="#">
+        <div class="aui-grid">
+          <div class="aui-cell aui-cell--6">
+            <h3 class="test-section__headline">Default and Checked</h3>
+          </div>
+          <div class="aui-cell aui-cell--6">
+            <h3 class="test-section__headline">Disabled states</h3>
+          </div>
+          <div class="aui-cell aui-cell--6 trailer-4">
+            {% include 'radio/snippets/radio.html' %}
+          </div>
+          <div class="aui-cell aui-cell--6 trailer-4">
+            {% include 'radio/snippets/radio-disabled.html' %}
+          </div>
+          <div class="aui-cell aui-cell--6 trailer-4">
+            {% include 'radio/snippets/radio-checked.html' %}
+          </div>
+          <div class="aui-cell aui-cell--6 trailer-4">
+            {% include 'radio/snippets/radio-checked-disabled.html' %}
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="test-section" id="fieldset-radios">
+    {{ section.header('Fieldset with Radios') }}
+    <div class="test-section__panel">
+      <form action="#">
+        {% include 'fieldset/snippets/fieldset-radios.html' %}
+        <h3 class="test-section__headline">Invalid state</h3>
+        {% include 'fieldset/snippets/fieldset-radios-invalid.html' %}
+      </form>
+    </div>
+  </section>
+
+  <section class="test-section" id="slider">
+    {{ section.header('Slider') }}
+    <div class="test-section__panel">
+      <form action="#">
+        {% include 'slider/snippets/slider.html' %}
+        <h3 class="test-section__headline">Disabled state</h3>
+        {% include 'slider/snippets/slider-disabled.html' %}
+        <h3 class="test-section__headline">Slider with text output</h3>
+        {% include 'slider/snippets/slider-output.html' %}
+        <h3 class="test-section__headline">Range Slider</h3>
+        {% include 'slider/snippets/slider-range.html' %}
+        <h3 class="test-section__headline">Range Slider disabled state</h3>
+        {% include 'slider/snippets/slider-range-disabled.html' %}
+      </form>
+    </div>
+  </section>
+
+  <section class="test-section" id="alignment-test">
+    {{ section.header('Alignment Test') }}
+    <div class="test-section__panel">
+      <form action="#">
+        <div class="aui-grid">
+          <div class="aui-cell aui-cell--4">
+            {% include 'textfield/snippets/textfield-floating-label.html' %}
+          </div>
+          <div class="aui-cell aui-cell--4">
+            {% include 'select/snippets/select.html' %}
+          </div>
+          <div class="aui-cell aui-cell--4">
+            {% include 'dropdown/snippets/dropdown.html' %}
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+{% endblock %}

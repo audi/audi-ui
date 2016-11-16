@@ -1,0 +1,39 @@
+{% extends 'pages/_layouts/page-color.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="slidernav">
+    {{ section.header('Slidernav') }}
+    <div class="test-section__panel">
+      <div>
+        {% include 'slidernav/snippets/slidernav.html' %}
+      </div>
+      <h3 class="test-section__headline">Image theme with shadow</h3>
+      <div class="leader-padding-60 trailer-padding-2 align-center" style="background: no-repeat center/cover url('http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/gallery-1280x720-4.jpg');">
+        {% include 'slidernav/snippets/slidernav-image.html' %}
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section" id="pager">
+    {{ section.header('Pager') }}
+    <div class="test-section__panel">
+      <h3 class="test-section__headline">Normal Pager</h3>
+      {% include 'pager/snippets/pager.html' %}
+      <h3 class="test-section__headline">Minimal Pager</h3>
+      {% include 'pager/snippets/pager-minimal.html' %}
+      <h3 class="test-section__headline">Pager with pagination</h3>
+      {% include 'pager/snippets/pager-pagination.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="pagination">
+    {{ section.header('Pagination') }}
+    <div class="test-section__panel">
+      {% include 'pagination/snippets/pagination.html' %}
+    </div>
+  </section>
+
+{% endblock %}

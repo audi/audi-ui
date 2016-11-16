@@ -1,0 +1,95 @@
+.aui-textfield {
+  /**
+   * Theme: light
+   */
+  &.aui-theme-light {
+    $aui-textfield-color: $aui-color-gray95;
+    $aui-textfield-color-secondary: rgba(#fff, 0.5);
+    $aui-textfield-border: rgba(#fff, 0.5);
+    $aui-textfield-border-hover: rgba(#fff, 0.8);
+    $aui-textfield-border-focus: rgba(#fff, 0.8);
+    $aui-textfield-border-dirty: rgba(#fff, 0.8);
+    $aui-textfield-valid-tick-color: rgba(#fff, 0.6);
+
+    stroke: $aui-textfield-color;
+
+    .aui-textfield__field {
+      border-color: $aui-textfield-border;
+    }
+
+    .aui-textfield__input {
+      color: $aui-field-placeholder-color-light;
+    }
+
+    .aui-textfield__label {
+      color: $aui-field-placeholder-color-light;
+    }
+
+    .aui-textfield__focus-line {
+      background: $aui-textfield-border-hover;
+    }
+
+    .aui-textfield__counter,
+    .aui-textfield__description,
+    .aui-textfield__error,
+    .aui-textfield__valid {
+      color: $aui-textfield-color-secondary;
+    }
+
+    .aui-textfield__valid {
+      &::before {
+        background: url('data:image/svg+xml,#{aui-svg-tick($aui-textfield-valid-tick-color)}') center center no-repeat;
+      }
+    }
+
+    .aui-textfield__error {
+      color: $aui-field-error-color;
+    }
+
+    /**
+     * States
+     */
+
+    // Hover state
+    &:not(.is-disabled):not(.is-invalid) {
+      .aui-textfield__field:hover {
+        border-bottom-color: $aui-textfield-border-hover;
+      }
+    }
+
+    // Focus state
+    &.is-focused {
+      .aui-textfield__field {
+        border-bottom-color: $aui-textfield-border-focus;
+      }
+    }
+
+    // Dirty state
+    &.is-dirty {
+      .aui-textfield__field {
+        border-bottom-color: $aui-textfield-border-dirty;
+      }
+      .aui-textfield__input {
+        color: $aui-textfield-color;
+      }
+    }
+
+    // Invalid state
+    &.is-invalid {
+      &,
+      &:not(.is-dirty) .aui-textfield__input,
+      .aui-textfield__counter,
+      .aui-textfield__label {
+        color: $aui-field-error-color;
+      }
+
+      .aui-textfield__field {
+        border-color: $aui-field-error-color;
+      }
+
+      .aui-textfield__focus-line {
+        background: $aui-field-error-color;
+      }
+    }
+  }
+}

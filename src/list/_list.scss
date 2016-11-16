@@ -1,0 +1,40 @@
+$aui-list-style-position: unit(5) !default;
+
+.aui-list {
+  counter-reset: li;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+  @include aui-responsive-type(0, 1.5);
+
+  &__item {
+    margin-left: $aui-list-style-position;
+
+    & + & {
+      margin-top: unit(3);
+    }
+
+    &::before {
+      display: inline-block;
+      width: $aui-list-style-position;
+      margin-left: #{$aui-list-style-position * -1};
+      color: rgba(#000, 0.3);
+    }
+  }
+
+  &--arrow &__item::before {
+    content: '›';
+  }
+
+  &--number &__item::before {
+    content: counter(li);
+    counter-increment: li;
+  }
+
+}
+
+.aui-color-text-light {
+  .aui-list__item::before {
+    color: rgba(#fff, 0.6);
+  }
+}

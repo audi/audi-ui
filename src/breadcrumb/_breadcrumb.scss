@@ -1,0 +1,64 @@
+.aui-breadcrumb {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  padding-top: unit(1);
+  color: rgba(#000, .5);
+  font-size: rem(11);
+  line-height: unit(4);
+  font-weight: $aui-font-weight-normal;
+
+  &__items {
+    // In order to make element scrollable:
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    // Reset list styles:
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    max-width: 10em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    // Current page
+    &:last-child {
+      color: rgba(#000, 1);
+      max-width: 22em;
+    }
+  }
+
+  // Divider
+  &__item + &__item::before {
+    content: '';
+    display: inline-block;
+    margin-left: .5em;
+    margin-right: .7em;
+    width: rem(5);
+    height: rem(8);
+    background: url('data:image/svg+xml,#{aui-svg-breadcrumb-divider(rgba(#000, .5))}') center center no-repeat;
+  }
+
+  &__action {
+    transition: color .15s linear;
+  }
+
+  &__action:hover {
+    color: #000;
+  }
+
+  // Added by JS, when element.offsetWidth > element.scrollWidth
+  &.is-oversized::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(to right, #ffffff 5%, rgba(#ffffff, 0) 100%);
+  }
+}

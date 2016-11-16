@@ -1,0 +1,18 @@
+.aui-fieldset {
+  /**
+   * Theme: light
+   */
+  &.aui-theme-light {
+    color: $aui-field-placeholder-color-light;
+
+    &.aui-fieldset--selects .aui-fieldset__legend,
+    &.aui-fieldset--textfields .aui-fieldset__legend {
+      color: $aui-color-gray95;
+    }
+
+    &.is-invalid .aui-fieldset__error,
+    &.is-invalid .aui-fieldset__legend {
+      color: $aui-color-invalid;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.aui-switch {
+  /**
+   * Theme: light
+   */
+  &.aui-theme-light {
+    $aui-switch-color-text: $aui-color-gray95;
+    $aui-switch-color-text-hover: $aui-color-white;
+    $aui-switch-color-text-inactive: rgba(#fff, 0.5);
+    $aui-switch-color-track-border: rgba(#fff, 0.5);
+    $aui-switch-color-track-border-hover: rgba(#fff, 1);
+    $aui-switch-color-thumb: rgba(#fff, 0.1);
+    $aui-switch-color-thumb-active: rgba(#fff, 0.8);
+
+    .aui-switch__text {
+      color: $aui-switch-color-text;
+    }
+
+    .aui-switch__track {
+      border-color: $aui-switch-color-track-border;
+    }
+
+    .aui-switch__thumb {
+      background: $aui-switch-color-thumb;
+    }
+
+    &.aui-switch--equal {
+      .aui-switch__text--right {
+        color: $aui-switch-color-text-inactive;
+      }
+
+      .aui-switch__thumb {
+        background: $aui-switch-color-thumb-active;
+      }
+    }
+
+    // Hover state
+    &:hover:not(.is-disabled) {
+      .aui-switch__text {
+        color: $aui-switch-color-text-hover;
+      }
+
+      .aui-switch__track {
+        border-color: $aui-switch-color-track-border-hover;
+      }
+    }
+
+    &.aui-switch--equal:hover:not(.is-disabled) .aui-switch__text--right {
+      color: $aui-switch-color-text-inactive;
+    }
+
+    &.aui-switch--equal:hover:not(.is-disabled) .aui-switch__input:checked ~ .aui-switch__text--left {
+      color: $aui-switch-color-text-inactive;
+    }
+
+    &.aui-switch--equal:hover:not(.is-disabled) .aui-switch__input:checked ~ .aui-switch__text--right {
+      color: $aui-switch-color-text-hover;
+    }
+
+    // Focus state
+    .aui-switch__input:focus ~ .aui-switch__track {
+      @include shadow-focus-light;
+    }
+
+    // Checked state
+    .aui-switch__input:checked ~ .aui-switch__track .aui-switch__thumb {
+      background: $aui-switch-color-thumb-active;
+    }
+
+    &.aui-switch--equal .aui-switch__input:checked ~ .aui-switch__text--left {
+      color: $aui-switch-color-text-inactive;
+    }
+
+    &.aui-switch--equal .aui-switch__input:checked ~ .aui-switch__text--right {
+      color: $aui-switch-color-text;
+    }
+  }
+}

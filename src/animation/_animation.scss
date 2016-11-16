@@ -1,0 +1,11 @@
+.aui-animation {
+  &-morph-in,
+  &-morph-out {
+    transition-timing-function: $aui-easing;
+    transition-duration: .6s;
+  }
+}
+
+.aui-no-transition {
+  transition: none !important;
+}

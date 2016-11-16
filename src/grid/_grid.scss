@@ -1,0 +1,51 @@
+// Grid layout
+.aui-layout {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $aui-grid-container-offset;
+  padding-right: $aui-grid-container-offset;
+}
+
+// Grid container
+.aui-grid {
+  margin-left: #{$aui-grid-gutters * -1};
+  box-sizing: border-box;
+
+  // Clearfix
+  &::after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+}
+
+// Grid cells
+.aui-cell {
+  float: left;
+  width: 100%;
+  padding-left: $aui-grid-gutters;
+
+  @for $i from 1 through $aui-grid-columns {
+    &--#{$i} {
+      width: 100% / $aui-grid-columns * $i;
+    }
+  }
+}
+
+// Nested grids
+.aui-grid {
+  @for $nested from 2 through $aui-grid-columns - 1 {
+    &--nested-#{$nested} {
+      .aui-cell {
+        $width-of-twelve: $aui-grid-columns / $nested * 100%;
+        width: $width-of-twelve;
+
+        @for $i from 1 through $aui-grid-columns {
+          &--#{$i} {
+            width: $width-of-twelve / $aui-grid-columns * $i;
+          }
+        }
+      }
+    }
+  }
+}

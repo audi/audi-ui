@@ -1,0 +1,74 @@
+{% extends 'pages/_layouts/page.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="alert">
+    {{ section.header('Alert Component') }}
+    <div class="test-section__panel">
+      <ul class="leader-padding-10 trailer-padding-10">
+        <li>
+          <a class="aui-textlink" href="alert-sticky.html" target="_blank">Sticky Alert</a>
+        </li>
+        <li>
+          <a class="aui-textlink" href="alert-animate.html" target="_blank">Animate Alert</a>
+        </li>
+        <li>
+          <a class="aui-textlink" href="alert-success.html" target="_blank">Alert "success" status</a>
+        </li>
+        <li>
+          <a class="aui-textlink" href="alert-warning.html" target="_blank">Alert "warning" status</a>
+        </li>
+        <li>
+          <a class="aui-textlink" href="alert-danger.html" target="_blank">Alert "danger" status</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="test-section" id="notification">
+    {{ section.header('Notification Component') }}
+    <div class="test-section__panel">
+      (See top right corner.)
+      <div class="aui-notification-container" id="notifications">
+        {% include 'notification/snippets/notification.html' %}
+        {% include 'notification/snippets/notification.html' %}
+        {% include 'notification/snippets/notification.html' %}
+        {% include 'notification/snippets/notification.html' %}
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section" id="badge">
+    {{ section.header('Badge Component') }}
+    <div class="test-section__panel">
+      <h3 class="test-section__headline">Small, default, small text, success, warning and danger badges</h3>
+      {% include 'badge/snippets/badge-small.html' %}
+      {% include 'badge/snippets/badge.html' %}
+      {% include 'badge/snippets/badge-small-text.html' %}
+      {% include 'badge/snippets/badge-success.html' %}
+      {% include 'badge/snippets/badge-warning.html' %}
+      {% include 'badge/snippets/badge-danger.html' %}
+      <h3 class="test-section__headline">Badges on black</h3>
+      <div class="leader-padding-2 trailer-padding-2 aui-color-black align-center">
+        <span class="aui-badge aui-color-white aui-color-text-dark">
+          99
+        </span>
+        {% include 'badge/snippets/badge-danger.html' %}
+      </div>
+      <h3 class="test-section__headline">Show/hide badge</h3>
+      {% include 'badge/snippets/badge-hidden.html' %}
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block javascript %}
+  <script type="text/javascript">
+    var hiddenBadge = $('.aui-badge.is-hidden');
+    setInterval(function () {
+      hiddenBadge.toggleClass('is-hidden');
+    }, 3000);
+  </script>
+{% endblock %}

@@ -1,0 +1,24 @@
+.aui-dropzone {
+  $aui-dropzone-background: rgba(#000, .9);
+  $aui-dropzone-border: rgba(#fff, .2);
+  $aui-dropzone-border-active: rgba(#fff, .8);
+
+  &.aui-theme-light {
+    color: $aui-color-light;
+    border-color: $aui-dropzone-border;
+
+    &.is-active,
+    &:hover {
+      border-color: $aui-dropzone-border-active;
+    }
+
+    &.aui-dropzone--fullpage {
+      background: $aui-dropzone-background;
+
+      // Indented broder
+      &::after {
+        border-color: $aui-dropzone-border-active;
+      }
+    }
+  }
+}

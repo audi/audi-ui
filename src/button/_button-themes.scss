@@ -1,0 +1,118 @@
+.aui-button {
+
+  $aui-button-color: $aui-color-white;
+  $aui-button-color-hover: $aui-color-gray90;
+  $aui-button-color-primary: $aui-color-black;
+
+  $aui-button-border-color: $aui-color-white;
+  $aui-button-border-color-hover: $aui-color-gray80;
+
+  $aui-button-background: $aui-color-white;
+  $aui-button-background-hover: $aui-color-gray90;
+
+  &.aui-theme-light {
+    &.is-active,
+    &:active,
+    &:hover {
+      color: $aui-button-color-hover;
+      stroke: $aui-button-color-hover;
+      fill: $aui-button-color-hover;
+    }
+
+    &,
+    &.is-disabled,
+    &:disabled {
+      color: $aui-button-color;
+      stroke: $aui-button-color;
+      fill: $aui-button-color;
+    }
+
+    &.is-disabled,
+    &:disabled {
+      opacity: .30;
+    }
+  }
+
+  &--icon.aui-theme-light,
+  &--primary.aui-theme-light,
+  &--secondary.aui-theme-light {
+    &:focus {
+      @include shadow-focus-light;
+    }
+
+    &.is-disabled,
+    &:disabled,
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &--primary.aui-theme-light,
+  &--floating.aui-theme-light {
+    &,
+    &.is-active,
+    &:active,
+    &:hover {
+      color: $aui-button-color-primary;
+      stroke: $aui-button-color-primary;
+      fill: $aui-button-color-primary;
+    }
+
+    &.is-disabled,
+    &:disabled {
+      color: rgba(#000, 0.5);
+      stroke: rgba(#000, 0.5);
+      fill: rgba(#000, 0.5);
+    }
+
+    &.is-active,
+    &:active,
+    &:hover {
+      border-color: $aui-button-background-hover;
+      background-color: $aui-button-background-hover;
+    }
+
+    &,
+    &.is-disabled,
+    &:disabled {
+      border-color: $aui-button-background;
+      background-color: $aui-button-background;
+    }
+  }
+
+  &--secondary.aui-theme-light {
+    &.is-active,
+    &:active,
+    &:hover {
+      border-color: $aui-button-border-color-hover;
+    }
+
+    &,
+    &.is-disabled,
+    &:disabled {
+      border-color: $aui-button-border-color;
+    }
+  }
+
+  &--text.aui-theme-light {
+    &::after {
+      background-image: url('data:image/svg+xml,#{aui-svg-arrow($aui-button-color)}');
+    }
+
+    &:hover::after {
+      background-image: url('data:image/svg+xml,#{aui-svg-arrow($aui-button-color-hover)}');
+    }
+  }
+
+  &--floating.aui-theme-light {
+    &,
+    &:focus,
+    &:hover {
+      @include shadow-dark;
+    }
+  }
+
+  &--fixed.aui-theme-light {
+    @include shadow-dark;
+  }
+}

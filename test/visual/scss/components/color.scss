@@ -1,0 +1,15 @@
+.aui-color {
+  &-image,
+  &-imagedark {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  &-image {
+    background-image: url('../content/image.jpg');
+  }
+  &-imagedark {
+    background-image: url('../content/image-dark.jpg');
+  }
+}

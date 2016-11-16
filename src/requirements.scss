@@ -1,0 +1,49 @@
+// The Audi-UI Kit is made to work alongside a CSS cross browser normalization.
+// Our suggestion to do so is Normalize.css. It makes browsers render all
+// elements more consistently and in line with modern standards. It precisely
+// targets only the styles that need normalizing.
+// https://necolas.github.io/normalize.css/
+@import '../node_modules/normalize.css/normalize';
+
+// The Audi UI Kit assumes {box-sizing: border-box}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  // For a better rendering of the Audi Type:
+   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Additional resets:
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+table {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+i,
+em {
+  // Because there's no italic font style of Audi Type
+  font-style: normal;
+}

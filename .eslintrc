@@ -1,0 +1,64 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jquery": true
+  },
+  "ecmaFeatures": {
+    "classes": true,
+    "globalReturn": true,
+    "modules": true
+  },
+  "rules": {
+    "no-debugger": 1,
+    "eqeqeq": 1,
+    "key-spacing": 0,
+    "new-cap": 0,
+    "strict": [2, "global"],
+    "no-underscore-dangle": 0,
+    "no-use-before-define": 0,
+    "eol-last": 0,
+    "quotes": 0,
+    "semi": 0,
+    "space-infix-ops": 0,
+    "no-trailing-spaces": 0,
+    "no-multi-spaces": 0,
+    "no-alert": 0,
+    "no-undef": 2,
+    "no-unused-vars": [1, {
+      "vars": "local",
+      "args": "none"
+    }],
+    "valid-jsdoc": [1, {
+      "prefer": {
+        "arg": "param",
+        "argument": "param",
+        "class": "constructor",
+        "return": "returns",
+        "virtual": "abstract"
+      },
+      # "preferType": {
+      #   "Boolean": "boolean",
+      #   "Number": "number",
+      #   "object": "Object",
+      #   "array": "Array",
+      #   "String": "string"
+      # },
+      "requireReturn": false
+    }]
+  },
+  "globals": {
+    "document": false,
+    "escape": false,
+    "navigator": false,
+    "unescape": false,
+    "window": true,
+    "describe": true,
+    "before": true,
+    "it": true,
+    "expect": true,
+    "sinon": true
+  }
+}
