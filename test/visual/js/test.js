@@ -150,10 +150,9 @@ fontFaceObserverScreen.load().then(function() {
   alertComponents.forEach(component => {
     component.update();
   });
-  console.log('Screen loaded');
 }, function() {
   // Error handling: Font is not available or timeout.
-  console.log('Warning: AudiTypeScreen not available.');
+  console.warn('Warning: AudiTypeScreen not available.');
 });
 
 let fontFaceObserverExtended = new FontFaceObserver('AudiTypeExtended');
@@ -161,10 +160,9 @@ fontFaceObserverExtended.load().then(function() {
   navComponents.forEach(component => {
     component.update();
   });
-  console.log('Extended loaded')
 }, function() {
   // Error handling: Font is not available or timeout.
-  console.log('Warning: AudiTypeScreen not available.');
+  console.warn('Warning: AudiTypeExtended not available.');
 });
 
 
