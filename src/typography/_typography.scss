@@ -5,9 +5,6 @@ html {
 body {
   font-family: $aui-font-default;
   font-weight: $aui-font-weight-light;
-  // @include typo-body;
-  // font-size: 16px;
-  // line-height: 28px;
   color: $aui-color-body;
 }
 
@@ -91,13 +88,6 @@ body {
 
 .aui-small {
   @include aui-responsive-type(-2, 1.5);
-  color: rgba(#000, 0.4);
-}
-
-.aui-color-text-light {
-  .aui-small {
-    color: rgba(#fff, 0.6);
-  }
 }
 
 .aui-blockquote {

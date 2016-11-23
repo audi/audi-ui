@@ -3789,8 +3789,7 @@ body {
 
 .aui-small {
   font-size: 12px;
-  line-height: 20px;
-  color: rgba(0, 0, 0, 0.4); }
+  line-height: 20px; }
   @media (min-width: 740px) {
     .aui-small {
       font-size: 12px;
@@ -3803,9 +3802,6 @@ body {
     .aui-small {
       font-size: 13px;
       line-height: 20px; } }
-
-.aui-color-text-light .aui-small {
-  color: rgba(255, 255, 255, 0.6); }
 
 .aui-blockquote {
   margin: 0;
