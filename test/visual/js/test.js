@@ -120,10 +120,6 @@ if (document.getElementById('change-color')) {
     })
     .addClass('aui-color-text-' + textColors[val]);
 
-    $('.test-section .aui-table').toggleClass('is-inverted', invert);
-    $('.test-section .aui-table').toggleClass('aui-table--silver', val === 'silver');
-    $('.test-section .aui-table').toggleClass('aui-table--warmsilver', val === 'warmsilver');
-
     $('.test-section .aui-spinner').toggleClass('is-inverted', invert);
     $('.test-section .aui-progress').toggleClass('is-inverted', invert);
 
@@ -158,6 +154,7 @@ if (document.getElementById('change-color')) {
       'checkbox',
       'fieldset',
       'select',
+      'table',
     ];
     for (var i = 0; i < componentsTextWithTheme.length; i++) {
       component = componentsTextWithTheme[i];

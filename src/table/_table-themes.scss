@@ -1,0 +1,30 @@
+$aui-table-border-color-light: $aui-color-white !default;
+$aui-table-background-color-light: rgba(#fff, .2);
+
+.aui-table {
+  /**
+   * Theme: light
+   */
+  &.aui-theme-light {
+
+    table {
+      border-color: $aui-table-border-color-light;
+    }
+
+    th {
+      border-top-color: $aui-table-border-color-light;
+    }
+
+    td {
+      border-top-color: $aui-table-border-color-light;
+    }
+
+    .aui-table__cell--colored {
+      background-color: $aui-table-background-color-light;
+    }
+
+    .aui-table__cell--last-row td::after {
+      border-color: $aui-table-border-color-light;
+    }
+  }
+}

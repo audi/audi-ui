@@ -3324,7 +3324,7 @@ body::before {
   .aui-table td {
     border-top: 1px solid #000000; }
   .aui-table__cell--colored {
-    background-color: rgba(0, 0, 0, 0.05); }
+    background-color: rgba(0, 0, 0, 0.1); }
   .aui-table__cell--last-row td {
     position: relative; }
     .aui-table__cell--last-row td::after {
@@ -3340,16 +3340,6 @@ body::before {
   .aui-table--padded th,
   .aui-table--padded td {
     padding: 1rem 0.75rem; }
-  .aui-table.is-inverted table {
-    border-color: #ffffff; }
-  .aui-table.is-inverted th {
-    border-top-color: #ffffff; }
-  .aui-table.is-inverted td {
-    border-top-color: #ffffff; }
-  .aui-table.is-inverted .aui-table__cell--colored {
-    background-color: rgba(255, 255, 255, 0.15); }
-  .aui-table.is-inverted .aui-table__cell--last-row td::after {
-    border-color: #ffffff; }
 
 .aui-textfield {
   display: block;
@@ -4507,6 +4497,21 @@ body {
     color: rgba(255, 255, 255, 0.5); }
   .aui-switch.aui-theme-light.aui-switch--equal .aui-switch__input:checked ~ .aui-switch__text--right {
     color: #f2f2f2; }
+
+.aui-table {
+  /**
+   * Theme: light
+   */ }
+  .aui-table.aui-theme-light table {
+    border-color: #ffffff; }
+  .aui-table.aui-theme-light th {
+    border-top-color: #ffffff; }
+  .aui-table.aui-theme-light td {
+    border-top-color: #ffffff; }
+  .aui-table.aui-theme-light .aui-table__cell--colored {
+    background-color: rgba(255, 255, 255, 0.2); }
+  .aui-table.aui-theme-light .aui-table__cell--last-row td::after {
+    border-color: #ffffff; }
 
 .aui-textfield {
   /**

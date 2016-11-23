@@ -1,13 +1,10 @@
-// TODO Add scroll shadow, http://codepen.io/dbushell/pen/wGaamR
-// TODO Add stacked responsive pattern as CodePen http://codepen.io/maddesigns/pen/pHqnt
-
-$aui-table-border-width-title: 3px;
-$aui-table-border-width: 1px;
-$aui-table-border-color: $aui-color-black;
-$aui-table-background-color: $aui-color-white;
-$aui-table-gutters: unit(2);
-$aui-table-cell-padding-x: unit(3);
-$aui-table-cell-padding-y: unit(4);
+$aui-table-border-width-title: 3px !default;
+$aui-table-border-width: 1px !default;
+$aui-table-border-color: $aui-color-black !default;
+$aui-table-background-color: rgba(#000, .1) !default;
+$aui-table-gutters: unit(2) !default;
+$aui-table-cell-padding-x: unit(3) !default;
+$aui-table-cell-padding-y: unit(4) !default;
 
 .aui-table {
   width: calc(100% + #{2 * $aui-table-gutters});
@@ -47,7 +44,7 @@ $aui-table-cell-padding-y: unit(4);
   }
 
   &__cell--colored {
-    background-color: rgba(#000, .05);
+    background-color: $aui-table-background-color;
   }
 
   &__cell--last-row {
@@ -76,32 +73,6 @@ $aui-table-cell-padding-y: unit(4);
     th,
     td {
       padding: $aui-table-cell-padding-y $aui-table-cell-padding-x;
-    }
-  }
-
-
-  &.is-inverted {
-    $aui-table-border-color: $aui-color-white;
-    $aui-table-background-color: $aui-color-black;
-
-    table {
-      border-color: $aui-table-border-color;
-    }
-
-    th {
-      border-top-color: $aui-table-border-color;
-    }
-
-    td {
-      border-top-color: $aui-table-border-color;
-    }
-
-    .aui-table__cell--colored {
-      background-color: rgba(#fff, .15);
-    }
-
-    .aui-table__cell--last-row td::after {
-      border-color: $aui-table-border-color;
     }
   }
 }
