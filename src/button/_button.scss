@@ -30,6 +30,7 @@ $aui-button-background-hover: $aui-color-gray20 !default;
     position: relative;
     padding: em(13, $aui-button-font-size) 0;
     outline: 0;
+    font-family: inherit;
     font-size: rem($aui-button-font-size);
     font-weight: $aui-font-weight-normal;
     line-height: unit(6);
