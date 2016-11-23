@@ -1,16 +1,12 @@
 $aui-button-font-size: 15 !default;
 $aui-button-icon-margin: 8 !default;
-
 $aui-button-floating-offset-x: 1.5rem !default;
 $aui-button-floating-offset-y: 1.5rem !default;
-
 $aui-button-color: $aui-color-black !default;
 $aui-button-color-hover: $aui-color-gray30 !default;
 $aui-button-color-primary: $aui-color-white !default;
-
 $aui-button-border-color: $aui-color-black !default;
 $aui-button-border-color-hover: $aui-color-gray50 !default;
-
 $aui-button-background: $aui-color-black !default;
 $aui-button-background-hover: $aui-color-gray20 !default;
 
@@ -28,7 +24,7 @@ $aui-button-background-hover: $aui-color-gray20 !default;
     cursor: pointer;
     display: inline-block;
     position: relative;
-    padding: em(13, $aui-button-font-size) 0;
+    padding: em(13, $aui-button-font-size) 0 em(12, $aui-button-font-size);
     outline: 0;
     font-family: inherit;
     font-size: rem($aui-button-font-size);
@@ -38,7 +34,7 @@ $aui-button-background-hover: $aui-color-gray20 !default;
     text-decoration: none;
     white-space: normal;
     vertical-align: middle;
-    transition: all .3s $aui-easing;
+    transition: all 0.3s $aui-easing;
     @include aui-remove-tap-highlight;
   }
 
@@ -55,7 +51,7 @@ $aui-button-background-hover: $aui-color-gray20 !default;
   &.is-disabled,
   &:disabled {
     cursor: not-allowed;
-    opacity: .30;
+    opacity: 0.30;
   }
 
   &--bold {
@@ -132,25 +128,26 @@ $aui-button-background-hover: $aui-color-gray20 !default;
   }
 
   &--text {
-    &::after {
+    .aui-button__text::after {
       content: '';
       display: inline-block;
       position: relative;
       top: em(1, $aui-button-font-size);
-      width: .5em;
-      height: .8125em;
+      margin-left: em(4, $aui-button-font-size);
+      width: 0.5em;
+      height: 0.8125em;
       background: center no-repeat url('data:image/svg+xml,#{aui-svg-arrow($aui-button-color)}');
       background-size: contain;
-      transition: transform .2s ease;
+      transition: transform 0.2s ease;
     }
 
-    &:hover::after {
+    &:hover .aui-button__text::after {
       background-image: url('data:image/svg+xml,#{aui-svg-arrow($aui-button-color-hover)}');
       transform: translateX(5px);
     }
 
-    &.is-disabled::after,
-    &:disabled::after {
+    &.is-disabled .aui-button__text::after,
+    &:disabled .aui-button__text::after {
       transform: none;
     }
   }
@@ -243,32 +240,30 @@ $aui-button-background-hover: $aui-color-gray20 !default;
 
   &__text {
     display: inline-block;
+    position: relative;
     text-align: left;
+    vertical-align: middle;
   }
 
   // Child elements
-  &__text-with-icon {
-    $_padding: em($aui-icon-size-small + $aui-button-icon-margin, $aui-button-font-size);
-    display: inline-block;
+  &__text-icon {
+    $_margin: em($aui-button-icon-margin, $aui-button-font-size);
+    display: inline-flex;
+    align-items: center;
     position: relative;
-    padding-left: $_padding;
     text-align: left;
+    vertical-align: middle;
 
     .audiicon {
       display: inline-block;
-      position: absolute;
-      top: 0;
-      left: 0;
     }
 
-    &--right {
-      padding-left: 0;
-      padding-right: $_padding;
+    .aui-button__text:first-child {
+      margin-right: $_margin;
     }
 
-    &--right .audiicon {
-      left: auto;
-      right: 0;
+    .aui-button__text:not(:first-child) {
+      margin-left: $_margin;
     }
   }
 
