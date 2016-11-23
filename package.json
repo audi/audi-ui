@@ -27,6 +27,7 @@
     "dom4": "^1.8.3",
     "eslint": "1.7.2",
     "eslint-loader": "1.1.0",
+    "fontfaceobserver": "^2.0.5",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-csso": "^2.0.0",

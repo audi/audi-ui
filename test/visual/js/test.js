@@ -4,11 +4,56 @@ import 'dom4';
 // Add Babel polyfill for ES2015, https://babeljs.io/docs/usage/polyfill/
 import 'babel-polyfill';
 
+//
+import FontFaceObserver from 'fontfaceobserver';
+
 // Import all components from Audi UI library
-import aui, {Modal, Progress, Spinner} from '../../../src/index';
+import {
+  Alert,
+  Breadcrumb,
+  Checkbox,
+  Dropdown,
+  Flyout,
+  Header,
+  Modal,
+  Nav,
+  Notification,
+  Pagination,
+  Player,
+  Popover,
+  Progress,
+  Radio,
+  Response,
+  Select,
+  Slider,
+  Slidernav,
+  Spinner,
+  Textfield,
+  Tooltip
+} from '../../../src/index';
 
 // Upgrade all Audi UI components
-aui.upgradeAllElements();
+let alertComponents = Alert.upgradeElements();
+let breadcrumbComponents = Breadcrumb.upgradeElements();
+Checkbox.upgradeElements();
+Dropdown.upgradeElements();
+Flyout.upgradeElements();
+Header.upgradeElements();
+Modal.upgradeElements();
+let navComponents = Nav.upgradeElements();
+Notification.upgradeElements();
+let paginationComponents = Pagination.upgradeElements();
+Player.upgradeElements();
+Popover.upgradeElements();
+let progressComponents = Progress.upgradeElements();
+Radio.upgradeElements();
+Response.upgradeElements();
+Select.upgradeElements();
+Slider.upgradeElements();
+Slidernav.upgradeElements();
+let spinnerComponents = Spinner.upgradeElements();
+Textfield.upgradeElements();
+Tooltip.upgradeElements();
 
 // Import test stuff:
 import URI from 'urijs';
@@ -43,8 +88,6 @@ Array.from(document.querySelectorAll('[data-svg-sprite]')).forEach(element => {
 // ----------------------------------------------------------------------------
 // Demo Spinner and Progress components:
 // ----------------------------------------------------------------------------
-let spinnerComponents = Spinner.upgradeElements();
-let progressComponents = Progress.upgradeElements();
 let progress = 0;
 
 function demoLoaderProgress() {
@@ -89,6 +132,39 @@ Array.from(document.querySelectorAll('[data-dismiss="modal"]')).forEach(element 
   element.addEventListener('click', (event) => {
     Modal.closeCurrentModal();
   });
+});
+
+
+
+// ----------------------------------------------------------------------------
+// Update components after font 'Audi Type' was loaded:
+// ----------------------------------------------------------------------------
+let fontFaceObserverScreen = new FontFaceObserver('AudiTypeScreen');
+fontFaceObserverScreen.load().then(function() {
+  paginationComponents.forEach(component => {
+    component.update();
+  });
+  breadcrumbComponents.forEach(component => {
+    component.update();
+  });
+  alertComponents.forEach(component => {
+    component.update();
+  });
+  console.log('Screen loaded');
+}, function() {
+  // Error handling: Font is not available or timeout.
+  console.log('Warning: AudiTypeScreen not available.');
+});
+
+let fontFaceObserverExtended = new FontFaceObserver('AudiTypeExtended');
+fontFaceObserverExtended.load().then(function() {
+  navComponents.forEach(component => {
+    component.update();
+  });
+  console.log('Extended loaded')
+}, function() {
+  // Error handling: Font is not available or timeout.
+  console.log('Warning: AudiTypeScreen not available.');
 });
 
 
