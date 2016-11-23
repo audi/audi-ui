@@ -1,7 +1,5 @@
 $aui-modal-close-size: 45px !default; // sync with JS
 $aui-modal-close-size-large: 81px !default; // sync with JS
-// $aui-modal-content-padding-x: 8.75% !default;
-// $aui-modal-content-padding-x: 14% !default;
 $aui-modal-content-padding-x: $aui-grid-container-offset !default;
 $aui-modal-content-padding-y: unit(6.5) !default;
 $aui-modal-dialog-padding: unit(8) !default;
@@ -79,7 +77,6 @@ $aui-modal-max-width: 1200px !default;
   transition: opacity $aui-modal-duration $aui-easing;
 
   &__body {
-    // TODO: For ArticlePreview module of the Audi Brand Platform, we need a padding:0 version.
     display: flex;
     position: relative;
     flex: 0 1 auto;
@@ -115,15 +112,8 @@ $aui-modal-max-width: 1200px !default;
   &__content {
     flex: 0 1 auto;
     width: 100%;
-    // margin: 0;
     transform: translateY($aui-modal-content-translate-y);
     transition: transform $aui-modal-duration $aui-easing;
-  }
-
-  &--fullpage &__content,
-  &--window &__content {
-    // Vertical/ horizontal center modal content
-    margin: auto;
   }
 
   &__close {
