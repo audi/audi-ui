@@ -1847,6 +1847,7 @@ body::before {
  */
 .aui-nav--inline,
 .aui-nav--pills {
+  font-family: 'AudiTypeExtended', Verdana, Geneva, sans-serif;
   overflow: hidden;
   height: 2rem; }
   .aui-nav--inline .aui-nav__panel,
@@ -1882,7 +1883,8 @@ body::before {
   .aui-nav--inline .aui-nav__action,
   .aui-nav--pills .aui-nav__action {
     display: inline-block;
-    width: auto; }
+    width: auto;
+    font-family: inherit; }
     .aui-nav--inline .aui-nav__action.is-active,
     .aui-nav--pills .aui-nav__action.is-active {
       transition-delay: .15s; }

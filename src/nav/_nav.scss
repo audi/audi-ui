@@ -130,6 +130,7 @@ $aui-nav-dropdown-sticky-height: $aui-nav-font-size + 2* $aui-nav-dropdown-stick
  */
 .aui-nav--inline,
 .aui-nav--pills {
+  font-family: $aui-font-extended;
   overflow: hidden;
   height: $aui-nav-default-height;
 
@@ -185,6 +186,7 @@ $aui-nav-dropdown-sticky-height: $aui-nav-font-size + 2* $aui-nav-dropdown-stick
   .aui-nav__action {
     display: inline-block;
     width: auto;
+    font-family: inherit;
 
     &.is-active {
       transition-delay: .15s;
