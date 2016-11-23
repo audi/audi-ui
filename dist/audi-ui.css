@@ -129,7 +129,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07);
     z-index: 1700; }
   .aui-alert.is-open .aui-alert__content {
     transform: translateY(0); }
@@ -381,7 +381,7 @@ body::before {
   position: fixed;
   left: 0;
   bottom: 0;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05); }
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07); }
 
 .aui-button--floating {
   position: fixed;
@@ -391,7 +391,7 @@ body::before {
   height: 45px;
   padding: 0;
   z-index: 900;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05); }
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07); }
   .aui-button--floating .audiicon {
     position: absolute;
     left: -1px;
@@ -403,7 +403,7 @@ body::before {
     .aui-button--floating .audiicon-container--large {
       display: inline; }
   .aui-button--floating, .aui-button--floating:focus, .aui-button--floating:hover {
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05); }
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07); }
 
 .aui-button__text {
   display: inline-block;
@@ -545,7 +545,7 @@ body::before {
   .aui-card--action:hover, .aui-card--action:focus {
     z-index: 1;
     outline: none;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07);
     transform: translateY(-0.25rem); }
   .aui-card--cover {
     -ms-flex-direction: row;
@@ -925,7 +925,7 @@ body::before {
     width: 100%;
     background: #e6e6e6;
     opacity: 0;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07);
     transition: opacity 0.25s cubic-bezier(0.75, 0.02, 0.5, 1);
     z-index: 1; }
   .aui-dropdown__list {
@@ -1191,7 +1191,7 @@ body::before {
       max-width: 288px;
       color: #333333;
       background: #ffffff;
-      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05);
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07);
       transform: translateY(-10px); }
     .aui-flyout__panel-content {
       position: relative;
@@ -1549,7 +1549,7 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05); }
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07); }
 
 .aui-list {
   counter-reset: li;
@@ -2046,7 +2046,7 @@ body::before {
     opacity: 0;
     visibility: hidden;
     background: #e5e5e5;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07);
     transition: opacity .3s, visibility .3s;
     transition-timing-function: cubic-bezier(0.75, 0.02, 0.5, 1);
     z-index: 1002; }
@@ -2088,7 +2088,7 @@ body::before {
     background: #ffffff; }
   .aui-nav--dropdown.is-sticky .aui-nav__toggle {
     padding: 1.125rem 4.375%;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07);
     z-index: 1001; }
   .aui-nav--dropdown.is-sticky .aui-nav__toggle {
     position: fixed;
@@ -2157,7 +2157,7 @@ body::before {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07);
     transition-duration: 0.4s; }
   .aui-notification.is-closed {
     transform: translateY(0);
@@ -2652,7 +2652,7 @@ body::before {
     visibility: visible; }
   .aui-popover__content {
     position: relative;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05); }
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07); }
   .aui-popover__content:not([class^="aui-color-"]):not([class*=" aui-color-"]) {
     background-color: #ffffff; }
   .aui-popover__text {
@@ -3548,7 +3548,7 @@ body::before {
   background: #ffffff;
   visibility: hidden;
   pointer-events: none;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07);
   opacity: 0;
   color: #333333;
   transition: opacity .15s linear, visibility .15s linear;

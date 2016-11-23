@@ -73,18 +73,14 @@
 
 // Shadows
 @mixin shadow() {
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05);
-  // box-shadow: 0 0 2px 0 rgba(#ff00ff, 0.5), 0 0 40px 0 rgba(#ff00ff, 0.5);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 50px 0 rgba(0, 0, 0, 0.07);
 }
 @mixin shadow-dark() {
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1), 0 0 40px 0 rgba(0, 0, 0, 0.15);
-  // box-shadow: 0 0 2px 0 rgba(#ffff00, 0.5), 0 0 40px 0 rgba(#ffff00, 0.5);
 }
 @mixin shadow-focus() {
   box-shadow: 0 0 3px 3px rgba(#000, 0.1);
-  // box-shadow: 0 0 3px 3px rgba(#0000ff, 0.5);
 }
 @mixin shadow-focus-light() {
   box-shadow: 0 0 3px 3px rgba(#fff, 0.2);
-  // box-shadow: 0 0 3px 3px rgba(#00ffff, 0.5);
 }
