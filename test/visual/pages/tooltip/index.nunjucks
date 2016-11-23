@@ -49,8 +49,7 @@
               laboris nisi ut aliquip ex ea commodo consequat.
             </p>
             <span class="aui-tooltip aui-js-tooltip" for="sample2-tooltip">
-              <span class="aui-tooltip__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+              <span class="aui-tooltip__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
             </span>
           </div>
           <div class="aui-cell aui-cell--6">
@@ -60,8 +59,7 @@
               laborisnisi ut aliquip ex ea commodo consequat.
             </p>
             <span class="aui-tooltip aui-js-tooltip aui-tooltip--dark" for="sample2-tooltip-dark">
-              <span class="aui-tooltip__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+              <span class="aui-tooltip__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
             </span>
           </div>
         </div>
@@ -81,8 +79,7 @@
               laboris nisi ut aliquip ex ea commodo consequat.
             </p>
             <span class="aui-tooltip aui-js-tooltip" for="sample2-tooltip-image"><img class="aui-tooltip__media" src="http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/tooltip-237x158.jpg" alt=""/>
-              <span class="aui-tooltip__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+              <span class="aui-tooltip__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
             </span>
           </div>
           <div class="aui-cell aui-cell--6">
@@ -92,8 +89,7 @@
               laboris nisi ut aliquip ex ea commodo consequat.
             </p>
             <span class="aui-tooltip aui-js-tooltip aui-tooltip--dark" for="sample2-tooltip-image-dark"><img class="aui-tooltip__media" src="http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/tooltip-237x158.jpg" alt=""/>
-              <span class="aui-tooltip__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+              <span class="aui-tooltip__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
             </span>
           </div>
         </div>
