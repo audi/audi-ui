@@ -4323,7 +4323,7 @@ body {
     .aui-radio.aui-theme-light .aui-radio__box {
       border-color: rgba(255, 255, 255, 0.5); }
     .aui-radio.aui-theme-light .aui-radio__tick {
-      background: rgba(255, 255, 255, 0.1); }
+      background: rgba(255, 255, 255, 0.2); }
     .aui-radio.aui-theme-light:hover:not(.is-disabled) {
       color: #ffffff; }
       .aui-radio.aui-theme-light:hover:not(.is-disabled) .aui-radio__box {
@@ -4474,7 +4474,7 @@ body {
   .aui-switch.aui-theme-light .aui-switch__track {
     border-color: rgba(255, 255, 255, 0.5); }
   .aui-switch.aui-theme-light .aui-switch__thumb {
-    background: rgba(255, 255, 255, 0.1); }
+    background: rgba(255, 255, 255, 0.2); }
   .aui-switch.aui-theme-light.aui-switch--equal .aui-switch__text--right {
     color: rgba(255, 255, 255, 0.5); }
   .aui-switch.aui-theme-light.aui-switch--equal .aui-switch__thumb {

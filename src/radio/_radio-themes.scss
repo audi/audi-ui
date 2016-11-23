@@ -1,31 +1,32 @@
+$aui-radio-light-color-text: $aui-color-gray95 !default;
+$aui-radio-light-color-text-hover: $aui-color-white !default;
+$aui-radio-light-color-border: rgba(#fff, 0.5) !default;
+$aui-radio-light-color-border-hover: rgba(#fff, 1) !default;
+$aui-radio-light-color-tick: rgba(#fff, 0.2) !default;
+$aui-radio-light-color-tick-active: rgba(#fff, 0.8) !default;
+
 .aui-radio {
   /**
    * Theme: light
    */
   &.aui-theme-light {
-    $aui-radio-color-text: $aui-color-gray95;
-    $aui-radio-color-text-hover: $aui-color-white;
-    $aui-radio-color-border: rgba(#fff, 0.5);
-    $aui-radio-color-border-hover: rgba(#fff, 1);
-    $aui-radio-color-tick: rgba(#fff, 0.1);
-    $aui-radio-color-tick-active: rgba(#fff, 0.8);
 
-    color: $aui-radio-color-text;
+    color: $aui-radio-light-color-text;
 
     .aui-radio__box {
-      border-color: $aui-radio-color-border;
+      border-color: $aui-radio-light-color-border;
     }
 
     .aui-radio__tick {
-      background: $aui-radio-color-tick;
+      background: $aui-radio-light-color-tick;
     }
 
     // Hover state
     &:hover:not(.is-disabled) {
-      color: $aui-radio-color-text-hover;
+      color: $aui-radio-light-color-text-hover;
 
       .aui-radio__box {
-        border-color: $aui-radio-color-border-hover;
+        border-color: $aui-radio-light-color-border-hover;
       }
     }
 
@@ -36,7 +37,7 @@
 
     // Checked state
     &.is-checked .aui-radio__tick {
-      background: $aui-radio-color-tick-active;
+      background: $aui-radio-light-color-tick-active;
     }
   }
 }
