@@ -59,17 +59,6 @@ body {
   @include aui-responsive-type(0, 1.5);
 }
 
-.aui-accentuated {
-  &::before {
-    content: '';
-    display: block;
-    margin-bottom: unit(5);
-    width: 100px;
-    height: 1px;
-    border-top: 1px solid $aui-color-black;
-  }
-}
-
 .aui-color-text-light {
   .aui-accentuated {
     &::before {

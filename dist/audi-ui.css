@@ -3746,14 +3746,6 @@ body {
       font-size: 20px;
       line-height: 32px; } }
 
-.aui-accentuated::before {
-  content: '';
-  display: block;
-  margin-bottom: 1.25rem;
-  width: 100px;
-  height: 1px;
-  border-top: 1px solid #000000; }
-
 .aui-color-text-light .aui-accentuated::before {
   border-top-color: #ffffff; }
 

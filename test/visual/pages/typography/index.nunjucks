@@ -49,8 +49,6 @@
     {{ section.header('Paragraphs') }}
     <div class="test-section__panel">
       {% include 'typography/snippets/paragraph.html'%}
-      <h3 class="test-section__headline">Accentuated</h3>
-      {% include 'typography/snippets/paragraph-accentuated.html'%}
       <h3 class="test-section__headline">Shortread</h3>
       {% include 'typography/snippets/paragraph-shortread.html'%}
       <h3 class="test-section__headline">Big text</h3>
