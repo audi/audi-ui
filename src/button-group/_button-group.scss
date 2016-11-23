@@ -57,28 +57,4 @@
       margin: 0 $button-spacing $button-spacing 0;
     }
   }
-
-  // A Button-Group, that only contains narrowly arranged Primary-Buttons
-  &--primaries {
-    $button-spacing: 1px;
-
-    margin-right: ($button-spacing * -1);
-    margin-bottom: ($button-spacing * -1);
-
-    .aui-button {
-      margin: 0 $button-spacing $button-spacing 0;
-    }
-  }
-
-  // A Button-Group, that only contains narrowly arranged Secondary-Butons
-  &--secondaries {
-    $button-spacing: -1px;
-
-    margin-right: ($button-spacing * -1);
-    margin-bottom: ($button-spacing * -1);
-
-    .aui-button {
-      margin: 0 $button-spacing $button-spacing 0;
-    }
-  }
 }

@@ -32,11 +32,4 @@
     </div>
   </section>
 
-  <section class="test-section" id="button-group-secondaries">
-    {{ section.header('Special Button Group of narrowly positioned Secondary Buttons only') }}
-    <div class="test-section__panel">
-      {% include 'button-group/snippets/button-group-secondaries.html' %}
-    </div>
-  </section>
-
 {% endblock %}

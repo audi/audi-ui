@@ -462,16 +462,6 @@ body::before {
     margin-bottom: -0.75rem; }
     .aui-button-group--icons .aui-button {
       margin: 0 0.75rem 0.75rem 0; }
-  .aui-button-group--primaries {
-    margin-right: -1px;
-    margin-bottom: -1px; }
-    .aui-button-group--primaries .aui-button {
-      margin: 0 1px 1px 0; }
-  .aui-button-group--secondaries {
-    margin-right: 1px;
-    margin-bottom: 1px; }
-    .aui-button-group--secondaries .aui-button {
-      margin: 0 -1px -1px 0; }
 
 .aui-card-grid {
   display: -ms-flexbox;
