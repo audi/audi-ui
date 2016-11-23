@@ -27,7 +27,9 @@
     {{ section.header('Popover placement') }}
     <div class="test-section__panel">
       <div>
-        <button id="sample-popover-top" class="aui-js-response aui-button aui-button--primary" type="button">Popover on top</button>
+        <button id="sample-popover-top" class="aui-js-response aui-button aui-button--primary" type="button">
+          <span class="aui-button__text">Popover on top</span>
+        </button>
         <div class="aui-popover aui-js-popover" role="tooltip" for="sample-popover-top" data-placement="top">
           <div class="aui-popover__content">
             <div class="aui-popover__text">
@@ -37,7 +39,9 @@
         </div>
       </div>
       <div class="leader-4">
-        <button id="sample-popover-right" class="aui-js-response aui-button aui-button--primary" type="button">Popover on right</button>
+        <button id="sample-popover-right" class="aui-js-response aui-button aui-button--primary" type="button">
+          <span class="aui-button__text">Popover on right</span>
+        </button>
         <div class="aui-popover aui-js-popover" role="tooltip" for="sample-popover-right" data-placement="right">
           <div class="aui-popover__content">
             <div class="aui-popover__text">
@@ -47,7 +51,9 @@
         </div>
       </div>
       <div class="leader-4">
-        <button id="sample-popover-bottom" class="aui-js-response aui-button aui-button--primary" type="button">Popover on bottom</button>
+        <button id="sample-popover-bottom" class="aui-js-response aui-button aui-button--primary" type="button">
+          <span class="aui-button__text">Popover on bottom</span>
+        </button>
         <div class="aui-popover aui-js-popover" role="tooltip" for="sample-popover-bottom" data-placement="bottom">
           <div class="aui-popover__content">
             <div class="aui-popover__text">
@@ -57,7 +63,9 @@
         </div>
       </div>
       <div class="leader-4 align-right">
-        <button id="sample-popover-left" class="aui-js-response aui-button aui-button--primary" type="button">Popover on left</button>
+        <button id="sample-popover-left" class="aui-js-response aui-button aui-button--primary" type="button">
+          <span class="aui-button__text">Popover on left</span>
+        </button>
         <div class="aui-popover aui-js-popover" role="tooltip" for="sample-popover-left" data-placement="left">
           <div class="aui-popover__content">
             <div class="aui-popover__text">

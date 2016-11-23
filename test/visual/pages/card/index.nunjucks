@@ -100,7 +100,9 @@
               </div>
               <div class="aui-card__content aui-card__content--bottom">
                 <div class="aui-button-group aui-button-group--block">
-                  <button class="aui-button aui-button--secondary aui-theme-light aui-js-response" type="button">Action</button>
+                  <button class="aui-button aui-button--secondary aui-theme-light aui-js-response" type="button">
+                    <span class="aui-button__text">Action</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -161,8 +163,12 @@
               <div class="aui-card__content aui-card__content--bottom align-right">
                 <!-- Button Group of two secondary buttons -->
                 <div class="aui-button-group">
-                  <button class="aui-js-response aui-button aui-button--secondary" type="button">Action</button>
-                  <button class="aui-js-response aui-button aui-button--secondary" type="button">Action</button>
+                  <button class="aui-js-response aui-button aui-button--secondary" type="button">
+                    <span class="aui-button__text">Action</span>
+                  </button>
+                  <button class="aui-js-response aui-button aui-button--secondary" type="button">
+                    <span class="aui-button__text">Action</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -179,7 +185,7 @@
                   24
                 </p>
                 <button class="aui-js-response aui-button aui-button--text aui-theme-light" type="button">
-                  Text Button
+                  <span class="aui-button__text">Text Button</span>
                 </button>
               </div>
             </div>

@@ -113,17 +113,17 @@
     <div class="test-section__panel">
       <div>
         <button class="aui-button aui-button--text aui-js-response" type="button">
-          Text button<br>second line
+          <span class="aui-button__text">Text button<br>second line</span>
         </button>
       </div>
       <div class="leader-4">
         <button class="aui-button aui-button--primary aui-js-response" type="button">
-          Primary button<br>second line
+          <span class="aui-button__text">Primary button<br>second line</span>
         </button>
       </div>
       <div class="leader-4">
         <button class="aui-button aui-button--secondary aui-js-response" type="button">
-          Secondary button<br>second line
+          <span class="aui-button__text">Secondary button<br>second line</span>
         </button>
       </div>
       <div class="leader-4">

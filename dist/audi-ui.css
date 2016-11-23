@@ -405,10 +405,15 @@ body::before {
   .aui-button--floating, .aui-button--floating:focus, .aui-button--floating:hover {
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.05), 0 0 40px 0 rgba(0, 0, 0, 0.05); }
 
+.aui-button__text {
+  display: inline-block;
+  text-align: left; }
+
 .aui-button__text-with-icon {
   display: inline-block;
   position: relative;
-  padding-left: 2.1333333333em; }
+  padding-left: 2.1333333333em;
+  text-align: left; }
   .aui-button__text-with-icon .audiicon {
     display: inline-block;
     position: absolute;

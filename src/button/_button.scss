@@ -240,12 +240,18 @@ $aui-button-background-hover: $aui-color-gray20 !default;
     }
   }
 
+  &__text {
+    display: inline-block;
+    text-align: left;
+  }
+
   // Child elements
   &__text-with-icon {
     $_padding: em($aui-icon-size-small + $aui-button-icon-margin, $aui-button-font-size);
     display: inline-block;
     position: relative;
     padding-left: $_padding;
+    text-align: left;
 
     .audiicon {
       display: inline-block;
