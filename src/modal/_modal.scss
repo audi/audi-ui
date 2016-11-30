@@ -167,6 +167,12 @@ $aui-modal-background-color: $aui-color-gray20 !default;
   }
 
   .aui-modal-dialog--layer {
+    padding: 0 $aui-modal-content-padding-x;
+
+    .aui-modal-dialog__body {
+      padding: $aui-modal-content-padding-y 0;
+    }
+
     .aui-modal-dialog__content {
       transform: translateY(0);
       background-color: $aui-modal-background-color;
