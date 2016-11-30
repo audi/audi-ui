@@ -1671,9 +1671,6 @@ body::before {
     width: 100%;
     transform: translateY(10px);
     transition: transform 0.4s cubic-bezier(0.75, 0.02, 0.5, 1); }
-  .aui-modal-dialog--fullpage .aui-modal-dialog__content,
-  .aui-modal-dialog--window .aui-modal-dialog__content {
-    margin: auto; }
   .aui-modal-dialog__close {
     position: fixed;
     top: 0.375rem;

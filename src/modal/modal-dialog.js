@@ -84,20 +84,30 @@ export default class ModalDialog extends Component {
 
     const small = this.createSvgNode(
       'svg', {
-        'class': 'aui-modal-close-icon-small',
-        'viewBox': `0 0 ${btnSize} ${btnSize}`
+        class: 'aui-modal-close-icon-small',
+        viewBox: `0 0 ${btnSize} ${btnSize}`
       });
-    small.innerHTML =
-      `<g transform="translate(${btnSize / 2}, ${btnSize / 2})">
-      <line x1="0" y1="-${diagonalHalf}"
-            x2="0" y2="${diagonalHalf}"
-            stroke="currentColor"
-            transform="rotate(-45, 0, 0)" />
-      <line x1="0" y1="-${diagonalHalf}"
-            x2="0" y2="${diagonalHalf}"
-            stroke="currentColor"
-            transform="rotate(45, 0, 0)" />
-      </g>`;
+    let group = this.createSvgNode(
+      'g', {
+        transform: `translate(${btnSize / 2}, ${btnSize / 2})`
+      });
+    group.appendChild(this.createSvgNode('line', {
+      x1: '0',
+      y1: -diagonalHalf,
+      x2: '0',
+      y2: diagonalHalf,
+      stroke: 'currentColor',
+      transform: 'rotate(-45, 0, 0)'
+    }));
+    group.appendChild(this.createSvgNode('line', {
+      x1: '0',
+      y1: -diagonalHalf,
+      x2: '0',
+      y2: diagonalHalf,
+      stroke: 'currentColor',
+      transform: 'rotate(45, 0, 0)'
+    }));
+    small.appendChild(group);
     container.appendChild(small);
 
     diagonalHalf = (Math.sqrt(2) * CLOSE_ICON_SIZE_LARGE) / 2;
@@ -107,17 +117,27 @@ export default class ModalDialog extends Component {
         'class': 'aui-modal-close-icon-large',
         'viewBox': `0 0 ${btnSize} ${btnSize}`
       });
-    large.innerHTML =
-      `<g transform="translate(${btnSize / 2}, ${btnSize / 2})">
-      <line x1="0" y1="-${diagonalHalf}"
-            x2="0" y2="${diagonalHalf}"
-            stroke="currentColor"
-            transform="rotate(-45, 0, 0)" />
-      <line x1="0" y1="-${diagonalHalf}"
-            x2="0" y2="${diagonalHalf}"
-            stroke="currentColor"
-            transform="rotate(45, 0, 0)" />
-      </g>`;
+    group = this.createSvgNode(
+      'g', {
+        transform: `translate(${btnSize / 2}, ${btnSize / 2})`
+      });
+    group.appendChild(this.createSvgNode('line', {
+      x1: '0',
+      y1: -diagonalHalf,
+      x2: '0',
+      y2: diagonalHalf,
+      stroke: 'currentColor',
+      transform: 'rotate(-45, 0, 0)'
+    }));
+    group.appendChild(this.createSvgNode('line', {
+      x1: '0',
+      y1: -diagonalHalf,
+      x2: '0',
+      y2: diagonalHalf,
+      stroke: 'currentColor',
+      transform: 'rotate(45, 0, 0)'
+    }));
+    large.appendChild(group);
     container.appendChild(large);
   }
 }

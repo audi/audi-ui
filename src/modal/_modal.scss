@@ -10,6 +10,7 @@ $aui-modal-content-translate-y: 10px !default;
 $aui-modal-breakpoint: map-get($aui-breakpoint, xsmall) !default;
 $aui-modal-morph-duration: .4s !default;
 $aui-modal-max-width: 1200px !default;
+$aui-modal-background-color: $aui-color-gray20;
 
 /**
  * Prevent scrolling of body, when modal is open.
@@ -31,7 +32,6 @@ $aui-modal-max-width: 1200px !default;
   outline: 0; // Prevent Chrome on Windows from adding a focus outline. For details, see https://github.com/twbs/bootstrap/pull/10951.
   z-index: $aui-zindex-modal;
   overflow: hidden;
-  -webkit-overflow-scrolling: touch;
 
   &.is-active {
     right: 0;
@@ -40,47 +40,31 @@ $aui-modal-max-width: 1200px !default;
     height: auto;
     overflow-x: hidden;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
-}
-
-/**
- * Modal background.
- */
-.aui-modal-backdrop {
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0,0,0, .9);
-  transition: opacity .6s $aui-easing;
-  z-index: $aui-zindex-modal-backdrop;
-}
-
-.aui-modal-open .aui-modal-backdrop {
-  opacity: 1;
 }
 
 /**
  * Modal dialog
  */
 .aui-modal-dialog {
-  margin-left: auto;
-  margin-right: auto;
-
   display: flex;
-  flex: 0 1 auto;
+  flex-flow: row;
+  justify-content: center;
   position: relative;
-  min-height: 100%;
+  min-height: 100vh;
   opacity: 0;
   transition: opacity $aui-modal-duration $aui-easing;
+  background-color: $aui-modal-background-color;
 
   &__body {
     display: flex;
+    flex-flow: column;
+    justify-content: center; // vertical, because of `flex-direction: column`
     position: relative;
-    flex: 0 1 auto;
-    width: 100%;
+    min-width: 1px;
+    max-width: 100%;
+    min-height: 100vh;
     padding: $aui-modal-content-padding-y $aui-modal-content-padding-x;
   }
 
@@ -110,10 +94,7 @@ $aui-modal-max-width: 1200px !default;
   }
 
   &__content {
-    flex: 0 1 auto;
-    width: 100%;
-    transform: translateY($aui-modal-content-translate-y);
-    transition: transform $aui-modal-duration $aui-easing;
+    max-width: 100%;
   }
 
   &__close {
@@ -129,14 +110,7 @@ $aui-modal-max-width: 1200px !default;
     border: none;
     @include aui-remove-tap-highlight;
     transition: color .3s $aui-easing;
-    color: $aui-color-black;
-
-    &:hover {
-      color: $aui-color-gray30;
-    }
-  }
-
-  &.aui-color-text-light &__close {
+    color: $aui-color-white;
     color: $aui-color-white;
 
     &:hover {
@@ -164,11 +138,6 @@ $aui-modal-max-width: 1200px !default;
     transition-delay: $aui-modal-delay;
   }
 
-  .aui-modal-dialog__content {
-    transform: translateY(0);
-    transition-delay: $aui-modal-delay;
-  }
-
   .aui-modal-dialog--morph {
     transition-delay: 0s;
 
@@ -182,11 +151,10 @@ $aui-modal-max-width: 1200px !default;
  * Responsive adaptions:
  */
 @media (min-width: $aui-modal-breakpoint) {
+
   .aui-modal-dialog__body {
     width: 62.5%;
     max-width: $aui-modal-max-width;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .aui-modal-dialog--fullpage,
@@ -205,23 +173,30 @@ $aui-modal-max-width: 1200px !default;
       padding-right: 0;
     }
   }
+  .aui-modal-dialog--window,
+  .aui-modal-dialog--layer {
+    background-color: transparent;
+  }
 
   .aui-modal-dialog--window {
     .aui-modal-dialog__body {
       width: 80%;
       padding-left: $aui-modal-close-size-large;
       padding-right: $aui-modal-close-size-large;
+      background-color: $aui-modal-background-color;
     }
   }
 
   .aui-modal-dialog--layer {
     .aui-modal-dialog__content {
       transform: translateY(0);
+      background-color: $aui-modal-background-color;
     }
 
-    .aui-modal-dialog__body {
-      margin: auto;
+    .aui-modal-dialog__content {
       padding: $aui-modal-dialog-padding;
+      transform: translateY($aui-modal-content-translate-y);
+      transition: transform $aui-modal-duration $aui-easing;
     }
 
     &:not(.aui-modal-dialog--morph) .aui-modal-dialog__body {
@@ -265,4 +240,46 @@ $aui-modal-max-width: 1200px !default;
   .aui-modal-close-icon-large {
     display: block;
   }
+
+  /**
+   * Styles when modal is open:
+   */
+  .aui-modal-open .aui-modal.is-active {
+    .aui-modal-dialog {
+      opacity: 1;
+      transition-delay: $aui-modal-delay;
+    }
+
+    .aui-modal-dialog__content {
+      transform: translateY(0);
+      transition-delay: $aui-modal-delay;
+    }
+
+    .aui-modal-dialog--morph {
+      transition-delay: 0s;
+
+      .aui-modal-dialog__body {
+        transition-delay: 0s;
+      }
+    }
+  }
+}
+
+/**
+ * Modal background.
+ */
+.aui-modal-backdrop {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0, .9);
+  transition: opacity .6s $aui-easing;
+  z-index: $aui-zindex-modal-backdrop;
+}
+
+.aui-modal-open .aui-modal-backdrop {
+  opacity: 1;
 }

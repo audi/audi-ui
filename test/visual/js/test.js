@@ -118,7 +118,6 @@ setTimeout(() => demoLoaderProgress(), 2000);
 // ----------------------------------------------------------------------------
 // Demo Spinner and Progress components:
 // ----------------------------------------------------------------------------
-Modal.upgradeElements();
 Array.from(document.querySelectorAll('[data-toggle="modal"]')).forEach(element => {
   element.addEventListener('click', (event) => {
     let modal = Modal.getModalById(element.getAttribute('data-target'));
