@@ -10,7 +10,9 @@ $aui-modal-content-translate-y: 10px !default;
 $aui-modal-breakpoint: map-get($aui-breakpoint, xsmall) !default;
 $aui-modal-morph-duration: .4s !default;
 $aui-modal-max-width: 1200px !default;
-$aui-modal-background-color: $aui-color-gray20 !default;
+$aui-modal-background: $aui-color-gray20 !default;
+$aui-modal-close-color: $aui-color-white !default;
+$aui-modal-close-hover-color: $aui-color-gray80 !default;
 
 /**
  * Prevent scrolling of body, when modal is open.
@@ -55,7 +57,7 @@ $aui-modal-background-color: $aui-color-gray20 !default;
   min-height: 100vh;
   opacity: 0;
   transition: opacity $aui-modal-duration $aui-easing;
-  background-color: $aui-modal-background-color;
+  background-color: $aui-modal-background;
 
   &__body {
     display: flex;
@@ -89,11 +91,10 @@ $aui-modal-background-color: $aui-color-gray20 !default;
     border: none;
     @include aui-remove-tap-highlight;
     transition: color .3s $aui-easing;
-    color: $aui-color-white;
-    color: $aui-color-white;
+    color: $aui-modal-close-color;
 
     &:hover {
-      color: $aui-color-gray80;
+      color: $aui-modal-close-hover-color;
     }
   }
 }
@@ -162,7 +163,7 @@ $aui-modal-background-color: $aui-color-gray20 !default;
       width: 80%;
       padding-left: $aui-modal-close-size-large;
       padding-right: $aui-modal-close-size-large;
-      background-color: $aui-modal-background-color;
+      background-color: $aui-modal-background;
     }
   }
 
@@ -175,7 +176,7 @@ $aui-modal-background-color: $aui-color-gray20 !default;
 
     .aui-modal-dialog__content {
       transform: translateY(0);
-      background-color: $aui-modal-background-color;
+      background-color: $aui-modal-background;
     }
 
     .aui-modal-dialog__content {
@@ -233,7 +234,7 @@ $aui-modal-background-color: $aui-color-gray20 !default;
 .aui-modal-morph {
   position: absolute;
   opacity: 0;
-  background-color: $aui-modal-background-color;
+  background-color: $aui-modal-background;
   transition-property: top, left, width, height, opacity;
   transition-duration: $aui-modal-duration;
   transition-timing-function: $aui-easing;

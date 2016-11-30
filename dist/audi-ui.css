@@ -1654,7 +1654,6 @@ body::before {
     -webkit-tap-highlight-color: transparent;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     transition: color 0.3s cubic-bezier(0.75, 0.02, 0.5, 1);
-    color: #ffffff;
     color: #ffffff; }
     .aui-modal-dialog__close:hover {
       color: #cccccc; }
@@ -1703,16 +1702,20 @@ body::before {
     padding-left: 81px;
     padding-right: 81px;
     background-color: #333333; }
-  .aui-modal-dialog--layer .aui-modal-dialog__content {
-    transform: translateY(0);
-    background-color: #333333; }
-  .aui-modal-dialog--layer .aui-modal-dialog__content {
-    padding: 2rem; }
-  .aui-modal-dialog--layer:not(.aui-modal-dialog--morph) .aui-modal-dialog__body {
-    transform: translateY(10px);
-    transition: transform 0.4s cubic-bezier(0.75, 0.02, 0.5, 1); }
-  .aui-modal-dialog--layer .aui-modal-dialog__close {
-    position: absolute; }
+  .aui-modal-dialog--layer {
+    padding: 0 4.375%; }
+    .aui-modal-dialog--layer .aui-modal-dialog__body {
+      padding: 1.625rem 0; }
+    .aui-modal-dialog--layer .aui-modal-dialog__content {
+      transform: translateY(0);
+      background-color: #333333; }
+    .aui-modal-dialog--layer .aui-modal-dialog__content {
+      padding: 2rem; }
+    .aui-modal-dialog--layer:not(.aui-modal-dialog--morph) .aui-modal-dialog__body {
+      transform: translateY(10px);
+      transition: transform 0.4s cubic-bezier(0.75, 0.02, 0.5, 1); }
+    .aui-modal-dialog--layer .aui-modal-dialog__close {
+      position: absolute; }
   .aui-modal-dialog--layer .aui-modal-dialog__body--full,
   .aui-modal-dialog__body--full {
     padding: 0; }
