@@ -1,17 +1,9 @@
-// TODO Close morph transition is not correct in Safari. Dialog jumps to the
-// top left corner and then closes.
-
-// TODO Dialogs doesn't have the correct height and position in IE10-11.
-// Some workarounds to consider
-// http://codepen.io/philipwalton/pen/JdvdJE?editors=0100
-// http://stackoverflow.com/questions/19371626/flexbox-not-centering-vertically-in-ie
-
 import ModalDialog from '../modal/modal-dialog';
 import transitionendEvent from '../util/transition-end-event';
 
 const CLASS_MODAL_IS_OPEN = 'aui-modal-open';
-const CLASS_MORPH_CONTENT = 'aui-modal__morph-content';
-const CLASS_MORPH_BODY = 'aui-modal__morph-body';
+const CLASS_CONTENT = 'aui-modal-dialog__content';
+const CLASS_MORPH_DIALOG = 'aui-modal-morph';
 const CLASS_IS_ACTIVE = 'is-active';
 const CLASS_IS_MORPHING = 'is-morphing';
 
@@ -30,15 +22,15 @@ export default class ModalMorph extends ModalDialog {
   init() {
     super.init();
 
-    this._morphContent = this._element.querySelector(`.${CLASS_MORPH_CONTENT}`);
-    this._morphBody = this._element.querySelector(`.${CLASS_MORPH_BODY}`);
+    this._content = this._element.querySelector(`.${CLASS_CONTENT}`);
   }
 
   /**
-   * Opens this modal.
+   * Open modal
    * @param {HTMLElement} trigger The element which opens the modal.
    */
   open(trigger) {
+    console.log('Open morphing modal');
     super.open();
     this._trigger = trigger;
 
@@ -51,82 +43,69 @@ export default class ModalMorph extends ModalDialog {
   }
 
   _prepareOpenTransition() {
-    // Loops until modal is really visible.
-    // That's required to make transitions work as aspected.
-    if (this._element.offsetWidth > 0) {
-      // Save bounding rect of element to be morphed.
-      this._endBoundingRect = this._morphBody.getBoundingClientRect();
+    const rect = this._trigger.getBoundingClientRect();
 
-      // Apply start bounding rect to element to be morphed.
-      this._triggerBoundingRect = this._trigger.getBoundingClientRect();
-      this._applyBoundingRectToElement(this._morphBody, this._triggerBoundingRect);
+    // Apply bounding rect to start with to morphing element
+    this._morph = this._getMorphElement(rect);
 
-      // Start opening animation
-      window.requestAnimationFrame(() => this._startOpenTransition());
-
-    } else {
-      window.requestAnimationFrame(() => this._prepareOpenTransition());
-    }
+    // Start opening animation
+    window.requestAnimationFrame(() => this._startOpenTransition());
   }
 
   _startOpenTransition() {
-    let rect = this._morphBody.getBoundingClientRect();
-    if (Math.round(this._triggerBoundingRect.width) === rect.width) {
-      this._body.classList.add(CLASS_MODAL_IS_OPEN);
-      this._morphContent.classList.add(CLASS_IS_MORPHING);
+    const rect = this._content.getBoundingClientRect();
 
-      // Apply end bounding rect to element to be morphed.
-      this._applyBoundingRectToElement(this._morphBody, this._endBoundingRect);
-      transitionendEvent && this._morphBody.addEventListener(transitionendEvent, this._morphBodyTransitionendHandler = (event) => this._onStartOpenTransitionend(event));
-
-    } else {
-      window.requestAnimationFrame(() => this._startOpenTransition());
-    }
+    // Apply bounding rect to end on to morphing element
+    this._applyBoundingRectToElement(this._morph, rect);
+    transitionendEvent && this._element.addEventListener(transitionendEvent, this._boundTransitionendElementIn = (event) => this._onTransitionendElementIn(event));
+    this._morph.classList.add(CLASS_IS_MORPHING);
+    this._body.classList.add(CLASS_MODAL_IS_OPEN);
   }
 
-  _onStartOpenTransitionend(event) {
-    if (event.target === event.currentTarget) {
-      console.log('morphing end');
-      this._morphBody.removeEventListener(transitionendEvent, this._morphBodyTransitionendHandler);
-      this._morphBody.removeAttribute('style');
-      this._morphContent.classList.remove(CLASS_IS_MORPHING);
-    }
+  _onTransitionendElementIn(event) {
+    this._element.removeEventListener(transitionendEvent, this._boundTransitionendElementIn);
+    this._morph.classList.remove(CLASS_IS_MORPHING);
   }
 
   /**
-   * Closes this modal.
+   * Close modal
    */
   close() {
-    this._morphBody.removeEventListener(transitionendEvent, this._morpBodyCloseTransitionendHandler);
+    console.log('close');
     if (this._backdrop) {
       this._backdrop.removeEventListener(transitionendEvent, this._backdropCloseTransitionendHandler);
+      transitionendEvent && this._backdrop.addEventListener(transitionendEvent, this._backdropCloseTransitionendHandler = (event) => this._onBackdropCloseTransitionend(event));
     }
 
-    const boundingRect = this._morphBody.getBoundingClientRect();
-    this._applyBoundingRectToElement(this._morphBody, boundingRect);
-    this._morphContent.classList.add(CLASS_IS_MORPHING);
+    this._element.removeEventListener(transitionendEvent, this._boundTransitionendElementIn);
+
+    const rect = this._content.getBoundingClientRect();
+    this._applyBoundingRectToElement(this._morph, rect);
+    this._morph.classList.add(CLASS_IS_MORPHING);
+
+    transitionendEvent && this._morph.addEventListener(transitionendEvent, this._boundTransitionendMorphOut = (event) => this._onTransitionendMorphOut(event));
 
     window.requestAnimationFrame(() => this._startCloseTransition());
   }
 
   _startCloseTransition() {
-    // Apply start bounding rect to element to be morphed.
-    this._triggerBoundingRect = this._trigger.getBoundingClientRect();
-    this._applyBoundingRectToElement(this._morphBody, this._triggerBoundingRect);
-    transitionendEvent && this._morphBody.addEventListener(transitionendEvent, this._morpBodyCloseTransitionendHandler = (event) => this._onMorpBodyCloseTransitionend(event));
-
-    if (this._backdrop) {
-      transitionendEvent && this._backdrop.addEventListener(transitionendEvent, this._backdropCloseTransitionendHandler = (event) => this._onBackdropCloseTransitionend(event));
-    }
+    const rect = this._trigger.getBoundingClientRect();
+    this._applyBoundingRectToElement(this._morph, rect);
 
     this._body.classList.remove(CLASS_MODAL_IS_OPEN);
+  }
+
+  _onTransitionendMorphOut(event) {
+    this._morph.removeEventListener(transitionendEvent, this._boundTransitionendMorphOut);
+    this.removeChild(this._morph);
+    this._morph = null;
   }
 
   _onMorpBodyCloseTransitionend(event) {
     if (event.target === event.currentTarget) {
       this._morphBody.removeEventListener(transitionendEvent, this._morpBodyCloseTransitionendHandler);
       this._morphBody.removeAttribute('style');
-      this._morphContent.classList.remove(CLASS_IS_MORPHING);
+      this._content.classList.remove(CLASS_IS_MORPHING);
     }
   }
 
@@ -134,10 +113,15 @@ export default class ModalMorph extends ModalDialog {
     element.style.top = `${Math.round(rect.top)}px`;
     element.style.left = `${Math.round(rect.left)}px`;
     element.style.width = `${Math.round(rect.width)}px`;
-    element.style.minWidth = `${Math.round(rect.width)}px`;
-    element.style.maxWidth = `${Math.round(rect.width)}px`;
     element.style.height = `${Math.round(rect.height)}px`;
-    element.style.minHeight = `${Math.round(rect.height)}px`;
-    element.style.maxHeight = `${Math.round(rect.height)}px`;
+  }
+
+  _getMorphElement(rect) {
+    if (!this._morph) {
+      this._morph = this.createElement('div', [CLASS_MORPH_DIALOG]);
+      this._applyBoundingRectToElement(this._morph, rect);
+      this._body.append(this._morph);
+    }
+    return this._morph;
   }
 }

@@ -10,7 +10,7 @@ $aui-modal-content-translate-y: 10px !default;
 $aui-modal-breakpoint: map-get($aui-breakpoint, xsmall) !default;
 $aui-modal-morph-duration: .4s !default;
 $aui-modal-max-width: 1200px !default;
-$aui-modal-background-color: $aui-color-gray20;
+$aui-modal-background-color: $aui-color-gray20 !default;
 
 /**
  * Prevent scrolling of body, when modal is open.
@@ -70,27 +70,6 @@ $aui-modal-background-color: $aui-color-gray20;
 
   &__body--full {
     padding: 0;
-  }
-
-  &--morph.is-morphing &__body {
-    transition-property: top, left, width, min-width, max-width, height, min-height, max-height, padding;
-    transition-duration: $aui-modal-morph-duration;
-    transition-timing-function: $aui-easing;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-  }
-
-  &--morph &__close,
-  &--morph &__content {
-    opacity: 0;
-    transition: opacity .15s $aui-easing;
-  }
-
-  .aui-modal-open &--morph &__close,
-  .aui-modal-open &--morph &__content {
-    opacity: 1;
-    transition-duration: .15s;
   }
 
   &__content {
@@ -195,8 +174,6 @@ $aui-modal-background-color: $aui-color-gray20;
 
     .aui-modal-dialog__content {
       padding: $aui-modal-dialog-padding;
-      transform: translateY($aui-modal-content-translate-y);
-      transition: transform $aui-modal-duration $aui-easing;
     }
 
     &:not(.aui-modal-dialog--morph) .aui-modal-dialog__body {
@@ -212,25 +189,6 @@ $aui-modal-background-color: $aui-color-gray20;
   .aui-modal-dialog--layer .aui-modal-dialog__body--full,
   .aui-modal-dialog__body--full {
     padding: 0;
-  }
-
-  .aui-modal-open {
-    .aui-modal-dialog--layer .aui-modal-dialog__body {
-      transform: translateY(0);
-      transition-delay: $aui-modal-delay;
-    }
-
-    .aui-modal-dialog--morph {
-      .aui-modal-dialog__body {
-        transition-delay: 0s;
-      }
-
-      .aui-modal-dialog__close,
-      .aui-modal-dialog__content {
-        transition-duration: .4s;
-        transition-delay: .5s;
-      }
-    }
   }
 
   .aui-modal-close-icon-small {
@@ -255,18 +213,34 @@ $aui-modal-background-color: $aui-color-gray20;
       transition-delay: $aui-modal-delay;
     }
 
-    .aui-modal-dialog--morph {
-      transition-delay: 0s;
-
-      .aui-modal-dialog__body {
-        transition-delay: 0s;
-      }
+    .aui-modal-dialog--layer .aui-modal-dialog__body {
+      transform: translateY(0);
+      transition-delay: $aui-modal-delay;
     }
   }
 }
 
 /**
- * Modal background.
+ * Modal morph
+ * Created by JS
+ */
+.aui-modal-morph {
+  position: absolute;
+  opacity: 0;
+  background-color: $aui-modal-background-color;
+  transition-property: top, left, width, height, opacity;
+  transition-duration: $aui-modal-duration;
+  transition-timing-function: $aui-easing;
+  z-index: $aui-zindex-modal-morph;
+
+  &.is-morphing {
+    opacity: 1;
+  }
+}
+
+/**
+ * Modal backdrop
+ * Created by JS
  */
 .aui-modal-backdrop {
   opacity: 0;

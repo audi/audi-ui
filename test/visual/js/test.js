@@ -122,7 +122,7 @@ Array.from(document.querySelectorAll('[data-toggle="modal"]')).forEach(element =
   element.addEventListener('click', (event) => {
     let modal = Modal.getModalById(element.getAttribute('data-target'));
     if (modal) {
-      modal.open(event.target);
+      modal.open(event.currentTarget);
     }
   });
 });
