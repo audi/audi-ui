@@ -24,11 +24,15 @@ export default class Component {
    * Constructor
    * @constructor
    * @param {HTMLElement} element The element of the AUI component.
+   * @param {String} namespace The namespace of the AUI component, like `auiComponent`.
    */
-  constructor(element) {
+  constructor(element, namespace) {
     this._element = element;
 
     if (this._element) {
+      if (namespace) {
+        this._element[namespace] = this;
+      }
       this.init();
     }
   }

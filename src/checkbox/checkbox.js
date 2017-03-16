@@ -1,5 +1,6 @@
 import Component from '../component/component';
 
+const NAMESPACE = 'auiCheckbox';
 const SELECTOR_COMPONENT = '.aui-js-checkbox';
 const CLASS_INPUT = 'aui-checkbox__input';
 const CLASS_LABEL = 'aui-checkbox__label';
@@ -32,8 +33,23 @@ export default class Checkbox extends Component {
     return components;
   };
 
+  /**
+   * Returns all AUI component instances within the given container
+   * @param {HTMLElement} container The container element to search for components
+   * @returns {Array} Returns an array of all newly upgraded components.
+   */
+  static get(container = document) {
+    let components = [];
+    if (container) {
+      Array.from(container.querySelectorAll(SELECTOR_COMPONENT)).forEach(element => {
+        components.push(element.auiCheckbox);
+      });
+    }
+    return components;
+  }
+
   constructor(element) {
-    super(element);
+    super(element, NAMESPACE);
   }
 
   init() {
@@ -125,6 +141,17 @@ export default class Checkbox extends Component {
   uncheck() {
     this._input.checked = false;
     this.updateClasses();
+  }
+
+  /**
+   * Uncheck checkbox
+   */
+  toggle() {
+    if (this._input.checked) {
+      this.uncheck();
+    } else {
+      this.check();
+    }
   }
 
   /**

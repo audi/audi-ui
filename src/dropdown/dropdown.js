@@ -1,4 +1,5 @@
 import Component from '../component/component';
+import Checkbox from '../checkbox/checkbox';
 
 const SELECTOR_COMPONENT = '.aui-js-dropdown';
 const SELECTOR_OPTION_INPUT = 'input';
@@ -188,7 +189,7 @@ export default class Dropdown extends Component {
   }
 
   /**
-   *
+   * Dispose component
    */
   dispose() {
     super.dispose();
@@ -212,7 +213,6 @@ export default class Dropdown extends Component {
     let currentElement = event.target;
     while (currentElement !== event.currentTarget) {
       if (currentElement.classList.contains(CLASS_OPTION)) {
-        this.optionClicked(currentElement);
         isOption = true;
         break;
       }
@@ -221,6 +221,12 @@ export default class Dropdown extends Component {
 
     if (!isOption) {
       this.toggleOpen();
+    } else {
+      // Toggle the Checkbox contained
+      Checkbox.get(currentElement).forEach(checkbox => {
+        checkbox.toggle();
+        this.optionClicked(currentElement);
+      });
     }
   }
 

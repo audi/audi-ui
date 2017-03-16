@@ -89,6 +89,20 @@ $aui-checkbox-color-tick: $aui-checkbox-color-text !default;
   }
 
   /**
+   * Variant: dropdown-option
+   */
+  .aui-js &--dropdown-option {
+    width: 100%;
+    padding-left: 0;
+    padding-right: $aui-checkbox-box-width + $aui-checkbox-text-spacing;
+
+    .aui-checkbox__box {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  /**
    * States
    */
   // Hover state

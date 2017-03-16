@@ -573,6 +573,9 @@ body::before {
    * Variant: box-right
    */
   /**
+   * Variant: dropdown-option
+   */
+  /**
    * States
    */ }
   .aui-js .aui-checkbox {
@@ -617,6 +620,13 @@ body::before {
     padding-left: 0;
     padding-right: 2.5em; }
     .aui-js .aui-checkbox--box-right .aui-checkbox__box {
+      left: auto;
+      right: 0; }
+  .aui-js .aui-checkbox--dropdown-option {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 2.5em; }
+    .aui-js .aui-checkbox--dropdown-option .aui-checkbox__box {
       left: auto;
       right: 0; }
   .aui-checkbox:hover:not(.is-disabled) {
@@ -2998,14 +3008,22 @@ body::before {
     background: #bb0a30; }
 
 /**
- * NOTE Slider AUI components rely on the 3rd party library noUiSlider.
- * @see https://github.com/leongersen/noUiSlider
+ * NOTE
+ * The Slider AUI component relies on the 3rd party library
+ * noUiSlider by Leon Gersen
+ * @see https://refreshless.com/nouislider/
  */
 .aui-slider {
   position: relative;
   padding: 0;
   min-height: 1.5rem;
-  color: #333333; }
+  color: #333333;
+  /**
+   * Customized noUiSlider Styles
+   */
+  /**
+   * States
+   */ }
   .aui-slider__output {
     position: relative;
     font-size: 14px; }
@@ -3070,13 +3088,13 @@ body::before {
     content: '';
     display: block;
     position: absolute;
-    top: 0.75rem;
+    top: 50%;
     left: 0;
     right: 0;
     height: 2px;
     transform: translateY(-50%);
     background: #000000; }
-  .aui-slider--single .aui-slider__connect::after {
+  .aui-slider.aui-slider--single .aui-slider__connect::after {
     margin-left: -0.75rem; }
   .aui-slider__draggable {
     cursor: ew-resize; }
@@ -4452,54 +4470,33 @@ body {
    * Theme: warmsilver
    */ }
   .aui-slider.aui-theme-black {
-    color: #cccccc;
-    /**
-    * States
-    */ }
-    .aui-slider.aui-theme-black::after {
+    color: #cccccc; }
+    .aui-slider.aui-theme-black .aui-slider__target::after {
       background: #333333; }
-    .aui-slider.aui-theme-black:not(.aui-slider--range)::after {
-      background: linear-gradient(to right, #ffffff 50.9%, #333333 51%); }
     .aui-slider.aui-theme-black .aui-slider__connect::after {
       background: #ffffff; }
-    .aui-slider.aui-theme-black .aui-slider__background::after {
-      background: #333333; }
     .aui-slider.aui-theme-black .aui-slider__handle {
       background: #000000;
       border-color: #808080; }
     .aui-slider.aui-theme-black:not(.is-disabled) .aui-slider__handle:hover {
       border-color: #ffffff; }
   .aui-slider.aui-theme-silver {
-    color: rgba(255, 255, 255, 0.8);
-    /**
-    * States
-    */ }
-    .aui-slider.aui-theme-silver::after {
+    color: rgba(255, 255, 255, 0.8); }
+    .aui-slider.aui-theme-silver .aui-slider__target::after {
       background: #c1c1c1; }
-    .aui-slider.aui-theme-silver:not(.aui-slider--range)::after {
-      background: linear-gradient(to right, #ffffff 50.9%, #c1c1c1 51%); }
     .aui-slider.aui-theme-silver .aui-slider__connect::after {
       background: #ffffff; }
-    .aui-slider.aui-theme-silver .aui-slider__background::after {
-      background: #c1c1c1; }
     .aui-slider.aui-theme-silver .aui-slider__handle {
       background: #b2b2b2;
       border-color: #d9d9d9; }
     .aui-slider.aui-theme-silver:not(.is-disabled) .aui-slider__handle:hover {
       border-color: #ffffff; }
   .aui-slider.aui-theme-warmsilver {
-    color: rgba(255, 255, 255, 0.8);
-    /**
-    * States
-    */ }
-    .aui-slider.aui-theme-warmsilver::after {
+    color: rgba(255, 255, 255, 0.8); }
+    .aui-slider.aui-theme-warmsilver .aui-slider__target::after {
       background: #c5c1ba; }
-    .aui-slider.aui-theme-warmsilver:not(.aui-slider--range)::after {
-      background: linear-gradient(to right, #ffffff 50.9%, #c5c1ba 51%); }
     .aui-slider.aui-theme-warmsilver .aui-slider__connect::after {
       background: #ffffff; }
-    .aui-slider.aui-theme-warmsilver .aui-slider__background::after {
-      background: #c5c1ba; }
     .aui-slider.aui-theme-warmsilver .aui-slider__handle {
       background: #b6b1a9;
       border-color: #dbd8d4; }
