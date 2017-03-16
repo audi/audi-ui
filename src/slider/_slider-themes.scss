@@ -13,12 +13,10 @@
 
     color: $aui-slider-color-text;
 
-    &::after {
-      background: $aui-slider-color-track;
-    }
-
-    &:not(.aui-slider--range)::after {
-      background: linear-gradient(to right, $aui-slider-color-track-active 50.9%, $aui-slider-color-track 51%);
+    .aui-slider__target {
+      &::after {
+        background: $aui-slider-color-track;
+      }
     }
 
     .aui-slider__connect {
@@ -27,22 +25,11 @@
       }
     }
 
-    .aui-slider__background {
-      &::after {
-        background: $aui-slider-color-track;
-      }
-    }
-
     .aui-slider__handle {
       background: $aui-slider-color-thumb;
       border-color: $aui-slider-color-thumb-border;
     }
 
-    /**
-    * States
-    */
-
-    // Hover
     &:not(.is-disabled) .aui-slider__handle:hover {
       border-color: $aui-slider-color-thumb-border-hover;
     }
@@ -61,12 +48,10 @@
 
     color: $aui-slider-color-text;
 
-    &::after {
-      background: $aui-slider-color-track;
-    }
-
-    &:not(.aui-slider--range)::after {
-      background: linear-gradient(to right, $aui-slider-color-track-active 50.9%, $aui-slider-color-track 51%);
+    .aui-slider__target {
+      &::after {
+        background: $aui-slider-color-track;
+      }
     }
 
     .aui-slider__connect {
@@ -75,22 +60,11 @@
       }
     }
 
-    .aui-slider__background {
-      &::after {
-        background: $aui-slider-color-track;
-      }
-    }
-
     .aui-slider__handle {
       background: $aui-slider-color-thumb;
       border-color: $aui-slider-color-thumb-border;
     }
 
-    /**
-    * States
-    */
-
-    // Hover
     &:not(.is-disabled) .aui-slider__handle:hover {
       border-color: $aui-slider-color-thumb-border-hover;
     }
@@ -109,12 +83,10 @@
 
     color: $aui-slider-color-text;
 
-    &::after {
-      background: $aui-slider-color-track;
-    }
-
-    &:not(.aui-slider--range)::after {
-      background: linear-gradient(to right, $aui-slider-color-track-active 50.9%, $aui-slider-color-track 51%);
+    .aui-slider__target {
+      &::after {
+        background: $aui-slider-color-track;
+      }
     }
 
     .aui-slider__connect {
@@ -123,22 +95,11 @@
       }
     }
 
-    .aui-slider__background {
-      &::after {
-        background: $aui-slider-color-track;
-      }
-    }
-
     .aui-slider__handle {
       background: $aui-slider-color-thumb;
       border-color: $aui-slider-color-thumb-border;
     }
 
-    /**
-    * States
-    */
-
-    // Hover
     &:not(.is-disabled) .aui-slider__handle:hover {
       border-color: $aui-slider-color-thumb-border-hover;
     }

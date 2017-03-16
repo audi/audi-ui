@@ -43,47 +43,62 @@ export default class Slider extends Component {
    * Initialize component
    */
   init() {
-    console.log('Hello slider');
     super.init();
 
+    // Save reference to component elements
     this._hiddenField = this._element.querySelector(SELECTOR_HIDDEN_FIELD);
-
     this._output = this._element.querySelector(SELECTOR_OUTPUT);
 
-    this._slider = document.createElement('span');
+    // Create slider container element
+    this._slider = document.createElement('div');
     this._element.insertBefore(this._slider, this._element.firstChild);
 
+    // Parse and save start and range values:
     this._value = this._parseData(this._hiddenField.value);
     this._rangeMin = this._parseData(this._element.getAttribute('data-min'));
     this._rangeMax = this._parseData(this._element.getAttribute('data-max'));
 
-    console.log('Value', this._value.length);
-    return;
+    // Create noUiSlider instance
+    noUiSlider.create(this._slider, {
+      // Set the start value defined in the hidden field.
+      // https://refreshless.com/nouislider/slider-options/#section-start
+      start: this._value,
 
-    // noUiSlider.create(this._slider, {
-    //   start: this._value,
-    //   connect: this._value.length > 1
-    //     ? true
-    //     : 'lower',
-    //   behaviour: this._value.length > 1
-    //     ? 'drag-tap'
-    //     : 'tap',
-    //   range: {
-    //     min: this._rangeMin,
-    //     max: this._rangeMax
-    //   },
-    //   cssPrefix: `${CLASS_COMPONENT}__`
-    // });
-    // this._slider.noUiSlider.on(`update.${EVENT_NAMESPACE}`, (values, handle, unencoded, tap, positions) => this._onUpdate(values, handle, unencoded, tap, positions));
-    //
-    // if (this._output) {
-    //   this._resizeObserver = new ResizeObserver();
-    //   this._resizeObserver.resized.add(this._resizedHandler = () => this._centerOutput());
-    // }
-    //
-    // if (this._element.classList.contains(CLASS_IS_DISABLED)) {
-    //   this.disable();
-    // }
+      // Set the range as defined in the data attributes
+      // https://refreshless.com/nouislider/slider-values/#section-range
+      range: {
+        min: this._rangeMin,
+        max: this._rangeMax
+      },
+
+      // If there are two handles, set the bar between the handles, but not
+      // between the handles and the sliders edges. If there is only one handle,
+      // set the bar from the slider edge to the handle.
+      // https://refreshless.com/nouislider/slider-options/#section-Connect
+      connect: this._value.length > 1
+        ? true
+        : [true, false],
+
+      // Define behaviour depending on number of handles
+      // https://refreshless.com/nouislider/behaviour-option/
+      behaviour: this._value.length > 1
+        ? 'tap-drag'
+        : 'tap',
+
+      // Use AUI namespace for css classes
+      // https://refreshless.com/nouislider/more/#section-styling
+      cssPrefix: `${CLASS_COMPONENT}__`
+    });
+    this._slider.noUiSlider.on(`update.${EVENT_NAMESPACE}`, (values, handle, unencoded, tap, positions) => this._onUpdate(values, handle, unencoded, tap, positions));
+
+    if (this._output) {
+      this._resizeObserver = new ResizeObserver();
+      this._resizeObserver.resized.add(this._resizedHandler = () => this._centerOutput());
+    }
+
+    if (this._element.classList.contains(CLASS_IS_DISABLED)) {
+      this.disable();
+    }
   }
 
   /**
@@ -144,8 +159,8 @@ export default class Slider extends Component {
     const unencoded = this._slider.noUiSlider.get();
     const sliderAverage = typeof unencoded === 'object'
       ? unencoded.reduce((previousValue, currentValue) => {
-        return previousValue + parseFloat(currentValue);
-      }, 0) / unencoded.length
+          return previousValue + parseFloat(currentValue);
+        }, 0) / unencoded.length
       : parseFloat(unencoded);
     const maxRight = this._element.offsetWidth - this._output.offsetWidth;
     const handleSize = this._slider.offsetHeight;
