@@ -128,11 +128,59 @@ const nunjucksConfig = {
 // ERROR HANDLING
 // ----------------------------------------------------------------------------
 
+/**
+ * Template for error logging messages.
+ * @param {Object} error object.
+ * @returns {string} template
+ */
+function errorLoggingTemplate(error) {
+  return `${_.util.colors.bgRed(`${error.name} in ${error.relativePath}`)}
+
+  ⚠️       ${error.name} ${_.util.colors.dim(`reported by`)} ${error.plugin}
+
+  Path:   ${error.relativePath}
+  Line:   ${error.line}
+  Column: ${error.column}
+
+  ${_.util.colors.red( error.formatted ? error.formatted.split('\n').join('\n  ') : '' )}`;
+};
+
+
+/**
+ * Template for error notifications.
+ * @param {Object} error object.
+ * @returns {Object} notification
+ */
+function errorNotifyObject(error) {
+  return {
+    title: `Gulp`,
+    subtitle: `${error.name}: ${error.plugin}`,
+    message: `${error.relativePath} ${error.line}:${error.column}`,
+    sound: 'Hero',
+  };
+}
+
+
+/**
+ * Error handling
+ *
+ * To eliminate the need of adding the error handler to each task, we overwrite
+ * the `gulp.src` method and add proper error logging messages and notifications.
+ */
 const _gulpSrc = gulp.src;
 gulp.src = function() {
   return _gulpSrc
     .apply(gulp, arguments)
-    .pipe(_.plumber());
+    .pipe(_.plumber(function(error) {
+      // Log error message in console
+      _.util.log(errorLoggingTemplate(error));
+
+      // Display notification
+      _.notify.onError(errorNotifyObject(error)).apply(this, arguments);
+
+      // Emit the end event, to properly end the task
+      this.emit('end');
+    }));
 };
 
 
@@ -141,6 +189,7 @@ gulp.src = function() {
 // ----------------------------------------------------------------------------
 gulp.task('css', function() {
   return gulp.src('src/index.scss')
+    .pipe(_.plumber())
     .pipe(_.sass({precision: 10}))
     .pipe(_.autoprefixer({
       browsers: ['last 2 version']
@@ -155,6 +204,7 @@ gulp.task('css', function() {
     .pipe(_.rename({
       suffix: '.min'
     }))
+    // .pipe(_.plumber.stop())
     .pipe(gulp.dest(libraryDest))
     .pipe(_.size({
       title: _.util.colors.underline('CSS size:') + '\n',
