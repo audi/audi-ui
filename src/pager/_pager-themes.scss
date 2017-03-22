@@ -10,18 +10,8 @@ $aui-pager-color-active: rgba(#fff, 1);
     }
 
     .aui-pager__next:hover:not(.is-disabled),
-    .aui-pager__previous:hover:not(.is-disabled) {
+    .aui-pager__prev:hover:not(.is-disabled) {
       color: $aui-pager-color-active;
-    }
-
-    .aui-pager__next-icon,
-    .aui-pager__previous-icon {
-      background: url('data:image/svg+xml;dataset=utf-8,#{aui-svg-arrow($aui-pager-color)}') center center no-repeat;
-    }
-
-    .aui-pager__next:hover:not(.is-disabled) .aui-pager__next-icon,
-    .aui-pager__previous:hover:not(.is-disabled) .aui-pager__previous-icon {
-      background: url('data:image/svg+xml;dataset=utf-8,#{aui-svg-arrow($aui-pager-color-active)}') center center no-repeat;
     }
   }
 }

@@ -33,17 +33,19 @@ $aui-pagination-color-active: rgba(#000, 1) !default;
   &__ellipsis,
   &__link,
   &__next,
-  &__previous {
+  &__prev {
     transition: color .15s linear;
   }
 
   &__link.is-active,
-  &__link:hover:not(.is-disabled) {
+  &__link:hover:not(.is-disabled),
+  &__next:hover:not(.is-disabled),
+  &__prev:hover:not(.is-disabled) {
     color: $aui-pagination-color-active;
   }
 
   &__next-icon,
-  &__previous-icon {
+  &__prev-icon {
     display: inline-block;
     width: .5em;
     height: .8125em;
@@ -53,21 +55,14 @@ $aui-pagination-color-active: rgba(#000, 1) !default;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+
+    svg {
+      @include icon;
+    }
   }
 
-  &__previous-icon {
+  &__prev-icon {
     transform: translateY(em(1)) rotate(180deg);
-  }
-
-  &__next-icon,
-  &__previous-icon {
-    background-image: url('data:image/svg+xml;dataset=utf-8,#{aui-svg-arrow($aui-pagination-color)}');
-    transition: background .15s linear;
-  }
-
-  &__next:hover:not(.is-disabled) .aui-pagination__next-icon,
-  &__previous:hover:not(.is-disabled) .aui-pagination__previous-icon {
-    background-image: url('data:image/svg+xml;dataset=utf-8,#{aui-svg-arrow($aui-pagination-color-active)}');
   }
 
   &__indicator {
@@ -90,7 +85,7 @@ $aui-pagination-color-active: rgba(#000, 1) !default;
 
   &__link,
   &__next,
-  &__previous {
+  &__prev {
     &.is-disabled {
       cursor: not-allowed;
       opacity: .30;

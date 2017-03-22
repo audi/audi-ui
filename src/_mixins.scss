@@ -84,3 +84,11 @@
 @mixin shadow-focus-light() {
   box-shadow: 0 0 3px 3px rgba(#fff, 0.2);
 }
+
+// SVG
+@mixin icon {
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: $aui-icon-stroke-width;
+}
