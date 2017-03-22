@@ -159,8 +159,8 @@ $aui-dropdown-option-hover-background: rgba(#000, 0.10) !default;
 
   &__list-title {
     color: $aui-dropdown-list-title-color;
-    padding-top: unit(2);
-    padding-bottom: unit(1);
+    padding-top: unit(3);
+    padding-bottom: 0;
   }
 
   &__option {

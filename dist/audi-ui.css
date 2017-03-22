@@ -944,8 +944,8 @@ body::before {
     font-weight: 400; }
   .aui-dropdown__list-title {
     color: rgba(0, 0, 0, 0.2);
-    padding-top: 0.5rem;
-    padding-bottom: 0.25rem; }
+    padding-top: 0.75rem;
+    padding-bottom: 0; }
   .aui-dropdown__option {
     position: relative;
     width: 100%;
