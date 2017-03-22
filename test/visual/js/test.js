@@ -26,7 +26,7 @@ import {
   Response,
   Select,
   Slider,
-  Slidernav,
+  Indicator,
   Spinner,
   Textfield,
   Tooltip
@@ -50,7 +50,7 @@ Radio.upgradeElements();
 Response.upgradeElements();
 Select.upgradeElements();
 Slider.upgradeElements();
-Slidernav.upgradeElements();
+Indicator.upgradeElements();
 let spinnerComponents = Spinner.upgradeElements();
 Textfield.upgradeElements();
 Tooltip.upgradeElements();

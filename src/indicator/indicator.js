@@ -1,28 +1,28 @@
 import Component from '../component/component';
 
-const SELECTOR_COMPONENT = '.aui-js-slidernav';
-const CLASS_ITEM = 'aui-slidernav__action';
-const CLASS_INDICATOR = 'aui-slidernav__indicator';
+const SELECTOR_COMPONENT = '.aui-js-indicator';
+const CLASS_ITEM = 'aui-indicator__action';
+const CLASS_INDICATOR = 'aui-indicator__indicator';
 const CLASS_IS_ACTIVE = 'is-active';
 
 /**
- * Class constructor for Slidernav AUI component.
+ * Class constructor for Indicator AUI component.
  * Implements AUI component design pattern defined at:
  * https://github.com/...
  *
  * @param {HTMLElement} element The element that will be upgraded.
  */
-export default class Slidernav extends Component {
+export default class Indicator extends Component {
 
   /**
-   * Upgrades all Slidernav AUI components.
+   * Upgrades all Indicator AUI components.
    * @returns {Array} Returns an array of all newly upgraded components.
    */
   static upgradeElements() {
     let components = [];
     Array.from(document.querySelectorAll(SELECTOR_COMPONENT)).forEach(element => {
       if (!Component.isElementUpgraded(element)) {
-        components.push(new Slidernav(element));
+        components.push(new Indicator(element));
       }
     });
     return components;

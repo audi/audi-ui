@@ -22,7 +22,7 @@ import Radio from './radio/radio';
 import Response from './response/response';
 import Select from './select/select';
 import Slider from './slider/slider';
-import Slidernav from './slidernav/slidernav';
+import Indicator from './indicator/indicator';
 import Spinner from './spinner/spinner';
 import Textfield from './textfield/textfield';
 import Tooltip from './tooltip/tooltip';
@@ -51,7 +51,7 @@ export {
   Response,
   Select,
   Slider,
-  Slidernav,
+  Indicator,
   Spinner,
   Textfield,
   Tooltip
@@ -95,7 +95,7 @@ class ComponentHandler {
     Response.upgradeElements();
     Select.upgradeElements();
     Slider.upgradeElements();
-    Slidernav.upgradeElements();
+    Indicator.upgradeElements();
     // Spinner.upgradeElements();
     Textfield.upgradeElements();
     Tooltip.upgradeElements();

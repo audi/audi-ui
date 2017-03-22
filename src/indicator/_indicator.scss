@@ -1,16 +1,16 @@
-$aui-slidernav-color: rgba(#000, 0.2) !default;
-$aui-slidernav-color-hover: rgba(#000, 0.5) !default;
-$aui-slidernav-color-active: rgba(#000, 0.8) !default;
+$aui-indicator-color: rgba(#000, 0.2) !default;
+$aui-indicator-color-hover: rgba(#000, 0.5) !default;
+$aui-indicator-color-active: rgba(#000, 0.8) !default;
 
-$aui-slidernav-dot-width: unit(5) !default;
-$aui-slidernav-height: unit(2) !default;
+$aui-indicator-dot-width: unit(5) !default;
+$aui-indicator-height: unit(2) !default;
 
-.aui-slidernav {
+.aui-indicator {
   display: inline-block;
   position: relative;
   font-family: serif;
-  height: $aui-slidernav-height;
-  line-height: $aui-slidernav-height;
+  height: $aui-indicator-height;
+  line-height: $aui-indicator-height;
 
   &__items {
     padding-left: 0;
@@ -29,8 +29,8 @@ $aui-slidernav-height: unit(2) !default;
 
   &__action {
     display: block;
-    width: $aui-slidernav-dot-width;
-    height: $aui-slidernav-height;
+    width: $aui-indicator-dot-width;
+    height: $aui-indicator-height;
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
@@ -41,11 +41,11 @@ $aui-slidernav-height: unit(2) !default;
 
   &__action,
   &__action:visited {
-    background: $aui-slidernav-color;
+    background: $aui-indicator-color;
   }
 
   &__action:hover {
-    background: $aui-slidernav-color-hover;
+    background: $aui-indicator-color-hover;
   }
 
   &__indicator {
@@ -54,9 +54,9 @@ $aui-slidernav-height: unit(2) !default;
     position: absolute;
     top: 0;
     left: 0;
-    width: $aui-slidernav-dot-width;
+    width: $aui-indicator-dot-width;
     height: 100%;
-    background: $aui-slidernav-color-active;
+    background: $aui-indicator-color-active;
     z-index: 1;
     transition: left 0.3s $aui-easing;
   }

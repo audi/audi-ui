@@ -4,15 +4,15 @@
 
 {% block main %}
 
-  <section class="test-section" id="slidernav">
-    {{ section.header('Slidernav') }}
+  <section class="test-section" id="indicator">
+    {{ section.header('Indicator') }}
     <div class="test-section__panel">
       <div>
-        {% include 'slidernav/snippets/slidernav.html' %}
+        {% include 'indicator/snippets/indicator.html' %}
       </div>
       <h3 class="test-section__headline">Image theme with shadow</h3>
       <div class="leader-padding-60 trailer-padding-2 align-center" style="background: no-repeat center/cover url('http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/gallery-1280x720-4.jpg');">
-        {% include 'slidernav/snippets/slidernav-image.html' %}
+        {% include 'indicator/snippets/indicator-image.html' %}
       </div>
     </div>
   </section>

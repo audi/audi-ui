@@ -1,0 +1,38 @@
+$aui-indicator-color-light: rgba(#fff, 0.2) !default;
+$aui-indicator-color-hover-light: rgba(#fff, 0.5) !default;
+$aui-indicator-color-active-light: rgba(#fff, 0.8) !default;
+$aui-indicator-color-image: rgba($aui-color-gray70, 0.5) !default;
+$aui-indicator-color-hover-image: rgba(#fff, 0.5) !default;
+$aui-indicator-color-active-image: rgba(#fff, 0.8) !default;
+
+.aui-indicator {
+  &.aui-theme-light {
+    .aui-indicator__action,
+    .aui-indicator__action:visited {
+      background: $aui-indicator-color-light;
+    }
+
+    .aui-indicator__action:hover {
+      background: $aui-indicator-color-hover-light;
+    }
+
+    .aui-indicator__indicator {
+      background: $aui-indicator-color-active-light;
+    }
+  }
+
+  &.aui-theme-image {
+    .aui-indicator__action,
+    .aui-indicator__action:visited {
+      background: $aui-indicator-color-image;
+    }
+
+    .aui-indicator__action:hover {
+      background: $aui-indicator-color-hover-image;
+    }
+
+    .aui-indicator__indicator {
+      background: $aui-indicator-color-active-image;
+    }
+  }
+}
