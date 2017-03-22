@@ -48,7 +48,7 @@ export default class Header extends Component {
       return;
     }
 
-    // FIXME position:sticky currently not working. See also SCSS.
+    // REVIEW position:sticky currently not working. See also SCSS.
     // If browser supports position:sticky, it will handle positioning and
     // we can skip here.
     // if (window.getComputedStyle(this._element).position.indexOf('sticky') !== -1) {
