@@ -2,7 +2,7 @@
 $aui-nav-textcolor: rgba(#000, .5) !default;
 $aui-nav-textcolor-active: $aui-color-black !default;
 $aui-nav-list-separator-color: rgba(#000, .1) !default;
-$aui-nav-pills-background: $aui-color-gray90 !default;
+$aui-nav-tab-background: $aui-color-gray90 !default;
 $aui-nav-dropdown-textcolor: $aui-nav-textcolor !default;
 $aui-nav-dropdown-textcolor-active: $aui-nav-textcolor-active !default;
 $aui-nav-dropdown-panel-color: $aui-color-gray90 !default;
@@ -19,14 +19,14 @@ $aui-nav-item-spacing: unit(8) !default;
 $aui-nav-small-font-size: unit(3) !default;
 $aui-nav-small-default-height: unit(6) !default;
 $aui-nav-small-item-spacing: unit(6) !default;
-$aui-nav-small-pills-item-padding-x: unit(4) !default;
-$aui-nav-small-pills-item-padding-y: unit(3.5) !default;
-$aui-nav-small-pills-height: $aui-nav-small-font-size + 2 * $aui-nav-small-pills-item-padding-y !default;
+$aui-nav-small-tab-item-padding-x: unit(4) !default;
+$aui-nav-small-tab-item-padding-y: unit(3.5) !default;
+$aui-nav-small-tab-height: $aui-nav-small-font-size + 2 * $aui-nav-small-tab-item-padding-y !default;
 
 // Modification: Pills
-$aui-nav-pills-item-padding-x: unit(5) !default;
-$aui-nav-pills-item-padding-y: unit(4.5) !default;
-$aui-nav-pills-height: $aui-nav-font-size + 2 * $aui-nav-pills-item-padding-y !default;
+$aui-nav-tab-item-padding-x: unit(5) !default;
+$aui-nav-tab-item-padding-y: unit(4.5) !default;
+$aui-nav-tab-height: $aui-nav-font-size + 2 * $aui-nav-tab-item-padding-y !default;
 
 // Modification: Dropdown
 $aui-nav-dropdown-toogle-arrow-width: 13px !default;
@@ -126,17 +126,17 @@ $aui-nav-dropdown-sticky-height: $aui-nav-font-size + 2* $aui-nav-dropdown-stick
 }
 
 /**
- * Modifier: Inline and Pills
+ * Modifier: Bar and Tab
  */
-.aui-nav--inline,
-.aui-nav--pills {
+.aui-nav--bar,
+.aui-nav--tab {
   font-family: $aui-font-extended;
   overflow: hidden;
   height: $aui-nav-default-height;
 
   // NOTE
   // Define a viewport width up to we use dropdown layout,
-  // instead of the origin inline/ pills layout.
+  // instead of the origin bar/ tab layout.
   // JS will read `content` value and switch the layout on window resize.
   @if $aui-nav-layout-break > 0 {
     &::after {
@@ -170,7 +170,6 @@ $aui-nav-dropdown-sticky-height: $aui-nav-font-size + 2* $aui-nav-dropdown-stick
   }
 
   .aui-nav__item {
-    // display: inline-block;
     flex: 0 0 auto;
     padding: 0 #{$aui-nav-item-spacing / 2};
 
@@ -294,8 +293,8 @@ $aui-nav-dropdown-sticky-height: $aui-nav-font-size + 2* $aui-nav-dropdown-stick
   }
 }
 
-.aui-nav--pills {
-  height: $aui-nav-pills-height;
+.aui-nav--tab {
+  height: $aui-nav-tab-height;
 
   .aui-nav__item {
     padding-left: 0;
@@ -303,26 +302,26 @@ $aui-nav-dropdown-sticky-height: $aui-nav-font-size + 2* $aui-nav-dropdown-stick
   }
 
   .aui-nav__action {
-    padding: $aui-nav-pills-item-padding-y $aui-nav-pills-item-padding-x;
+    padding: $aui-nav-tab-item-padding-y $aui-nav-tab-item-padding-x;
   }
 
   .aui-nav__indicator {
     top: 0;
     height: 100%;
     transform: none;
-    background: $aui-nav-pills-background;
+    background: $aui-nav-tab-background;
   }
 
   &.aui-nav--small {
-    height: $aui-nav-small-pills-height;
+    height: $aui-nav-small-tab-height;
 
     .aui-nav__action {
-      padding: $aui-nav-small-pills-item-padding-y $aui-nav-small-pills-item-padding-x;
+      padding: $aui-nav-small-tab-item-padding-y $aui-nav-small-tab-item-padding-x;
     }
   }
 
   &.aui-nav--overlap {
-    margin-top: #{$aui-nav-pills-height * -1};
+    margin-top: #{$aui-nav-tab-height * -1};
   }
 }
 

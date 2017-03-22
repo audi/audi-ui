@@ -20,23 +20,23 @@ const SCROLL_PADDING = 10; // in px;
 const SCROLL_EASING = 0.2;
 
 /**
- * Class constructor for NavInline AUI component.
+ * Class constructor for NavBar AUI component.
  * Implements AUI component design pattern defined at:
  * https://github.com/...
  *
  * @param {HTMLElement} element The element that will be upgraded.
  */
-export default class NavInline extends Component {
+export default class NavBar extends Component {
 
   /**
-   * Upgrades all NavInline AUI components.
+   * Upgrades all NavBar AUI components.
    * @returns {Array} Returns an array of all newly upgraded components.
    */
   static upgradeElements() {
     let components = [];
     Array.from(document.querySelectorAll(SELECTOR_COMPONENT)).forEach(element => {
       if (!Component.isElementUpgraded(element)) {
-        components.push(new NavInline(element));
+        components.push(new NavBar(element));
       }
     });
     return components;

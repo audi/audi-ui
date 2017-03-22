@@ -24,36 +24,36 @@
     </div>
   </section>
 
-  <section class="test-section" id="nav-inline">
-    {{ section.header('Nav Inline') }}
+  <section class="test-section" id="nav-bar">
+    {{ section.header('Nav Bar') }}
     <div class="test-section__panel">
       <div class="aui-grid">
         <div class="aui-cell">
           <h3 class="test-section__headline">Default</h3>
-          {% include 'nav/snippets/nav-inline.html' %}
+          {% include 'nav/snippets/nav-bar.html' %}
         </div>
         <div class="aui-cell leader-4">
           <h3 class="test-section__headline">Small</h3>
-          {% include 'nav/snippets/nav-inline-small.html' %}
+          {% include 'nav/snippets/nav-bar-small.html' %}
         </div>
       </div>
     </div>
   </section>
 
-  <section class="test-section" id="nav-pills">
-    {{ section.header('Nav Pills') }}
+  <section class="test-section" id="nav-tab">
+    {{ section.header('Nav Tab') }}
     <div class="test-section__panel">
       <div class="aui-grid">
         <div class="aui-cell">
           <h3 class="test-section__headline">Default</h3>
-          {% include 'nav/snippets/nav-pills.html' %}
+          {% include 'nav/snippets/nav-tab.html' %}
           <div class="leader-padding-10 trailer-padding-10 aui-color-gray90" style="padding-left: 1.25rem; padding-right: 1.25rem;">
             Content area
           </div>
         </div>
         <div class="aui-cell leader-4">
           <h3 class="test-section__headline">Small</h3>
-          {% include 'nav/snippets/nav-pills-small.html' %}
+          {% include 'nav/snippets/nav-tab-small.html' %}
           <div class="leader-padding-10 trailer-padding-10 aui-color-gray90" style="padding-left: 1rem; padding-right: 1rem;">
             Content area
           </div>
@@ -62,8 +62,8 @@
     </div>
   </section>
 
-  <section class="test-section" id="nav-pills-theme">
-    {{ section.header('Nav Pills Overlap component with custom theme of gray10 and gray20') }}
+  <section class="test-section" id="nav-tab-theme">
+    {{ section.header('Nav Tab Overlap component with custom theme of gray10 and gray20') }}
     <div class="test-section__panel">
       <div class="aui-grid">
         <div class="aui-cell">
@@ -74,7 +74,7 @@
       </div>
       <div class="aui-grid">
         <div class="aui-cell">
-          <nav class="aui-nav aui-js-nav aui-nav--pills aui-nav--overlap aui-theme-gray10-gray20">
+          <nav class="aui-nav aui-js-nav aui-nav--tab aui-nav--overlap aui-theme-gray10-gray20">
             <div class="aui-nav__panel">
               <ul class="aui-nav__items">
                 <li class="aui-nav__item">

@@ -4,8 +4,8 @@
   $aui-nav-textcolor-active: rgba(#fff, 1);
   $aui-nav-list-separator-color: rgba(#fff, .2);
   $aui-nav-paddle-background: $aui-color-black;
-  $aui-nav-pills-color: rgba(#000, 1);
-  $aui-nav-pills-background: $aui-color-gray90;
+  $aui-nav-tab-color: rgba(#000, 1);
+  $aui-nav-tab-background: $aui-color-gray90;
   $aui-nav-dropdown-textcolor: $aui-nav-textcolor;
   $aui-nav-dropdown-textcolor-active: $aui-nav-textcolor-active;
   $aui-nav-dropdown-panel-color: $aui-color-gray20;
@@ -51,13 +51,13 @@
     background: linear-gradient(to right, rgba($aui-nav-paddle-background, 0) 0%,rgba($aui-nav-paddle-background, 1) 60%);
   }
 
-  &.aui-nav--pills {
+  &.aui-nav--tab {
     .aui-nav__action.is-active {
-      color: $aui-nav-pills-color;
+      color: $aui-nav-tab-color;
     }
 
     .aui-nav__indicator {
-      background: $aui-nav-pills-background;
+      background: $aui-nav-tab-background;
     }
   }
 
@@ -173,8 +173,8 @@
     $aui-nav-textcolor: rgba(#fff, .5);
     $aui-nav-textcolor-active: rgba(#fff, 1);
     $aui-nav-paddle-background: $aui-color-gray10;
-    $aui-nav-pills-color: rgba(#fff, 1);
-    $aui-nav-pills-background: $aui-color-gray20;
+    $aui-nav-tab-color: rgba(#fff, 1);
+    $aui-nav-tab-background: $aui-color-gray20;
 
     color: $aui-nav-textcolor;
     fill: $aui-nav-textcolor;
@@ -216,13 +216,13 @@
       background: linear-gradient(to right, rgba($aui-nav-paddle-background, 0) 0%,rgba($aui-nav-paddle-background, 1) 60%);
     }
 
-    &.aui-nav--pills {
+    &.aui-nav--tab {
       .aui-nav__action.is-active {
-        color: $aui-nav-pills-color;
+        color: $aui-nav-tab-color;
       }
 
       .aui-nav__indicator {
-        background: $aui-nav-pills-background;
+        background: $aui-nav-tab-background;
       }
     }
   }

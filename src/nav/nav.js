@@ -1,13 +1,13 @@
 import Component from '../component/component';
-import NavInline from '../nav/nav-inline';
+import NavBar from '../nav/nav-bar';
 import NavDropdown from '../nav/nav-dropdown';
 import NavList from '../nav/nav-list';
 import ResizeObserver from '../util/resize-observer';
 
 const SELECTOR_COMPONENT = '.aui-js-nav';
 const CLASS_LIST = 'aui-nav--list';
-const CLASS_INLINE = 'aui-nav--inline';
-const CLASS_PILLS = 'aui-nav--pills';
+const CLASS_BAR = 'aui-nav--bar';
+const CLASS_TAB = 'aui-nav--tab';
 const CLASS_DROPDOWN = 'aui-nav--dropdown';
 
 /**
@@ -41,17 +41,17 @@ export default class Nav extends Component {
   }
 
   /**
-   * Returns modifier `inline`
+   * Returns modifier `bar`
    */
-  static get MODIFIER_INLINE() {
-    return CLASS_INLINE;
+  static get MODIFIER_BAR() {
+    return CLASS_BAR;
   }
 
   /**
-   * Returns modifier `pills`
+   * Returns modifier `tab`
    */
-  static get MODIFIER_PILLS() {
-    return CLASS_PILLS;
+  static get MODIFIER_TAB() {
+    return CLASS_TAB;
   }
 
   /**
@@ -78,11 +78,11 @@ export default class Nav extends Component {
 
     // Initialize with appropriate decorator depending on modifier,
     // represented by according CSS class:
-    if (this._element.classList.contains(CLASS_INLINE)) {
-      this._originModifier = Nav.MODIFIER_INLINE;
+    if (this._element.classList.contains(CLASS_BAR)) {
+      this._originModifier = Nav.MODIFIER_BAR;
 
-    } else if (this._element.classList.contains(CLASS_PILLS)) {
-      this._originModifier = Nav.MODIFIER_PILLS;
+    } else if (this._element.classList.contains(CLASS_TAB)) {
+      this._originModifier = Nav.MODIFIER_TAB;
 
     } else if (this._element.classList.contains(CLASS_DROPDOWN)) {
       this._originModifier = Nav.MODIFIER_DROPDOWN;
@@ -93,7 +93,7 @@ export default class Nav extends Component {
 
     this._layoutBreakpoint = parseInt(window.getComputedStyle(this._element, ':after').getPropertyValue('content').replace(/['"]+/g, ''));
 
-    if (this._layoutBreakpoint > 0 && (this._originModifier === Nav.MODIFIER_INLINE || this._originModifier === Nav.MODIFIER_PILLS)) {
+    if (this._layoutBreakpoint > 0 && (this._originModifier === Nav.MODIFIER_BAR || this._originModifier === Nav.MODIFIER_TAB)) {
       this._resizeObserver = new ResizeObserver();
       this._resizeObserver.resized.add(this._boundResize = () => this._resized());
       this._resized();
@@ -136,17 +136,17 @@ export default class Nav extends Component {
       this._decorator.dispose();
     }
 
-    this._element.classList.remove(CLASS_LIST, CLASS_INLINE, CLASS_PILLS, CLASS_DROPDOWN);
+    this._element.classList.remove(CLASS_LIST, CLASS_BAR, CLASS_TAB, CLASS_DROPDOWN);
 
     switch (modifier) {
-      case Nav.MODIFIER_INLINE:
-        this._element.classList.add(CLASS_INLINE);
-        this._decorator = new NavInline(this._element);
+      case Nav.MODIFIER_BAR:
+        this._element.classList.add(CLASS_BAR);
+        this._decorator = new NavBar(this._element);
         break;
 
-      case Nav.MODIFIER_PILLS:
-        this._element.classList.add(CLASS_PILLS);
-        this._decorator = new NavInline(this._element);
+      case Nav.MODIFIER_TAB:
+        this._element.classList.add(CLASS_TAB);
+        this._decorator = new NavBar(this._element);
         break;
 
       case Nav.MODIFIER_DROPDOWN:
@@ -171,7 +171,7 @@ export default class Nav extends Component {
    */
   _resized() {
     const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    if (this._originModifier === Nav.MODIFIER_INLINE || this._originModifier === Nav.MODIFIER_PILLS) {
+    if (this._originModifier === Nav.MODIFIER_BAR || this._originModifier === Nav.MODIFIER_TAB) {
       if (viewportWidth >= this._layoutBreakpoint) {
         this.setModifier(this._originModifier);
       } else {
