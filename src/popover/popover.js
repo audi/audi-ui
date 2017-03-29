@@ -115,7 +115,7 @@ export default class Popover extends Component {
             gpu: false
           }
         });
-        reflow(this._element); // TODO Do we need this anymore?
+        reflow(this._element); // REVIEW Do we need this anymore?
         this._tether.position();
       }
       performToggle();
@@ -143,7 +143,6 @@ export default class Popover extends Component {
   hide() {
     this._element.classList.remove(CLASS_SHOWN);
     this._element.addEventListener(transitionend, this._boundAnimationendHandler = (event) => this._onHideComplete(event));
-    // this._cleanupTether();
     window.removeEventListener('click', this._boundWindowClickHandler);
   }
 
@@ -169,7 +168,7 @@ export default class Popover extends Component {
     if (closest(event.target, SELECTOR_DISMISS, this._element)) {
       this.hide();
 
-      // Hide if target is not inside Popover and not trigger element
+      // Hide if target is not inside Popover and is not a trigger element
     } else if (!this._element.contains(event.target) && event.target !== this._trigger) {
       this.hide();
     }
