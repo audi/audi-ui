@@ -94,7 +94,7 @@
     }
   }
 
-  &--text.aui-theme-light {
+  &--text.aui-theme-light &__text {
     &::after {
       background-image: url('data:image/svg+xml,#{aui-svg-arrow($aui-button-color)}');
     }
