@@ -8,6 +8,7 @@ const CLASS_IS_TOP = 'is-top';
 const OFFSET_VIEWPORT_X = 10;
 const OFFSET_TARGET_TOP = 12;
 const OFFSET_TARGET_BOTTOM = 12;
+const OPEN_DELAY = 400;
 
 /**
  * Class constructor for Tooltip AUI component.
@@ -145,6 +146,7 @@ export default class Tooltip extends Component {
    */
   _onTriggerEnter(event) {
     this.open(event.target, event.clientX);
+    this.openTimeout = setTimeout(this.open => (event.target, event.clientX));
   }
 
   /**
