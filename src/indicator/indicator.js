@@ -1,7 +1,9 @@
 import Component from '../component/component';
+import clamp from '../util/clamp';
 
 const SELECTOR_COMPONENT = '.aui-js-indicator';
-const CLASS_ITEM = 'aui-indicator__action';
+const CLASS_ITEM = 'aui-indicator__item';
+const CLASS_ACTION = 'aui-indicator__action';
 const CLASS_INDICATOR = 'aui-indicator__indicator';
 const CLASS_IS_ACTIVE = 'is-active';
 
@@ -35,7 +37,8 @@ export default class Indicator extends Component {
   init() {
     super.init();
 
-    this._items = Array.from(this._element.querySelectorAll(`.${CLASS_ITEM}`));
+    this._actions = Array.from(this._element.querySelectorAll(`.${CLASS_ACTION}`));
+    this._listItems = Array.from(this._element.querySelectorAll(`.${CLASS_ITEM}`));
 
     this._indicator = document.createElement('span');
     this._indicator.classList.add(CLASS_INDICATOR);
@@ -44,21 +47,53 @@ export default class Indicator extends Component {
     this._element.addEventListener('click', this.clickHandler = (event) => this._onClick(event));
   }
 
+  /**
+   * Handle click.
+   * @param {Event} event The event that fired.
+   * @private
+   */
   _onClick(event) {
-    if (!event.target.classList.contains(CLASS_ITEM)) {
+    if (!event.target.classList.contains(CLASS_ACTION)) {
       return;
     }
     event.preventDefault();
 
-    this._items.forEach(item => {
+    this.selectAction(event.target);
+  }
+
+  /**
+   * Select item with given action element.
+   * @param {HTMLElement} actionElement Action child element of the list item to select.
+   * @private
+   */
+  selectAction(actionElement) {
+    if (actionElement) {
+      // Find index
+      const listItem = actionElement.parentNode;
+      const index = this._listItems.indexOf(listItem);
+      this.select(index);
+    }
+  }
+
+  /**
+   * Select item.
+   * @param {Integer} index Zero-based index of the list item to select.
+   * @private
+   */
+  select(index = 0) {
+    index = clamp(index, 0, this._actions.length - 1);
+    const activeItem = this._actions[index];
+
+    // Update actions
+    this._actions.forEach(item => {
       item.classList.remove(CLASS_IS_ACTIVE);
     });
-    event.target.classList.add(CLASS_IS_ACTIVE);
+    activeItem.classList.add(CLASS_IS_ACTIVE);
 
-    // Indicator position
-    let rectContainer = this._element.getBoundingClientRect();
-    let rectTarget = event.target.getBoundingClientRect();
-    let indicatorLeft = rectTarget.left - rectContainer.left;
+    // Update indicator position
+    const rectContainer = this._element.getBoundingClientRect();
+    const rectTarget = activeItem.getBoundingClientRect();
+    const indicatorLeft = rectTarget.left - rectContainer.left;
     this._indicator.style.left = `${indicatorLeft}px`;
   }
 }
