@@ -71,6 +71,7 @@ export default class Tooltip extends Component {
   dispose() {
     this._trigger.removeEventListener('mouseenter', this._boundMouseenter);
     this._trigger.removeEventListener('mouseleave', this._boundMouseleave);
+    this._trigger.removeEventListener('mousemove', this._boundMouseMove);
     this._trigger.removeEventListener('focusin', this._boundfocusin);
     this._trigger.removeEventListener('focusout', this._boundfocusout);
     this._trigger.removeEventListener('touchstart', this._boundTouchstart);
@@ -93,6 +94,8 @@ export default class Tooltip extends Component {
     }
 
     const rect = trigger.getBoundingClientRect();
+    this._element.style.left = `0px`;
+    this._element.style.top = `0px`;
     clientX = clientX || rect.left + rect.width / 2;
     const triggerX = clientX - rect.left;
     const yTop = rect.top - this._element.offsetHeight - OFFSET_TARGET_TOP;
@@ -136,6 +139,7 @@ export default class Tooltip extends Component {
    * Close tooltip.
    */
   close() {
+    clearTimeout(this.openTimeout);
     window.removeEventListener('scroll', this._boundScrollWindow);
     this._element.classList.remove(CLASS_IS_ACTIVE);
   }
@@ -145,8 +149,23 @@ export default class Tooltip extends Component {
    * @param {Event} event that fired.
    */
   _onTriggerEnter(event) {
-    this.open(event.target, event.clientX);
-    this.openTimeout = setTimeout(this.open => (event.target, event.clientX));
+    // this.open(event.target, event.clientX);
+    this.openPositionX = event.clientX;
+    this._trigger.addEventListener('mousemove', this._boundMouseMove = (event) => this._onTriggerMove(event));
+
+    clearTimeout(this.openTimeout);
+    this.openTimeout = setTimeout(() => {
+      this._trigger.removeEventListener('mousemove', this._boundMouseMove);
+      this.open(event.target, this.openPositionX);
+    }, OPEN_DELAY);
+  }
+
+  /**
+   * Handle mousemove event.
+   * @param {Event} event that fired.
+   */
+  _onTriggerMove(event) {
+    this.openPositionX = event.clientX;
   }
 
   /**
@@ -162,7 +181,9 @@ export default class Tooltip extends Component {
    * @param {Event} event that fired.
    */
   _onTriggerLeaveOutside(event) {
+    console.log('leaveoutside', event);
     if (!this._element.contains(event.target) && !this._trigger.contains(event.target)) {
+      console.log('-> close');
       this.close();
     };
   }

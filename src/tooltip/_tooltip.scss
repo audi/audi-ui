@@ -1,18 +1,23 @@
+$aui-tooltip-open-duration: .25s;
+$aui-tooltip-close-duration: .15s;
+
 .aui-tooltip {
+  pointer-events: none;
   display: block;
   position: fixed;
   top: -1000px;
   left: -1000px;
+  max-width: $aui-layout-min-width;
   font-size: .875rem;
   line-height: unit(5);
-  max-width: $aui-layout-min-width;
+  color: $aui-color-body;
   background: $aui-color-white;
-  visibility: hidden;
-  pointer-events: none;
   @include shadow;
   opacity: 0;
-  color: $aui-color-body;
-  transition: opacity .15s linear, visibility .15s linear;
+  visibility: hidden;
+  transition-property: opacity, visibility;
+  transition-duration: $aui-tooltip-close-duration;
+  transition-timing-function: linear;
 
   &__triangle {
     display: block;
@@ -63,8 +68,7 @@
   &.is-active {
     opacity: 1;
     visibility: visible;
-    transition-duration: .25s;
-    transition-delay: .4s;
+    transition-duration: $aui-tooltip-open-duration;
     z-index: $aui-zindex-tooltip;
   }
 
