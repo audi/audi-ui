@@ -15,13 +15,13 @@ $aui-textfield-floating-label-active-label-top: 0 !default;
 $aui-textfield-floating-label-active-label-opacity: 1 !default;
 $aui-textfield-floating-label-active-label-font-size: $aui-field-floating-label-font-size !default;
 
-$aui-textfield-multiline-padding-top: (21 / 16 * 1em) !default;
+//$aui-textfield-multiline-padding-top: (21 / 16 * 1em) !default;
+$aui-textfield-multiline-padding-top: (13 / 16 * 1em) !default;
 $aui-textfield-multiline-padding-x: (10 / 16 * 1em) !default;
 $aui-textfield-multiline-active-label-top: (10 / 16 * 1em) !default;
 $aui-textfield-multiline-active-label-font-size: $aui-field-floating-label-font-size !default;
 $aui-textfield-multiline-active-label-opacity: 1 !default;
 $aui-textfield-multiline-active-field-padding-top: (20 / 16 * 1em) !default;
-$aui-textfield-multiline-padding-top: (13 / 16 * 1em) !default;
 
 .aui-textfield {
   display: block;
