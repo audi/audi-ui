@@ -35,19 +35,28 @@ $aui-response-duration: 0.6s !default;
   &.is-animating &__effect {
     animation: aui-response-dark $aui-response-duration $aui-easing both;
   }
+
+  &.aui-theme-light.is-animating &__effect,
+  .aui-button.aui-theme-light &.is-animating &__effect {
+    animation: aui-response-light $aui-response-duration $aui-easing both;
+  }
 }
 
-.aui-js-response.aui-theme-light &.is-animating &__effect {
+/**
+ * Invert effect, when used with Primary Button
+ */
+
+.aui-button--primary .aui-response.is-animating .aui-response__effect {
   animation: aui-response-light $aui-response-duration $aui-easing both;
 }
 
-.aui-button--primary &.is-animating &__effect {
-  animation: aui-response-light $aui-response-duration $aui-easing both;
-}
-
-.aui-button--primary.aui-theme-light &.is-animating &__effect {
+.aui-button--primary.aui-theme-light .aui-response.is-animating .aui-response__effect {
   animation: aui-response-dark $aui-response-duration $aui-easing both;
 }
+
+/**
+ * Animations
+ */
 
 @keyframes aui-response-dark {
   0% {
