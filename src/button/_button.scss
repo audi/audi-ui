@@ -242,7 +242,7 @@ $aui-button-background-hover: $aui-color-gray20 !default;
     display: inline-block;
     position: relative;
     text-align: left;
-    vertical-align: middle;
+    // vertical-align: middle; REVIEW Increases button height by 1px; check if necessary
   }
 
   // Child elements
