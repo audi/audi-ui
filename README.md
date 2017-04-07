@@ -7,9 +7,9 @@
 ## Want to contribute?
 
 If you found a bug, have any questions or want to contribute. Follow our
-[guidelines](https://github.com/strichpunkt-design/audi-ui/blob/master/CONTRIBUTING.md),
+[guidelines](https://github.com/audi/audi-ui/blob/master/CONTRIBUTING.md),
 and help improve the Audi UI. For more information visit our
-[wiki](https://github.com/strichpunkt-design/audi-ui/wiki).
+[wiki](https://github.com/audi/audi-ui/wiki).
 
 ## Getting Started
 
@@ -38,7 +38,7 @@ CLI version 1.2.2
 ### Setup the repo:
 
 ```
-git clone https://github.com/strichpunkt-design/audi-ui.git && cd audi-ui
+git clone https://github.com/audi/audi-ui.git && cd audi-ui
 npm i
 ```
 
@@ -57,7 +57,7 @@ gulp test:visual
 
 #### 1. Install Audi UI via NPM
 ```
-npm install https://github.com/strichpunkt-design/audi-ui.git
+npm install https://github.com/audi/audi-ui.git
 ```
 
 #### 2. Link CSS directly OR import library SCSS in your styles
