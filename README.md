@@ -122,7 +122,3 @@ Supported versioned browsers:
 - Internet Explorer 10
 - Safari 8
 - Mobile Safari 8
-
-## License
-
-© Audi, 2017.
