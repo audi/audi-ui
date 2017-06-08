@@ -1,9 +1,9 @@
 {
-  "name": "audi-ui",
+  "name": "@audi/audi-ui",
   "version": "1.0.0-alpha.1",
   "description": "Audi UI components in HTML, CSS and JS.",
   "author": "Audi",
-  "private": true,
+  "private": false,
   "homepage": "https://github.com/audi/audi-ui",
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
     "eslint": "1.7.2",
     "eslint-loader": "1.1.0",
     "fontfaceobserver": "^2.0.5",
-    "gulp": "gulpjs/gulp#4.0",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-csso": "^2.0.0",
     "gulp-data": "^1.2.1",
@@ -56,5 +56,12 @@
   "scripts": {},
   "engines": {
     "node": "^6.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/audi/audi-ui/issues"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "license": "Apache-2.0"
 }
