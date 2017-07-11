@@ -10,6 +10,7 @@ import FontFaceObserver from 'fontfaceobserver';
 // Import all components from Audi UI library
 import {
   Alert,
+  Audioplayer,
   Breadcrumb,
   Checkbox,
   Dropdown,
@@ -35,6 +36,7 @@ import {
 // Upgrade all Audi UI components
 let alertComponents = Alert.upgradeElements();
 let breadcrumbComponents = Breadcrumb.upgradeElements();
+Audioplayer.upgradeElements();
 Checkbox.upgradeElements();
 Dropdown.upgradeElements();
 Flyout.upgradeElements();

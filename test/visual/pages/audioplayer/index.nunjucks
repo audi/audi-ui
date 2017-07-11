@@ -1,0 +1,42 @@
+{% extends 'pages/_layouts/page.nunjucks' %}
+{% import 'pages/_macros/icon.nunjucks' as icon %}
+{% import 'pages/_macros/section.nunjucks' as section %}
+
+{% block main %}
+
+  <section class="test-section" id="audioplayer-basic">
+    {{ section.header('Basic audioplayer') }}
+    <div class="test-section__panel">
+      {% include 'audioplayer/snippets/audioplayer-basic.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="audioplayer-download">
+    {{ section.header('Audioplayer with downloadable content & mute functionality') }}
+    <div class="test-section__panel">
+      {% include 'audioplayer/snippets/audioplayer-download.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="audioplayer-playlist">
+    {{ section.header('Audioplayer with playlist functionality') }}
+    <div class="test-section__panel">
+      {% include 'audioplayer/snippets/audioplayer-playlist.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="audioplayer-download">
+    {{ section.header('Audioplayer with volume control button') }}
+    <div class="test-section__panel">
+      {% include 'audioplayer/snippets/audioplayer-volume-control.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="audioplayer-cover-small">
+    {{ section.header('Audioplayer with small cover') }}
+    <div class="test-section__panel">
+      {% include 'audioplayer/snippets/audioplayer-cover-small.html' %}
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+$aui-audioplayer-light-loading: $aui-color-gray50 !default;
+$aui-audioplayer-light-progress: $aui-color-white !default;
+$aui-audioplayer-light-timeline: $aui-color-gray30 !default;
+
+.aui-audioplayer {
+
+  &.aui-theme-light {
+    color: $aui-color-white;
+
+    .aui-button {
+      fill: $aui-color-white;
+      color: $aui-color-white;
+    }
+
+    .aui-audioplayer__playhead {
+      background-color: $aui-color-gray20;
+    }
+
+    .aui-audioplayer__progress--loading {
+      background-color: $aui-audioplayer-light-loading;
+    }
+
+    .aui-audioplayer__progress--progress {
+      background-color: $aui-audioplayer-light-progress;
+    }
+
+    .aui-audioplayer__progress-holder {
+      background-color: $aui-audioplayer-light-timeline;
+    }
+
+    .aui-audioplayer__cover {
+      background-color: $aui-color-black;
+    }
+  }
+
+}

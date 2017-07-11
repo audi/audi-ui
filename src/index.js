@@ -6,6 +6,7 @@
  * Import all AUI components.
  */
 import Alert from './alert/alert';
+import Audioplayer from './audioplayer/audioplayer';
 import Breadcrumb from './breadcrumb/breadcrumb';
 import Checkbox from './checkbox/checkbox';
 import Dropdown from './dropdown/dropdown';
@@ -35,6 +36,7 @@ import Tooltip from './tooltip/tooltip';
  */
 export {
   Alert,
+  Audioplayer,
   Breadcrumb,
   Checkbox,
   Dropdown,
@@ -79,6 +81,7 @@ class ComponentHandler {
 
   upgradeAllElements() {
     Alert.upgradeElements();
+    Audioplayer.upgradeElements();
     Breadcrumb.upgradeElements();
     Checkbox.upgradeElements();
     Dropdown.upgradeElements();

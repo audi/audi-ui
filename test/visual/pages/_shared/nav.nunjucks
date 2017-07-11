@@ -11,6 +11,7 @@
   <li class="test-nav__item"><a class="test-nav__action" href="{{ 'notification/' | path('test') }}">Notification</a></li>
   <li class="test-nav__item"><a class="test-nav__action" href="{{ 'pagination/' | path('test') }}">Pagination</a></li>
   <li class="test-nav__item"><a class="test-nav__action" href="{{ 'player/' | path('test') }}">Player</a></li>
+  <li class="test-nav__item"><a class="test-nav__action" href="{{ 'audioplayer/' | path('test') }}">Audioplayer</a></li>
   <li class="test-nav__item"><a class="test-nav__action" href="{{ 'popover/' | path('test') }}">Popover</a></li>
   <li class="test-nav__item"><a class="test-nav__action" href="{{ 'switch/' | path('test') }}">Switch</a></li>
   <li class="test-nav__item"><a class="test-nav__action" href="{{ 'table/' | path('test') }}">Table</a></li>
