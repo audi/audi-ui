@@ -83,6 +83,10 @@ $aui-pagination-color-active: rgba(#000, 1) !default;
     transition: left .3s $aui-easing, width .3s $aui-easing, opacity .3s $aui-easing;
   }
 
+  [displaytype^='stepless'] &__indicator {
+    display: none;
+  }
+
   &__link,
   &__next,
   &__prev {
