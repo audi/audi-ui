@@ -87,6 +87,10 @@ $aui-pagination-color-active: rgba(#000, 1) !default;
     display: none;
   }
 
+  [pageCount^='0'] &__indicator {
+    display: none;
+  }
+
   &__link,
   &__next,
   &__prev {
