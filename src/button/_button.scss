@@ -1,4 +1,5 @@
 $aui-button-font-size: 15 !default;
+$aui-button-font-size-rem: rem($aui-button-font-size) !default;
 $aui-button-icon-margin: 8 !default;
 $aui-button-floating-offset-x: 1.5rem !default;
 $aui-button-floating-offset-y: 1.5rem !default;
@@ -9,6 +10,7 @@ $aui-button-border-color: $aui-color-black !default;
 $aui-button-border-color-hover: $aui-color-gray50 !default;
 $aui-button-background: $aui-color-black !default;
 $aui-button-background-hover: $aui-color-gray20 !default;
+$aui-button-padding: em(13, $aui-button-font-size) 0 em(12, $aui-button-font-size) !default;
 
 .aui-button {
   &.is-active,
@@ -24,10 +26,10 @@ $aui-button-background-hover: $aui-color-gray20 !default;
     cursor: pointer;
     display: inline-block;
     position: relative;
-    padding: em(13, $aui-button-font-size) 0 em(12, $aui-button-font-size);
+    padding: $aui-button-padding;
     outline: 0;
     font-family: inherit;
-    font-size: rem($aui-button-font-size);
+    font-size: $aui-button-font-size-rem;
     font-weight: $aui-font-weight-normal;
     line-height: unit(6);
     text-align: center;
@@ -61,8 +63,8 @@ $aui-button-background-hover: $aui-color-gray20 !default;
   &--padded,
   &--primary,
   &--secondary {
-    padding-left: em(32, $aui-button-font-size);
-    padding-right: em(32, $aui-button-font-size);
+    padding-left: em($aui-rem-base * 2, $aui-button-font-size);
+    padding-right: em($aui-rem-base * 2, $aui-button-font-size);
   }
 
   &--icon,

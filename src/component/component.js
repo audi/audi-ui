@@ -57,7 +57,11 @@ export default class Component {
    */
   removeChild(childNode) {
     if (childNode && childNode.parentNode) {
-      childNode.remove();
+      if (this.isIE()) {
+        childNode.removeNode(true);
+      } else {
+        childNode.remove();
+      }
     }
   }
 
@@ -106,5 +110,33 @@ export default class Component {
    */
   get element() {
     return this._element;
+  }
+
+  /**
+   * Returns boolean if browser is Internet Explorer. Other browser (also Edge) return false.
+   */
+  isIE() {
+  var ua = window.navigator.userAgent;
+    var msie = ua.indexOf('MSIE ');
+    if (msie > 0) {
+      // IE 10 or older
+      return true;
+    }
+
+    var trident = ua.indexOf('Trident/');
+    if (trident > 0) {
+      // IE 11
+      var rv = ua.indexOf('rv:');
+      return true;
+    }
+
+    var edge = ua.indexOf('Edge/');
+    if (edge > 0) {
+      // Edge (IE 12+)
+      return false;
+    }
+
+    // other browser
+    return false;
   }
 }
