@@ -1,15 +1,13 @@
 # Audi UI
 
-> An implementation of Audi UI components in vanilla CSS, JS, and HTML.
+> An implementation of Audi UI components in CSS, Vanilla JavaScript, and HTML.
+> Complementary [typefaces](https://github.com/audi/audi-type) and [icons](http://github.com/audi/audi-icon) can be found in the corresponding repositories on the same organization account.
 
 > Project status: **alpha**
 
 ## Want to contribute?
 
-If you found a bug, have any questions or want to contribute. Follow our
-[guidelines](https://github.com/audi/audi-ui/blob/master/CONTRIBUTING.md),
-and help improve the Audi UI. For more information visit our
-[wiki](https://github.com/audi/audi-ui/wiki).
+If you found a bug, have any questions or want to contribute feel free to file an issue on GitHub. For general information on the audi corporate design please follow the [official guidelines](https://www.audi.com/ci).
 
 ## Getting Started
 
@@ -57,16 +55,16 @@ gulp test:visual
 
 #### 1. Install Audi UI via NPM
 ```
-npm install https://github.com/audi/audi-ui.git
+npm install @audi/audi-ui
 ```
 
 #### 2. Link CSS directly OR import library SCSS in your styles
 ``` html
-<link rel="stylesheet" href="/node_modules/audi-ui/lib/audiui.min.css">
+<link rel="stylesheet" href="/node_modules/@audi/audi-ui/lib/audiui.min.css">
 ```
 
 ``` CSS
-@import "/node_modules/audi-ui/src/index";
+@import "/node_modules/@audi/audi-ui/src/index";
 ```
 
 #### 3. Initialize JS
