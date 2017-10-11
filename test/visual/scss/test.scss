@@ -1,9 +1,9 @@
 // Import Audi Type:
 $auditype-font-src: '../fonts';
-@import '/node_modules/audi-type/dist/css/audi-type.css';
+@import '/node_modules/@audi/audi-type/dist/css/audi-type.css';
 
 // Import Audi Icon:
-@import '/node_modules/audi-icon/dist/css/audi-icon.css';
+@import '/node_modules/@audi/audi-icon/dist/css/audi-icon.css';
 
 // Import library requirements:
 @import '../../../src/requirements';

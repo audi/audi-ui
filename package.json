@@ -11,8 +11,8 @@
   },
   "main": "dist/audi-ui.min.js",
   "devDependencies": {
-    "audi-icon": "git+https://github.com/audi/audi-icon.git",
-    "audi-type": "git+https://github.com/audi/audi-type.git",
+    "@audi/audi-icon": "^1.0.0-alpha.1",
+    "@audi/audi-type": "^1.0.0-alpha.1",
     "babel": "6.3.13",
     "babel-core": "6.1.18",
     "babel-eslint": "5.0.0",

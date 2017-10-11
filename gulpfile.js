@@ -319,12 +319,12 @@ gulp.task('test:visual:content', function() {
 });
 
 gulp.task('test:visual:fonts', function() {
-  return gulp.src(['./node_modules/audi-type/dist/fonts/**/*.{woff,woff2,ttf}'])
+  return gulp.src(['./node_modules/@audi/audi-type/dist/fonts/**/*.{woff,woff2,ttf}'])
     .pipe(gulp.dest(`${testFolder}/assets/fonts`));
 });
 
 gulp.task('test:visual:svg', function() {
-  return gulp.src(['node_modules/audi-icon/dist/svg/sprite/sprite.svg'])
+  return gulp.src(['node_modules/@audi/audi-icon/dist/svg/sprite/sprite.svg'])
     .pipe(gulp.dest(`${testFolder}/assets/svg`));
 });
 
