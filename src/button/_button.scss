@@ -23,6 +23,7 @@ $aui-button-padding: em(13, $aui-button-font-size) 0 em(12, $aui-button-font-siz
   };
 
   & {
+    border-radius: 0;
     cursor: pointer;
     display: inline-block;
     position: relative;
