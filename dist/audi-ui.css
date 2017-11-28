@@ -168,7 +168,16 @@
     background-color: #e5e5e5;
     display: none;
     min-height: 100px;
-    min-width: 100px; }
+    min-width: 100px;
+    max-height: 100px;
+    max-width: 100px; }
+  .aui-audioplayer--large-cover .aui-audioplayer__cover {
+    margin-bottom: 20px;
+    max-height: inherit;
+    max-width: inherit; }
+  .aui-audioplayer__cover-image {
+    width: 100%;
+    display: block; }
   .aui-audioplayer__meta {
     font-size: 0.875rem;
     line-height: 1;
@@ -371,6 +380,7 @@ body::before {
   fill: #4c4c4c; }
 
 .aui-button {
+  border-radius: 0;
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -2061,7 +2071,8 @@ body::before {
 
 .aui-nav--small {
   height: 1.5rem;
-  font-size: 0.75rem; }
+  font-size: 0.75rem;
+  font-family: 'AudiTypeScreen', Verdana, Geneva, sans-serif; }
   .aui-nav--small .aui-nav__item {
     padding: 0 0.75rem; }
     .aui-nav--small .aui-nav__item:first-child {
@@ -2375,6 +2386,8 @@ body::before {
     opacity: 1;
     transition: left 0.3s cubic-bezier(0.75, 0.02, 0.5, 1), width 0.3s cubic-bezier(0.75, 0.02, 0.5, 1), opacity 0.3s cubic-bezier(0.75, 0.02, 0.5, 1); }
   [displaytype^='stepless'] .aui-pagination__indicator {
+    display: none; }
+  [pageCount^='0'] .aui-pagination__indicator {
     display: none; }
   .aui-pagination__link.is-disabled, .aui-pagination__next.is-disabled, .aui-pagination__prev.is-disabled {
     cursor: not-allowed;

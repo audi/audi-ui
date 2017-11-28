@@ -33,6 +33,21 @@ $aui-audioplayer-dark-timeline: $aui-color-gray90 !default;
     display: none;
     min-height: 100px;
     min-width: 100px;
+    max-height: 100px;
+    max-width: 100px;
+  }
+
+  &--large-cover {
+    .aui-audioplayer__cover {
+      margin-bottom: 20px;
+      max-height: inherit;
+      max-width: inherit;
+    }
+  }
+
+  &__cover-image {
+    width: 100%;
+    display: block;
   }
 
   &__meta {
