@@ -2,7 +2,7 @@
  * @audi/audi-ui - Audi UI components in HTML, CSS and JS.
  * @version v1.0.0-alpha.1
  * @license Apache-2.0
- * @copyright 2017 Audi
+ * @copyright 2018 Audi
  * @link https://github.com/audi/audi-ui
  */
 @charset "UTF-8";
@@ -238,15 +238,15 @@
       padding: 1.25rem 1rem 1.25rem 0px; }
       .aui-audioplayer--frameless {
         padding: 0px 1rem 0px 0px; }
-      .aui-audioplayer__controls {
+      .aui-audioplayer__controls--secondary {
+        margin-top: 0;
         margin-left: 1rem; }
-        .aui-audioplayer__controls--secondary {
-          margin-top: 0; }
       .aui-audioplayer__chrome {
         -ms-flex-direction: row;
             flex-direction: row; }
       .aui-audioplayer__cover {
-        display: block; }
+        display: block;
+        margin-right: 1rem; }
       .aui-audioplayer__meta {
         margin-bottom: 0;
         margin-left: 1rem;
@@ -4713,7 +4713,6 @@ body {
    */ }
   .aui-textfield.aui-theme-light {
     stroke: #f2f2f2;
-    color: #f2f2f2;
     /**
      * States
      */ }

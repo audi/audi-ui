@@ -77,6 +77,7 @@ class ComponentHandler {
       document.documentElement.classList.add('aui-js');
     }
 
+    this.upgradeAllElements();
   }
 
   upgradeAllElements() {
