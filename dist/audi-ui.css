@@ -141,7 +141,7 @@
     transform: translateY(-100%); }
 
 .aui-audioplayer {
-  padding: 1.25rem; }
+  padding: 177.25rem; }
   .aui-audioplayer__controls {
     line-height: 23px;
     -ms-flex-order: 1;
@@ -176,7 +176,7 @@
     max-height: inherit;
     max-width: inherit; }
   .aui-audioplayer__cover-image {
-    width: 100%;
+    max-width: 100%;
     display: block; }
   .aui-audioplayer__meta {
     font-size: 0.875rem;

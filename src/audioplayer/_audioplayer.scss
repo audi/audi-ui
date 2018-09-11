@@ -175,12 +175,28 @@ $aui-audioplayer-dark-timeline: $aui-color-gray90 !default;
         margin-left: 1rem;
       }
     }
+
     &__chrome {
       flex-direction: row;
     }
+
     &__cover {
       display: block;
       margin-right: 1rem;
+    }
+
+    &__cover-image {
+      max-width: 100px;
+    }
+
+    &--large-cover {
+      .aui-audioplayer__cover {
+        margin-right: 0;
+      }
+
+      .aui-audioplayer__cover-image {
+        max-width: none;
+      }
     }
 
     &__meta {
