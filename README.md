@@ -45,7 +45,7 @@ npm i
 gulp
 ```
 
-### Build library an run the development server:
+### Build library and run the development server:
 ```
 cd /path/to/audi-ui
 gulp test:visual
