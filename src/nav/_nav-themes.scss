@@ -166,6 +166,21 @@
   }
 
   /**
+   * Theme: gray95
+   */
+  &.aui-theme-gray95 {
+    $aui-nav-paddle-background: $aui-color-gray95;
+
+    .aui-nav__paddle-left {
+      background: linear-gradient(to right, rgba($aui-nav-paddle-background, 1) 40%,rgba($aui-nav-paddle-background, 0) 100%);
+    }
+
+    .aui-nav__paddle-right {
+      background: linear-gradient(to right, rgba($aui-nav-paddle-background, 0) 0%,rgba($aui-nav-paddle-background, 1) 60%);
+    }
+  }
+
+  /**
    * TODO Remove in final version.
    * Theme: gray
    */
