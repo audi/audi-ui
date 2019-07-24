@@ -2,7 +2,7 @@
  * @audi/audi-ui - Audi UI components in HTML, CSS and JS.
  * @version v1.0.0-alpha.1
  * @license Apache-2.0
- * @copyright 2018 Audi
+ * @copyright 2019 Audi
  * @link https://github.com/audi/audi-ui
  */
 @charset "UTF-8";
@@ -176,7 +176,7 @@
     max-height: inherit;
     max-width: inherit; }
   .aui-audioplayer__cover-image {
-    max-width: 100%;
+    width: 100%;
     display: block; }
   .aui-audioplayer__meta {
     font-size: 0.875rem;
@@ -247,6 +247,12 @@
       .aui-audioplayer__cover {
         display: block;
         margin-right: 1rem; }
+      .aui-audioplayer__cover-image {
+        max-width: 100px; }
+      .aui-audioplayer--large-cover .aui-audioplayer__cover {
+        margin-right: 0; }
+      .aui-audioplayer--large-cover .aui-audioplayer__cover-image {
+        max-width: none; }
       .aui-audioplayer__meta {
         margin-bottom: 0;
         margin-left: 1rem;
@@ -4467,6 +4473,9 @@ body {
    * Theme: red
    */
   /**
+   * Theme: gray95
+   */
+  /**
    * TODO Remove in final version.
    * Theme: gray
    */ }
@@ -4482,6 +4491,10 @@ body {
     background: linear-gradient(to right, #bb0a30 40%, rgba(187, 10, 48, 0) 100%); }
   .aui-nav.aui-theme-red .aui-nav__paddle-right {
     background: linear-gradient(to right, rgba(187, 10, 48, 0) 0%, #bb0a30 60%); }
+  .aui-nav.aui-theme-gray95 .aui-nav__paddle-left {
+    background: linear-gradient(to right, #f2f2f2 40%, rgba(242, 242, 242, 0) 100%); }
+  .aui-nav.aui-theme-gray95 .aui-nav__paddle-right {
+    background: linear-gradient(to right, rgba(242, 242, 242, 0) 0%, #f2f2f2 60%); }
   .aui-nav.aui-theme-gray10-gray20 {
     color: rgba(255, 255, 255, 0.5);
     fill: rgba(255, 255, 255, 0.5);
