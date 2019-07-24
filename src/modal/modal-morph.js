@@ -110,7 +110,7 @@ export default class ModalMorph extends ModalDialog {
   }
 
   _applyBoundingRectToElement(element, rect) {
-    element.style.top = `${Math.round(rect.top)}px`;
+    element.style.top = `${Math.round(rect.top + window.pageYOffset)}px`;
     element.style.left = `${Math.round(rect.left)}px`;
     element.style.width = `${Math.round(rect.width)}px`;
     element.style.height = `${Math.round(rect.height)}px`;
