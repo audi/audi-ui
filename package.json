@@ -28,7 +28,7 @@
     "eslint": "1.7.2",
     "eslint-loader": "1.1.0",
     "fontfaceobserver": "^2.0.5",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "4.0.2",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-csso": "^2.0.0",
     "gulp-data": "^1.2.1",
@@ -53,7 +53,10 @@
     "webpack": "1.12.9",
     "webpack-stream": "^3.2.0"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "gulp",
+    "test:visual": "gulp test:visual"
+  },
   "engines": {
     "node": "^6.0.0"
   },
