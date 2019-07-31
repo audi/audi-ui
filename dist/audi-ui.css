@@ -3566,23 +3566,53 @@ body::before {
   .aui-table--padded th,
   .aui-table--padded td {
     padding: 1rem 0.75rem; }
-  .aui-table--responsive tr, .aui-table--responsive td {
+  .aui-table--responsive thead,
+  .aui-table--responsive tfoot {
+    display: none; }
+  .aui-table--responsive tr {
+    border-top: 3px solid #000000;
+    padding-bottom: 2rem; }
+  .aui-table--responsive tr,
+  .aui-table--responsive td {
     float: left;
     width: 100%; }
-  .aui-table--responsive td td::before {
-    content: attr(data-label);
-    word-break: break-word; }
-  .aui-table--responsive th {
-    color: red !important; }
-  @media (min-width: 740px) {
-    .aui-table--responsive th {
-      color: green !important; }
+  .aui-table--responsive td {
+    padding-bottom: 1rem; }
     .aui-table--responsive td:before {
-      content: none; }
-    .aui-table--responsive th, .aui-table--responsive td {
+      content: attr(data-label);
+      float: left;
+      font-weight: 700;
+      -webkit-hyphens: auto;
+          -ms-hyphens: auto;
+              hyphens: auto;
+      padding-right: 0.75rem;
+      width: 50%;
+      word-break: break-word; }
+  .aui-table--responsive .aui-table__cell--last-row-responsive {
+    border-bottom: 3px solid #000000; }
+  @media (min-width: 740px) {
+    .aui-table--responsive td {
+      padding-bottom: 0.5rem; }
+      .aui-table--responsive td:before {
+        content: none; }
+    .aui-table--responsive thead,
+    .aui-table--responsive tr,
+    .aui-table--responsive td,
+    .aui-table--responsive tfoot {
+      float: none;
+      width: auto; }
+    .aui-table--responsive th,
+    .aui-table--responsive td {
       display: table-cell; }
+    .aui-table--responsive thead {
+      display: table-header-group; }
     .aui-table--responsive tr {
-      display: table-row; } }
+      display: table-row; }
+    .aui-table--responsive tfoot {
+      display: table-footer-group; }
+    .aui-table--responsive .aui-table__cell--last-row-responsive td {
+      border-bottom: 1px solid #000000;
+      padding-bottom: 1rem; } }
 
 .aui-textfield {
   display: block;
