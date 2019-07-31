@@ -70,9 +70,90 @@ $aui-table-cell-padding-y: unit(4) !default;
   }
 
   &--padded {
+
     th,
     td {
       padding: $aui-table-cell-padding-y $aui-table-cell-padding-x;
+    }
+  }
+
+  &--responsive {
+
+    thead,
+    tfoot {
+      display: none; // Hide <thead> as table headers will be displayed in <td> on mobiles
+    }
+
+    tr {
+      border-top: $aui-table-border-width-title solid $aui-table-border-color;
+      padding-bottom: $aui-table-cell-padding-y * 2;
+    }
+
+    tr,
+    td {
+      float: left;
+      width: 100%;
+    }
+
+    td {
+      padding-bottom: $aui-table-cell-padding-y;
+
+      &:before {
+        content: attr(data-label); // Use 'data-label' as header text on mobiles
+        float: left;
+        font-weight: $aui-font-weight-bold;
+        hyphens: auto;
+        padding-right: $aui-table-cell-padding-x;
+        width: 50%;
+        word-break: break-word
+      }
+    }
+
+    .aui-table__cell--last-row-responsive {
+      border-bottom: $aui-table-border-width-title solid $aui-table-border-color;
+    }
+
+    @include aui-respond-to(small) {
+
+      td {
+        padding-bottom: #{$aui-table-cell-padding-y - $aui-table-gutters};
+
+        &:before {
+          content: none; // Hide 'data-label' attribute
+        }
+      }
+
+      thead,
+      tr,
+      td,
+      tfoot {
+        float: none;
+        width: auto;
+      }
+
+      th,
+      td {
+        display: table-cell;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+
+      tr {
+        display: table-row;
+      }
+
+      tfoot {
+        display: table-footer-group;
+      }
+
+      .aui-table__cell--last-row-responsive {
+        td {
+          border-bottom: $aui-table-border-width solid $aui-table-border-color;
+          padding-bottom: $aui-table-cell-padding-y;
+        }
+      }
     }
   }
 }
