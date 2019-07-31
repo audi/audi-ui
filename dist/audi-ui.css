@@ -3566,6 +3566,23 @@ body::before {
   .aui-table--padded th,
   .aui-table--padded td {
     padding: 1rem 0.75rem; }
+  .aui-table--responsive tr, .aui-table--responsive td {
+    float: left;
+    width: 100%; }
+  .aui-table--responsive td td::before {
+    content: attr(data-label);
+    word-break: break-word; }
+  .aui-table--responsive th {
+    color: red !important; }
+  @media (min-width: 740px) {
+    .aui-table--responsive th {
+      color: green !important; }
+    .aui-table--responsive td:before {
+      content: none; }
+    .aui-table--responsive th, .aui-table--responsive td {
+      display: table-cell; }
+    .aui-table--responsive tr {
+      display: table-row; } }
 
 .aui-textfield {
   display: block;
