@@ -53,7 +53,7 @@ $closing-duration: .4s !default;
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
-    @include shadow;
+    @include shadow-dark;
     transition-duration: $opening-duration;
   }
 

@@ -11,6 +11,20 @@
     </div>
   </section>
 
+  <section class="test-section" id="table-responsive">
+    {{ section.header('Table with responsive behaviour') }}
+    <div class="test-section__panel">
+      {% include 'table/snippets/table-responsive.html' %}
+    </div>
+  </section>
+
+  <section class="test-section" id="table-stretched-responsive">
+    {{ section.header('Table stretched to 100% width with responsive behaviour') }}
+    <div class="test-section__panel">
+      {% include 'table/snippets/table-stretched-responsive.html' %}
+    </div>
+  </section>
+
   <section class="test-section" id="table-colored">
     {{ section.header('Table with colored and padded cells') }}
     <div class="test-section__panel">

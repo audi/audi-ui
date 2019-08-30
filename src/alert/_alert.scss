@@ -42,7 +42,7 @@ $aui-alert-closing-duration: .3s !default;
     top: 0;
     left: 0;
     width: 100%;
-    @include shadow;
+    @include shadow-dark;
     z-index: $aui-alert-zindex;
   }
 
