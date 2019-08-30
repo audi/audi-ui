@@ -2657,15 +2657,11 @@ body::before {
     display: inline-block; }
   .aui-player.is-fullscreen .aui-player__icon-enter-fullscreen, .aui-player:-webkit-full-screen .aui-player__icon-enter-fullscreen {
     visibility: hidden; }
-  .aui-player.is-fullscreen .aui-player__icon-enter-fullscreen, .aui-player:-moz-full-screen .aui-player__icon-enter-fullscreen {
-    visibility: hidden; }
   .aui-player.is-fullscreen .aui-player__icon-enter-fullscreen, .aui-player:-ms-fullscreen .aui-player__icon-enter-fullscreen {
     visibility: hidden; }
   .aui-player.is-fullscreen .aui-player__icon-enter-fullscreen, .aui-player:fullscreen .aui-player__icon-enter-fullscreen {
     visibility: hidden; }
   .aui-player.is-fullscreen .aui-player__icon-exit-fullscreen, .aui-player:-webkit-full-screen .aui-player__icon-exit-fullscreen {
-    visibility: visible; }
-  .aui-player.is-fullscreen .aui-player__icon-exit-fullscreen, .aui-player:-moz-full-screen .aui-player__icon-exit-fullscreen {
     visibility: visible; }
   .aui-player.is-fullscreen .aui-player__icon-exit-fullscreen, .aui-player:-ms-fullscreen .aui-player__icon-exit-fullscreen {
     visibility: visible; }
