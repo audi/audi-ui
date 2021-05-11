@@ -1,5 +1,5 @@
 .aui-button-group {
-  $button-spacing: unit();
+  $button-spacing: unit(0.8);
 
   display: inline-flex;
   flex-flow: row wrap;
@@ -36,7 +36,7 @@
 
   // A Button-Group, that only contains Text-Buttons
   &--texts {
-    $button-spacing: unit(6);
+    $button-spacing: unit(4.8);
 
     margin-right: ($button-spacing * -1);
     margin-bottom: ($button-spacing * -1);
@@ -48,7 +48,7 @@
 
   // A Button-Group, that only contains Icon-Buttons
   &--icons {
-    $button-spacing: unit(3);
+    $button-spacing: unit(2.4);
 
     margin-right: ($button-spacing * -1);
     margin-bottom: ($button-spacing * -1);

@@ -2,7 +2,7 @@
  * @audi/audi-ui - Audi UI components in HTML, CSS and JS.
  * @version v1.0.0-alpha.1
  * @license Apache-2.0
- * @copyright 2019 Audi
+ * @copyright 2021 Audi
  * @link https://github.com/audi/audi-ui
  */
 @charset "UTF-8";
@@ -2078,7 +2078,7 @@ body::before {
 .aui-nav--small {
   height: 1.5rem;
   font-size: 0.75rem;
-  font-family: 'AudiTypeScreen', Verdana, Geneva, sans-serif; }
+  font-family: 'AudiTypeWide', Verdana, Geneva, sans-serif; }
   .aui-nav--small .aui-nav__item {
     padding: 0 0.75rem; }
     .aui-nav--small .aui-nav__item:first-child {
@@ -3884,7 +3884,7 @@ html {
       line-height: 36px; } }
 
 body {
-  font-family: 'AudiTypeScreen', Verdana, Geneva, sans-serif;
+  font-family: 'AudiTypeWide', Verdana, Geneva, sans-serif;
   font-weight: 300;
   color: #333333; }
 
@@ -3894,7 +3894,7 @@ body {
   letter-spacing: -0.015em; }
 
 .aui-headline-6 {
-  font-family: 'AudiTypeScreen', Verdana, Geneva, sans-serif; }
+  font-family: 'AudiTypeWide', Verdana, Geneva, sans-serif; }
 
 .aui-headline-1 {
   font-size: 46px;
