@@ -1,4 +1,4 @@
-$aui-button-font-size: 15 !default;
+$aui-button-font-size: 12.8 !default;
 $aui-button-font-size-rem: rem($aui-button-font-size) !default;
 $aui-button-icon-margin: 8 !default;
 $aui-button-floating-offset-x: 1.5rem !default;
@@ -9,8 +9,8 @@ $aui-button-color-primary: $aui-color-white !default;
 $aui-button-border-color: $aui-color-black !default;
 $aui-button-border-color-hover: $aui-color-gray50 !default;
 $aui-button-background: $aui-color-black !default;
-$aui-button-background-hover: $aui-color-gray20 !default;
-$aui-button-padding: em(13, $aui-button-font-size) 0 em(12, $aui-button-font-size) !default;
+$aui-button-background-hover: $aui-color-gray30 !default;
+$aui-button-padding: em(12.8, $aui-button-font-size) 0 em(12.8, $aui-button-font-size) !default;
 
 .aui-button {
   &.is-active,
@@ -32,12 +32,12 @@ $aui-button-padding: em(13, $aui-button-font-size) 0 em(12, $aui-button-font-siz
     font-family: inherit;
     font-size: $aui-button-font-size-rem;
     font-weight: $aui-font-weight-normal;
-    line-height: unit(6);
+    line-height: unit(4.8);
     text-align: center;
     text-decoration: none;
     white-space: normal;
     vertical-align: middle;
-    transition: all 0.3s $aui-easing;
+    transition: all 250ms $aui-easing;
     @include aui-remove-tap-highlight;
   }
 
@@ -64,15 +64,15 @@ $aui-button-padding: em(13, $aui-button-font-size) 0 em(12, $aui-button-font-siz
   &--padded,
   &--primary,
   &--secondary {
-    padding-left: em($aui-rem-base * 2, $aui-button-font-size);
-    padding-right: em($aui-rem-base * 2, $aui-button-font-size);
+    padding-left: em($aui-rem-base * 1.6, $aui-button-font-size);
+    padding-right: em($aui-rem-base * 1.6, $aui-button-font-size);
   }
 
   &--icon,
   &--primary,
   &--secondary {
     &:focus {
-      @include shadow-focus;
+    //  @include shadow-focus; // adjusted to react library
     }
 
     &.is-disabled,
@@ -103,9 +103,9 @@ $aui-button-padding: em(13, $aui-button-font-size) 0 em(12, $aui-button-font-siz
 
     &.is-disabled,
     &:disabled {
-      color: rgba(#fff, 0.5);
-      stroke: rgba(#fff, 0.5);
-      fill: rgba(#fff, 0.5);
+      color: $aui-color-white;
+      stroke: $aui-color-white;
+      fill: $aui-color-white;
     }
 
     &,
