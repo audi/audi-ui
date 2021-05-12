@@ -1,17 +1,20 @@
-$aui-switch-track-width: 3em !default;
-$aui-switch-track-height: 1.5em !default;
+$aui-switch-track-width: 2.9em !default;
+$aui-switch-track-height: 1.6em !default;
 $aui-switch-track-spacing: 1em !default;
-$aui-switch-thumb-scale: 8 / 12 / $aui-circle-smoothing-factor !default;
-$aui-switch-thumb-scale-hover: 10 / 12 / $aui-circle-smoothing-factor !default;
+$aui-switch-thumb-scale: 1 / $aui-circle-smoothing-factor !default;
+$aui-switch-thumb-scale-hover: 8 / 10 / $aui-circle-smoothing-factor !default;
 $aui-switch-thumb-scale-active: 1 / $aui-circle-smoothing-factor !default;
-$aui-switch-thumb-size: .75em * $aui-circle-smoothing-factor !default;
+// $aui-switch-thumb-size: .75em * $aui-circle-smoothing-factor !default;
+$aui-switch-thumb-size: 52px !default;
 $aui-switch-color-text: $aui-color-gray20 !default;
 $aui-switch-color-text-hover: $aui-color-black !default;
 $aui-switch-color-text-inactive: rgba(#000, 0.5) !default;
+$aui-switch-color-track-background: $aui-color-gray85;
+$aui-switch-color-track-background-active: $aui-color-green;
 $aui-switch-color-track-border: rgba(#000, 0.5) !default;
 $aui-switch-color-track-border-hover: rgba(#000, 1) !default;
-$aui-switch-color-thumb: rgba(#000, 0.1) !default;
-$aui-switch-color-thumb-active: rgba(#000, 0.8) !default;
+$aui-switch-color-thumb: $aui-color-white !default;
+$aui-switch-color-thumb-active: $aui-color-white !default;
 
 .aui-switch {
   cursor: pointer;
@@ -41,7 +44,7 @@ $aui-switch-color-thumb-active: rgba(#000, 0.8) !default;
     display: inline-block;
     padding-left: #{$aui-switch-track-width + $aui-switch-track-spacing};
     color: $aui-switch-color-text;
-    transition: color .15s linear;
+    transition: all 250ms $aui-easing;
   }
 
   &__track {
@@ -51,10 +54,11 @@ $aui-switch-color-thumb-active: rgba(#000, 0.8) !default;
     left: 0;
     width: $aui-switch-track-width;
     height: $aui-switch-track-height;
-    border: 1px solid $aui-switch-color-track-border;
+    // border: 1px solid $aui-switch-color-track-border;
     border-radius: #{$aui-switch-track-height / 2};
     vertical-align: middle;
-    transition: box-shadow .15s linear, border .15s linear;
+    background-color: $aui-switch-color-track-background;
+    transition: all .15s linear, border .15s linear;
   }
 
   &__thumb {
@@ -154,9 +158,9 @@ $aui-switch-color-thumb-active: rgba(#000, 0.8) !default;
   }
 
   // Focus state
-  &__input:focus ~ .aui-switch__track {
-    @include shadow-focus;
-  }
+  // &__input:focus ~ .aui-switch__track {
+  //   @include shadow-focus;
+  // }
 
   // Disabled state
   &.is-disabled {
@@ -165,6 +169,10 @@ $aui-switch-color-thumb-active: rgba(#000, 0.8) !default;
   }
 
   // Checked state
+  &__input:checked ~ &__track {
+    background: $aui-switch-color-track-background-active;
+  }
+
   &__input:checked ~ &__track &__thumb {
     background: $aui-switch-color-thumb-active;
     transform: translate(-50%, -50%) scale($aui-switch-thumb-scale-active, $aui-switch-thumb-scale-active);
