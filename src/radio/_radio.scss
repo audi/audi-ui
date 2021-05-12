@@ -29,6 +29,13 @@ $aui-radio-color-tick-active: rgba(#000, 0.8) !default;
     @extend %aui-hidden-input;
   }
 
+  &__hint {
+    display: block;
+    margin-top: unit(2);
+    font-size: rem(13);
+    line-height: unit(5);
+  }
+
   &__box {
     display: none;
     overflow: hidden;
@@ -77,13 +84,14 @@ $aui-radio-color-tick-active: rgba(#000, 0.8) !default;
   }
 
   // Focus state
-  &__input:focus ~ .aui-radio__box {
-    @include shadow-focus;
-  }
+  // &__input:focus ~ .aui-radio__box {
+  //   @include shadow-focus;
+  // }
 
   // Disabled state
   &.is-disabled {
-    opacity: $aui-field-disabled-opacity;
+    //opacity: $aui-field-disabled-opacity;
+    color: $aui-color-gray40;
     cursor: not-allowed;
   }
 
