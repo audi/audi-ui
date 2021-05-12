@@ -26,6 +26,12 @@ $aui-checkbox-color-tick: $aui-checkbox-color-text !default;
     @extend %aui-hidden-input;
   }
 
+  &__label {
+    &--optional {
+      color: red;
+    }
+  }
+
   &__box {
     display: none;
     overflow: hidden;
@@ -115,13 +121,14 @@ $aui-checkbox-color-tick: $aui-checkbox-color-text !default;
   }
 
   // Focus state
-  &__input:focus ~ .aui-checkbox__box {
-    @include shadow-focus;
-  }
+  // &__input:focus ~ .aui-checkbox__box {
+  //   @include shadow-focus;
+  // }
 
   // Disabled state
   &.is-disabled {
-    opacity: $aui-field-disabled-opacity;
+    //opacity: $aui-field-disabled-opacity;
+    color: $aui-color-gray40;
     cursor: not-allowed;
   }
 
