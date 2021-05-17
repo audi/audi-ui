@@ -3,9 +3,9 @@
  * All animations happen in JS.
  */
 
-$aui-spinner-color: rgba(#000, .6) !default;
-$aui-spinner-color-progress: $aui-color-red !default;
-$aui-spinner-size: rem(96) !default;
+$aui-spinner-color: $aui-color-gray90 !default;
+$aui-spinner-color-progress: $aui-color-progressive-red !default;
+$aui-spinner-size: rem(92) !default;
 $aui-spinner-size-continuous: rem(48) !default;
 
 .aui-spinner {
@@ -24,13 +24,13 @@ $aui-spinner-size-continuous: rem(48) !default;
   &__path {
     stroke-miterlimit: 10;
     stroke-linecap: square;
-    stroke-width: 1.1px;
+    stroke-width: 4px;
     fill: none;
   }
 
   &__path--progress {
     stroke: $aui-spinner-color-progress;
-    stroke-width: 3px;
+    stroke-width: 4px;
   }
 
   &__value {
