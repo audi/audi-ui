@@ -36,6 +36,7 @@ $aui-pager-color-active: rgba(#000, 1) !default;
     text-indent: 100%;
     overflow: hidden;
     transform: translateY(em(1));
+    transition: transform .15s cubic-bezier(0.75, 0.02, 0.5, 1);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -52,6 +53,18 @@ $aui-pager-color-active: rgba(#000, 1) !default;
   &__next:hover:not(.is-disabled),
   &__prev:hover:not(.is-disabled) {
     color: $aui-pager-color-active;
+  }
+
+  &__prev:hover:not(.is-disabled) {
+    .aui-pager__prev-icon {
+      transform: translateX(-4px) translateY(em(1)) rotate(180deg);
+    }
+  }
+
+  &__next:hover:not(.is-disabled) {
+    .aui-pager__next-icon {
+      transform: translateX(4px) translateY(em(1));
+    }
   }
 
   &__next,
