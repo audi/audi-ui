@@ -390,17 +390,17 @@ body::before {
   cursor: pointer;
   display: inline-block;
   position: relative;
-  padding: 0.8666666667em 0 0.8em;
+  padding: 1em 0 1em;
   outline: 0;
   font-family: inherit;
-  font-size: 0.9375rem;
+  font-size: 0.8rem;
   font-weight: 400;
-  line-height: 1.5rem;
+  line-height: 1.2rem;
   text-align: center;
   text-decoration: none;
   white-space: normal;
   vertical-align: middle;
-  transition: all 0.3s cubic-bezier(0.75, 0.02, 0.5, 1);
+  transition: all 250ms cubic-bezier(0.75, 0.02, 0.5, 1);
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
 
@@ -419,18 +419,15 @@ body::before {
   font-weight: 700; }
 
 .aui-button--padded, .aui-button--primary, .aui-button--secondary {
-  padding-left: 2.1333333333em;
-  padding-right: 2.1333333333em; }
-
-.aui-button--icon:focus, .aui-button--primary:focus, .aui-button--secondary:focus {
-  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1); }
+  padding-left: 2em;
+  padding-right: 2em; }
 
 .aui-button--icon.is-disabled, .aui-button--icon:disabled, .aui-button--icon:hover, .aui-button--primary.is-disabled, .aui-button--primary:disabled, .aui-button--primary:hover, .aui-button--secondary.is-disabled, .aui-button--secondary:disabled, .aui-button--secondary:hover {
   box-shadow: none; }
 
 .aui-button--floating.is-active, .aui-button--floating:active, .aui-button--floating:hover, .aui-button--primary.is-active, .aui-button--primary:active, .aui-button--primary:hover {
-  border-color: #333333;
-  background-color: #333333; }
+  border-color: #4c4c4c;
+  background-color: #4c4c4c; }
 
 .aui-button--floating, .aui-button--floating.is-active, .aui-button--floating:active, .aui-button--floating:hover, .aui-button--floating:visited, .aui-button--primary, .aui-button--primary.is-active, .aui-button--primary:active, .aui-button--primary:hover, .aui-button--primary:visited {
   color: #ffffff;
@@ -438,9 +435,9 @@ body::before {
   fill: #ffffff; }
 
 .aui-button--floating.is-disabled, .aui-button--floating:disabled, .aui-button--primary.is-disabled, .aui-button--primary:disabled {
-  color: rgba(255, 255, 255, 0.5);
-  stroke: rgba(255, 255, 255, 0.5);
-  fill: rgba(255, 255, 255, 0.5); }
+  color: #ffffff;
+  stroke: #ffffff;
+  fill: #ffffff; }
 
 .aui-button--floating, .aui-button--floating.is-disabled, .aui-button--floating:disabled, .aui-button--primary, .aui-button--primary.is-disabled, .aui-button--primary:disabled {
   border-color: #000000;
@@ -456,8 +453,8 @@ body::before {
   content: '';
   display: inline-block;
   position: relative;
-  top: 0.0666666667em;
-  margin-left: 0.2666666667em;
+  top: 0.078125em;
+  margin-left: 0.3125em;
   width: 0.5em;
   height: 0.8125em;
   background: center no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='13' viewBox='0 0 8 13'%3E%3Cpath stroke='%23000000' stroke-width='1px' fill='none' d='M1.5,1l5.485,5.504l-5.48,5.496' /%3E%3C/svg%3E");
@@ -548,9 +545,9 @@ body::before {
   .aui-button__text-icon .audiicon {
     display: inline-block; }
   .aui-button__text-icon .aui-button__text:first-child {
-    margin-right: 0.5333333333em; }
+    margin-right: 0.625em; }
   .aui-button__text-icon .aui-button__text:not(:first-child) {
-    margin-left: 0.5333333333em; }
+    margin-left: 0.625em; }
 
 .aui-button::-moz-focus-inner {
   border: 0;
@@ -564,12 +561,12 @@ body::before {
   -ms-flex-align: center;
       align-items: center;
   vertical-align: top;
-  margin-right: -0.25rem;
-  margin-bottom: -0.25rem; }
+  margin-right: -0.2rem;
+  margin-bottom: -0.2rem; }
   .aui-button-group .aui-button {
     -ms-flex: 1 1 auto;
         flex: 1 1 auto;
-    margin: 0 0.25rem 0.25rem 0; }
+    margin: 0 0.2rem 0.2rem 0; }
     .aui-button-group .aui-button:hover, .aui-button-group .aui-button:focus, .aui-button-group .aui-button:active, .aui-button-group .aui-button.is-active {
       z-index: 2; }
   .aui-button-group .aui-button--icon {
@@ -579,15 +576,15 @@ body::before {
     display: -ms-flexbox;
     display: flex; }
   .aui-button-group--texts {
-    margin-right: -1.5rem;
-    margin-bottom: -1.5rem; }
+    margin-right: -1.2rem;
+    margin-bottom: -1.2rem; }
     .aui-button-group--texts .aui-button {
-      margin: 0 1.5rem 1.5rem 0; }
+      margin: 0 1.2rem 1.2rem 0; }
   .aui-button-group--icons {
-    margin-right: -0.75rem;
-    margin-bottom: -0.75rem; }
+    margin-right: -0.6rem;
+    margin-bottom: -0.6rem; }
     .aui-button-group--icons .aui-button {
-      margin: 0 0.75rem 0.75rem 0; }
+      margin: 0 0.6rem 0.6rem 0; }
 
 .aui-card-grid {
   display: -ms-flexbox;
@@ -703,6 +700,8 @@ body::before {
    */ }
   .aui-js .aui-checkbox {
     padding-left: 2.5em; }
+  .aui-checkbox__label--optional {
+    color: red; }
   .aui-checkbox__box {
     display: none;
     overflow: hidden;
@@ -756,10 +755,8 @@ body::before {
     color: #000000; }
     .aui-checkbox:hover:not(.is-disabled) .aui-checkbox__box {
       border-color: black; }
-  .aui-checkbox__input:focus ~ .aui-checkbox__box {
-    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1); }
   .aui-checkbox.is-disabled {
-    opacity: 0.3;
+    color: #666666;
     cursor: not-allowed; }
   .aui-checkbox.is-checked .aui-checkbox__tick {
     opacity: 1; }
@@ -2879,6 +2876,11 @@ body::before {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
   .aui-js .aui-radio {
     padding-left: 2.5em; }
+  .aui-radio__hint {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    line-height: 1.25rem; }
   .aui-radio__box {
     display: none;
     overflow: hidden;
@@ -2913,10 +2915,8 @@ body::before {
       border-color: black; }
     .aui-radio:hover:not(.is-disabled) .aui-radio__tick {
       transform: translate(-50%, -50%) scale(0.4166666667, 0.4166666667); }
-  .aui-radio__input:focus ~ .aui-radio__box {
-    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1); }
   .aui-radio.is-disabled {
-    opacity: 0.3;
+    color: #666666;
     cursor: not-allowed; }
   .aui-radio.is-checked .aui-radio__tick {
     background: rgba(0, 0, 0, 0.8);
@@ -3374,7 +3374,7 @@ body::before {
   position: relative;
   width: 6rem;
   height: 6rem;
-  stroke: rgba(0, 0, 0, 0.6);
+  stroke: #e5e5e5;
   font-size: 1rem; }
   .aui-spinner__svg {
     width: 100%;
@@ -3382,11 +3382,11 @@ body::before {
   .aui-spinner__path {
     stroke-miterlimit: 10;
     stroke-linecap: square;
-    stroke-width: 1.1px;
+    stroke-width: 4px;
     fill: none; }
   .aui-spinner__path--progress {
-    stroke: #bb0a30;
-    stroke-width: 3px; }
+    stroke: #f50537;
+    stroke-width: 4px; }
   .aui-spinner__value {
     display: block;
     position: absolute;
@@ -3417,7 +3417,7 @@ body::before {
   display: inline-block;
   position: relative;
   font-weight: 400;
-  min-width: 3em;
+  min-width: 2.9em;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -3437,34 +3437,34 @@ body::before {
     visibility: hidden; }
   .aui-switch__text {
     display: inline-block;
-    padding-left: 4em;
+    padding-left: 3.9em;
     color: #333333;
-    transition: color .15s linear; }
+    transition: all 250ms cubic-bezier(0.75, 0.02, 0.5, 1); }
   .aui-switch__track {
     display: inline-block;
     position: absolute;
     top: .125em;
     left: 0;
-    width: 3em;
-    height: 1.5em;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 0.75em;
+    width: 2.9em;
+    height: 1.6em;
+    border-radius: 0.8em;
     vertical-align: middle;
-    transition: box-shadow .15s linear, border .15s linear; }
+    background-color: #d9d9d9;
+    transition: all .15s linear, border .15s linear; }
   .aui-switch__thumb {
     display: inline-block;
     position: absolute;
     top: 50%;
     left: .75em;
-    width: 1.5em;
-    height: 1.5em;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0.3333333333, 0.3333333333);
-    background: rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%) scale(0.5, 0.5);
+    background: #ffffff;
     transition: transform 0.15s cubic-bezier(0.75, 0.02, 0.5, 1), left 0.3s cubic-bezier(0.75, 0.02, 0.5, 1), background 0.3s cubic-bezier(0.75, 0.02, 0.5, 1); }
   .aui-switch--text-left .aui-switch__text {
     padding-left: 0;
-    padding-right: 4em; }
+    padding-right: 3.9em; }
   .aui-switch--text-left .aui-switch__track {
     left: auto;
     right: 0; }
@@ -3488,32 +3488,32 @@ body::before {
     .aui-switch--equal .aui-switch__track {
       position: relative;
       left: auto;
-      -ms-flex: 0 0 3em;
-          flex: 0 0 3em;
+      -ms-flex: 0 0 2.9em;
+          flex: 0 0 2.9em;
       -ms-flex-order: 2;
           order: 2; }
     .aui-switch--equal .aui-switch__thumb {
-      background: rgba(0, 0, 0, 0.8);
+      background: #ffffff;
       transform: translate(-50%, -50%) scale(0.5, 0.5); }
   .aui-switch:hover:not(.is-disabled) .aui-switch__text {
     color: #000000; }
   .aui-switch:hover:not(.is-disabled) .aui-switch__track {
     border-color: black; }
     .aui-switch:hover:not(.is-disabled) .aui-switch__track .aui-switch__thumb {
-      transform: translate(-50%, -50%) scale(0.4166666667, 0.4166666667); }
+      transform: translate(-50%, -50%) scale(0.4, 0.4); }
   .aui-switch--equal:hover:not(.is-disabled) .aui-switch__text--right {
     color: rgba(0, 0, 0, 0.5); }
   .aui-switch--equal:hover:not(.is-disabled) .aui-switch__input:checked ~ .aui-switch__text--left {
     color: rgba(0, 0, 0, 0.5); }
   .aui-switch--equal:hover:not(.is-disabled) .aui-switch__input:checked ~ .aui-switch__text--right {
     color: #000000; }
-  .aui-switch__input:focus ~ .aui-switch__track {
-    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1); }
   .aui-switch.is-disabled {
     opacity: 0.3;
     cursor: not-allowed; }
+  .aui-switch__input:checked ~ .aui-switch__track {
+    background: #009900; }
   .aui-switch__input:checked ~ .aui-switch__track .aui-switch__thumb {
-    background: rgba(0, 0, 0, 0.8);
+    background: #ffffff;
     transform: translate(-50%, -50%) scale(0.5, 0.5);
     left: 2.125em; }
   .aui-switch--equal .aui-switch__input:checked ~ .aui-switch__text--left {

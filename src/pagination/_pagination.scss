@@ -2,7 +2,6 @@ $aui-pagination-color: rgba(#000, 0.5) !default;
 $aui-pagination-color-active: rgba(#000, 1) !default;
 
 .aui-pagination {
-  overflow: hidden;
   position: relative;
   height: unit(7);
   @include typo-body;
@@ -44,6 +43,18 @@ $aui-pagination-color-active: rgba(#000, 1) !default;
     color: $aui-pagination-color-active;
   }
 
+  &__prev:hover:not(.is-disabled) {
+    .aui-pagination__prev-icon {
+      transform: translateX(-4px) translateY(em(1)) rotate(180deg);
+    }
+  }
+
+  &__next:hover:not(.is-disabled) {
+    .aui-pagination__next-icon {
+      transform: translateX(4px) translateY(em(1));
+    }
+  }
+
   &__next-icon,
   &__prev-icon {
     display: inline-block;
@@ -52,6 +63,7 @@ $aui-pagination-color-active: rgba(#000, 1) !default;
     text-indent: 100%;
     overflow: hidden;
     transform: translateY(em(1));
+    transition: transform .15s cubic-bezier(0.75, 0.02, 0.5, 1);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
