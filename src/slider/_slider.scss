@@ -19,9 +19,19 @@ $aui-slider-color-thumb-border-hover: $aui-slider-color-track-active !default;
   padding: 0;
   min-height: $aui-slider-handle-size;
   color: $aui-slider-color-text;
+  display: flex;
+  flex-direction: column;
 
-  &__output {
+  &__label {
+    order: -2;
+    font-size: rem(12);
+    margin-bottom: 1rem;
+  }
+
+  &__rangeOutput {
+    order: -1;
     position: relative;
+    align-self: center;
     font-size: modular-scale(-1);
   }
 
@@ -154,6 +164,15 @@ $aui-slider-color-thumb-border-hover: $aui-slider-color-track-active !default;
     cursor: pointer;
   }
 
+  &.aui-slider--output &__origin::before{
+    position: absolute;
+    top: -35px;
+    transform: translateX(-50%);
+    font-size: modular-scale(-1);
+    display: block;
+    content: attr(data-before);
+  }
+
   &:not(.is-disabled) &__handle:hover {
     border-color: $aui-slider-color-thumb-border-hover;
   }
@@ -187,6 +206,12 @@ $aui-slider-color-thumb-border-hover: $aui-slider-color-track-active !default;
   &__value-sub {
     color: #ccc;
     font-size: 10px;
+  }
+
+  &__range {
+    display: flex;
+    justify-content: space-between;
+    font-size: rem(12);
   }
 
   // Markings
@@ -280,6 +305,15 @@ $aui-slider-color-thumb-border-hover: $aui-slider-color-track-active !default;
     right: 120%;
   }
 
+  /**
+   * Variants
+   */
+
+  &--output {
+    .aui-slider__label {
+      margin-bottom: 2rem;
+    }
+  }
 
   /**
    * States

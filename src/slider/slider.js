@@ -12,6 +12,10 @@ import noUiSlider from 'nouislider';
 const SELECTOR_COMPONENT = '.aui-js-slider';
 const SELECTOR_HIDDEN_FIELD = '.aui-slider__hidden-field';
 const SELECTOR_OUTPUT = '.aui-slider__output';
+const SELECTOR_RANGE_OUTPUT = '.aui-slider__rangeOutput';
+const SELECTOR_RANGE_MIN = '.aui-slider__range-min';
+const SELECTOR_RANGE_MAX = '.aui-slider__range-max';
+const SELECTOR_ORIGIN = '.aui-slider__origin';
 const CLASS_COMPONENT = 'aui-slider';
 const CLASS_IS_DISABLED = 'is-disabled';
 const EVENT_NAMESPACE = CLASS_COMPONENT;
@@ -48,6 +52,9 @@ export default class Slider extends Component {
     // Save reference to component elements
     this._hiddenField = this._element.querySelector(SELECTOR_HIDDEN_FIELD);
     this._output = this._element.querySelector(SELECTOR_OUTPUT);
+    this._rangeOutput = this._element.querySelector(SELECTOR_RANGE_OUTPUT);
+    this._rangeMinOutput = this._element.querySelector(SELECTOR_RANGE_MIN);
+    this._rangeMaxOutput = this._element.querySelector(SELECTOR_RANGE_MAX);
 
     // Create slider container element
     this._slider = document.createElement('div');
@@ -91,9 +98,10 @@ export default class Slider extends Component {
     });
     this._slider.noUiSlider.on(`update.${EVENT_NAMESPACE}`, (values, handle, unencoded, tap, positions) => this._onUpdate(values, handle, unencoded, tap, positions));
 
-    if (this._output) {
+    if (this._output || this._rangeOutput) {
       this._resizeObserver = new ResizeObserver();
-      this._resizeObserver.resized.add(this._resizedHandler = () => this._centerOutput());
+      this._rangeMinOutput.innerHTML = this._rangeMin;
+      this._rangeMaxOutput.innerHTML = this._rangeMax;
     }
 
     if (this._element.classList.contains(CLASS_IS_DISABLED)) {
@@ -143,30 +151,35 @@ export default class Slider extends Component {
       this._hiddenField.value = unencoded;
     }
 
-    // Position output to center of slider handles
+    // Display slider value above slider handle
     if (this._output) {
-      this._output.innerHTML = values.length > 1
+      this._origin = this._element.querySelector(SELECTOR_ORIGIN);
+      this._origin.setAttribute('data-before', values[0]);
+    }
+
+    // Position output to center of slider handles
+    if (this._rangeOutput) {
+      this._rangeOutput.innerHTML = values.length > 1
         ? `${values[0]} to ${values[1]}`
         : `${values[0]}`;
-      this._centerOutput();
     }
   }
 
   /**
    * Center output bewteen handles.
    */
-  _centerOutput() {
-    const unencoded = this._slider.noUiSlider.get();
-    const sliderAverage = typeof unencoded === 'object'
-      ? unencoded.reduce((previousValue, currentValue) => {
-          return previousValue + parseFloat(currentValue);
-        }, 0) / unencoded.length
-      : parseFloat(unencoded);
-    const maxRight = this._element.offsetWidth - this._output.offsetWidth;
-    const handleSize = this._slider.offsetHeight;
-    const position = mapLinear(sliderAverage, this._rangeMin, this._rangeMax, 0, 1) * this._slider.offsetWidth - this._output.offsetWidth / 2 + handleSize / 2;
-    this._output.style.left = `${limit(position, 0, maxRight)}px`;
-  }
+  // _centerOutput() {
+  //   const unencoded = this._slider.noUiSlider.get();
+  //   const sliderAverage = typeof unencoded === 'object'
+  //     ? unencoded.reduce((previousValue, currentValue) => {
+  //         return previousValue + parseFloat(currentValue);
+  //       }, 0) / unencoded.length
+  //     : parseFloat(unencoded);
+  //   const maxRight = this._element.offsetWidth - this._rangeOutput.offsetWidth;
+  //   const handleSize = this._slider.offsetHeight;
+  //   const position = mapLinear(sliderAverage, this._rangeMin, this._rangeMax, 0, 1) * this._slider.offsetWidth - this._rangeOutput.offsetWidth / 2 + handleSize / 2;
+  //   this._rangeOutput.style.left = `${limit(position, 0, maxRight)}px`;
+  // }
 
   /**
    * Parse data to use with noUiSlider
