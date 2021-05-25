@@ -82,6 +82,11 @@ $aui-textfield-multiline-active-field-padding-top: (20 / 16 * 1em) !default;
     transition-duration: $aui-field-transition-duration;
     transition-timing-function: $aui-easing;
     pointer-events: none;
+
+    &-optional {
+      font-size: rem(13);
+      padding-left: 4px;
+    }
   }
 
   // Focus line will be injected by JS
@@ -141,7 +146,18 @@ $aui-textfield-multiline-active-field-padding-top: (20 / 16 * 1em) !default;
   }
 
   &__error {
+    display: flex;
+    font-size: rem(13);
     color: $aui-field-error-color;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-right: unit(2);
+      width: 24px;
+      height: 24px;
+      background: url('data:image/svg+xml,#{aui-svg-caution($aui-field-error-color)}') center center no-repeat;
+    }
   }
 
   .audiicon {
@@ -271,7 +287,8 @@ $aui-textfield-multiline-active-field-padding-top: (20 / 16 * 1em) !default;
 
   // Disabled state
   &.is-disabled {
-    opacity: $aui-field-disabled-opacity;
+    //opacity: $aui-field-disabled-opacity;
+    color: $aui-color-gray40;
     cursor: not-allowed;
 
     .aui-textfield__input {

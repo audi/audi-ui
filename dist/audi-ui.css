@@ -3163,6 +3163,9 @@ body::before {
    * Customized noUiSlider Styles
    */
   /**
+   * Variants
+   */
+  /**
    * States
    */ }
   .aui-slider__label {
@@ -3263,14 +3266,7 @@ body::before {
     cursor: pointer; }
   .aui-slider.aui-slider--output .aui-slider__origin::before {
     position: absolute;
-    top: -30px;
-    transform: translateX(-100%);
-    font-size: 14px;
-    display: block;
-    content: attr(data-before); }
-  .aui-slider.aui-slider--output .aui-slider__origin::before {
-    position: absolute;
-    top: -30px;
+    top: -35px;
     transform: translateX(-50%);
     font-size: 14px;
     display: block;
@@ -3297,7 +3293,8 @@ body::before {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
-        justify-content: space-between; }
+        justify-content: space-between;
+    font-size: 0.75rem; }
   .aui-slider__marker {
     position: absolute;
     background: #CCC; }
@@ -3354,6 +3351,8 @@ body::before {
     transform: translate(0, -50%);
     top: 50%;
     right: 120%; }
+  .aui-slider--output .aui-slider__label {
+    margin-bottom: 2rem; }
   .aui-slider.is-disabled {
     opacity: 0.3;
     cursor: not-allowed; }
@@ -3814,7 +3813,7 @@ body::before {
   .aui-textfield.is-focused .aui-textfield__focus-line {
     opacity: 1; }
   .aui-textfield.is-disabled {
-    opacity: 0.3;
+    color: #666666;
     cursor: not-allowed; }
     .aui-textfield.is-disabled .aui-textfield__input {
       cursor: not-allowed; }
