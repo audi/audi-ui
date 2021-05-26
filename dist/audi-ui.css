@@ -975,7 +975,7 @@ body::before {
     font-weight: 400;
     line-height: inherit;
     text-align: left;
-    color: rgba(0, 0, 0, 0.6);
+    color: #333333;
     background: none;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
@@ -994,7 +994,7 @@ body::before {
     bottom: 0;
     left: 0;
     width: 100%;
-    color: rgba(0, 0, 0, 0.6);
+    color: #333333;
     font-size: inherit;
     font-weight: 400;
     text-align: left;
@@ -1015,7 +1015,7 @@ body::before {
     width: 13px;
     height: 8px;
     margin-top: -4px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8' viewBox='0 0 13 8'%3E%3Cpolygon fill='rgba(0, 0, 0, 0.6)' points='6.511 7.371 0 0.715 0.731 0 6.51 5.907 12.267 0 13 0.714 6.511 7.371'/%3E%3C/svg%3E") center center no-repeat;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8' viewBox='0 0 13 8'%3E%3Cpolygon fill='%23333333' points='6.511 7.371 0 0.715 0.731 0 6.51 5.907 12.267 0 13 0.714 6.511 7.371'/%3E%3C/svg%3E") center center no-repeat;
     transition-property: transform, background;
     transition-duration: 0.25s;
     transition-timing-function: cubic-bezier(0.75, 0.02, 0.5, 1); }
@@ -1159,7 +1159,7 @@ body::before {
   border: none;
   line-height: 1.5rem;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.6);
+  color: #333333;
   box-sizing: border-box; }
   .aui-fieldset--selects .aui-fieldset__legend,
   .aui-fieldset--textfields .aui-fieldset__legend {
@@ -1182,6 +1182,8 @@ body::before {
   .aui-fieldset--radios .aui-fieldset__field {
     -ms-flex: 0 1 auto;
         flex: 0 1 auto; }
+  .aui-fieldset--radios.is-invalid .aui-radio__label {
+    color: #bb0a30; }
   .aui-fieldset__error {
     display: block;
     margin-top: 0.5rem;
@@ -2140,7 +2142,7 @@ body::before {
       width: 13px;
       height: 8px;
       margin-top: -4px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8' viewBox='0 0 13 8'%3E%3Cpolygon fill='rgba(0, 0, 0, 0.6)' points='6.511 7.371 0 0.715 0.731 0 6.51 5.907 12.267 0 13 0.714 6.511 7.371'/%3E%3C/svg%3E") center center no-repeat;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8' viewBox='0 0 13 8'%3E%3Cpolygon fill='%23333333' points='6.511 7.371 0 0.715 0.731 0 6.51 5.907 12.267 0 13 0.714 6.511 7.371'/%3E%3C/svg%3E") center center no-repeat;
       transition-property: transform, background;
       transition-duration: 0.25s;
       transition-timing-function: cubic-bezier(0.75, 0.02, 0.5, 1); }
@@ -3015,7 +3017,7 @@ body::before {
     font-size: inherit;
     font-weight: 400;
     line-height: inherit;
-    color: rgba(0, 0, 0, 0.6);
+    color: #333333;
     background: none;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
@@ -3032,12 +3034,12 @@ body::before {
       display: none; }
     .aui-select__input::-ms-value {
       background: none;
-      color: rgba(0, 0, 0, 0.6); }
+      color: #333333; }
     .aui-select__input option {
       color: #333333;
       background: white; }
       .aui-select__input option:disabled {
-        color: rgba(0, 0, 0, 0.6); }
+        color: #333333; }
 
 @-moz-document url-prefix() {
   .aui-select .aui-select__input {
@@ -3050,7 +3052,7 @@ body::before {
     bottom: 0;
     left: 0;
     width: 100%;
-    color: rgba(0, 0, 0, 0.6);
+    color: #333333;
     font-size: inherit;
     font-weight: 400;
     text-align: left;
@@ -3070,7 +3072,7 @@ body::before {
     right: 0;
     width: 13px;
     height: 8px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8' viewBox='0 0 13 8'%3E%3Cpolygon fill='rgba(0, 0, 0, 0.6)' points='6.511 7.371 0 0.715 0.731 0 6.51 5.907 12.267 0 13 0.714 6.511 7.371'/%3E%3C/svg%3E") center center no-repeat;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8' viewBox='0 0 13 8'%3E%3Cpolygon fill='%23333333' points='6.511 7.371 0 0.715 0.731 0 6.51 5.907 12.267 0 13 0.714 6.511 7.371'/%3E%3C/svg%3E") center center no-repeat;
     transform: translateY(-50%);
     transition: background .25s linear;
     pointer-events: none; }
@@ -3681,7 +3683,7 @@ body::before {
     font-weight: 400;
     line-height: inherit;
     text-align: left;
-    color: rgba(0, 0, 0, 0.6);
+    color: #333333;
     background: none;
     border: none;
     transition: color 0.25s cubic-bezier(0.75, 0.02, 0.5, 1);
@@ -3700,7 +3702,7 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    color: rgba(0, 0, 0, 0.6);
+    color: #333333;
     font-size: 0.75rem;
     font-weight: 400;
     text-align: left;
@@ -3712,13 +3714,17 @@ body::before {
     transition-duration: 0.25s;
     transition-timing-function: cubic-bezier(0.75, 0.02, 0.5, 1);
     pointer-events: none; }
+    .aui-textfield__label-optional {
+      font-size: 0.8125rem;
+      padding-left: 4px;
+      color: #666666; }
   .aui-textfield__focus-line {
     display: block;
     position: relative;
     width: 100%;
     margin-top: -2px;
     height: 1px;
-    background: rgba(0, 0, 0, 0.8);
+    background: #808080;
     opacity: 0;
     transition-property: opacity, background;
     transition-duration: 0.25s; }
@@ -3751,7 +3757,17 @@ body::before {
       height: 12px;
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolygon fill='rgba(0, 0, 0, 0.6)' points='4.945 12 0 7.699 0.667 6.92 4.708 10.435 11.132 0 12 0.543 4.945 12' /%3E%3C/svg%3E") center center no-repeat; }
   .aui-textfield__error {
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 0.8125rem;
     color: #bb0a30; }
+    .aui-textfield__error::before {
+      content: '';
+      display: inline-block;
+      margin-right: 0.5rem;
+      width: 24px;
+      height: 24px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M21.5,20.5 L1.5,20.5 L11.5,2.5 L21.5,20.5 Z M11.5,16 L11.5,18 M11.5,8 L11.5,14' stroke='%23bb0a30' stroke-width='1' fill-rule='evenodd'/%3E%3C/svg%3E") center center no-repeat; }
   .aui-textfield .audiicon {
     position: absolute;
     top: 1.25rem;
@@ -3790,7 +3806,7 @@ body::before {
   .aui-textfield--icon .aui-textfield__label {
     padding-left: 2rem; }
   .aui-textfield:not(.is-disabled):not(.is-invalid) .aui-textfield__field:hover {
-    border-bottom-color: rgba(0, 0, 0, 0.8); }
+    border-bottom-color: #808080; }
   .aui-textfield.is-focused .aui-textfield__label {
     opacity: 0; }
   .aui-textfield.is-focused.aui-textfield--floating-label .aui-textfield__label {
@@ -3816,7 +3832,10 @@ body::before {
     color: #666666;
     cursor: not-allowed; }
     .aui-textfield.is-disabled .aui-textfield__input {
-      cursor: not-allowed; }
+      cursor: not-allowed;
+      border-color: #b3b3b3; }
+    .aui-textfield.is-disabled .aui-textfield__label {
+      color: #666666; }
     .aui-textfield.is-disabled .aui-textfield__focus-line {
       opacity: 0; }
   .aui-textfield.is-dirty .aui-textfield__label {

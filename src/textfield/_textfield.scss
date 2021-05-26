@@ -1,10 +1,9 @@
 $aui-textfield-max-lines: 0 !default;
 $aui-textfield-icon-top-default: $aui-field-default-height * .5 !default; // Center with label
-$aui-textfield-color: $aui-color-dark !default;
-$aui-textfield-color: $aui-color-black !default;
+$aui-textfield-color: $aui-color-gray20 !default;
 $aui-textfield-color-secondary: rgba(#000, 0.5) !default;
 $aui-textfield-border: rgba(#000, 0.3) !default;
-$aui-textfield-border-hover: rgba(#000, 0.8) !default;
+$aui-textfield-border-hover: $aui-color-gray50 !default;
 $aui-textfield-border-focus: rgba(#000, 0.8) !default;
 $aui-textfield-border-dirty: rgba(#000, 0.8) !default;
 $aui-textfield-valid-tick-color: rgba(#000, 0.6) !default;
@@ -86,6 +85,7 @@ $aui-textfield-multiline-active-field-padding-top: (20 / 16 * 1em) !default;
     &-optional {
       font-size: rem(13);
       padding-left: 4px;
+      color: $aui-color-gray40;
     }
   }
 
@@ -293,6 +293,11 @@ $aui-textfield-multiline-active-field-padding-top: (20 / 16 * 1em) !default;
 
     .aui-textfield__input {
       cursor: not-allowed;
+      border-color: #b3b3b3;
+    }
+
+    .aui-textfield__label {
+      color: $aui-color-gray40;
     }
 
     .aui-textfield__focus-line {
