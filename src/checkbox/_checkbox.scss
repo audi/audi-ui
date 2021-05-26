@@ -28,7 +28,7 @@ $aui-checkbox-color-tick: $aui-checkbox-color-text !default;
 
   &__label {
     &--optional {
-      color: red;
+      color: $aui-color-gray40;
     }
   }
 
