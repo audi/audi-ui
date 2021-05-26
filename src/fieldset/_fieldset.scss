@@ -37,6 +37,15 @@ $aui-fieldset-field-spacing-y: unit(6) !default;
     flex: 0 1 auto;
   }
 
+  &--radios {
+
+    &.is-invalid {
+      .aui-radio__label {
+        color: $aui-color-invalid;
+      }
+    }
+  }
+
   &__error {
     display: block;
     margin-top: unit(2);
