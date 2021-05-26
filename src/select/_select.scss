@@ -190,7 +190,8 @@ $aui-select-color-arrow-dirty: $aui-select-color;
 
   // Disabled state
   &.is-disabled {
-    opacity: $aui-field-disabled-opacity;
+    //opacity: $aui-field-disabled-opacity;
+    color: $aui-color-gray40;
     cursor: not-allowed;
 
     .aui-select__input {
