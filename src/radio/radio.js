@@ -78,6 +78,12 @@ export default class Radio extends Component {
    * Check the toggle state and update field accordingly.
    */
   checkToggleState() {
+
+    // Remove all graphical 'is-active' states before re-applying to actual clicked radio button
+    Array.from(document.querySelectorAll(SELECTOR_COMPONENT)).forEach(e => {
+      e.classList.remove(CLASS_IS_CHECKED);
+    });
+
     if (this._input.checked) {
       this._element.classList.add(CLASS_IS_CHECKED);
     } else {

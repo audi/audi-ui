@@ -701,7 +701,7 @@ body::before {
   .aui-js .aui-checkbox {
     padding-left: 2.5em; }
   .aui-checkbox__label--optional {
-    color: red; }
+    color: #666666; }
   .aui-checkbox__box {
     display: none;
     overflow: hidden;
@@ -3116,7 +3116,7 @@ body::before {
   .aui-select.is-focused .aui-select__focus-line {
     opacity: 1; }
   .aui-select.is-disabled {
-    opacity: 0.3;
+    color: #666666;
     cursor: not-allowed; }
     .aui-select.is-disabled .aui-select__input {
       cursor: not-allowed; }
