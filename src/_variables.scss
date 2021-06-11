@@ -9,7 +9,8 @@ $aui-pi: 3.14159;
 /**
  * Modular Scale
  */
-$aui-modular-scale: ( default: ( base: 16px, ratio: 1.14, ), small: ( ratio: 1.17, ), large: ( base: 18px, ratio: 1.21, ), huge: ( base: 20px, ratio: 1.25, ), ) !default;
+//$aui-modular-scale: ( default: ( base: 16px, ratio: 1.14, ), small: ( ratio: 1.17, ), large: ( base: 18px, ratio: 1.21, ), huge: ( base: 20px, ratio: 1.25, ), ) !default;
+$aui-modular-scale: ( default: ( base: 16px, ratio: 1.14, ), small: ( ratio: 1.17, ), large: ( base: 16px, ratio: 1.21, ), huge: ( base: 16px, ratio: 1.25, ), ) !default;
 
 /**
  * Animation & Transitions
@@ -20,6 +21,7 @@ $aui-easing: cubic-bezier(0.75, 0.02, 0.5, 1) !default;
  * Colors
  */
 $aui-color-red: #bb0a30 !default;
+$aui-color-progressive-red: #f50537 !default;
 $aui-color-yellow: #ffaa00 !default;
 $aui-color-green: #009900 !default;
 $aui-color-silver: #b2b2b2 !default;
@@ -31,7 +33,6 @@ $aui-color-gray30: #4c4c4c !default;
 $aui-color-gray40: #666666 !default;
 $aui-color-gray50: #808080 !default;
 $aui-color-gray60: #999999 !default;
-$aui-color-gray65: #b3b3b3 !default;
 $aui-color-gray70: #b2b2b2 !default;
 $aui-color-gray80: #cccccc !default;
 $aui-color-gray85: #d9d9d9 !default;
