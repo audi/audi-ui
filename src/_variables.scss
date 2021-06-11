@@ -76,7 +76,8 @@ $aui-svg-arrow-height: 13px !default;
 /**
  * Breakpoints
  */
-$aui-breakpoint: ( tiny : 480px, xsmall : 600px, small : 740px, medium : 960px, large : 1264px, xlarge : 1424px, huge : 1584px, ) !default;
+//$aui-breakpoint: ( tiny : 480px, xsmall : 600px, small : 740px, medium : 960px, large : 1264px, xlarge : 1424px, huge : 1584px, ) !default;
+$aui-breakpoint: ( xsmall : 0px, small : 375px, medium : 768px, large : 1024px, xlarge : 1440px, huge : 1920px, ) !default;
 
 
 // $aui-shadow: 0 10px 50px rgba(#000, .1);
