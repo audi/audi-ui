@@ -98,7 +98,7 @@ $aui-field-line-height: 1.5 !default;
 $aui-field-error-line-height: unit(5) !default;
 $aui-field-error-color: $aui-color-invalid !default;
 $aui-field-disabled-opacity: 0.3 !default;
-$aui-field-placeholder-color: rgba(#000, 0.6) !default;
+$aui-field-placeholder-color: $aui-color-gray20 !default;
 $aui-field-placeholder-color-light: rgba(#fff, 0.6) !default;
 $aui-field-transition-duration: 0.25s !default;
 $aui-field-label-y: 0.5rem !default;
