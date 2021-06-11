@@ -113,7 +113,7 @@ $aui-table-cell-padding-y: unit(4) !default;
       border-bottom: $aui-table-border-width-title solid $aui-table-border-color;
     }
 
-    @include aui-respond-to(small) {
+    @include aui-respond-to(large) {
 
       td {
         padding-bottom: #{$aui-table-cell-padding-y - $aui-table-gutters};

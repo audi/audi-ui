@@ -162,7 +162,7 @@ $aui-audioplayer-dark-timeline: $aui-color-gray90 !default;
     margin-right: 0.625rem;
   }
 
-  @include aui-respond-to(small) {
+  @include aui-respond-to(large) {
     padding: 1.25rem 1rem 1.25rem 0px;
 
     &--frameless {

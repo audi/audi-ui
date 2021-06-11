@@ -405,7 +405,7 @@ $aui-player-chrome-seeking-height: 101px !default;
 
   $aui-player-chrome-height: 120px;
   $aui-player-chrome-seeking-height: 182px;
-  @include aui-respond-to(small) {
+  @include aui-respond-to(large) {
     &__chrome {
       font-size: rem(16);
       height: $aui-player-chrome-height;
@@ -501,7 +501,7 @@ $aui-player-chrome-seeking-height: 101px !default;
       }
     }
   }
-  @include aui-respond-to(medium) {
+  @include aui-respond-to(large) {
     &-related-content {
       font-family: $aui-font-extended;
       @include aui-font-size-line-height(-1, 1.4);
