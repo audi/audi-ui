@@ -4,7 +4,7 @@
 
 {% block main %}
 
-  <section class="test-section" id="button">
+  {# <section class="test-section" id="button">
     {{ section.header('Button') }}
     <div class="test-section__panel">
       {% include 'button/snippets/button.html' %}
@@ -13,7 +13,7 @@
       <h3 class="test-section__headline">Disabled state</h3>
       {% include 'button/snippets/button-disabled.html' %}
     </div>
-  </section>
+  </section> #}
 
   <section class="test-section" id="button-text">
     {{ section.header('Button text style') }}

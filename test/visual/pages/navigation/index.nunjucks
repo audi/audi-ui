@@ -62,7 +62,7 @@
     </div>
   </section>
 
-  <section class="test-section" id="nav-tab-theme">
+  {# <section class="test-section" id="nav-tab-theme">
     {{ section.header('Nav Tab Overlap component with custom theme of gray10 and gray20') }}
     <div class="test-section__panel">
       <div class="aui-grid">
@@ -104,16 +104,16 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> #}
 
-  <section class="test-section" id="nav-dropdown">
+  {# <section class="test-section" id="nav-dropdown">
     {{ section.header('Nav Dropdown') }}
     <div class="test-section__panel">
       {% include 'nav/snippets/nav-dropdown.html' %}
       <h3 class="test-section__headline">Sticky</h3>
       {% include 'nav/snippets/nav-dropdown-sticky.html' %}
     </div>
-  </section>
+  </section> #}
 
   <section class="test-section" id="nav-list">
     {{ section.header('Nav List') }}
@@ -126,12 +126,12 @@
     </div>
   </section>
 
-  <section class="test-section" id="header">
+  {# <section class="test-section" id="header">
     {{ section.header('Header') }}
     <div class="test-section__panel">
       <a class="aui-textlink" href="header.html">Sticky header demo</a>
     </div>
-  </section>
+  </section> #}
 
   <section class="test-section" id="breadcrumb">
     {{ section.header('Breadcrumb') }}

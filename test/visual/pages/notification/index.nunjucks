@@ -50,13 +50,13 @@
       {% include 'badge/snippets/badge-success.html' %}
       {% include 'badge/snippets/badge-warning.html' %}
       {% include 'badge/snippets/badge-danger.html' %}
-      <h3 class="test-section__headline">Badges on black</h3>
+      {# <h3 class="test-section__headline">Badges on black</h3>
       <div class="leader-padding-2 trailer-padding-2 aui-color-black align-center">
         <span class="aui-badge aui-color-white aui-color-text-dark">
           99
         </span>
         {% include 'badge/snippets/badge-danger.html' %}
-      </div>
+      </div> #}
       <h3 class="test-section__headline">Show/hide badge</h3>
       {% include 'badge/snippets/badge-hidden.html' %}
     </div>

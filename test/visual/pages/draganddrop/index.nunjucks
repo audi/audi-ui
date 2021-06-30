@@ -17,8 +17,8 @@
     {{ section.header('Dropzone') }}
     <div class="test-section__panel">
       {% include 'dropzone/snippets/dropzone.html' %}
-      <h3 class="test-section__headline">While active dragging</h3>
-      <a class="aui-textlink" href="dropzone-fullpage.html">Full-page dropzone</a>
+      {# <h3 class="test-section__headline">While active dragging</h3>
+      <a class="aui-textlink" href="dropzone-fullpage.html">Full-page dropzone</a> #}
     </div>
   </section>
 

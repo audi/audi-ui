@@ -39,7 +39,7 @@
     </div>
   </section>
 
-  <section class="test-section" id="switch-equal">
+  {# <section class="test-section" id="switch-equal">
     {{ section.header('Switch with equal options') }}
     <div class="test-section__panel">
       {% include 'switch/snippets/switch-equal.html' %}
@@ -48,6 +48,6 @@
       <h3 class="test-section__headline">Checked and disabled state</h3>
       {% include 'switch/snippets/switch-equal-checked-disabled.html' %}
     </div>
-  </section>
+  </section> #}
 
 {% endblock %}

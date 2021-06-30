@@ -11,7 +11,7 @@
     </div>
   </section>
 
-  <section class="test-section" id="audioplayer-download">
+  {# <section class="test-section" id="audioplayer-download">
     {{ section.header('Audioplayer with downloadable content & mute functionality') }}
     <div class="test-section__panel">
       {% include 'audioplayer/snippets/audioplayer-download.html' %}
@@ -37,6 +37,6 @@
     <div class="test-section__panel">
       {% include 'audioplayer/snippets/audioplayer-cover-small.html' %}
     </div>
-  </section>
+  </section> #}
 
 {% endblock %}
