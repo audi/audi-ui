@@ -1,11 +1,13 @@
-$aui-switch-track-width: 2.9em !default;
-$aui-switch-track-height: 1.6em !default;
+//$aui-switch-track-width: 2.9em !default;
+$aui-switch-track-width: 3.63em !default;
+//$aui-switch-track-height: 1.6em !default;
+$aui-switch-track-height: 2em !default;
 $aui-switch-track-spacing: 1em !default;
 $aui-switch-thumb-scale: 1 / $aui-circle-smoothing-factor !default;
 $aui-switch-thumb-scale-hover: 8 / 10 / $aui-circle-smoothing-factor !default;
 $aui-switch-thumb-scale-active: 1 / $aui-circle-smoothing-factor !default;
-// $aui-switch-thumb-size: .75em * $aui-circle-smoothing-factor !default;
-$aui-switch-thumb-size: 52px !default;
+$aui-switch-thumb-size: 1.63em * $aui-circle-smoothing-factor !default;
+//$aui-switch-thumb-size: 26px !default;
 $aui-switch-color-text: $aui-color-gray20 !default;
 $aui-switch-color-text-hover: $aui-color-black !default;
 $aui-switch-color-text-inactive: rgba(#000, 0.5) !default;
@@ -18,9 +20,11 @@ $aui-switch-color-thumb-active: $aui-color-white !default;
 
 .aui-switch {
   cursor: pointer;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   position: relative;
   font-weight: $aui-font-weight-normal;
+  height: $aui-switch-track-height;
   // Because track is positioned `absolute`, the element would have a width of 0
   // when there's no text label.
   min-width: $aui-switch-track-width;
@@ -50,7 +54,7 @@ $aui-switch-color-thumb-active: $aui-color-white !default;
   &__track {
     display: inline-block;
     position: absolute;
-    top: .125em;
+    // top: .125em;
     left: 0;
     width: $aui-switch-track-width;
     height: $aui-switch-track-height;
@@ -64,14 +68,39 @@ $aui-switch-color-thumb-active: $aui-color-white !default;
   &__thumb {
     display: inline-block;
     position: absolute;
+    z-index: 10;
     top: 50%;
-    left: .75em;
+    //left: .75em;
+    left: 1em;
     width: $aui-switch-thumb-size;
     height: $aui-switch-thumb-size;
     border-radius: 50%;
     transform: translate(-50%, -50%) scale($aui-switch-thumb-scale, $aui-switch-thumb-scale);
     background: $aui-switch-color-thumb;
     transition: transform .15s $aui-easing, left .3s $aui-easing, background .3s $aui-easing;
+  }
+
+  &__indicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &--on {
+      //left: 1.75em;
+      width: 1px;
+      height: 8px;
+      background-color: $aui-color-white;
+      transition: transform .15s $aui-easing, opacity .15s $aui-easing;
+    }
+
+    &--off {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      border: 1px solid $aui-color-gray50;
+      right: 0.75em;
+      transition: transform .15s $aui-easing, opacity .15s $aui-easing;
+    }
   }
 
   /**
@@ -173,10 +202,38 @@ $aui-switch-color-thumb-active: $aui-color-white !default;
     background: $aui-switch-color-track-background-active;
   }
 
+  &__input:checked ~ &__track {
+    .aui-switch__indicator--on {
+      //left: 1.05em;
+      opacity: 1;
+      transform: translate(1.05em, -50%);
+    }
+
+    .aui-switch__indicator--off {
+      transform: translate(-0.7em, -50%);
+      //right: 0.75em;
+      opacity: 0;
+    }
+  }
+
+  // Unchecked state
+  &__input:not(:checked) ~ &__track {
+    .aui-switch__indicator--on {
+      opacity: 0;
+      transform: translate(1.75em, -50%);
+    }
+
+    .aui-switch__indicator--off {
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+  }
+
   &__input:checked ~ &__track &__thumb {
     background: $aui-switch-color-thumb-active;
     transform: translate(-50%, -50%) scale($aui-switch-thumb-scale-active, $aui-switch-thumb-scale-active);
-    left: 2.125em;
+    //left: 2.125em;
+    left: 2.65em;
   }
 
   &--equal &__input:checked ~ .aui-switch__text--left {
