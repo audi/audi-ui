@@ -113,17 +113,17 @@
     <div class="test-section__panel">
       <div>
         <button class="aui-button aui-button--text aui-js-response" type="button">
-          <span class="aui-button__text">Text button<br>second line</span>
+          <span class="aui-button__text">Text button</span>
         </button>
       </div>
       <div class="leader-4">
         <button class="aui-button aui-button--primary aui-js-response" type="button">
-          <span class="aui-button__text">Primary button<br>second line</span>
+          <span class="aui-button__text">Primary button</span>
         </button>
       </div>
       <div class="leader-4">
         <button class="aui-button aui-button--secondary aui-js-response" type="button">
-          <span class="aui-button__text">Secondary button<br>second line</span>
+          <span class="aui-button__text">Secondary button</span>
         </button>
       </div>
       <div class="leader-4">
@@ -132,14 +132,14 @@
             <svg class="audiicon">
               <use xlink:href="#audiicon-search-small"></use>
             </svg>
-            <span class="aui-button__text">Primary button<br>second line</span>
+            <span class="aui-button__text">Primary button</span>
           </span>
         </button>
       </div>
       <div class="leader-4">
         <button class="aui-button aui-button--secondary aui-js-response" type="button">
           <span class="aui-button__text-icon">
-            <span class="aui-button__text">Secondary button<br>second line</span>
+            <span class="aui-button__text">Secondary button</span>
             <svg class="audiicon">
               <use xlink:href="#audiicon-erase-small"></use>
             </svg>
