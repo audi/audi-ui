@@ -13,7 +13,7 @@
     padding: unit(4) 0 calc(#{unit(1)} - 1px);
     margin-bottom: unit(4);
     padding: unit(1) unit(2);
-    @include fontfamily;
+    font-family: $aui-font-default;
     font-size: 12px;
     font-weight: bold;
     line-height: unit(4);
@@ -27,7 +27,7 @@
     margin-top: unit(4);
     margin-bottom: unit(4);
     padding: unit(1) unit(2);
-    @include fontfamily;
+    font-family: $aui-font-default;
     font-size: 12px;
     font-weight: bold;
     line-height: unit(4);
