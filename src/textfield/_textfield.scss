@@ -293,7 +293,7 @@ $aui-textfield-multiline-active-field-padding-top: (20 / 16 * 1em) !default;
 
     .aui-textfield__input {
       cursor: not-allowed;
-      border-color: #b3b3b3;
+      border-color: $aui-color-gray70;
     }
 
     .aui-textfield__label {

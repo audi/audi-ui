@@ -1,6 +1,8 @@
 // Colors
-$aui-nav-textcolor: rgba(#000, .5) !default;
+//$aui-nav-textcolor: rgba(#000, .5) !default;
+$aui-nav-textcolor: $aui-color-gray20 !default;
 $aui-nav-textcolor-active: $aui-color-black !default;
+$aui-nav-textcolor-disabled: $aui-color-gray70 !default;
 $aui-nav-list-separator-color: rgba(#000, .1) !default;
 $aui-nav-tab-background: $aui-color-gray90 !default;
 $aui-nav-dropdown-textcolor: $aui-nav-textcolor !default;
@@ -53,6 +55,7 @@ $aui-nav-dropdown-sticky-height: $aui-nav-font-size + 2* $aui-nav-dropdown-stick
   display: block;
   width: 100%;
   z-index: 1;
+  font-family: $aui-font-default;
   position: relative;
   padding: #{($aui-nav-default-height - $aui-nav-font-size) / 2} 0;
   vertical-align: baseline;
@@ -98,7 +101,10 @@ $aui-nav-dropdown-sticky-height: $aui-nav-font-size + 2* $aui-nav-dropdown-stick
 
   &.is-disabled {
     cursor: not-allowed;
-    opacity: .3;
+    color: $aui-nav-textcolor-disabled;
+    fill: $aui-nav-textcolor-disabled;
+    stroke: $aui-nav-textcolor-disabled;
+    //opacity: .3;
   }
 }
 

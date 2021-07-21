@@ -8,6 +8,7 @@ $aui-audioplayer-dark-timeline: $aui-color-gray90 !default;
   &__controls {
     line-height: 23px;
     order: 1;
+    margin-left: 1rem;
 
     .aui-button-group {
       flex-flow: row nowrap;

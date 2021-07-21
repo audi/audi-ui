@@ -30,6 +30,11 @@
     background-color: $aui-color-red;
   }
 
+  &-danger,
+  &-progressive-red {
+    background-color: $aui-color-progressive-red;
+  }
+
   &-gray10 {
     background-color: $aui-color-gray10;
   }
