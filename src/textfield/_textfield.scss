@@ -139,25 +139,36 @@ $aui-textfield-multiline-active-field-padding-top: (20 / 16 * 1em) !default;
     &::before {
       content: '';
       display: inline-block;
-      margin-right: unit(2);
+      margin-right: rem(16px);
       width: 12px;
       height: 12px;
       background: url('data:image/svg+xml,#{aui-svg-tick($aui-textfield-valid-tick-color)}') center center no-repeat;
+
+      @include aui-respond-to('large') {
+        margin-right: unit(2);
+      }
     }
   }
 
   &__error {
     display: flex;
+    align-items: center;
     font-size: rem(13);
     color: $aui-field-error-color;
 
     &::before {
       content: '';
       display: inline-block;
-      margin-right: unit(2);
-      width: 24px;
+      margin-right: rem(16px);
+      width: 40px;
       height: 24px;
       background: url('data:image/svg+xml,#{aui-svg-caution($aui-field-error-color)}') center center no-repeat;
+
+      @include aui-respond-to('large') {
+        margin-right: unit(2);
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 
@@ -231,7 +242,11 @@ $aui-textfield-multiline-active-field-padding-top: (20 / 16 * 1em) !default;
   &--icon {
     .aui-textfield__input,
     .aui-textfield__label {
-      padding-left: unit(8);
+      padding-left: unit(12);
+
+      @include aui-respond-to(large) {
+        padding-left: unit(8);
+      }
     }
   }
 
