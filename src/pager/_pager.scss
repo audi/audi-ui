@@ -1,5 +1,5 @@
-$aui-pager-color: rgba(#000, 0.5) !default;
-$aui-pager-color-active: rgba(#000, 1) !default;
+$aui-pager-color: $aui-color-gray40 !default;
+$aui-pager-color-active: $aui-color-black !default;
 
 .aui-pager {
   list-style: none;
@@ -35,7 +35,6 @@ $aui-pager-color-active: rgba(#000, 1) !default;
     height: .8125em;
     text-indent: 100%;
     overflow: hidden;
-    transform: translateY(em(1));
     transition: transform .15s cubic-bezier(0.75, 0.02, 0.5, 1);
     background-size: contain;
     background-repeat: no-repeat;
@@ -63,7 +62,7 @@ $aui-pager-color-active: rgba(#000, 1) !default;
 
   &__next:hover:not(.is-disabled) {
     .aui-pager__next-icon {
-      transform: translateX(4px) translateY(em(1));
+      transform: translateX(4px);
     }
   }
 
