@@ -154,14 +154,14 @@ export default class Slider extends Component {
     // Display slider value above slider handle
     if (this._output) {
       this._origin = this._element.querySelector(SELECTOR_ORIGIN);
-      this._origin.setAttribute('data-before', values[0]);
+      this._origin.setAttribute('data-before', parseInt(values[0]));
     }
 
     // Position output to center of slider handles
     if (this._rangeOutput) {
       this._rangeOutput.innerHTML = values.length > 1
-        ? `${values[0]} to ${values[1]}`
-        : `${values[0]}`;
+        ? `${parseInt(values[0])} to ${parseInt(values[1])}`
+        : `${parseInt(values[0])}`;
     }
   }
 

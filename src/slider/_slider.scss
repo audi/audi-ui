@@ -8,6 +8,7 @@ $aui-slider-handle-size: unit(6) !default;
 $aui-slider-handle-offset: $aui-slider-handle-size / 2;
 $aui-slider-track-size: 2px;
 $aui-slider-color-text: $aui-color-gray20 !default;
+$aui-slider-color-disabled: $aui-color-gray40 !default;
 $aui-slider-color-track: $aui-color-gray80 !default;
 $aui-slider-color-track-active: $aui-color-black !default;
 $aui-slider-color-thumb: $aui-color-white !default;
@@ -25,6 +26,7 @@ $aui-slider-color-thumb-border-hover: $aui-slider-color-track-active !default;
   &__label {
     order: -2;
     font-size: rem(12);
+    color: $aui-slider-color-disabled;
     margin-bottom: 1rem;
   }
 
@@ -321,8 +323,17 @@ $aui-slider-color-thumb-border-hover: $aui-slider-color-track-active !default;
 
   // Disabled state
   &.is-disabled {
-    opacity: $aui-field-disabled-opacity;
+    //opacity: $aui-field-disabled-opacity;
     cursor: not-allowed;
+
+    .aui-slider__connect::after {
+      background-color: $aui-color-gray70;
+    }
+
+
+    .aui-slider__target::after {
+      background-color: $aui-color-gray90;
+    }
 
     .aui-slider__handle,
     .aui-slider__draggable {
