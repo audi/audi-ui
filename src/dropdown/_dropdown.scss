@@ -37,6 +37,7 @@ $aui-dropdown-option-hover-background: rgba(#000, 0.10) !default;
     width: 100%;
     padding-right: #{rem($aui-dropdown-arrow-width) + unit(2)};
     min-height: $aui-field-default-height;
+    font-family: $aui-font-default;
     font-size: inherit;
     font-weight: $aui-font-weight-normal;
     line-height: inherit;
@@ -112,7 +113,7 @@ $aui-dropdown-option-hover-background: rgba(#000, 0.10) !default;
     color: $aui-dropdown-secondary-color;
     transition: color $aui-field-transition-duration linear;
     margin-top: unit(2);
-    font-size: rem(13);
+    font-size: rem(12);
     line-height: $aui-field-error-line-height;
   }
 

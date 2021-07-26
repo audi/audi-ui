@@ -24,6 +24,7 @@ $aui-select-color-arrow-dirty: $aui-select-color;
     padding-right: #{rem($aui-select-arrow-width) + unit(2)};
     width: 100%;
     min-height: $aui-field-default-height;
+    font-family: $aui-font-default;
     font-size: inherit;
     font-weight: $aui-font-weight-normal;
     line-height: inherit;

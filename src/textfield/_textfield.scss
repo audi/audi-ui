@@ -37,6 +37,7 @@ $aui-textfield-multiline-active-field-padding-top: (20 / 16 * 1em) !default;
     padding: $aui-textfield-input-padding-y 0;
     width: 100%;
     min-height: $aui-field-default-height;
+    font-family: $aui-font-default;
     font-size: inherit;
     font-weight: $aui-font-weight-normal;
     line-height: inherit;
