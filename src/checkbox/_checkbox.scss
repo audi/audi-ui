@@ -3,9 +3,10 @@ $aui-checkbox-tick-size: .75em !default;
 $aui-checkbox-text-spacing: 1em !default;
 $aui-checkbox-color-text: $aui-color-gray20 !default;
 $aui-checkbox-color-text-hover: $aui-color-black !default;
-$aui-checkbox-color-border: rgba(#000, 0.5) !default;
+$aui-checkbox-color-border: $aui-color-gray50 !default;
 $aui-checkbox-color-border-hover: rgba(#000, 1) !default;
 $aui-checkbox-color-border-invalid: $aui-color-invalid !default;
+$aui-checkbox-color-border-disabled: $aui-color-gray70 !default;
 $aui-checkbox-color-tick: $aui-checkbox-color-text !default;
 
 .aui-checkbox {
@@ -128,7 +129,7 @@ $aui-checkbox-color-tick: $aui-checkbox-color-text !default;
   // Disabled state
   &.is-disabled {
     //opacity: $aui-field-disabled-opacity;
-    color: $aui-color-gray40;
+    color: $aui-checkbox-color-border-disabled;
     cursor: not-allowed;
   }
 
