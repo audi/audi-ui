@@ -66,13 +66,38 @@ $aui-checkbox-color-tick: $aui-checkbox-color-text !default;
     pointer-events: none;
   }
 
+  // &__error {
+  //   display: block;
+  //   margin-top: unit(2);
+  //   font-size: rem(13);
+  //   line-height: unit(5);
+  //   color: $aui-field-error-color;
+  //   transition: color .25s linear;
+  // }
+
   &__error {
-    display: block;
-    margin-top: unit(2);
+    display: flex;
+    align-items: center;
+    line-height: $aui-field-error-line-height;
+    margin-top: unit(3.5);
     font-size: rem(13);
-    line-height: unit(5);
     color: $aui-field-error-color;
-    transition: color .25s linear;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      line-height: $aui-field-error-line-height;
+      margin-right: rem(16px);
+      width: 40px;
+      height: 24px;
+      background: url('data:image/svg+xml,#{aui-svg-caution($aui-field-error-color)}') center center no-repeat;
+
+      @include aui-respond-to('large') {
+        margin-right: unit(2.5);
+        width: 36px;
+        height: 24px;
+      }
+    }
   }
 
   /**

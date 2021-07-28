@@ -46,13 +46,37 @@ $aui-fieldset-field-spacing-y: unit(6) !default;
     }
   }
 
+  // &__error {
+  //   display: block;
+  //   margin-top: unit(2);
+  //   color: $aui-color-gray60;
+  //   font-size: rem(13);
+  //   line-height: unit(5);
+  //   transition: color .25s linear;
+  // }
+
   &__error {
-    display: block;
-    margin-top: unit(2);
-    color: $aui-color-gray60;
+    display: flex;
+    align-items: center;
+    line-height: $aui-field-error-line-height;
+    margin-top: unit(3.5);
     font-size: rem(13);
-    line-height: unit(5);
-    transition: color .25s linear;
+    color: $aui-field-error-color;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-right: rem(16px);
+      width: 40px;
+      height: 24px;
+      background: url('data:image/svg+xml,#{aui-svg-caution($aui-field-error-color)}') center center no-repeat;
+
+      @include aui-respond-to('large') {
+        margin-right: unit(2);
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
   &.is-invalid &__error,

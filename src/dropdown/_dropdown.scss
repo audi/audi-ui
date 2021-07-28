@@ -107,18 +107,41 @@ $aui-dropdown-option-hover-background: rgba(#000, 0.10) !default;
     transition-duration: $aui-field-transition-duration;
   }
 
-  &__description,
-  &__error {
+  &__description {
     display: block;
     color: $aui-dropdown-secondary-color;
     transition: color $aui-field-transition-duration linear;
-    margin-top: unit(2);
+    margin-top: unit(3.5);
     font-size: rem(12);
     line-height: $aui-field-error-line-height;
   }
 
+  // &__error {
+  //   color: $aui-field-error-color;
+  // }
+
   &__error {
+    display: flex;
+    align-items: center;
+    line-height: $aui-field-error-line-height;
+    margin-top: unit(3.5);
+    font-size: rem(13);
     color: $aui-field-error-color;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-right: rem(16px);
+      width: 40px;
+      height: 24px;
+      background: url('data:image/svg+xml,#{aui-svg-caution($aui-field-error-color)}') center center no-repeat;
+
+      @include aui-respond-to('large') {
+        margin-right: unit(2);
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
   &__panel {
