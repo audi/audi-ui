@@ -13,8 +13,11 @@ $aui-progress-color-progress: $aui-color-progressive-red !default;
     top: 0;
     left: 0;
     height: 100%;
-    width: 50%;
+    //width: 50%;
+    width: 100%;
     background: $aui-progress-color-progress;
+
+    transform-origin: 0% 0%;
   }
 
   &--continuous &__bar {
@@ -23,29 +26,44 @@ $aui-progress-color-progress: $aui-color-progressive-red !default;
 }
 
 // Continous progress animation:
+// @keyframes aui-progress {
+//   from {
+//     left: -55%;
+//     width: 55%;
+//   }
+
+//   50% {
+//     width: 30%;
+//   }
+
+//   70% {
+//     width: 70%;
+//   }
+
+//   80% {
+//     left: 50%;
+//   }
+
+//   95% {
+//     left: 120%;
+//   }
+
+//   to {
+//     left: 100%;
+//   }
+// }
+
 @keyframes aui-progress {
-  from {
-    left: -55%;
-    width: 55%;
+  0% {
+    transform: translateX(0%) scaleX(0);
   }
 
   50% {
-    width: 30%;
+    transform: translateX(20%) scaleX(0.5);
+    animation-timing-function: cubic-bezier(0, 0, 0, 1);
   }
 
-  70% {
-    width: 70%;
-  }
-
-  80% {
-    left: 50%;
-  }
-
-  95% {
-    left: 120%;
-  }
-
-  to {
-    left: 100%;
+  100% {
+    transform: translateX(100%) scaleX(0.5);
   }
 }
