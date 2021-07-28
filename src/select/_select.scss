@@ -23,7 +23,8 @@ $aui-select-color-arrow-dirty: $aui-select-color;
     margin: 0;
     padding-right: #{rem($aui-select-arrow-width) + unit(2)};
     width: 100%;
-    min-height: $aui-field-default-height;
+    //min-height: $aui-field-default-height;
+    min-height: 2.71rem;
     font-family: $aui-font-default;
     font-size: inherit;
     font-weight: $aui-font-weight-normal;
@@ -125,18 +126,37 @@ $aui-select-color-arrow-dirty: $aui-select-color;
     transition-duration: $aui-field-transition-duration;
   }
 
-  &__description,
-  &__error {
+  &__description {
     display: block;
     color: $aui-select-color-secondary;
     transition: color $aui-field-transition-duration linear;
-    margin-top: unit(2);
+    margin-top: unit(3.5);
     font-size: rem(13);
     line-height: $aui-field-error-line-height;
   }
 
   &__error {
+    display: flex;
+    align-items: center;
+    line-height: $aui-field-error-line-height;
+    margin-top: unit(3.5);
+    font-size: rem(13);
     color: $aui-field-error-color;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-right: rem(16px);
+      width: 40px;
+      height: 24px;
+      background: url('data:image/svg+xml,#{aui-svg-caution($aui-field-error-color)}') center center no-repeat;
+
+      @include aui-respond-to('large') {
+        margin-right: unit(2);
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
   /**
