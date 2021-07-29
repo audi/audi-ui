@@ -1,10 +1,10 @@
 %aui-nav-theme-light {
   // Colors
   $aui-nav-textcolor: rgba(#fff, .5);
-  $aui-nav-textcolor-active: rgba(#fff, 1);
+  $aui-nav-textcolor-active: $aui-color-white;
   $aui-nav-list-separator-color: rgba(#fff, .2);
   $aui-nav-paddle-background: $aui-color-black;
-  $aui-nav-tab-color: rgba(#000, 1);
+  $aui-nav-tab-color: $aui-color-black ;
   $aui-nav-tab-background: $aui-color-gray90;
   $aui-nav-dropdown-textcolor: $aui-nav-textcolor;
   $aui-nav-dropdown-textcolor-active: $aui-nav-textcolor-active;
@@ -186,9 +186,9 @@
    */
   &.aui-theme-gray10-gray20 {
     $aui-nav-textcolor: rgba(#fff, .5);
-    $aui-nav-textcolor-active: rgba(#fff, 1);
+    $aui-nav-textcolor-active: $aui-color-white;
     $aui-nav-paddle-background: $aui-color-gray10;
-    $aui-nav-tab-color: rgba(#fff, 1);
+    $aui-nav-tab-color: $aui-color-white;
     $aui-nav-tab-background: $aui-color-gray20;
 
     color: $aui-nav-textcolor;

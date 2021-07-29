@@ -1,12 +1,12 @@
 $aui-textfield-max-lines: 0 !default;
 $aui-textfield-icon-top-default: $aui-field-default-height * .5 !default; // Center with label
 $aui-textfield-color: $aui-color-gray20 !default;
-$aui-textfield-color-secondary: rgba(#000, 0.5) !default;
-$aui-textfield-border: rgba(#000, 0.3) !default;
+$aui-textfield-color-secondary: $aui-color-gray40 !default;
+$aui-textfield-border: $aui-color-gray50 !default;
 $aui-textfield-border-hover: $aui-color-gray50 !default;
-$aui-textfield-border-focus: rgba(#000, 0.8) !default;
-$aui-textfield-border-dirty: rgba(#000, 0.8) !default;
-$aui-textfield-valid-tick-color: rgba(#000, 0.6) !default;
+$aui-textfield-border-focus: $aui-color-black !default;
+$aui-textfield-border-dirty: $aui-color-black !default;
+$aui-textfield-valid-tick-color: $aui-color-black !default;
 
 $aui-textfield-input-padding-y: (8 / 16 * 1em) !default;
 

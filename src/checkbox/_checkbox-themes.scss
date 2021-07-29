@@ -5,8 +5,8 @@
   &.aui-theme-light {
     $aui-checkbox-color-text: $aui-color-gray95;
     $aui-checkbox-color-text-hover: $aui-color-white;
-    $aui-checkbox-color-border: rgba(#fff, 0.5);
-    $aui-checkbox-color-border-hover: rgba(#fff, 1);
+    $aui-checkbox-color-border: $aui-color-gray50;
+    $aui-checkbox-color-border-hover: $aui-color-white;
     $aui-checkbox-color-border-invalid: $aui-color-invalid;
     $aui-checkbox-color-tick: $aui-checkbox-color-text;
 

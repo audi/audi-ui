@@ -39,7 +39,7 @@
    * Theme: silver
    */
   &.aui-theme-silver {
-    $aui-slider-color-text: rgba(#fff, 0.8);
+    $aui-slider-color-text: $aui-color-black;
     $aui-slider-color-track: #c1c1c1;
     $aui-slider-color-track-active: $aui-color-white;
     $aui-slider-color-thumb: $aui-color-silver;
@@ -74,7 +74,7 @@
    * Theme: warmsilver
    */
   &.aui-theme-warmsilver {
-    $aui-slider-color-text: rgba(#fff, 0.8);
+    $aui-slider-color-text: $aui-color-black;
     $aui-slider-color-track: #c5c1ba;
     $aui-slider-color-track-active: $aui-color-white;
     $aui-slider-color-thumb: $aui-color-warmsilver;

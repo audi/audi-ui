@@ -1,5 +1,5 @@
-$aui-pager-color: rgba(#fff, 0.5);
-$aui-pager-color-active: rgba(#fff, 1);
+$aui-pager-color: $aui-color-gray50;
+$aui-pager-color-active: $aui-color-white;
 
 .aui-pager {
   &.aui-theme-light {

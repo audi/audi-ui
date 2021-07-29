@@ -1,9 +1,9 @@
 $aui-select-light-color: $aui-color-gray95 !default;
-$aui-select-light-color-secondary: rgba(#fff, 0.5) !default;
-$aui-select-light-border: rgba(#fff, 0.5) !default;
-$aui-select-light-border-hover: rgba(#fff, 0.8) !default;
-$aui-select-light-border-focus: rgba(#fff, 0.8) !default;
-$aui-select-light-border-dirty: rgba(#fff, 0.8) !default;
+$aui-select-light-color-secondary: $aui-color-gray50 !default;
+$aui-select-light-border: $aui-color-gray50 !default;
+$aui-select-light-border-hover: $aui-color-black !default;
+$aui-select-light-border-focus: $aui-color-black !default;
+$aui-select-light-border-dirty: $aui-color-black !default;
 $aui-select-light-color-arrow: $aui-field-placeholder-color-light !default;
 $aui-select-light-color-arrow-dirty: $aui-select-light-color !default;
 $aui-select-light-panel-background: $aui-color-black !default;

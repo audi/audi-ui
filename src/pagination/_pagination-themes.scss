@@ -1,5 +1,5 @@
-$aui-pagination-color: rgba(#fff, 0.5);
-$aui-pagination-color-active: rgba(#fff, 1);
+$aui-pagination-color: $aui-color-gray50;
+$aui-pagination-color-active: $aui-color-white;
 
 .aui-pagination {
   &.aui-theme-light {

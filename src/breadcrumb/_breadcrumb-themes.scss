@@ -40,7 +40,7 @@
   color: rgba(#fff, .6);
 
   .aui-breadcrumb__item:last-child {
-    color: rgba(#fff, 1);
+    color: $aui-color-white;
   }
 
   .aui-breadcrumb__item + .aui-breadcrumb__item::before {

@@ -87,7 +87,7 @@ body {
 
 .aui-textlink {
   padding-bottom: 0.06125em;
-  border-bottom: 1px solid rgba(#000, 0.3);
+  border-bottom: 1px solid $aui-color-gray50;
   color: inherit;
   font-weight: $aui-font-weight-normal;
   transition: color 0.3s linear, border 0.3s linear;

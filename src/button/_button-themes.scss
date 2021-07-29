@@ -60,9 +60,9 @@
 
     &.is-disabled,
     &:disabled {
-      color: rgba(#000, 0.5);
-      stroke: rgba(#000, 0.5);
-      fill: rgba(#000, 0.5);
+      color: $aui-color-gray40;
+      stroke: $aui-color-gray40;
+      fill: $aui-color-gray40;
     }
 
     &.is-active,

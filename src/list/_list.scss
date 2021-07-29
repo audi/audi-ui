@@ -18,7 +18,7 @@ $aui-list-style-position: unit(5) !default;
       display: inline-block;
       width: $aui-list-style-position;
       margin-left: #{$aui-list-style-position * -1};
-      color: rgba(#000, 0.3);
+      color: $aui-color-gray50;
     }
   }
 

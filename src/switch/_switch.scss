@@ -10,11 +10,11 @@ $aui-switch-thumb-size: 1.63em * $aui-circle-smoothing-factor !default;
 //$aui-switch-thumb-size: 26px !default;
 $aui-switch-color-text: $aui-color-gray20 !default;
 $aui-switch-color-text-hover: $aui-color-black !default;
-$aui-switch-color-text-inactive: rgba(#000, 0.5) !default;
+$aui-switch-color-text-inactive: $aui-color-gray40 !default;
 $aui-switch-color-track-background: $aui-color-gray85;
 $aui-switch-color-track-background-active: $aui-color-green;
-$aui-switch-color-track-border: rgba(#000, 0.5) !default;
-$aui-switch-color-track-border-hover: rgba(#000, 1) !default;
+$aui-switch-color-track-border: $aui-color-gray40 !default;
+$aui-switch-color-track-border-hover: $aui-color-black  !default;
 $aui-switch-color-thumb: $aui-color-white !default;
 $aui-switch-color-thumb-active: $aui-color-white !default;
 

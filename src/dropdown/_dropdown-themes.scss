@@ -1,10 +1,10 @@
 %aui-dropdown-theme-light {
   $aui-dropdown-color: $aui-color-gray95;
-  $aui-dropdown-secondary-color: rgba(#fff, 0.5);
-  $aui-dropdown-border: rgba(#fff, 0.5);
-  $aui-dropdown-hover-border: rgba(#fff, 0.8);
-  $aui-dropdown-focus-border: rgba(#fff, 0.8);
-  $aui-dropdown-dirty-border: rgba(#fff, 0.8);
+  $aui-dropdown-secondary-color: $aui-color-gray50;
+  $aui-dropdown-border: $aui-color-gray50;
+  $aui-dropdown-hover-border: $aui-color-black;
+  $aui-dropdown-focus-border: $aui-color-black;
+  $aui-dropdown-dirty-border: $aui-color-black;
   $aui-dropdown-valid-tick-color: rgba(#fff, 0.6);
   $aui-dropdown-arrow-color: $aui-field-placeholder-color-light;
   $aui-dropdown-dirty-arrow-color: $aui-dropdown-color;

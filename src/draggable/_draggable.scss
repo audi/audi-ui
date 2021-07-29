@@ -3,8 +3,8 @@ $aui-draggable-icon-margin-left: unit(2) !default;
 $aui-draggable-padding-x: unit(6) !default;
 
 $aui-draggable-color: rgba(#000, .8) !default;
-$aui-draggable-color-hover: rgba(#000, 1) !default;
-$aui-draggable-color-active: rgba(#000, 1) !default;
+$aui-draggable-color-hover: $aui-color-black  !default;
+$aui-draggable-color-active: $aui-color-black  !default;
 
 $aui-draggable-background: rgba(#000, 0.1) !default;
 $aui-draggable-background-hover: rgba(#000, 0.15) !default;

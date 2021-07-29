@@ -1,6 +1,6 @@
 $aui-indicator-color: rgba(#000, 0.2) !default;
-$aui-indicator-color-hover: rgba(#000, 0.5) !default;
-$aui-indicator-color-active: rgba(#000, 0.8) !default;
+$aui-indicator-color-hover: $aui-color-gray40 !default;
+$aui-indicator-color-active: $aui-color-black !default;
 
 $aui-indicator-dot-width: unit(5) !default;
 $aui-indicator-height: unit(2) !default;
@@ -62,6 +62,6 @@ $aui-indicator-height: unit(2) !default;
   }
 
   &--shadow &__action {
-    box-shadow: 0 0 8px rgba(#000, 0.5);
+    box-shadow: 0 0 8px $aui-color-gray40;
   }
 }

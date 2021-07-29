@@ -4,11 +4,11 @@
    */
   &.aui-theme-light {
     $aui-textfield-color: $aui-color-gray95;
-    $aui-textfield-color-secondary: rgba(#fff, 0.5);
-    $aui-textfield-border: rgba(#fff, 0.5);
-    $aui-textfield-border-hover: rgba(#fff, 0.8);
-    $aui-textfield-border-focus: rgba(#fff, 0.8);
-    $aui-textfield-border-dirty: rgba(#fff, 0.8);
+    $aui-textfield-color-secondary: $aui-color-gray50;
+    $aui-textfield-border: $aui-color-gray50;
+    $aui-textfield-border-hover: $aui-color-black;
+    $aui-textfield-border-focus: $aui-color-black;
+    $aui-textfield-border-dirty: $aui-color-black;
     $aui-textfield-valid-tick-color: rgba(#fff, 0.6);
 
     stroke: $aui-textfield-color;

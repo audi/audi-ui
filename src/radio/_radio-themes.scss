@@ -1,9 +1,9 @@
 $aui-radio-light-color-text: $aui-color-gray95 !default;
 $aui-radio-light-color-text-hover: $aui-color-white !default;
-$aui-radio-light-color-border: rgba(#fff, 0.5) !default;
-$aui-radio-light-color-border-hover: rgba(#fff, 1) !default;
+$aui-radio-light-color-border: $aui-color-gray50 !default;
+$aui-radio-light-color-border-hover: $aui-color-white !default;
 $aui-radio-light-color-tick: rgba(#fff, 0.2) !default;
-$aui-radio-light-color-tick-active: rgba(#fff, 0.8) !default;
+$aui-radio-light-color-tick-active: $aui-color-black !default;
 
 .aui-radio {
   /**
