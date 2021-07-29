@@ -3,7 +3,7 @@
   overflow: hidden;
   position: relative;
   padding-top: unit(1);
-  color: rgba(#000, .5);
+  color: $aui-color-gray40;
   font-size: rem(11);
   line-height: unit(4);
   font-weight: $aui-font-weight-normal;
@@ -26,7 +26,7 @@
 
     // Current page
     &:last-child {
-      color: rgba(#000, 1);
+      color: $aui-color-black ;
       max-width: 22em;
     }
   }

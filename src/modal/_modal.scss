@@ -256,7 +256,7 @@ $aui-modal-close-hover-color: $aui-color-gray80 !default;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0,0,0, .9);
+  background: $aui-color-gray10;
   transition: opacity .6s $aui-easing;
   z-index: $aui-zindex-modal-backdrop;
 }
