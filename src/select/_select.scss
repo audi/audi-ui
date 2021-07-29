@@ -1,11 +1,11 @@
 $aui-select-arrow-width: 13px;
 $aui-select-arrow-top-default: $aui-field-default-height * .525; // Center with label
 $aui-select-color: $aui-color-dark;
-$aui-select-color-secondary: rgba(#000, 0.5);
-$aui-select-border: rgba(#000, 0.3);
-$aui-select-border-hover: rgba(#000, 0.8);
-$aui-select-border-focus: rgba(#000, 0.8);
-$aui-select-border-dirty: rgba(#000, 0.8);
+$aui-select-color-secondary: $aui-color-gray40;
+$aui-select-border: $aui-color-gray50;
+$aui-select-border-hover: $aui-color-black;
+$aui-select-border-focus: $aui-color-black;
+$aui-select-border-dirty: $aui-color-black;
 $aui-select-color-arrow: $aui-field-placeholder-color;
 $aui-select-color-arrow-dirty: $aui-select-color;
 
@@ -14,9 +14,17 @@ $aui-select-color-arrow-dirty: $aui-select-color;
   position: relative;
   margin: 0;
   padding: 0;
+  padding-top: $aui-field-floating-label-padding;
   font-size: 1rem;
   line-height: $aui-field-line-height;
   box-sizing: border-box;
+
+
+  &:hover {
+    .aui-select__focus-line {
+      background: $aui-select-border-hover;
+    }
+  }
 
   &__input {
     display: block;
@@ -94,7 +102,8 @@ $aui-select-color-arrow-dirty: $aui-select-color;
     transition-property: top, font-size, color, opacity;
     transition-duration: $aui-field-transition-duration;
     transition-timing-function: $aui-easing;
-    opacity: 0;
+    //opacity: 0;
+    opacity: 1;
     pointer-events: none;
   }
 
@@ -103,7 +112,8 @@ $aui-select-color-arrow-dirty: $aui-select-color;
     content: '';
     display: block;
     position: absolute;
-    top: $aui-select-arrow-top-default;
+    //top: $aui-select-arrow-top-default;
+    top: $aui-select-arrow-top-default + $aui-field-floating-label-padding;
     right: 0;
     width: $aui-select-arrow-width;
     height: 8px;
@@ -118,11 +128,13 @@ $aui-select-color-arrow-dirty: $aui-select-color;
     display: block;
     position: relative;
     width: 100%;
-    margin-top: -2px;
+    //margin-top: -2px;
+    margin-top: -1px;
     height: 1px;
-    background: $aui-select-border-hover;
-    opacity: 0;
-    transition-property: opacity, background;
+    background: $aui-select-border;
+    //opacity: 0;
+    opacity: 1;
+    transition-property:  background;
     transition-duration: $aui-field-transition-duration;
   }
 
@@ -162,17 +174,32 @@ $aui-select-color-arrow-dirty: $aui-select-color;
   /**
    * Variant: floating-label
    */
+  // &.aui-select--floating-label {
+  //   // padding-top: $aui-field-floating-label-padding;
+
+  //   // Arrow icon
+  //   &::after {
+  //     top: $aui-select-arrow-top-default + $aui-field-floating-label-padding;
+  //   }
+  // }
+
+  .aui-js &.aui-select--floating-label &__label {
+    top: $aui-field-label-y + $aui-field-floating-label-padding + 0.0925rem;
+  }
+
   &.aui-select--floating-label {
-    padding-top: $aui-field-floating-label-padding;
+    .aui-select__input {
+      opacity: 0;
+
+      &:focus {
+        opacity: 1;
+      }
+    }
 
     // Arrow icon
     &::after {
       top: $aui-select-arrow-top-default + $aui-field-floating-label-padding;
     }
-  }
-
-  .aui-js &.aui-select--floating-label &__label {
-    top: $aui-field-label-y + $aui-field-floating-label-padding;
   }
 
   /**
@@ -205,7 +232,8 @@ $aui-select-color-arrow-dirty: $aui-select-color;
     }
 
     .aui-select__focus-line {
-      opacity: 1;
+      //opacity: 1;
+      opacity: 0;
     }
   }
 
@@ -220,7 +248,7 @@ $aui-select-color-arrow-dirty: $aui-select-color;
     }
 
     .aui-select__focus-line {
-      opacity: 0;
+      opacity: 1;
     }
   }
 
