@@ -7,9 +7,9 @@ $aui-radio-text-spacing: 1em !default;
 $aui-radio-color-text: $aui-color-gray20 !default;
 $aui-radio-color-text-hover: $aui-color-black !default;
 $aui-radio-color-border: $aui-color-gray50 !default;
-$aui-radio-color-border-hover: rgba(#000, 1) !default;
-$aui-radio-color-tick: rgba(#000, 0.1) !default;
-$aui-radio-color-tick-active: rgba(#000, 0.8) !default;
+$aui-radio-color-border-hover: $aui-color-black !default;
+$aui-radio-color-tick: $aui-color-gray85 !default;
+$aui-radio-color-tick-active: $aui-color-black !default;
 
 .aui-radio {
   display: inline-block;

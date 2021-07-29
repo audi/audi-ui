@@ -1,5 +1,5 @@
-$aui-pagination-color: rgba(#000, 0.5) !default;
-$aui-pagination-color-active: rgba(#000, 1) !default;
+$aui-pagination-color: $aui-color-gray40 !default;
+$aui-pagination-color-active: $aui-color-gray85 !default;
 
 .aui-pagination {
   position: relative;
