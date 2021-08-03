@@ -10,7 +10,8 @@ $aui-modal-content-translate-y: 10px !default;
 $aui-modal-breakpoint: map-get($aui-breakpoint, xsmall) !default;
 $aui-modal-morph-duration: .4s !default;
 $aui-modal-max-width: 1200px !default;
-$aui-modal-background: $aui-color-gray20 !default;
+// $aui-modal-background: $aui-color-gray20 !default;
+$aui-modal-background: $aui-color-white !default;
 $aui-modal-close-color: $aui-color-white !default;
 $aui-modal-close-hover-color: $aui-color-gray80 !default;
 
