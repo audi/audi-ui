@@ -160,9 +160,16 @@ $aui-button-padding: em(16, $aui-button-font-size) 0 em(16, $aui-button-font-siz
       transform: translateX(5px);
     }
 
+    &:disabled {
+      .aui-button__text {
+        color: $aui-button-color-disabled;
+      }
+    }
+
     &.is-disabled .aui-button__text::after,
     &:disabled .aui-button__text::after {
       transform: none;
+      background-image: url('data:image/svg+xml,#{aui-svg-arrow($aui-button-color-disabled)}');
     }
   }
 
