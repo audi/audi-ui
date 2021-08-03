@@ -4,7 +4,7 @@
 
 {% block main %}
 
-  <section class="test-section" id="dropdown">
+  {# <section class="test-section" id="dropdown">
     {{ section.header('Dropdown') }}
     <div class="test-section__panel">
       <form action="#">
@@ -24,7 +24,7 @@
         {% include 'dropdown/snippets/dropdown-multiple.html' %}
       </form>
     </div>
-  </section>
+  </section> #}
 
   <section class="test-section" id="select">
     {{ section.header('Select') }}
@@ -203,11 +203,9 @@
     {{ section.header('Slider') }}
     <div class="test-section__panel">
       <form action="#">
-        {% include 'slider/snippets/slider.html' %}
+        {% include 'slider/snippets/slider-output.html' %}
         <h3 class="test-section__headline">Disabled state</h3>
         {% include 'slider/snippets/slider-disabled.html' %}
-        <h3 class="test-section__headline">Slider with text output</h3>
-        {% include 'slider/snippets/slider-output.html' %}
         <h3 class="test-section__headline">Range Slider</h3>
         {% include 'slider/snippets/slider-range.html' %}
         <h3 class="test-section__headline">Range Slider disabled state</h3>
@@ -216,7 +214,7 @@
     </div>
   </section>
 
-  <section class="test-section" id="alignment-test">
+  {# <section class="test-section" id="alignment-test">
     {{ section.header('Alignment Test') }}
     <div class="test-section__panel">
       <form action="#">
@@ -233,6 +231,6 @@
         </div>
       </form>
     </div>
-  </section>
+  </section> #}
 
 {% endblock %}
