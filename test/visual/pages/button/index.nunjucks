@@ -108,7 +108,7 @@
     </div>
   </section>
 
-  <section class="test-section" id="sepcial-examples">
+  {# <section class="test-section" id="sepcial-examples">
     {{ section.header('Special examples like multiline buttons') }}
     <div class="test-section__panel">
       <div>
@@ -147,6 +147,6 @@
         </button>
       </div>
     </div>
-  </section>
+  </section> #}
 
 {% endblock %}
