@@ -504,6 +504,7 @@ $aui-player-chrome-seeking-height: 101px !default;
   @include aui-respond-to(large) {
     &-related-content {
       font-family: $aui-font-extended;
+      font-variation-settings: $aui-font-extended-width;
       @include aui-font-size-line-height(-1, 1.4);
     }
   }

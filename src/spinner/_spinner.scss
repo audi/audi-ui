@@ -41,6 +41,7 @@ $aui-spinner-size-continuous: rem(48) !default;
     transform: translate(-50%, -50%);
     width: 100%;
     font-family: $aui-font-extended;
+    font-variation-settings: $aui-font-extended-width;
     font-size: 1rem;
     line-height: 1;
     text-align: center;
