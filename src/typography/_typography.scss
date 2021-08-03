@@ -15,6 +15,7 @@ body {
   &-4,
   &-5 {
     font-family: $aui-font-extended;
+    font-variation-settings: $aui-font-extended-width;
     font-weight: $aui-font-weight-normal;
     letter-spacing: -0.015em;
   }
