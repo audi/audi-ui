@@ -33,9 +33,9 @@
       (See top right corner.)
       <div class="aui-notification-container" id="notifications">
         {% include 'notification/snippets/notification.html' %}
+        {% include 'notification/snippets/notification-light.html' %}
         {% include 'notification/snippets/notification.html' %}
-        {% include 'notification/snippets/notification.html' %}
-        {% include 'notification/snippets/notification.html' %}
+        {% include 'notification/snippets/notification-light.html' %}
       </div>
     </div>
   </section>
