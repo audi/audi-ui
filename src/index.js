@@ -9,7 +9,7 @@ import Alert from './alert/alert';
 import Audioplayer from './audioplayer/audioplayer';
 import Breadcrumb from './breadcrumb/breadcrumb';
 import Checkbox from './checkbox/checkbox';
-import Dropdown from './dropdown/dropdown';
+// import Dropdown from './dropdown/dropdown';
 import Flyout from './flyout/flyout';
 import Header from './header/header';
 import Modal from './modal/modal';
@@ -39,7 +39,7 @@ export {
   Audioplayer,
   Breadcrumb,
   Checkbox,
-  Dropdown,
+  // Dropdown,
   Flyout,
   Header,
   Modal,
@@ -85,7 +85,7 @@ class ComponentHandler {
     Audioplayer.upgradeElements();
     Breadcrumb.upgradeElements();
     Checkbox.upgradeElements();
-    Dropdown.upgradeElements();
+    // Dropdown.upgradeElements();
     Flyout.upgradeElements();
     Header.upgradeElements();
     // Modal.upgradeElements();

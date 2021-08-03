@@ -38,7 +38,7 @@ let alertComponents = Alert.upgradeElements();
 let breadcrumbComponents = Breadcrumb.upgradeElements();
 Audioplayer.upgradeElements();
 Checkbox.upgradeElements();
-Dropdown.upgradeElements();
+// Dropdown.upgradeElements();
 Flyout.upgradeElements();
 Header.upgradeElements();
 Modal.upgradeElements();
