@@ -422,6 +422,11 @@ body::before {
 .aui-button--icon.is-disabled, .aui-button--icon:disabled, .aui-button--icon:hover, .aui-button--primary.is-disabled, .aui-button--primary:disabled, .aui-button--primary:hover, .aui-button--secondary.is-disabled, .aui-button--secondary:disabled, .aui-button--secondary:hover {
   box-shadow: none; }
 
+.aui-button--round.is-disabled, .aui-button--round:disabled {
+  color: #b3b3b3;
+  stroke: #b3b3b3;
+  fill: #b3b3b3; }
+
 .aui-button--floating.is-active, .aui-button--floating:active, .aui-button--floating:hover, .aui-button--primary.is-active, .aui-button--primary:active, .aui-button--primary:hover {
   border-color: #4c4c4c;
   background-color: #4c4c4c; }
@@ -1224,6 +1229,8 @@ body::before {
     width: 91.6666666667%; }
   .aui-cell--12 {
     width: 100%; }
+  .aui-cell--spacing-left {
+    padding-left: 1rem; }
 
 .aui-grid--nested-2 .aui-cell {
   width: 600%; }
@@ -1632,6 +1639,10 @@ body::before {
     color: #ffffff; }
     .aui-modal-dialog__close:hover {
       color: #cccccc; }
+    .aui-modal-dialog__close--dark {
+      color: #666666; }
+      .aui-modal-dialog__close--dark:hover {
+        color: #000000; }
 
 .aui-modal-close-icon-large,
 .aui-modal-close-icon-small {
@@ -1819,6 +1830,7 @@ body::before {
 .aui-nav--bar,
 .aui-nav--tab {
   font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif;
+  font-variation-settings: "wdth" 130;
   overflow: hidden;
   height: 2.25rem; }
   .aui-nav--bar .aui-nav__panel,
@@ -2585,6 +2597,7 @@ body::before {
   @media (min-width: 1024px) {
     .aui-player-related-content {
       font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif;
+      font-variation-settings: "wdth" 130;
       font-size: 14px;
       line-height: 20px; } }
   @media (min-width: 1024px) {
@@ -3306,6 +3319,7 @@ body::before {
     transform: translate(-50%, -50%);
     width: 100%;
     font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif;
+    font-variation-settings: "wdth" 130;
     font-size: 1rem;
     line-height: 1;
     text-align: center; }
@@ -3865,8 +3879,11 @@ body {
 
 .aui-headline-1, .aui-headline-2, .aui-headline-3, .aui-headline-4, .aui-headline-5 {
   font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif;
+  font-variation-settings: "wdth" 130;
   font-weight: 400;
   letter-spacing: -0.015em; }
+  .aui-headline-1--bold, .aui-headline-2--bold, .aui-headline-3--bold, .aui-headline-4--bold, .aui-headline-5--bold {
+    font-weight: 700; }
 
 .aui-headline-6 {
   font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif; }
@@ -3888,6 +3905,8 @@ body {
     .aui-headline-1 {
       font-size: 95px;
       line-height: 104px; } }
+  .aui-headline-1--normal {
+    font-weight: 400; }
 
 .aui-color-text-light .aui-headline-1 {
   color: #ffffff; }
@@ -3972,6 +3991,8 @@ body {
     .aui-headline-6 {
       font-size: 16px;
       line-height: 24px; } }
+  .aui-headline-6--normal {
+    font-weight: 400; }
 
 .aui-shortread {
   font-size: 16px;

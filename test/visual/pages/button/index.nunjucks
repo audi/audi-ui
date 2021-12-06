@@ -79,7 +79,7 @@
   </section>
 
   <section class="test-section" id="button-icon">
-    {{ section.header('Button icon style with small system icon close') }}
+    {{ section.header('Button icon style with small system icon') }}
     <div class="test-section__panel">
       {% include 'button/snippets/button-icon.html' %}
       <h3 class="test-section__headline">Disabled state</h3>
@@ -88,7 +88,7 @@
   </section>
 
   <section class="test-section" id="button-icon-large">
-    {{ section.header('Button icon style with large system icon close') }}
+    {{ section.header('Button icon style with large system icon') }}
     <div class="test-section__panel">
       {% include 'button/snippets/button-icon-large.html' %}
       <h3 class="test-section__headline">Disabled state</h3>

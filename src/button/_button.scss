@@ -85,6 +85,15 @@ $aui-button-padding: em(16, $aui-button-font-size) 0 em(16, $aui-button-font-siz
     }
   }
 
+  &--round {
+    &.is-disabled,
+    &:disabled {
+      color: $aui-button-color-disabled;
+      stroke: $aui-button-color-disabled;
+      fill: $aui-button-color-disabled;
+    }
+  }
+
   &--floating,
   &--primary {
     &.is-active,

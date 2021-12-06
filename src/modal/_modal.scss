@@ -13,7 +13,9 @@ $aui-modal-max-width: 1200px !default;
 // $aui-modal-background: $aui-color-gray20 !default;
 $aui-modal-background: $aui-color-white !default;
 $aui-modal-close-color: $aui-color-white !default;
+$aui-modal-close-color-dark: $aui-color-gray40 !default;
 $aui-modal-close-hover-color: $aui-color-gray80 !default;
+$aui-modal-close-hover-color-dark: $aui-color-black !default;
 
 /**
  * Prevent scrolling of body, when modal is open.
@@ -96,6 +98,14 @@ $aui-modal-close-hover-color: $aui-color-gray80 !default;
 
     &:hover {
       color: $aui-modal-close-hover-color;
+    }
+
+    &--dark {
+      color:  $aui-modal-close-color-dark;
+
+      &:hover {
+        color: $aui-modal-close-hover-color-dark;
+      }
     }
   }
 }

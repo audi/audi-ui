@@ -18,6 +18,10 @@ body {
     font-variation-settings: $aui-font-extended-width;
     font-weight: $aui-font-weight-normal;
     letter-spacing: -0.015em;
+
+    &--bold {
+      font-weight: $aui-font-weight-bold;
+    }
   }
 
   &-6 {
@@ -28,6 +32,10 @@ body {
     @include aui-responsive-type(8, 1.1);
     font-weight: $aui-font-weight-bold;
     color: $aui-color-black;
+
+    &--normal {
+      font-weight: $aui-font-weight-normal;
+    }
   }
 
   .aui-color-text-light &-1 {
@@ -53,6 +61,10 @@ body {
   &-6 {
     @include aui-responsive-type(0, 1.5);
     font-weight: $aui-font-weight-bold;
+
+    &--normal {
+      font-weight: $aui-font-weight-normal;
+    }
   }
 }
 

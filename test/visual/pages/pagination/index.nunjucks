@@ -11,7 +11,7 @@
         {% include 'indicator/snippets/indicator.html' %}
       </div>
       <h3 class="test-section__headline">Image theme with shadow</h3>
-      <div class="leader-padding-60 trailer-padding-2 align-center" style="background: no-repeat center/cover url('http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/gallery-1280x720-4.jpg');">
+      <div class="trailer-padding-2 align-center" style="padding-top:27rem;background: no-repeat center/cover url('https://www.audi.com/content/dam/gbp2/company/brand/2020/1920x600-desktop-brand-stage.jpg');">
         {% include 'indicator/snippets/indicator-image.html' %}
       </div>
     </div>

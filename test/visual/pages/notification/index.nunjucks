@@ -44,12 +44,13 @@
     {{ section.header('Badge Component') }}
     <div class="test-section__panel">
       <h3 class="test-section__headline">Small, default, small text, success, warning and danger badges</h3>
-      {% include 'badge/snippets/badge-small.html' %}
+      {# {% include 'badge/snippets/badge-small.html' %} #}
+      {% include 'badge/snippets/badge-single-digit.html' %}
       {% include 'badge/snippets/badge.html' %}
       {% include 'badge/snippets/badge-small-text.html' %}
-      {% include 'badge/snippets/badge-success.html' %}
+      {# {% include 'badge/snippets/badge-success.html' %}
       {% include 'badge/snippets/badge-warning.html' %}
-      {% include 'badge/snippets/badge-danger.html' %}
+      {% include 'badge/snippets/badge-danger.html' %} #}
       {# <h3 class="test-section__headline">Badges on black</h3>
       <div class="leader-padding-2 trailer-padding-2 aui-color-black align-center">
         <span class="aui-badge aui-color-white aui-color-text-dark">

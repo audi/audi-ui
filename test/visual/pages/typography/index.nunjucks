@@ -81,11 +81,4 @@
     </div>
   </section>
 
-  <section class="test-section" id="blockquote">
-    {{ section.header('Blockquote') }}
-    <div class="test-section__panel">
-      {% include 'typography/snippets/blockquote.html'%}
-    </div>
-  </section>
-
 {% endblock %}

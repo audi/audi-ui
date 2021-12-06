@@ -25,7 +25,7 @@
         <div class="aui-card-grid__item">
           <a class="aui-card aui-card--action aui-card--cover aui-color-black aui-color-text-dark" href="#">
             <div class="aui-card__cover">
-              <img class="aui-card__cover-image" src="http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/gallery-1280x720-1.jpg"/>
+              <img class="aui-card__cover-image" src="https://www.audi.com/content/dam/gbp2/experience-audi/models-and-technology/production-models/q4-e-tron/audi-q4-e-tron-driving-dynamics-desktop.jpg"/>
             </div>
             <div class="aui-card__body">
               <div class="aui-card__content">
@@ -42,7 +42,7 @@
         <div class="aui-card-grid__item">
           <a class="aui-card aui-card--action aui-card--cover aui-color-black aui-color-text-light" href="#">
             <div class="aui-card__cover">
-              <img class="aui-card__cover-image" src="http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/gallery-1280x720-4.jpg"/>
+              <img class="aui-card__cover-image" src="https://www.audi.com/content/dam/gbp2/company/brand/2020/1920x1080-desktop-brand-digital.jpg"/>
             </div>
             <div class="aui-card__body">
               <div class="aui-card__content">
@@ -59,7 +59,7 @@
         <div class="aui-card-grid__item">
           <a class="aui-card aui-card--action aui-card--cover aui-color-black aui-color-text-dark" href="#">
             <div class="aui-card__cover">
-              <img class="aui-card__cover-image" src="http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/gallery-1280x720-3.jpg"/>
+              <img class="aui-card__cover-image" src="https://www.audi.com/content/dam/gbp2/experience-audi/models-and-technology/production-models/q4-e-tron/1920x1080-q4-e-tron.jpg"/>
             </div>
             <div class="aui-card__body">
               <div class="aui-card__content">
@@ -85,7 +85,7 @@
           <div class="aui-card aui-color-gray70 aui-color-text-light">
             <div class="aui-card__body">
               <div class="aui-card__media">
-                <img src="http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/card-390x224.jpg" alt="" width="390" height="224" style="max-width:390px;">
+                <img src="https://mediaservice.audi.com/media/live/50900/fly1400x601n8/f83rj7/2022.png" alt="" width="390" height="224" style="max-width:390px;">
               </div>
               <div class="aui-card__content">
                 <p class="aui-small">
@@ -112,7 +112,7 @@
           {% include 'card/snippets/card-actions.html' %}
         </div>
         <div class="aui-card-grid__item">
-          <a class="aui-card aui-card--action aui-card--image aui-color-black aui-color-text-light" style="background-image:url('http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/card-390x480.jpg');background-position:100% 50%;" href="#">
+          <a class="aui-card aui-card--action aui-card--image aui-color-black aui-color-text-light" style="background-image:url('https://www.progress.audi/content/dam/progress/home/2021/210331_Audi_Rom_1920x1920_StageTeaser_CLEAN.jpg?imwidth=792&imdensity=1');background-position:100% 50%;" href="#">
             <div class="aui-card__content">
               <p class="aui-small">
                 31.07.2016
@@ -135,7 +135,7 @@
     <div class="test-section__panel">
       <div class="aui-card-grid">
         <div class="aui-card-grid__item">
-          <a class="aui-card aui-card--action aui-card--image aui-color-black aui-color-text-light" style="background-image:url('http://dev.strichpunkt-design.de/audi/gui-kit/assets/content/card-390x480.jpg');background-position:100% 50%;" href="#">
+          <a class="aui-card aui-card--action aui-card--image aui-color-black aui-color-text-light" style="background-image:url('https://www.progress.audi/content/dam/progress/home/2021/210331_Audi_Rom_1920x1920_StageTeaser_CLEAN.jpg?imwidth=792&imdensity=1');background-position:100% 50%;" href="#">
             <div class="aui-card__content">
               <p class="aui-small">
                 31.07.2016

@@ -27,8 +27,6 @@ Later the class will be renamed to `aui-js` by a JavaScript.
 
   <body>
 
-    <div class="audiicon-sprite" data-svg-sprite="{{ 'assets/svg/sprite.svg' | path('test') }}"></div>
-
     {% block outside %}{% endblock %}
 
     {% block body %}
@@ -37,6 +35,7 @@ Later the class will be renamed to `aui-js` by a JavaScript.
       </div>
     {% endblock %}
 
+    <div class="audiicon-sprite" data-svg-sprite="{{ 'assets/svg/sprite.svg' | path('test') }}"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.1/URI.min.js"></script>
     <script src={{ 'assets/js/test.min.js' | path('test') }}></script>

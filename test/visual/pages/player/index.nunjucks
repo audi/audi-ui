@@ -7,12 +7,12 @@
   <section class="test-section" id="player-with-chrome">
     {{ section.header('Player with chrome') }}
     <div class="test-section__panel">
-      <div class="aui-player aui-js-player aui-player--preview" style="background-image:url('http://dev.strichpunkt-design.de/audi/animation_principles/images/content/section-index-slider-1.4205e277.jpg')">
+      <div class="aui-player aui-js-player aui-player--preview" style="background-image:url('https://www.audi.com/content/dam/gbp2/experience-audi/models-and-technology/production-models/q4-e-tron/1920x1080-q4-e-tron-sportback.jpg')">
         {% include 'player/snippets/player_video-container.html' %}
         {% include 'player/snippets/player_chrome.html' %}
       </div>
       <h3 class="test-section__headline">Complete state (and without preview)</h3>
-      <div class="aui-player aui-js-player is-complete" style="background-image:url('http://dev.strichpunkt-design.de/audi/animation_principles/images/content/section-index-slider-1.4205e277.jpg')">
+      <div class="aui-player aui-js-player is-complete" style="background-image:url('https://www.audi.com/content/dam/gbp2/experience-audi/models-and-technology/production-models/q4-e-tron/1920x1080-q4-e-tron-sportback.jpg')">
         {% include 'player/snippets/player_video-container.html' %}
         {% include 'player/snippets/player_chrome.html' %}
       </div>
@@ -22,13 +22,13 @@
   <section class="test-section" id="Player-with-large-button">
     {{ section.header('Player with large button') }}
     <div class="test-section__panel">
-      <div class="aui-player aui-js-player" style="background-image:url('http://dev.strichpunkt-design.de/audi/animation_principles/images/content/section-index-slider-1.4205e277.jpg')">
+      <div class="aui-player aui-js-player" style="background-image:url('https://www.audi.com/content/dam/gbp2/experience-audi/models-and-technology/production-models/q4-e-tron/1920x1080-q4-e-tron-sportback.jpg')">
         {% include 'player/snippets/player_video-container.html' %}
         {% include 'player/snippets/player_overlay.html' %}
         {% include 'player/snippets/player_large-button.html' %}
       </div>
       <h3 class="test-section__headline">Complete state</h3>
-      <div class="aui-player aui-js-player is-complete" style="background-image:url('http://dev.strichpunkt-design.de/audi/animation_principles/images/content/section-index-slider-1.4205e277.jpg')">
+      <div class="aui-player aui-js-player is-complete" style="background-image:url('https://www.audi.com/content/dam/gbp2/experience-audi/models-and-technology/production-models/q4-e-tron/1920x1080-q4-e-tron-sportback.jpg')">
         {% include 'player/snippets/player_video-container.html' %}
         {% include 'player/snippets/player_overlay.html' %}
         {% include 'player/snippets/player_large-button.html' %}
@@ -39,7 +39,7 @@
   <section class="test-section" id="video-complete-state-with-related-content">
     {{ section.header('Player with related content; complete state') }}
     <div class="test-section__panel">
-      <div class="aui-player aui-js-player is-complete" style="background-image:url('http://dev.strichpunkt-design.de/audi/animation_principles/images/content/section-index-slider-1.4205e277.jpg')">
+      <div class="aui-player aui-js-player is-complete" style="background-image:url('https://www.audi.com/content/dam/gbp2/experience-audi/models-and-technology/production-models/q4-e-tron/1920x1080-q4-e-tron-sportback.jpg')">
         {% include 'player/snippets/player_video-container.html' %}
         {% include 'player/snippets/player_overlay.html' %}
         {% include 'player/snippets/player_related-container.html' %}

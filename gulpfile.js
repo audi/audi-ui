@@ -109,7 +109,8 @@ const nunjucksConfig = {
     environment.addFilter('path', function(str, baseDir) {
       // TODO switch depending on environment (test, deploy, etc.)
       const dir = {
-        test: '.temp/test/visual/',
+      test: '.temp/test/visual/',
+      //test: 'audi/audi-ui-redo-2021/',
       };
       baseDir = dir[baseDir] || '';
       return `/${baseDir}${str}`;

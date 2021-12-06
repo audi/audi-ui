@@ -3,11 +3,6 @@
     <select id="change-color">
       <option value="white">Light</option>
       <option value="black">Dark</option>
-      <option value="progressive-red">Progressive Red</option>
-      {# <option value="silver">Silver</option>
-      <option value="warmsilver">Warmsilver</option>
-      <option value="image">Image</option>
-      <option value="imagedark">Image dark</option> #}
     </select>
   </div>
 </div>
