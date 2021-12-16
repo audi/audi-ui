@@ -22,8 +22,11 @@ $aui-easing: cubic-bezier(0.75, 0.02, 0.5, 1) !default;
  */
 $aui-color-red: #bb0a30 !default;
 $aui-color-progressive-red: #f50537 !default;
+$aui-color-signal-red: #eb0d3f !default;
 $aui-color-yellow: #ffaa00 !default;
 $aui-color-green: #009900 !default;
+$aui-color-charging-neon-blue: #2526fe !default;
+$aui-color-charging-neon-green: #15da15 !default;
 $aui-color-silver: #b2b2b2 !default;
 $aui-color-warmsilver: #b6b1a9 !default;
 $aui-color-black: #000000 !default;
@@ -50,6 +53,7 @@ $aui-color-invalid: $aui-color-red !default;
  * Font
  */
 $aui-font-default: #{"\'AudiTypeVariable\'", Verdana, Geneva, sans-serif} !default;
+$aui-font-wide: #{"\'AudiTypeWide\'", Verdana, Geneva, sans-serif} !default;
 //$aui-font-extended: #{"\'AudiTypeExtended\'", Verdana, Geneva, sans-serif} !default;
 $aui-font-extended: #{"\'AudiTypeVariable\'", Verdana, Geneva, sans-serif} !default;
 $aui-font-extended-width: "wdth" 130;

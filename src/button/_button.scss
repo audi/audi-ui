@@ -12,6 +12,7 @@ $aui-button-border-color-hover: $aui-color-gray50 !default;
 $aui-button-background: $aui-color-black !default;
 $aui-button-background-hover: $aui-color-gray30 !default;
 $aui-button-padding: em(16, $aui-button-font-size) 0 em(16, $aui-button-font-size) 0 !default;
+$aui-button-stretch-max: 767px !default;
 
 .aui-button {
   &.is-active,
@@ -226,6 +227,7 @@ $aui-button-padding: em(16, $aui-button-font-size) 0 em(16, $aui-button-font-siz
 
   &--stretched {
     width: 100%;
+    max-width: $aui-button-stretch-max;
   }
 
   &--sticky {
@@ -233,6 +235,11 @@ $aui-button-padding: em(16, $aui-button-font-size) 0 em(16, $aui-button-font-siz
     left: 0;
     bottom: 0;
     @include shadow;
+  }
+
+  &--centered {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   &--floating {

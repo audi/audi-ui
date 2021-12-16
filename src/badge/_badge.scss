@@ -1,18 +1,66 @@
 .aui-badge {
-  $size: 24px;
 
-  display: inline-block;
-  width: $size;
-  height: $size;
-  font-size: 13px;
-  line-height: $size;
-  border-radius: 50%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
-  transition: transform .25s $aui-easing, visibility .25s $aui-easing, color .25s $aui-easing .1s;
-  vertical-align: middle;
+  $size: 24px;
+  $size-small: 8px;
+
+  &__dot {
+    display: inline-block;
+    // width: $size;
+    // height: $size;
+    // font-size: 12px;
+    font-family: $aui-font-wide;
+    font-weight: $aui-font-weight-normal;
+    line-height: $size;
+    border-radius: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    transition: transform .25s $aui-easing, visibility .25s $aui-easing, color .25s $aui-easing .1s;
+    vertical-align: middle;
+
+    &--large {
+      width: $size;
+      height: $size;
+      font-size: 12px;
+    }
+
+    &--small {
+      width: $size-small;
+      height: $size-small;
+      margin:  $size-small;
+    }
+
+    &--signal-yellow {
+      border-radius: 0;
+      transform: rotate(45deg);
+      background-color: $aui-color-yellow;
+    }
+
+    &--signal-green {
+      background-color: $aui-color-green;
+    }
+
+    &--signal-red {
+      // position: relative;
+      // left: -1px;
+      margin: $size-small 7px;
+      border-radius: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 5px 8px 5px;
+      border-color: transparent transparent $aui-color-signal-red transparent;
+    }
+
+    &--charging-green {
+      background-color: $aui-color-charging-neon-green;
+    }
+
+    &--charging-blue {
+      background-color: $aui-color-charging-neon-blue;
+    }
+  }
 
   &.is-hidden {
     transform: scale(0);
@@ -21,13 +69,45 @@
     visibility: hidden;
   }
 
-  &--small {
-    text-indent: 100%;
-    transform: scale(.25);
-  }
-
   &--small-text {
     font-size: 10px;
+  }
+
+
+  &--label {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &--icon {
+    display: inline-flex;
+    align-items: center;
+
+    .audiicon {
+      width: $aui-icon-size-small;
+      height: $aui-icon-size-small;
+    }
+  }
+
+  &__label {
+    //margin-left: 0.5rem;
+    font-size: 1rem;
+
+    &--small {
+      font-size: rem(12);
+    }
+
+    &--left {
+      //margin: 0 0.5rem 0 0;
+    }
+  }
+
+  &__icon {
+    //margin-left: 0.5rem;
+
+    &--left {
+      //margin: 0 0.5rem 0 0;
+    }
   }
 
   &.aui-color-text-light {

@@ -43,7 +43,7 @@
   <section class="test-section" id="badge">
     {{ section.header('Badge Component') }}
     <div class="test-section__panel">
-      <h3 class="test-section__headline">Small, default, small text, success, warning and danger badges</h3>
+      <h3 class="test-section__headline">Generic badge</h3>
       {# {% include 'badge/snippets/badge-small.html' %} #}
       {% include 'badge/snippets/badge-single-digit.html' %}
       {% include 'badge/snippets/badge.html' %}
@@ -60,6 +60,36 @@
       </div> #}
       <h3 class="test-section__headline">Show/hide badge</h3>
       {% include 'badge/snippets/badge-hidden.html' %}
+      <h3 class="test-section__headline">Generic small badge</h3>
+      <div class="test-section__panel">
+        {% include 'badge/snippets/badge-small.html' %}
+      </div>
+      <div class="test-section__panel">
+        {% include 'badge/snippets/badge-small-label.html' %}
+      </div>
+      <div class="test-section__panel">
+        {% include 'badge/snippets/badge-small-label-small.html' %}
+      </div>
+      <div class="test-section__panel">
+        {% include 'badge/snippets/badge-small-icon.html' %}
+      </div>
+      <h3 class="test-section__headline">Signal badge</h3>
+      <div class="test-section__panel">
+        {% include 'badge/snippets/badge-signal-yellow.html' %}
+      </div>
+      <div class="test-section__panel">
+        {% include 'badge/snippets/badge-signal-green.html' %}
+      </div>
+      <div class="test-section__panel">
+        {% include 'badge/snippets/badge-signal-red.html' %}
+      </div>
+      <h3 class="test-section__headline">Charging badge</h3>
+      <div class="test-section__panel">
+        {% include 'badge/snippets/badge-charging-blue.html' %}
+      </div>
+      <div class="test-section__panel">
+        {% include 'badge/snippets/badge-charging-green.html' %}
+      </div>
     </div>
   </section>
 
