@@ -4,6 +4,7 @@ import clamp from '../util/clamp';
 const SELECTOR_COMPONENT = '.aui-js-indicator';
 const CLASS_ITEM = 'aui-indicator__item';
 const CLASS_ACTION = 'aui-indicator__action';
+const CLASS_TRIGGER = 'aui-indicator__trigger';
 const CLASS_INDICATOR = 'aui-indicator__indicator';
 const CLASS_IS_ACTIVE = 'is-active';
 
@@ -38,6 +39,7 @@ export default class Indicator extends Component {
     super.init();
 
     this._actions = Array.from(this._element.querySelectorAll(`.${CLASS_ACTION}`));
+    this._triggers = Array.from(this._element.querySelectorAll(`.${CLASS_TRIGGER}`));
     this._listItems = Array.from(this._element.querySelectorAll(`.${CLASS_ITEM}`));
 
     this._indicator = document.createElement('span');
@@ -53,7 +55,7 @@ export default class Indicator extends Component {
    * @private
    */
   _onClick(event) {
-    if (!event.target.classList.contains(CLASS_ACTION)) {
+    if (!event.target.classList.contains(CLASS_TRIGGER)) {
       return;
     }
     event.preventDefault();
