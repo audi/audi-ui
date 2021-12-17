@@ -26,9 +26,9 @@ $aui-indicator-trigger-height: 40px !default;
     float: left;
     margin-left: unit(1);
 
-    &:first-child {
-      margin-left: 0;
-    }
+    // &:first-child {
+    //   margin-left: 0;
+    // }
   }
 
   &__trigger {
@@ -36,16 +36,16 @@ $aui-indicator-trigger-height: 40px !default;
     align-items: center;
     width: $aui-indicator-trigger-width;
     height: $aui-indicator-trigger-height;
-    padding: 0 $aui-indicator-dot-spacing;
+    padding: 0 $aui-indicator-dot-spacing 0 0;
 
     &:hover {
-      .aui-indicator__action {
+      .aui-indicator__dot {
         background: $aui-indicator-color-hover;
       }
     }
   }
 
-  &__action {
+  &__dot {
     pointer-events: none;
     display: block;
     width: $aui-indicator-dot-width;
@@ -58,12 +58,12 @@ $aui-indicator-trigger-height: 40px !default;
     transition: background 0.15s linear;
   }
 
-  &__action,
-  &__action:visited {
+  &__dot,
+  &__dot:visited {
     background: $aui-indicator-color;
   }
 
-  // &__action:hover {
+  // &__dot:hover {
   //   background: $aui-indicator-color-hover;
   // }
 
@@ -95,7 +95,7 @@ $aui-indicator-trigger-height: 40px !default;
     transition: left 0.3s $aui-easing;
   }
 
-  &--shadow &__action {
+  &--shadow &__dot {
     box-shadow: 0 0 8px $aui-color-gray40;
   }
 }

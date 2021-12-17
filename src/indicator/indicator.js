@@ -3,7 +3,7 @@ import clamp from '../util/clamp';
 
 const SELECTOR_COMPONENT = '.aui-js-indicator';
 const CLASS_ITEM = 'aui-indicator__item';
-const CLASS_ACTION = 'aui-indicator__action';
+const CLASS_DOT = 'aui-indicator__dot';
 const CLASS_TRIGGER = 'aui-indicator__trigger';
 const CLASS_INDICATOR = 'aui-indicator__indicator';
 const CLASS_IS_ACTIVE = 'is-active';
@@ -38,7 +38,7 @@ export default class Indicator extends Component {
   init() {
     super.init();
 
-    this._actions = Array.from(this._element.querySelectorAll(`.${CLASS_ACTION}`));
+    this._dots = Array.from(this._element.querySelectorAll(`.${CLASS_DOT}`));
     this._triggers = Array.from(this._element.querySelectorAll(`.${CLASS_TRIGGER}`));
     this._listItems = Array.from(this._element.querySelectorAll(`.${CLASS_ITEM}`));
 
@@ -60,18 +60,18 @@ export default class Indicator extends Component {
     }
     event.preventDefault();
 
-    this.selectAction(event.target);
+    this.selectDot(event.target);
   }
 
   /**
-   * Select item with given action element.
-   * @param {HTMLElement} actionElement Action child element of the list item to select.
+   * Select item with given dot element.
+   * @param {HTMLElement} dotElement Dot child element of the list item to select.
    * @private
    */
-  selectAction(actionElement) {
-    if (actionElement) {
+  selectDot(dotElement) {
+    if (dotElement) {
       // Find index
-      const listItem = actionElement.parentNode;
+      const listItem = dotElement.parentNode;
       const index = this._listItems.indexOf(listItem);
       this.select(index);
     }
@@ -83,11 +83,11 @@ export default class Indicator extends Component {
    * @private
    */
   select(index = 0) {
-    index = clamp(index, 0, this._actions.length - 1);
-    const activeItem = this._actions[index];
+    index = clamp(index, 0, this._dots.length - 1);
+    const activeItem = this._dots[index];
 
-    // Update actions
-    this._actions.forEach(item => {
+    // Update dots
+    this._dots.forEach(item => {
       item.classList.remove(CLASS_IS_ACTIVE);
     });
     activeItem.classList.add(CLASS_IS_ACTIVE);
