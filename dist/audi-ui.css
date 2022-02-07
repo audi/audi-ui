@@ -2,7 +2,7 @@
  * @audi/audi-ui - Audi UI components in HTML, CSS and JS.
  * @version v1.0.0-alpha.1
  * @license Apache-2.0
- * @copyright 2021 Audi
+ * @copyright 2022 Audi
  * @link https://github.com/audi/audi-ui
  */
 @charset "UTF-8";
@@ -3300,6 +3300,7 @@ body::before {
   display: inline-block;
   position: relative;
   font-family: serif;
+  margin-left: -4px;
   line-height: 4px; }
   .aui-indicator__items {
     padding-left: 0;
@@ -3311,8 +3312,6 @@ body::before {
   .aui-indicator__item {
     float: left;
     margin-left: 0.25rem; }
-    .aui-indicator__item:first-child {
-      margin-left: 0; }
   .aui-indicator__trigger {
     display: -ms-flexbox;
     display: flex;
@@ -3341,6 +3340,7 @@ body::before {
     display: block;
     position: absolute;
     top: calc(50% - 1px);
+    left: 4px;
     transform: translate(0, -50%);
     width: 32px;
     height: 4px;
