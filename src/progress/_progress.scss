@@ -13,7 +13,6 @@ $aui-progress-color-progress: $aui-color-progressive-red !default;
     top: 0;
     left: 0;
     height: 100%;
-    //width: 50%;
     width: 100%;
     background: $aui-progress-color-progress;
 
@@ -24,34 +23,6 @@ $aui-progress-color-progress: $aui-color-progressive-red !default;
     animation: aui-progress 1s cubic-bezier(0.85, 0, 1, 1) 0s infinite normal none running;
   }
 }
-
-// Continous progress animation:
-// @keyframes aui-progress {
-//   from {
-//     left: -55%;
-//     width: 55%;
-//   }
-
-//   50% {
-//     width: 30%;
-//   }
-
-//   70% {
-//     width: 70%;
-//   }
-
-//   80% {
-//     left: 50%;
-//   }
-
-//   95% {
-//     left: 120%;
-//   }
-
-//   to {
-//     left: 100%;
-//   }
-// }
 
 @keyframes aui-progress {
   0% {

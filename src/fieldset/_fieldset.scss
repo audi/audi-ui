@@ -46,15 +46,6 @@ $aui-fieldset-field-spacing-y: unit(6) !default;
     }
   }
 
-  // &__error {
-  //   display: block;
-  //   margin-top: unit(2);
-  //   color: $aui-color-gray60;
-  //   font-size: rem(13);
-  //   line-height: unit(5);
-  //   transition: color .25s linear;
-  // }
-
   &__error {
     display: flex;
     align-items: center;

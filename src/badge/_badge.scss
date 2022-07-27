@@ -5,9 +5,6 @@
 
   &__dot {
     display: inline-block;
-    // width: $size;
-    // height: $size;
-    // font-size: 12px;
     font-family: $aui-font-wide;
     font-weight: $aui-font-weight-normal;
     line-height: $size;
@@ -42,8 +39,6 @@
     }
 
     &--signal-red {
-      // position: relative;
-      // left: -1px;
       margin: $size-small 7px;
       border-radius: 0;
       width: 0;

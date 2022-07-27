@@ -66,8 +66,6 @@ $aui-button-stretch-max: 767px !default;
   &--padded,
   &--primary,
   &--secondary {
-    // padding-left: em($aui-rem-base * 1.6, $aui-button-font-size);
-    // padding-right: em($aui-rem-base * 1.6, $aui-button-font-size);
     padding-left: 2rem;
     padding-right: 2rem;
   }
