@@ -13,7 +13,7 @@ $aui-indicator-trigger-height: 40px !default;
   display: inline-block;
   position: relative;
   font-family: serif;
-  //height: $aui-indicator-height;
+  margin-left: -$aui-indicator-dot-spacing;
   line-height: $aui-indicator-height;
 
   &__items {

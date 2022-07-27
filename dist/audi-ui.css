@@ -90,12 +90,12 @@
   line-height: 20px; }
   @media (min-width: 375px) {
     .aui-alert {
-      font-size: 10px;
-      line-height: 16px; } }
+      font-size: 14px;
+      line-height: 20px; } }
   @media (min-width: 1024px) {
     .aui-alert {
-      font-size: 13px;
-      line-height: 20px; } }
+      font-size: 15px;
+      line-height: 24px; } }
   @media (min-width: 1920px) {
     .aui-alert {
       font-size: 13px;
@@ -339,8 +339,12 @@ body::before {
     border-style: solid;
     border-width: 0 5px 8px 5px;
     border-color: transparent transparent #eb0d3f transparent; }
-  .aui-badge__dot--charging-green {
+  .aui-badge__dot--charging-neon-green {
     background-color: #15da15; }
+  .aui-badge__dot--charging-green {
+    background-color: #0da20d; }
+  .aui-badge__dot--charging-neon-blue {
+    background-color: #556EFE; }
   .aui-badge__dot--charging-blue {
     background-color: #2526fe; }
 
@@ -1084,14 +1088,13 @@ body::before {
       content: '';
       display: inline-block;
       margin-right: 1rem;
-      width: 40px;
+      width: 24px;
+      min-width: 24px;
       height: 24px;
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M21.5,20.5 L1.5,20.5 L11.5,2.5 L21.5,20.5 Z M11.5,16 L11.5,18 M11.5,8 L11.5,14' stroke='%23bb0a30' stroke-width='1' fill-rule='evenodd'/%3E%3C/svg%3E") center center no-repeat; }
       @media (min-width: 1024px) {
         .aui-fieldset__error::before {
-          margin-right: 0.5rem;
-          width: 24px;
-          height: 24px; } }
+          margin-right: 0.5rem; } }
   .aui-fieldset.is-invalid .aui-fieldset__error,
   .aui-fieldset.is-invalid .aui-fieldset__legend {
     color: #bb0a30; }
@@ -1588,12 +1591,12 @@ body::before {
   line-height: 24px; }
   @media (min-width: 375px) {
     .aui-list {
-      font-size: 12px;
-      line-height: 20px; } }
-  @media (min-width: 1024px) {
-    .aui-list {
       font-size: 16px;
       line-height: 24px; } }
+  @media (min-width: 1024px) {
+    .aui-list {
+      font-size: 18px;
+      line-height: 28px; } }
   @media (min-width: 1920px) {
     .aui-list {
       font-size: 16px;
@@ -2155,12 +2158,12 @@ body::before {
   visibility: hidden; }
   @media (min-width: 375px) {
     .aui-notification {
-      font-size: 10px;
-      line-height: 16px; } }
+      font-size: 14px;
+      line-height: 20px; } }
   @media (min-width: 1024px) {
     .aui-notification {
-      font-size: 13px;
-      line-height: 20px; } }
+      font-size: 15px;
+      line-height: 24px; } }
   @media (min-width: 1920px) {
     .aui-notification {
       font-size: 13px;
@@ -3818,14 +3821,13 @@ $aui-indicator-height: 2px !default;
       content: '';
       display: inline-block;
       margin-right: 1rem;
-      width: 40px;
+      width: 24px;
+      min-width: 24px;
       height: 24px;
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M21.5,20.5 L1.5,20.5 L11.5,2.5 L21.5,20.5 Z M11.5,16 L11.5,18 M11.5,8 L11.5,14' stroke='%23bb0a30' stroke-width='1' fill-rule='evenodd'/%3E%3C/svg%3E") center center no-repeat; }
       @media (min-width: 1024px) {
         .aui-textfield__error::before {
-          margin-right: 0.5rem;
-          width: 24px;
-          height: 24px; } }
+          margin-right: 0.5rem; } }
   .aui-textfield .audiicon {
     position: absolute;
     top: 1.35rem;
@@ -3994,12 +3996,12 @@ html {
   line-height: 28px; }
   @media (min-width: 375px) {
     html {
-      font-size: 12px;
-      line-height: 20px; } }
-  @media (min-width: 1024px) {
-    html {
       font-size: 16px;
       line-height: 28px; } }
+  @media (min-width: 1024px) {
+    html {
+      font-size: 18px;
+      line-height: 32px; } }
   @media (min-width: 1920px) {
     html {
       font-size: 16px;
@@ -4028,12 +4030,12 @@ body {
   color: #000000; }
   @media (min-width: 375px) {
     .aui-headline-1 {
-      font-size: 42px;
-      line-height: 48px; } }
+      font-size: 56px;
+      line-height: 60px; } }
   @media (min-width: 1024px) {
     .aui-headline-1 {
-      font-size: 74px;
-      line-height: 80px; } }
+      font-size: 83px;
+      line-height: 92px; } }
   @media (min-width: 1920px) {
     .aui-headline-1 {
       font-size: 95px;
@@ -4049,12 +4051,12 @@ body {
   line-height: 36px; }
   @media (min-width: 375px) {
     .aui-headline-2 {
-      font-size: 26px;
-      line-height: 32px; } }
+      font-size: 35px;
+      line-height: 44px; } }
   @media (min-width: 1024px) {
     .aui-headline-2 {
-      font-size: 41px;
-      line-height: 48px; } }
+      font-size: 47px;
+      line-height: 56px; } }
   @media (min-width: 1920px) {
     .aui-headline-2 {
       font-size: 49px;
@@ -4065,12 +4067,12 @@ body {
   line-height: 24px; }
   @media (min-width: 375px) {
     .aui-headline-3 {
-      font-size: 16px;
-      line-height: 20px; } }
+      font-size: 22px;
+      line-height: 28px; } }
   @media (min-width: 1024px) {
     .aui-headline-3 {
-      font-size: 23px;
-      line-height: 28px; } }
+      font-size: 26px;
+      line-height: 32px; } }
   @media (min-width: 1920px) {
     .aui-headline-3 {
       font-size: 25px;
@@ -4081,12 +4083,12 @@ body {
   line-height: 20px; }
   @media (min-width: 375px) {
     .aui-headline-4 {
-      font-size: 14px;
-      line-height: 16px; } }
-  @media (min-width: 1024px) {
-    .aui-headline-4 {
       font-size: 19px;
       line-height: 24px; } }
+  @media (min-width: 1024px) {
+    .aui-headline-4 {
+      font-size: 22px;
+      line-height: 28px; } }
   @media (min-width: 1920px) {
     .aui-headline-4 {
       font-size: 20px;
@@ -4097,12 +4099,12 @@ body {
   line-height: 20px; }
   @media (min-width: 375px) {
     .aui-headline-5 {
-      font-size: 12px;
-      line-height: 16px; } }
-  @media (min-width: 1024px) {
-    .aui-headline-5 {
       font-size: 16px;
       line-height: 20px; } }
+  @media (min-width: 1024px) {
+    .aui-headline-5 {
+      font-size: 18px;
+      line-height: 24px; } }
   @media (min-width: 1920px) {
     .aui-headline-5 {
       font-size: 16px;
@@ -4114,12 +4116,12 @@ body {
   font-weight: 700; }
   @media (min-width: 375px) {
     .aui-headline-6 {
-      font-size: 12px;
-      line-height: 20px; } }
-  @media (min-width: 1024px) {
-    .aui-headline-6 {
       font-size: 16px;
       line-height: 24px; } }
+  @media (min-width: 1024px) {
+    .aui-headline-6 {
+      font-size: 18px;
+      line-height: 28px; } }
   @media (min-width: 1920px) {
     .aui-headline-6 {
       font-size: 16px;
@@ -4132,12 +4134,12 @@ body {
   line-height: 24px; }
   @media (min-width: 375px) {
     .aui-shortread {
-      font-size: 12px;
-      line-height: 20px; } }
-  @media (min-width: 1024px) {
-    .aui-shortread {
       font-size: 16px;
       line-height: 24px; } }
+  @media (min-width: 1024px) {
+    .aui-shortread {
+      font-size: 18px;
+      line-height: 28px; } }
   @media (min-width: 1920px) {
     .aui-shortread {
       font-size: 16px;
@@ -4151,12 +4153,12 @@ body {
   line-height: 20px; }
   @media (min-width: 375px) {
     .aui-caption {
-      font-size: 10px;
-      line-height: 16px; } }
+      font-size: 14px;
+      line-height: 20px; } }
   @media (min-width: 1024px) {
     .aui-caption {
-      font-size: 13px;
-      line-height: 20px; } }
+      font-size: 15px;
+      line-height: 24px; } }
   @media (min-width: 1920px) {
     .aui-caption {
       font-size: 13px;
@@ -4167,12 +4169,12 @@ body {
   line-height: 32px; }
   @media (min-width: 375px) {
     .aui-big {
-      font-size: 14px;
-      line-height: 24px; } }
-  @media (min-width: 1024px) {
-    .aui-big {
       font-size: 19px;
       line-height: 32px; } }
+  @media (min-width: 1024px) {
+    .aui-big {
+      font-size: 22px;
+      line-height: 40px; } }
   @media (min-width: 1920px) {
     .aui-big {
       font-size: 20px;
@@ -4183,12 +4185,12 @@ body {
   line-height: 20px; }
   @media (min-width: 375px) {
     .aui-small {
-      font-size: 9px;
-      line-height: 12px; } }
+      font-size: 12px;
+      line-height: 20px; } }
   @media (min-width: 1024px) {
     .aui-small {
-      font-size: 11px;
-      line-height: 16px; } }
+      font-size: 12px;
+      line-height: 20px; } }
   @media (min-width: 1920px) {
     .aui-small {
       font-size: 10px;
@@ -4201,12 +4203,12 @@ body {
   line-height: 28px; }
   @media (min-width: 375px) {
     .aui-blockquote {
-      font-size: 14px;
-      line-height: 20px; } }
-  @media (min-width: 1024px) {
-    .aui-blockquote {
       font-size: 19px;
       line-height: 28px; } }
+  @media (min-width: 1024px) {
+    .aui-blockquote {
+      font-size: 22px;
+      line-height: 32px; } }
   @media (min-width: 1920px) {
     .aui-blockquote {
       font-size: 20px;

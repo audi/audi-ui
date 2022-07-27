@@ -53,12 +53,20 @@
       border-color: transparent transparent $aui-color-signal-red transparent;
     }
 
-    &--charging-green {
+    &--charging-neon-green {
       background-color: $aui-color-charging-neon-green;
     }
 
-    &--charging-blue {
+    &--charging-green {
+      background-color: $aui-color-charging-green;
+    }
+
+    &--charging-neon-blue {
       background-color: $aui-color-charging-neon-blue;
+    }
+
+    &--charging-blue {
+      background-color: $aui-color-charging-blue;
     }
   }
 

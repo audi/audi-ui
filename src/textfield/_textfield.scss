@@ -160,14 +160,13 @@ $aui-textfield-multiline-active-field-padding-top: (20 / 16 * 1em) !default;
       content: '';
       display: inline-block;
       margin-right: rem(16px);
-      width: 40px;
+      width: 24px;
+      min-width: 24px;
       height: 24px;
       background: url('data:image/svg+xml,#{aui-svg-caution($aui-field-error-color)}') center center no-repeat;
 
       @include aui-respond-to('large') {
         margin-right: unit(2);
-        width: 24px;
-        height: 24px;
       }
     }
   }

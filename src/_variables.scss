@@ -10,7 +10,7 @@ $aui-pi: 3.14159;
  * Modular Scale
  */
 //$aui-modular-scale: ( default: ( base: 16px, ratio: 1.14, ), small: ( ratio: 1.17, ), large: ( base: 18px, ratio: 1.21, ), huge: ( base: 20px, ratio: 1.25, ), ) !default;
-$aui-modular-scale: ( default: ( base: 16px, ratio: 1.14, ), small: ( base: 12px, ratio: 1.17, ), large: ( base: 16px, ratio: 1.21, ), huge: ( base: 16px, ratio: 1.25, ), ) !default;
+$aui-modular-scale: ( default: ( base: 16px, ratio: 1.14, ), small: ( base: 16px, ratio: 1.17, ), large: ( base: 18px, ratio: 1.21, ), huge: ( base: 16px, ratio: 1.25, ), ) !default;
 
 /**
  * Animation & Transitions
@@ -25,8 +25,10 @@ $aui-color-progressive-red: #f50537 !default;
 $aui-color-signal-red: #eb0d3f !default;
 $aui-color-yellow: #ffaa00 !default;
 $aui-color-green: #009900 !default;
-$aui-color-charging-neon-blue: #2526fe !default;
+$aui-color-charging-neon-blue: #556EFE !default;
+$aui-color-charging-blue: #2526fe !default;
 $aui-color-charging-neon-green: #15da15 !default;
+$aui-color-charging-green: #0da20d !default;
 $aui-color-silver: #b2b2b2 !default;
 $aui-color-warmsilver: #b6b1a9 !default;
 $aui-color-black: #000000 !default;
