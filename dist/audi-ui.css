@@ -3339,7 +3339,6 @@ body::before {
   .aui-indicator__dot, .aui-indicator__dot:visited {
     background: #cccccc; }
   .aui-indicator__indicator {
-    pointer-events: none;
     display: block;
     position: absolute;
     top: calc(50% - 1px);
@@ -3349,82 +3348,11 @@ body::before {
     height: 4px;
     background: #000000;
     z-index: 1;
-    transition: left 0.3s cubic-bezier(0.75, 0.02, 0.5, 1); }
+    transition: left 0.3s cubic-bezier(0.75, 0.02, 0.5, 1);
+    pointer-events: none; }
   .aui-indicator--shadow .aui-indicator__dot {
     box-shadow: 0 0 8px #666666; }
 
-/*
-$aui-indicator-color: $aui-color-gray80 !default;
-$aui-indicator-color-hover: $aui-color-gray40 !default;
-$aui-indicator-color-active: $aui-color-black !default;
-
-$aui-indicator-dot-width: unit(5) !default;
-$aui-indicator-height: 2px !default;
-
-.aui-indicator {
-  display: inline-block;
-  position: relative;
-  font-family: serif;
-  height: $aui-indicator-height;
-  line-height: $aui-indicator-height;
-
-  &__items {
-    padding-left: 0;
-    list-style: none;
-    height: 4px;
-    display: flex;
-    align-items: flex-end;
-   // @include clearfix;
-  }
-
-  &__item {
-    //float: left;
-    margin-left: unit(1);
-
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-
-  &__action {
-    display: block;
-    width: $aui-indicator-dot-width;
-    height: $aui-indicator-height;
-    overflow: hidden;
-    text-indent: 100%;
-    white-space: nowrap;
-    text-decoration: none;
-    outline: 0;
-    transition: background 0.15s linear;
-  }
-
-  &__action,
-  &__action:visited {
-    background: $aui-indicator-color;
-  }
-
-  &__action:hover {
-    background: $aui-indicator-color-hover;
-  }
-
-  &__indicator {
-    pointer-events: none;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: $aui-indicator-dot-width;
-    height: $aui-indicator-height * 2;
-    background: $aui-indicator-color-active;
-    z-index: 1;
-    transition: left 0.3s $aui-easing;
-  }
-
-  &--shadow &__action {
-    box-shadow: 0 0 8px $aui-color-gray40;
-  }
-}
-*/
 /**
  * NOTE
  * All animations happen in JS.
