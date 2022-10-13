@@ -2348,7 +2348,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #666666;
+    background: rgba(0, 0, 0, 0.5);
     overflow: hidden; }
   .aui-player-related-container__replay {
     position: absolute;
@@ -2402,7 +2402,7 @@ body::before {
       padding-right: 1rem; }
   .aui-player__overlay {
     position: absolute;
-    background: #666666;
+    background: rgba(0, 0, 0, 0.5);
     top: 0;
     bottom: 0;
     left: 0;
