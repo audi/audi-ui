@@ -98,8 +98,8 @@
       line-height: 24px; } }
   @media (min-width: 1920px) {
     .aui-alert {
-      font-size: 13px;
-      line-height: 20px; } }
+      font-size: 16px;
+      line-height: 24px; } }
   .aui-alert__content {
     position: relative;
     color: inherit;
@@ -1599,8 +1599,8 @@ body::before {
       line-height: 28px; } }
   @media (min-width: 1920px) {
     .aui-list {
-      font-size: 16px;
-      line-height: 24px; } }
+      font-size: 20px;
+      line-height: 32px; } }
   .aui-list__item {
     margin-left: 1.25rem; }
     .aui-list__item + .aui-list__item {
@@ -2166,8 +2166,8 @@ body::before {
       line-height: 24px; } }
   @media (min-width: 1920px) {
     .aui-notification {
-      font-size: 13px;
-      line-height: 20px; } }
+      font-size: 16px;
+      line-height: 24px; } }
   .aui-notification-container {
     position: fixed;
     right: 0.75rem;
@@ -3932,8 +3932,8 @@ html {
       line-height: 32px; } }
   @media (min-width: 1920px) {
     html {
-      font-size: 16px;
-      line-height: 28px; } }
+      font-size: 20px;
+      line-height: 36px; } }
 
 body {
   font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif;
@@ -3966,8 +3966,8 @@ body {
       line-height: 92px; } }
   @media (min-width: 1920px) {
     .aui-headline-1 {
-      font-size: 95px;
-      line-height: 104px; } }
+      font-size: 119px;
+      line-height: 132px; } }
   .aui-headline-1--normal {
     font-weight: 400; }
 
@@ -3987,8 +3987,8 @@ body {
       line-height: 56px; } }
   @media (min-width: 1920px) {
     .aui-headline-2 {
-      font-size: 49px;
-      line-height: 60px; } }
+      font-size: 61px;
+      line-height: 72px; } }
 
 .aui-headline-3 {
   font-size: 21px;
@@ -4003,8 +4003,8 @@ body {
       line-height: 32px; } }
   @media (min-width: 1920px) {
     .aui-headline-3 {
-      font-size: 25px;
-      line-height: 32px; } }
+      font-size: 31px;
+      line-height: 36px; } }
 
 .aui-headline-4 {
   font-size: 18px;
@@ -4019,8 +4019,8 @@ body {
       line-height: 28px; } }
   @media (min-width: 1920px) {
     .aui-headline-4 {
-      font-size: 20px;
-      line-height: 24px; } }
+      font-size: 25px;
+      line-height: 32px; } }
 
 .aui-headline-5 {
   font-size: 16px;
@@ -4035,8 +4035,8 @@ body {
       line-height: 24px; } }
   @media (min-width: 1920px) {
     .aui-headline-5 {
-      font-size: 16px;
-      line-height: 20px; } }
+      font-size: 20px;
+      line-height: 28px; } }
 
 .aui-headline-6 {
   font-size: 16px;
@@ -4052,8 +4052,8 @@ body {
       line-height: 28px; } }
   @media (min-width: 1920px) {
     .aui-headline-6 {
-      font-size: 16px;
-      line-height: 24px; } }
+      font-size: 20px;
+      line-height: 32px; } }
   .aui-headline-6--normal {
     font-weight: 400; }
 
@@ -4070,8 +4070,8 @@ body {
       line-height: 28px; } }
   @media (min-width: 1920px) {
     .aui-shortread {
-      font-size: 16px;
-      line-height: 24px; } }
+      font-size: 20px;
+      line-height: 32px; } }
 
 .aui-color-text-light .aui-accentuated::before {
   border-top-color: #ffffff; }
@@ -4089,8 +4089,8 @@ body {
       line-height: 24px; } }
   @media (min-width: 1920px) {
     .aui-caption {
-      font-size: 13px;
-      line-height: 20px; } }
+      font-size: 16px;
+      line-height: 24px; } }
 
 .aui-big {
   font-size: 18px;
@@ -4105,8 +4105,8 @@ body {
       line-height: 40px; } }
   @media (min-width: 1920px) {
     .aui-big {
-      font-size: 20px;
-      line-height: 36px; } }
+      font-size: 25px;
+      line-height: 44px; } }
 
 .aui-small {
   font-size: 12px;
@@ -4121,8 +4121,8 @@ body {
       line-height: 20px; } }
   @media (min-width: 1920px) {
     .aui-small {
-      font-size: 10px;
-      line-height: 16px; } }
+      font-size: 13px;
+      line-height: 20px; } }
 
 .aui-blockquote {
   margin: 0;
@@ -4139,8 +4139,8 @@ body {
       line-height: 32px; } }
   @media (min-width: 1920px) {
     .aui-blockquote {
-      font-size: 20px;
-      line-height: 32px; } }
+      font-size: 25px;
+      line-height: 36px; } }
 
 .aui-textlink {
   padding-bottom: 0.06125em;
