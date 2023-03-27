@@ -187,7 +187,9 @@ $aui-select-color-arrow-dirty: $aui-select-color;
     .aui-select__input {
       opacity: 0;
 
-      &:focus {
+      &:focus,
+      &:not(:focus)
+      {
         opacity: 1;
       }
     }
