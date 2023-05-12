@@ -3030,7 +3030,7 @@ body::before {
     top: 1.28rem; }
   .aui-select.aui-select--floating-label .aui-select__input {
     opacity: 0; }
-    .aui-select.aui-select--floating-label .aui-select__input:focus {
+    .aui-select.aui-select--floating-label .aui-select__input:focus, .aui-select.aui-select--floating-label .aui-select__input:not(:focus) {
       opacity: 1; }
   .aui-select.aui-select--floating-label::after {
     top: 2.105rem; }
