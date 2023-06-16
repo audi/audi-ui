@@ -95,4 +95,11 @@
     </div>
   </section>
 
+  <section class="test-section" id="sup-sub">
+    {{ section.header('Super- and Subscript') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/sup-sub.html'%}
+    </div>
+  </section>
+
 {% endblock %}
