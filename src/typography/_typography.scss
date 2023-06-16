@@ -8,33 +8,34 @@ body {
   color: $aui-color-body;
 }
 
-.aui-headline {
+.aui-display {
   &-1,
-  &-2,
-  &-3,
-  &-4,
-  &-5 {
+  &-2 {
     font-family: $aui-font-extended;
     font-variation-settings: $aui-font-extended-width;
-    font-weight: $aui-font-weight-normal;
+    font-weight: $aui-font-weight-bold;
     letter-spacing: -0.015em;
 
-    &--bold {
-      font-weight: $aui-font-weight-bold;
+    &--normal {
+      font-weight: $aui-font-weight-normal;
     }
-  }
-
-  &-6 {
-    font-family: $aui-font-default;
   }
 
   &-1 {
     @include aui-responsive-type(8, 1.1);
-    font-weight: $aui-font-weight-bold;
     color: $aui-color-black;
 
-    &--normal {
-      font-weight: $aui-font-weight-normal;
+    &--white {
+      color: $aui-color-white;
+    }
+  }
+
+  &-2 {
+    @include aui-responsive-type(8, 1.1);
+    color: $aui-color-gray20;
+
+    &--light-gray {
+      color: $aui-color-gray95;
     }
   }
 
@@ -45,26 +46,50 @@ body {
   &-2 {
     @include aui-responsive-type(5, 1.2);
   }
+}
 
-  &-3 {
-    @include aui-responsive-type(2, 1.2);
-  }
-
-  &-4 {
-    @include aui-responsive-type(1, 1.2);
-  }
-
-  &-5 {
-    @include aui-responsive-type(0, 1.3333);
-  }
-
-  &-6 {
-    @include aui-responsive-type(0, 1.5);
+.aui-headline {
+  &-1,
+  &-2,
+  &-3,
+  &-4
+  {
+    font-family: $aui-font-extended;
+    font-variation-settings: $aui-font-extended-width;
     font-weight: $aui-font-weight-bold;
+    color: $aui-color-gray20;
+    letter-spacing: -0.015em;
 
     &--normal {
       font-weight: $aui-font-weight-normal;
     }
+  }
+
+  &-6 {
+    font-family: $aui-font-default;
+  }
+
+  &-1 {
+    @include aui-responsive-type(2, 1.2);
+  }
+
+  .aui-color-text-light &-1,
+  .aui-color-text-light &-2,
+  .aui-color-text-light &-3,
+  .aui-color-text-light &-4 {
+    color: $aui-color-gray95;
+  }
+
+  &-2 {
+    @include aui-responsive-type(1, 1.2);
+  }
+
+  &-3 {
+    @include aui-responsive-type(0, 1.33);
+  }
+
+  &-4 {
+    @include aui-responsive-type(0, 1.5);
   }
 }
 

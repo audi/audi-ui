@@ -3940,122 +3940,152 @@ body {
   font-weight: 300;
   color: #333333; }
 
-.aui-headline-1, .aui-headline-2, .aui-headline-3, .aui-headline-4, .aui-headline-5 {
+.aui-display-1, .aui-display-2 {
   font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif;
   font-variation-settings: "wdth" 130;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: -0.015em; }
-  .aui-headline-1--bold, .aui-headline-2--bold, .aui-headline-3--bold, .aui-headline-4--bold, .aui-headline-5--bold {
-    font-weight: 700; }
+  .aui-display-1--normal, .aui-display-2--normal {
+    font-weight: 400; }
+
+.aui-display-1 {
+  font-size: 46px;
+  line-height: 52px;
+  color: #000000; }
+  @media (min-width: 375px) {
+    .aui-display-1 {
+      font-size: 56px;
+      line-height: 60px; } }
+  @media (min-width: 1024px) {
+    .aui-display-1 {
+      font-size: 83px;
+      line-height: 92px; } }
+  @media (min-width: 1920px) {
+    .aui-display-1 {
+      font-size: 119px;
+      line-height: 132px; } }
+  .aui-display-1--white {
+    color: #ffffff; }
+
+.aui-display-2 {
+  font-size: 46px;
+  line-height: 52px;
+  color: #333333; }
+  @media (min-width: 375px) {
+    .aui-display-2 {
+      font-size: 56px;
+      line-height: 60px; } }
+  @media (min-width: 1024px) {
+    .aui-display-2 {
+      font-size: 83px;
+      line-height: 92px; } }
+  @media (min-width: 1920px) {
+    .aui-display-2 {
+      font-size: 119px;
+      line-height: 132px; } }
+  .aui-display-2--light-gray {
+    color: #f2f2f2; }
+
+.aui-color-text-light .aui-display-1 {
+  color: #ffffff; }
+
+.aui-display-2 {
+  font-size: 31px;
+  line-height: 36px; }
+  @media (min-width: 375px) {
+    .aui-display-2 {
+      font-size: 35px;
+      line-height: 44px; } }
+  @media (min-width: 1024px) {
+    .aui-display-2 {
+      font-size: 47px;
+      line-height: 56px; } }
+  @media (min-width: 1920px) {
+    .aui-display-2 {
+      font-size: 61px;
+      line-height: 72px; } }
+
+.aui-headline-1, .aui-headline-2, .aui-headline-3, .aui-headline-4 {
+  font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif;
+  font-variation-settings: "wdth" 130;
+  font-weight: 700;
+  color: #333333;
+  letter-spacing: -0.015em; }
+  .aui-headline-1--normal, .aui-headline-2--normal, .aui-headline-3--normal, .aui-headline-4--normal {
+    font-weight: 400; }
 
 .aui-headline-6 {
   font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif; }
 
 .aui-headline-1 {
-  font-size: 46px;
-  line-height: 52px;
-  font-weight: 700;
-  color: #000000; }
-  @media (min-width: 375px) {
-    .aui-headline-1 {
-      font-size: 56px;
-      line-height: 60px; } }
-  @media (min-width: 1024px) {
-    .aui-headline-1 {
-      font-size: 83px;
-      line-height: 92px; } }
-  @media (min-width: 1920px) {
-    .aui-headline-1 {
-      font-size: 119px;
-      line-height: 132px; } }
-  .aui-headline-1--normal {
-    font-weight: 400; }
-
-.aui-color-text-light .aui-headline-1 {
-  color: #ffffff; }
-
-.aui-headline-2 {
-  font-size: 31px;
-  line-height: 36px; }
-  @media (min-width: 375px) {
-    .aui-headline-2 {
-      font-size: 35px;
-      line-height: 44px; } }
-  @media (min-width: 1024px) {
-    .aui-headline-2 {
-      font-size: 47px;
-      line-height: 56px; } }
-  @media (min-width: 1920px) {
-    .aui-headline-2 {
-      font-size: 61px;
-      line-height: 72px; } }
-
-.aui-headline-3 {
   font-size: 21px;
   line-height: 24px; }
   @media (min-width: 375px) {
-    .aui-headline-3 {
+    .aui-headline-1 {
       font-size: 22px;
       line-height: 28px; } }
   @media (min-width: 1024px) {
-    .aui-headline-3 {
+    .aui-headline-1 {
       font-size: 26px;
       line-height: 32px; } }
   @media (min-width: 1920px) {
-    .aui-headline-3 {
+    .aui-headline-1 {
       font-size: 31px;
       line-height: 36px; } }
 
-.aui-headline-4 {
+.aui-color-text-light .aui-headline-1,
+.aui-color-text-light .aui-headline-2,
+.aui-color-text-light .aui-headline-3,
+.aui-color-text-light .aui-headline-4 {
+  color: #f2f2f2; }
+
+.aui-headline-2 {
   font-size: 18px;
   line-height: 20px; }
   @media (min-width: 375px) {
-    .aui-headline-4 {
+    .aui-headline-2 {
       font-size: 19px;
       line-height: 24px; } }
   @media (min-width: 1024px) {
-    .aui-headline-4 {
+    .aui-headline-2 {
       font-size: 22px;
       line-height: 28px; } }
   @media (min-width: 1920px) {
-    .aui-headline-4 {
+    .aui-headline-2 {
       font-size: 25px;
       line-height: 32px; } }
 
-.aui-headline-5 {
+.aui-headline-3 {
   font-size: 16px;
   line-height: 20px; }
   @media (min-width: 375px) {
-    .aui-headline-5 {
+    .aui-headline-3 {
       font-size: 16px;
       line-height: 20px; } }
   @media (min-width: 1024px) {
-    .aui-headline-5 {
+    .aui-headline-3 {
       font-size: 18px;
       line-height: 24px; } }
   @media (min-width: 1920px) {
-    .aui-headline-5 {
+    .aui-headline-3 {
       font-size: 20px;
       line-height: 28px; } }
 
-.aui-headline-6 {
+.aui-headline-4 {
   font-size: 16px;
-  line-height: 24px;
-  font-weight: 700; }
+  line-height: 24px; }
   @media (min-width: 375px) {
-    .aui-headline-6 {
+    .aui-headline-4 {
       font-size: 16px;
       line-height: 24px; } }
   @media (min-width: 1024px) {
-    .aui-headline-6 {
+    .aui-headline-4 {
       font-size: 18px;
       line-height: 28px; } }
   @media (min-width: 1920px) {
-    .aui-headline-6 {
+    .aui-headline-4 {
       font-size: 20px;
       line-height: 32px; } }
-  .aui-headline-6--normal {
-    font-weight: 400; }
 
 .aui-shortread {
   font-size: 16px;

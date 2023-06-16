@@ -3,6 +3,20 @@
 
 {% block main %}
 
+  <section class="test-section" id="display-1">
+    {{ section.header('Display 1') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/display-1.html'%}
+    </div>
+  </section>
+
+  <section class="test-section" id="display-2">
+    {{ section.header('Display 2') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/display-2.html'%}
+    </div>
+  </section>
+
   <section class="test-section" id="headline-1">
     {{ section.header('Headline 1') }}
     <div class="test-section__panel">
@@ -28,20 +42,6 @@
     {{ section.header('Headline 4') }}
     <div class="test-section__panel">
       {% include 'typography/snippets/headline-4.html'%}
-    </div>
-  </section>
-
-  <section class="test-section" id="headline-5">
-    {{ section.header('Headline 5') }}
-    <div class="test-section__panel">
-      {% include 'typography/snippets/headline-5.html'%}
-    </div>
-  </section>
-
-  <section class="test-section" id="headline-6">
-    {{ section.header('Headline 6') }}
-    <div class="test-section__panel">
-      {% include 'typography/snippets/headline-6.html'%}
     </div>
   </section>
 
