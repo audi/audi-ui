@@ -93,6 +93,40 @@ body {
   }
 }
 
+.aui-copy {
+  &-1,
+  &-2,
+  &-3
+  {
+    strong,
+    bold,
+    &--bold {
+      font-weight: $aui-font-weight-bold;
+    }
+  }
+
+  &-1 {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  &-2 {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  &-3 {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .aui-color-text-light &-1,
+  .aui-color-text-light &-2,
+  .aui-color-text-light &-3 {
+    color: $aui-color-gray95;
+  }
+}
+
 .aui-shortread {
   @include aui-responsive-type(0, 1.5);
 }
@@ -149,4 +183,17 @@ body {
       border-bottom-color: $aui-color-white;
     }
   }
+}
+
+sup,
+sub {
+  position: relative;
+  bottom: -0.275em;
+  vertical-align: baseline;
+  font-size: 53.8%;
+  font-variation-settings: "wdth" 108, "wght" 660;
+}
+
+sup {
+  top: -0.68em;
 }

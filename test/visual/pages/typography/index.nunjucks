@@ -45,18 +45,32 @@
     </div>
   </section>
 
-  <section class="test-section" id="paragraph">
-    {{ section.header('Paragraphs') }}
+  <section class="test-section" id="copy-1">
+    {{ section.header('Copy 1') }}
     <div class="test-section__panel">
-      {% include 'typography/snippets/paragraph.html'%}
-      <h3 class="test-section__headline">Shortread</h3>
+      {% include 'typography/snippets/copy-1.html'%}
+      {# <h3 class="test-section__headline">Shortread</h3>
       {% include 'typography/snippets/paragraph-shortread.html'%}
       <h3 class="test-section__headline">Big text</h3>
       {% include 'typography/snippets/paragraph-big.html'%}
       <h3 class="test-section__headline">Small text</h3>
       {% include 'typography/snippets/paragraph-small.html'%}
       <h3 class="test-section__headline">Caption</h3>
-      {% include 'typography/snippets/paragraph-caption.html'%}
+      {% include 'typography/snippets/paragraph-caption.html'%} #}
+    </div>
+  </section>
+
+  <section class="test-section" id="copy-2">
+    {{ section.header('Copy 2') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/copy-2.html'%}
+    </div>
+  </section>
+
+  <section class="test-section" id="copy-3">
+    {{ section.header('Copy 3') }}
+    <div class="test-section__panel">
+      {% include 'typography/snippets/copy-3.html'%}
     </div>
   </section>
 

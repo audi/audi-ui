@@ -1609,7 +1609,7 @@ body::before {
       display: inline-block;
       width: 1.25rem;
       margin-left: -1.25rem;
-      color: #808080; }
+      color: #666666; }
   .aui-list--arrow .aui-list__item::before {
     content: '›'; }
   .aui-list--number .aui-list__item::before {
@@ -4086,6 +4086,29 @@ body {
     .aui-headline-4 {
       font-size: 20px;
       line-height: 32px; } }
+
+.aui-copy-1 strong,
+.aui-copy-1 bold, .aui-copy-1--bold, .aui-copy-2 strong,
+.aui-copy-2 bold, .aui-copy-2--bold, .aui-copy-3 strong,
+.aui-copy-3 bold, .aui-copy-3--bold {
+  font-weight: 700; }
+
+.aui-copy-1 {
+  font-size: 16px;
+  line-height: 1.75; }
+
+.aui-copy-2 {
+  font-size: 12px;
+  line-height: 1.75; }
+
+.aui-copy-3 {
+  font-size: 10px;
+  line-height: 1.5; }
+
+.aui-color-text-light .aui-copy-1,
+.aui-color-text-light .aui-copy-2,
+.aui-color-text-light .aui-copy-3 {
+  color: #f2f2f2; }
 
 .aui-shortread {
   font-size: 16px;
