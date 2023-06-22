@@ -89,7 +89,11 @@ body {
   }
 
   &-4 {
-    @include aui-responsive-type(0, 1.5);
+    @include aui-responsive-type(-1, 1.5);
+
+    &--normal {
+      font-weight: 504;
+    }
   }
 }
 
@@ -171,6 +175,10 @@ body {
 
   &:focus {
     outline: none;
+  }
+
+  &:visited {
+    opacity: 0.6;
   }
 }
 
