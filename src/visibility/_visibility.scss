@@ -13,13 +13,17 @@
 .aui-hidden {
   display: none !important;
 }
+
 @if $aui-visibility {
-   @each $breakpoint-name in $aui-visibility{
+  @each $breakpoint-name in $aui-visibility {
+    // Hidden classes for each breakpoint
     .aui-visible-#{$breakpoint-name},
     .aui-visible-#{$breakpoint-name}-inline,
     .aui-visible-#{$breakpoint-name}-inline-block {
       display: none !important;
     }
+
+    // Responsive styles for each breakpoint
     @include aui-respond-to($breakpoint-name) {
       .aui-visible-#{$breakpoint-name} {
         display: block !important;
