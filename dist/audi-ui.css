@@ -2,7 +2,7 @@
  * @audi/audi-ui - Audi UI components in HTML, CSS and JS.
  * @version v1.0.0-alpha.1
  * @license Apache-2.0
- * @copyright 2023 Audi
+ * @copyright 2024 Audi
  * @link https://github.com/audi/audi-ui
  */
 @charset "UTF-8";
@@ -280,18 +280,12 @@ body::before {
   @media (min-width: 375px) {
     body::before {
       content: "small"; } }
-  @media (min-width: 768px) {
-    body::before {
-      content: "medium"; } }
   @media (min-width: 1024px) {
     body::before {
       content: "large"; } }
-  @media (min-width: 1440px) {
-    body::before {
-      content: "xlarge"; } }
   @media (min-width: 1920px) {
     body::before {
-      content: "huge"; } }
+      content: "xlarge"; } }
 
 @-moz-viewport {
   width: device-width; }
@@ -1586,21 +1580,7 @@ body::before {
   counter-reset: li;
   margin-left: 0;
   padding-left: 0;
-  list-style: none;
-  font-size: 16px;
-  line-height: 24px; }
-  @media (min-width: 375px) {
-    .aui-list {
-      font-size: 16px;
-      line-height: 24px; } }
-  @media (min-width: 1024px) {
-    .aui-list {
-      font-size: 18px;
-      line-height: 28px; } }
-  @media (min-width: 1920px) {
-    .aui-list {
-      font-size: 20px;
-      line-height: 32px; } }
+  list-style: none; }
   .aui-list__item {
     margin-left: 1.25rem; }
     .aui-list__item + .aui-list__item {
@@ -1885,7 +1865,7 @@ body::before {
  */
 .aui-nav--bar,
 .aui-nav--tab {
-  font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif;
+  font-family: 'AudiTypeExtended', Verdana, Geneva, sans-serif;
   font-variation-settings: "wdth" 130;
   overflow: hidden;
   height: 2.25rem; }
@@ -2652,7 +2632,7 @@ body::before {
       height: 182px; } }
   @media (min-width: 1024px) {
     .aui-player-related-content {
-      font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif;
+      font-family: 'AudiTypeExtended', Verdana, Geneva, sans-serif;
       font-variation-settings: "wdth" 130;
       font-size: 14px;
       line-height: 20px; } }
@@ -3382,7 +3362,7 @@ body::before {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif;
+    font-family: 'AudiTypeExtended', Verdana, Geneva, sans-serif;
     font-variation-settings: "wdth" 130;
     font-size: 1rem;
     line-height: 1;
@@ -3921,19 +3901,8 @@ body::before {
 
 html {
   font-size: 16px;
-  line-height: 28px; }
-  @media (min-width: 375px) {
-    html {
-      font-size: 16px;
-      line-height: 28px; } }
-  @media (min-width: 1024px) {
-    html {
-      font-size: 18px;
-      line-height: 32px; } }
-  @media (min-width: 1920px) {
-    html {
-      font-size: 20px;
-      line-height: 36px; } }
+  line-height: 24px;
+  letter-spacing: 0.003px; }
 
 body {
   font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif;
@@ -3943,74 +3912,76 @@ body {
 .aui-display-1, .aui-display-2 {
   font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif;
   font-variation-settings: "wdth" 130;
-  font-weight: 700;
-  letter-spacing: -0.015em; }
+  font-weight: 700; }
   .aui-display-1--normal, .aui-display-2--normal {
     font-weight: 400; }
 
 .aui-display-1 {
-  font-size: 46px;
-  line-height: 52px;
-  color: #000000; }
+  color: #000000;
+  font-size: 40px;
+  line-height: 56px;
+  letter-spacing: 0.008px; }
   @media (min-width: 375px) {
     .aui-display-1 {
-      font-size: 56px;
-      line-height: 60px; } }
+      font-size: 40px;
+      line-height: 56px;
+      letter-spacing: 0.004px; } }
   @media (min-width: 1024px) {
     .aui-display-1 {
-      font-size: 83px;
-      line-height: 92px; } }
+      font-size: 60px;
+      line-height: 84px;
+      letter-spacing: 0.012px; } }
   @media (min-width: 1920px) {
     .aui-display-1 {
-      font-size: 119px;
-      line-height: 132px; } }
+      font-size: 84px;
+      line-height: 116px;
+      letter-spacing: 0.017px; } }
+  .aui-display-1--normal {
+    letter-spacing: 0.008px; }
+    @media (min-width: 375px) {
+      .aui-display-1--normal {
+        letter-spacing: 0.004px; } }
+    @media (min-width: 1024px) {
+      .aui-display-1--normal {
+        letter-spacing: 0.006px; } }
+    @media (min-width: 1920px) {
+      .aui-display-1--normal {
+        letter-spacing: 0.008px; } }
   .aui-display-1--white {
     color: #ffffff; }
 
 .aui-display-2 {
-  font-size: 46px;
+  color: #000000;
+  font-size: 36px;
   line-height: 52px;
-  color: #333333; }
+  letter-spacing: 0.007px; }
   @media (min-width: 375px) {
     .aui-display-2 {
-      font-size: 56px;
-      line-height: 60px; } }
+      font-size: 36px;
+      line-height: 52px;
+      letter-spacing: 0.007px; } }
   @media (min-width: 1024px) {
     .aui-display-2 {
-      font-size: 83px;
-      line-height: 92px; } }
+      font-size: 44px;
+      line-height: 64px;
+      letter-spacing: 0.009px; } }
   @media (min-width: 1920px) {
     .aui-display-2 {
-      font-size: 119px;
-      line-height: 132px; } }
+      font-size: 60px;
+      line-height: 84px;
+      letter-spacing: 0.012px; } }
   .aui-display-2--light-gray {
     color: #f2f2f2; }
 
-.aui-color-text-light .aui-display-1 {
+.aui-color-text-light .aui-display-1,
+.aui-color-text-light .aui-display-2 {
   color: #ffffff; }
-
-.aui-display-2 {
-  font-size: 31px;
-  line-height: 36px; }
-  @media (min-width: 375px) {
-    .aui-display-2 {
-      font-size: 35px;
-      line-height: 44px; } }
-  @media (min-width: 1024px) {
-    .aui-display-2 {
-      font-size: 47px;
-      line-height: 56px; } }
-  @media (min-width: 1920px) {
-    .aui-display-2 {
-      font-size: 61px;
-      line-height: 72px; } }
 
 .aui-headline-1, .aui-headline-2, .aui-headline-3, .aui-headline-4 {
   font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif;
   font-variation-settings: "wdth" 130;
   font-weight: 700;
-  color: #333333;
-  letter-spacing: -0.015em; }
+  color: #333333; }
   .aui-headline-1--normal, .aui-headline-2--normal, .aui-headline-3--normal, .aui-headline-4--normal {
     font-weight: 400; }
 
@@ -4018,20 +3989,25 @@ body {
   font-family: 'AudiTypeVariable', Verdana, Geneva, sans-serif; }
 
 .aui-headline-1 {
-  font-size: 21px;
-  line-height: 24px; }
+  color: #000000;
+  font-size: 28px;
+  line-height: 44px;
+  letter-spacing: 0.006px; }
   @media (min-width: 375px) {
     .aui-headline-1 {
-      font-size: 22px;
-      line-height: 28px; } }
+      font-size: 28px;
+      line-height: 44px;
+      letter-spacing: 0.006px; } }
   @media (min-width: 1024px) {
     .aui-headline-1 {
-      font-size: 26px;
-      line-height: 32px; } }
+      font-size: 36px;
+      line-height: 52px;
+      letter-spacing: 0.007px; } }
   @media (min-width: 1920px) {
     .aui-headline-1 {
-      font-size: 31px;
-      line-height: 36px; } }
+      font-size: 44px;
+      line-height: 68px;
+      letter-spacing: 0.009px; } }
 
 .aui-color-text-light .aui-headline-1,
 .aui-color-text-light .aui-headline-2,
@@ -4040,52 +4016,64 @@ body {
   color: #f2f2f2; }
 
 .aui-headline-2 {
-  font-size: 18px;
-  line-height: 20px; }
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 0.002px; }
   @media (min-width: 375px) {
     .aui-headline-2 {
-      font-size: 19px;
-      line-height: 24px; } }
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.002px; } }
   @media (min-width: 1024px) {
     .aui-headline-2 {
-      font-size: 22px;
-      line-height: 28px; } }
+      font-size: 28px;
+      line-height: 44px;
+      letter-spacing: 0.003px; } }
   @media (min-width: 1920px) {
     .aui-headline-2 {
-      font-size: 25px;
-      line-height: 32px; } }
+      font-size: 36px;
+      line-height: 52px;
+      letter-spacing: 0.004px; } }
 
 .aui-headline-3 {
-  font-size: 16px;
-  line-height: 20px; }
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.002px; }
   @media (min-width: 375px) {
-    .aui-headline-3 {
-      font-size: 16px;
-      line-height: 20px; } }
-  @media (min-width: 1024px) {
-    .aui-headline-3 {
-      font-size: 18px;
-      line-height: 24px; } }
-  @media (min-width: 1920px) {
     .aui-headline-3 {
       font-size: 20px;
-      line-height: 28px; } }
+      line-height: 32px;
+      letter-spacing: 0.002px; } }
+  @media (min-width: 1024px) {
+    .aui-headline-3 {
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 0.002px; } }
+  @media (min-width: 1920px) {
+    .aui-headline-3 {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.002px; } }
 
 .aui-headline-4 {
-  font-size: 14px;
-  line-height: 20px; }
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.002px; }
   @media (min-width: 375px) {
     .aui-headline-4 {
-      font-size: 14px;
-      line-height: 20px; } }
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.002px; } }
   @media (min-width: 1024px) {
     .aui-headline-4 {
-      font-size: 15px;
-      line-height: 24px; } }
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.002px; } }
   @media (min-width: 1920px) {
     .aui-headline-4 {
-      font-size: 16px;
-      line-height: 24px; } }
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 0.002px; } }
   .aui-headline-4--normal {
     font-weight: 504; }
 
@@ -4097,36 +4085,23 @@ body {
 
 .aui-copy-1 {
   font-size: 16px;
-  line-height: 1.75; }
+  line-height: 24px;
+  letter-spacing: 0.003px; }
 
 .aui-copy-2 {
   font-size: 12px;
-  line-height: 1.75; }
+  line-height: 20px;
+  letter-spacing: 0.002px; }
 
 .aui-copy-3 {
   font-size: 10px;
-  line-height: 1.5; }
+  line-height: 16px;
+  letter-spacing: 0.002px; }
 
 .aui-color-text-light .aui-copy-1,
 .aui-color-text-light .aui-copy-2,
 .aui-color-text-light .aui-copy-3 {
   color: #f2f2f2; }
-
-.aui-shortread {
-  font-size: 16px;
-  line-height: 24px; }
-  @media (min-width: 375px) {
-    .aui-shortread {
-      font-size: 16px;
-      line-height: 24px; } }
-  @media (min-width: 1024px) {
-    .aui-shortread {
-      font-size: 18px;
-      line-height: 28px; } }
-  @media (min-width: 1920px) {
-    .aui-shortread {
-      font-size: 20px;
-      line-height: 32px; } }
 
 .aui-color-text-light .aui-accentuated::before {
   border-top-color: #ffffff; }
@@ -4238,23 +4213,6 @@ sup {
 .aui-hidden {
   display: none !important; }
 
-.aui-visible-tiny,
-.aui-visible-tiny-inline,
-.aui-visible-tiny-inline-block {
-  display: none !important; }
-
-.aui-visible-tiny {
-  display: block !important; }
-
-.aui-visible-tiny-inline {
-  display: inline !important; }
-
-.aui-visible-tiny-inline-block {
-  display: inline-block !important; }
-
-.aui-hidden-tiny {
-  display: none !important; }
-
 .aui-visible-xsmall,
 .aui-visible-xsmall-inline,
 .aui-visible-xsmall-inline-block {
@@ -4285,21 +4243,6 @@ sup {
   .aui-hidden-small {
     display: none !important; } }
 
-.aui-visible-medium,
-.aui-visible-medium-inline,
-.aui-visible-medium-inline-block {
-  display: none !important; }
-
-@media (min-width: 768px) {
-  .aui-visible-medium {
-    display: block !important; }
-  .aui-visible-medium-inline {
-    display: inline !important; }
-  .aui-visible-medium-inline-block {
-    display: inline-block !important; }
-  .aui-hidden-medium {
-    display: none !important; } }
-
 .aui-visible-large,
 .aui-visible-large-inline,
 .aui-visible-large-inline-block {
@@ -4320,7 +4263,7 @@ sup {
 .aui-visible-xlarge-inline-block {
   display: none !important; }
 
-@media (min-width: 1440px) {
+@media (min-width: 1920px) {
   .aui-visible-xlarge {
     display: block !important; }
   .aui-visible-xlarge-inline {
@@ -4328,21 +4271,6 @@ sup {
   .aui-visible-xlarge-inline-block {
     display: inline-block !important; }
   .aui-hidden-xlarge {
-    display: none !important; } }
-
-.aui-visible-huge,
-.aui-visible-huge-inline,
-.aui-visible-huge-inline-block {
-  display: none !important; }
-
-@media (min-width: 1920px) {
-  .aui-visible-huge {
-    display: block !important; }
-  .aui-visible-huge-inline {
-    display: inline !important; }
-  .aui-visible-huge-inline-block {
-    display: inline-block !important; }
-  .aui-hidden-huge {
     display: none !important; } }
 
 .aui-audioplayer.aui-theme-light {
