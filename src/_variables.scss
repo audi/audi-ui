@@ -56,8 +56,8 @@ $aui-color-invalid: $aui-color-signal-red !default;
  */
 $aui-font-default: #{"\'AudiTypeVariable\'", Verdana, Geneva, sans-serif} !default;
 $aui-font-wide: #{"\'AudiTypeWide\'", Verdana, Geneva, sans-serif} !default;
-//$aui-font-extended: #{"\'AudiTypeExtended\'", Verdana, Geneva, sans-serif} !default;
-$aui-font-extended: #{"\'AudiTypeVariable\'", Verdana, Geneva, sans-serif} !default;
+$aui-font-extended: #{"\'AudiTypeExtended\'", Verdana, Geneva, sans-serif} !default;
+$aui-font-variable: #{"\'AudiTypeVariable\'", Verdana, Geneva, sans-serif} !default;
 $aui-font-extended-width: "wdth" 130;
 $aui-font-weight-light: 300 !default;
 $aui-font-weight-normal: 400 !default;
@@ -84,8 +84,7 @@ $aui-svg-arrow-height: 13px !default;
 /**
  * Breakpoints
  */
-//$aui-breakpoint: ( tiny : 480px, xsmall : 600px, small : 740px, medium : 960px, large : 1264px, xlarge : 1424px, huge : 1584px, ) !default;
-$aui-breakpoint: ( xsmall : 0px, small : 375px, medium : 768px, large : 1024px, xlarge : 1440px, huge : 1920px, ) !default;
+$aui-breakpoint: ( xsmall : 0px, small : 375px, large : 1024px, xlarge : 1920px, ) !default;
 
 
 // $aui-shadow: 0 10px 50px $aui-color-gray85;
@@ -122,7 +121,7 @@ $aui-grid-container-offset: 4.375% !default; // in percent
 /**
  * Visibility Component
  */
-$aui-visibility: ( tiny, xsmall, small, medium, large, xlarge, huge, );
+$aui-visibility: ( xsmall, small, large, xlarge, );
 
 /**
  * z-index
