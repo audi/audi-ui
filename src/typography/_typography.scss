@@ -1,5 +1,8 @@
 html {
-  @include aui-responsive-type(0, 1.75);
+  // @include aui-responsive-type(0, 1.75);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.003px;
 }
 
 body {
@@ -11,10 +14,9 @@ body {
 .aui-display {
   &-1,
   &-2 {
-    font-family: $aui-font-extended;
+    font-family: $aui-font-variable;
     font-variation-settings: $aui-font-extended-width;
     font-weight: $aui-font-weight-bold;
-    letter-spacing: -0.015em;
 
     &--normal {
       font-weight: $aui-font-weight-normal;
@@ -22,8 +24,38 @@ body {
   }
 
   &-1 {
-    @include aui-responsive-type(8, 1.1);
+    @include aui-respond-to('small') {
+      font-size: 40px;
+      line-height: 56px;
+      letter-spacing: 0.004px;
+    }
+    @include aui-respond-to('large') {
+      font-size: 60px;
+      line-height: 84px;
+      letter-spacing: 0.012px;
+    }
+    @include aui-respond-to('xlarge') {
+      font-size: 84px;
+      line-height: 116px;
+      letter-spacing: 0.017px;
+    }
     color: $aui-color-black;
+    font-size: 40px;
+    line-height: 56px;
+    letter-spacing: 0.008px;
+
+    &--normal {
+      @include aui-respond-to('small') {
+        letter-spacing: 0.004px;
+      }
+      @include aui-respond-to('large') {
+        letter-spacing: 0.006px;
+      }
+      @include aui-respond-to('xlarge') {
+        letter-spacing: 0.008px;
+      }
+      letter-spacing: 0.008px;
+    }
 
     &--white {
       color: $aui-color-white;
@@ -31,20 +63,34 @@ body {
   }
 
   &-2 {
-    @include aui-responsive-type(8, 1.1);
-    color: $aui-color-gray20;
+    @include aui-respond-to('small') {
+      font-size: 36px;
+      line-height: 52px;
+      letter-spacing: 0.007px;
+    }
+    @include aui-respond-to('large') {
+      font-size: 44px;
+      line-height: 64px;
+      letter-spacing: 0.009px;
+    }
+    @include aui-respond-to('xlarge') {
+      font-size: 60px;
+      line-height: 84px;
+      letter-spacing: 0.012px;
+    }
+    color: $aui-color-black;
+    font-size: 36px;
+    line-height: 52px;
+    letter-spacing: 0.007px;
 
     &--light-gray {
       color: $aui-color-gray95;
     }
   }
 
-  .aui-color-text-light &-1 {
+  .aui-color-text-light &-1,
+  .aui-color-text-light &-2 {
     color: $aui-color-white;
-  }
-
-  &-2 {
-    @include aui-responsive-type(5, 1.2);
   }
 }
 
@@ -54,11 +100,10 @@ body {
   &-3,
   &-4
   {
-    font-family: $aui-font-extended;
+    font-family: $aui-font-variable;
     font-variation-settings: $aui-font-extended-width;
     font-weight: $aui-font-weight-bold;
     color: $aui-color-gray20;
-    letter-spacing: -0.015em;
 
     &--normal {
       font-weight: $aui-font-weight-normal;
@@ -70,7 +115,25 @@ body {
   }
 
   &-1 {
-    @include aui-responsive-type(2, 1.2);
+    @include aui-respond-to('small') {
+      font-size: 28px;
+      line-height: 44px;
+      letter-spacing: 0.006px;
+    }
+    @include aui-respond-to('large') {
+      font-size: 36px;
+      line-height: 52px;
+      letter-spacing: 0.007px;
+    }
+    @include aui-respond-to('xlarge') {
+      font-size: 44px;
+      line-height: 68px;
+      letter-spacing: 0.009px;
+    }
+    color: $aui-color-black;
+    font-size: 28px;
+    line-height: 44px;
+    letter-spacing: 0.006px;
   }
 
   .aui-color-text-light &-1,
@@ -81,15 +144,66 @@ body {
   }
 
   &-2 {
-    @include aui-responsive-type(1, 1.2);
+    @include aui-respond-to('small') {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.002px;
+    }
+    @include aui-respond-to('large') {
+      font-size: 28px;
+      line-height: 44px;
+      letter-spacing: 0.003px;
+    }
+    @include aui-respond-to('xlarge') {
+      font-size: 36px;
+      line-height: 52px;
+      letter-spacing: 0.004px;
+    }
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.002px;
   }
 
   &-3 {
-    @include aui-responsive-type(0, 1.33);
+    @include aui-respond-to('small') {
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 0.002px;
+    }
+    @include aui-respond-to('large') {
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 0.002px;
+    }
+    @include aui-respond-to('xlarge') {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.002px;
+    }
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0.002px;
   }
 
   &-4 {
-    @include aui-responsive-type(-1, 1.5);
+    @include aui-respond-to('small') {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.002px;
+    }
+    @include aui-respond-to('large') {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.002px;
+    }
+    @include aui-respond-to('xlarge') {
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 0.002px;
+    }
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.002px;
 
     &--normal {
       font-weight: 504;
@@ -111,17 +225,20 @@ body {
 
   &-1 {
     font-size: 16px;
-    line-height: 1.75;
+    line-height: 24px;
+    letter-spacing: 0.003px;
   }
 
   &-2 {
     font-size: 12px;
-    line-height: 1.75;
+    line-height: 20px;
+    letter-spacing: 0.002px;
   }
 
   &-3 {
     font-size: 10px;
-    line-height: 1.5;
+    line-height: 16px;
+    letter-spacing: 0.002px;
   }
 
   .aui-color-text-light &-1,
@@ -132,7 +249,7 @@ body {
 }
 
 .aui-shortread {
-  @include aui-responsive-type(0, 1.5);
+  //@include aui-responsive-type(0, 1.5);
 }
 
 .aui-color-text-light {

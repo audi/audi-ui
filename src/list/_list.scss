@@ -5,7 +5,6 @@ $aui-list-style-position: unit(5) !default;
   margin-left: 0;
   padding-left: 0;
   list-style: none;
-  @include aui-responsive-type(0, 1.5);
 
   &__item {
     margin-left: $aui-list-style-position;
